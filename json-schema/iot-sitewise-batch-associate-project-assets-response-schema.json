@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-batch-associate-project-assets-response-schema.json",
+  "title": "BatchAssociateProjectAssetsResponse",
+  "description": "BatchAssociateProjectAssetsResponse schema",
+  "type": "object",
+  "properties": {
+    "errors": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BatchAssociateProjectAssetsErrors"
+        },
+        {
+          "description": "A list of associated error information, if any."
+        }
+      ]
+    }
+  }
+}

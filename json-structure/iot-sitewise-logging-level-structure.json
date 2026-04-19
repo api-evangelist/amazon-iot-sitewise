@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-logging-level-structure.json",
+  "name": "LoggingLevel",
+  "description": "LoggingLevel schema",
+  "type": "string",
+  "enum": [
+    "ERROR",
+    "INFO",
+    "OFF"
+  ]
+}

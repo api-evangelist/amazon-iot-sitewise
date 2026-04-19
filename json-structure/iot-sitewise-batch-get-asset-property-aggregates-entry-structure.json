@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-batch-get-asset-property-aggregates-entry-structure.json",
+  "name": "BatchGetAssetPropertyAggregatesEntry",
+  "description": "<p>Contains information for an asset property aggregate entry that is associated with the <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html\">BatchGetAssetPropertyAggregates</a> API.</p> <p>To identify an asset property, you must specify one of the following:</p> <ul> <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li> <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html\">UpdateAssetProperty</a>.</p> </li> </ul>",
+  "type": "object",
+  "properties": {
+    "entryId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EntryId"
+        },
+        {
+          "description": "The ID of the entry."
+        }
+      ]
+    },
+    "assetId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ID"
+        },
+        {
+          "description": "The ID of the asset in which the asset property was created."
+        }
+      ]
+    },
+    "propertyId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ID"
+        },
+        {
+          "description": "The ID of the asset property."
+        }
+      ]
+    },
+    "propertyAlias": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AssetPropertyAlias"
+        },
+        {
+          "description": "The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html\">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>."
+        }
+      ]
+    },
+    "aggregateTypes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AggregateTypes"
+        },
+        {
+          "description": "The data aggregating function."
+        }
+      ]
+    },
+    "resolution": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Resolution"
+        },
+        {
+          "description": "The time interval over which to aggregate data."
+        }
+      ]
+    },
+    "startDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time."
+        }
+      ]
+    },
+    "endDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time."
+        }
+      ]
+    },
+    "qualities": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Qualities"
+        },
+        {
+          "description": "The quality by which to filter asset data."
+        }
+      ]
+    },
+    "timeOrdering": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeOrdering"
+        },
+        {
+          "description": "<p>The chronological sorting order of the requested information.</p> <p>Default: <code>ASCENDING</code> </p>"
+        }
+      ]
+    }
+  },
+  "required": [
+    "entryId",
+    "aggregateTypes",
+    "resolution",
+    "startDate",
+    "endDate"
+  ]
+}

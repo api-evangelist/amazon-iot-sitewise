@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-get-asset-property-value-response-structure.json",
+  "name": "GetAssetPropertyValueResponse",
+  "description": "GetAssetPropertyValueResponse schema",
+  "type": "object",
+  "properties": {
+    "propertyValue": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AssetPropertyValue"
+        },
+        {
+          "description": "The current asset property value."
+        }
+      ]
+    }
+  }
+}

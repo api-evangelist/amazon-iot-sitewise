@@ -1,0 +1,11 @@
+{
+  "assetId": "id-abc123",
+  "propertyId": "id-abc123",
+  "alias": "example-value",
+  "timeSeriesId": "id-abc123",
+  "dataType": "example-value",
+  "dataTypeSpec": "example-value",
+  "timeSeriesCreationDate": "2025-03-15T14:30:00Z",
+  "timeSeriesLastUpdateDate": "2025-03-15T14:30:00Z",
+  "timeSeriesArn": "arn:aws:iot:us-east-1:123456789012:thing/example"
+}

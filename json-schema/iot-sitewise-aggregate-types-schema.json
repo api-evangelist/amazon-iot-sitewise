@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-aggregate-types-schema.json",
+  "title": "AggregateTypes",
+  "description": "AggregateTypes schema",
+  "type": "array",
+  "items": {
+    "type": "string",
+    "enum": [
+      "AVERAGE",
+      "COUNT",
+      "MAXIMUM",
+      "MINIMUM",
+      "SUM",
+      "STANDARD_DEVIATION"
+    ]
+  }
+}

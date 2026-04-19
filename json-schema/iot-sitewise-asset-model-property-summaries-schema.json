@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-asset-model-property-summaries-schema.json",
+  "title": "AssetModelPropertySummaries",
+  "description": "AssetModelPropertySummaries schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "name",
+      "dataType",
+      "type"
+    ],
+    "properties": {
+      "id": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ID"
+          },
+          {
+            "description": "The ID of the property."
+          }
+        ]
+      },
+      "name": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Name"
+          },
+          {
+            "description": "The name of the property."
+          }
+        ]
+      },
+      "dataType": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PropertyDataType"
+          },
+          {
+            "description": "The data type of the property."
+          }
+        ]
+      },
+      "dataTypeSpec": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Name"
+          },
+          {
+            "description": "The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type."
+          }
+        ]
+      },
+      "unit": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PropertyUnit"
+          },
+          {
+            "description": "The unit (such as <code>Newtons</code> or <code>RPM</code>) of the property."
+          }
+        ]
+      },
+      "type": {
+        "$ref": "#/components/schemas/PropertyType"
+      },
+      "assetModelCompositeModelId": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ID"
+          },
+          {
+            "description": " The ID of the composite model that contains the asset model property. "
+          }
+        ]
+      }
+    },
+    "description": "Contains a summary of a property associated with a model."
+  }
+}

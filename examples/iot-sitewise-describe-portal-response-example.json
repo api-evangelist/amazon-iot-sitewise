@@ -1,0 +1,17 @@
+{
+  "portalId": "id-abc123",
+  "portalArn": "arn:aws:iot:us-east-1:123456789012:thing/example",
+  "portalName": "example-resource",
+  "portalDescription": "example-value",
+  "portalClientId": "id-abc123",
+  "portalStartUrl": "https://example.com/path",
+  "portalContactEmail": "example-value",
+  "portalStatus": "ACTIVE",
+  "portalCreationDate": "example-value",
+  "portalLastUpdateDate": "example-value",
+  "portalLogoImageLocation": "example-value",
+  "roleArn": "arn:aws:iot:us-east-1:123456789012:thing/example",
+  "portalAuthMode": "example-value",
+  "notificationSenderEmail": "example-value",
+  "alarms": "example-value"
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-batch-disassociate-project-assets-request-schema.json",
+  "title": "BatchDisassociateProjectAssetsRequest",
+  "description": "BatchDisassociateProjectAssetsRequest schema",
+  "type": "object",
+  "properties": {
+    "assetIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IDs"
+        },
+        {
+          "description": "The IDs of the assets to be disassociated from the project."
+        }
+      ]
+    },
+    "clientToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ClientToken"
+        },
+        {
+          "description": "A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required."
+        }
+      ]
+    }
+  },
+  "required": [
+    "assetIds"
+  ]
+}

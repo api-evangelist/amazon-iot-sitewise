@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-aggregates-schema.json",
+  "title": "Aggregates",
+  "description": "Contains the (pre-calculated) aggregate values for an asset property.",
+  "type": "object",
+  "properties": {
+    "average": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AggregatedDoubleValue"
+        },
+        {
+          "description": "The average (mean) value of the time series over a time interval window."
+        }
+      ]
+    },
+    "count": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AggregatedDoubleValue"
+        },
+        {
+          "description": "The count of data points in the time series over a time interval window."
+        }
+      ]
+    },
+    "maximum": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AggregatedDoubleValue"
+        },
+        {
+          "description": "The maximum value of the time series over a time interval window."
+        }
+      ]
+    },
+    "minimum": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AggregatedDoubleValue"
+        },
+        {
+          "description": "The minimum value of the time series over a time interval window."
+        }
+      ]
+    },
+    "sum": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AggregatedDoubleValue"
+        },
+        {
+          "description": "The sum of the time series over a time interval window."
+        }
+      ]
+    },
+    "standardDeviation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AggregatedDoubleValue"
+        },
+        {
+          "description": "The standard deviation of the time series over a time interval window."
+        }
+      ]
+    }
+  }
+}

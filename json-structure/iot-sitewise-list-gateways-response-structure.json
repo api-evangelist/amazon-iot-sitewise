@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-list-gateways-response-structure.json",
+  "name": "ListGatewaysResponse",
+  "description": "ListGatewaysResponse schema",
+  "type": "object",
+  "properties": {
+    "gatewaySummaries": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GatewaySummaries"
+        },
+        {
+          "description": "A list that summarizes each gateway."
+        }
+      ]
+    },
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "The token for the next set of results, or null if there are no additional results."
+        }
+      ]
+    }
+  },
+  "required": [
+    "gatewaySummaries"
+  ]
+}

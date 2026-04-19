@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-asset-relationship-type-structure.json",
+  "name": "AssetRelationshipType",
+  "description": "AssetRelationshipType schema",
+  "type": "string",
+  "enum": [
+    "HIERARCHY"
+  ]
+}

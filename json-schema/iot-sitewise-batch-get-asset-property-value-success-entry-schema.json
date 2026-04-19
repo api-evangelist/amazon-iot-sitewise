@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-batch-get-asset-property-value-success-entry-schema.json",
+  "title": "BatchGetAssetPropertyValueSuccessEntry",
+  "description": "Contains success information for an entry that is associated with the <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html\">BatchGetAssetPropertyValue</a> API.",
+  "type": "object",
+  "properties": {
+    "entryId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EntryId"
+        },
+        {
+          "description": "The ID of the entry."
+        }
+      ]
+    },
+    "assetPropertyValue": {
+      "type": "object",
+      "required": [
+        "value",
+        "timestamp"
+      ],
+      "properties": {
+        "value": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/Variant"
+            },
+            {
+              "description": "The value of the asset property (see <code>Variant</code>)."
+            }
+          ]
+        },
+        "timestamp": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/TimeInNanos"
+            },
+            {
+              "description": "The timestamp of the asset property value."
+            }
+          ]
+        },
+        "quality": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/Quality"
+            },
+            {
+              "description": "The quality of the asset property value."
+            }
+          ]
+        }
+      },
+      "description": "Contains asset property value information."
+    }
+  },
+  "required": [
+    "entryId"
+  ]
+}

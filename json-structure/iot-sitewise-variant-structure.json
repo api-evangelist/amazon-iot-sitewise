@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-variant-structure.json",
+  "name": "Variant",
+  "description": "Contains an asset property value (of a single type only).",
+  "type": "object",
+  "properties": {
+    "stringValue": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PropertyValueStringValue"
+        },
+        {
+          "description": "Asset property data of type string (sequence of characters)."
+        }
+      ]
+    },
+    "integerValue": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PropertyValueIntegerValue"
+        },
+        {
+          "description": "Asset property data of type integer (whole number)."
+        }
+      ]
+    },
+    "doubleValue": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PropertyValueDoubleValue"
+        },
+        {
+          "description": "Asset property data of type double (floating point number)."
+        }
+      ]
+    },
+    "booleanValue": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PropertyValueBooleanValue"
+        },
+        {
+          "description": "Asset property data of type Boolean (true or false)."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-batch-disassociate-project-assets-response-structure.json",
+  "name": "BatchDisassociateProjectAssetsResponse",
+  "description": "BatchDisassociateProjectAssetsResponse schema",
+  "type": "object",
+  "properties": {
+    "errors": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BatchDisassociateProjectAssetsErrors"
+        },
+        {
+          "description": "A list of associated error information, if any."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-update-access-policy-response-structure.json",
+  "name": "UpdateAccessPolicyResponse",
+  "description": "UpdateAccessPolicyResponse schema",
+  "type": "object",
+  "properties": {}
+}

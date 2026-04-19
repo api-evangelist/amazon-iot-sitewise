@@ -1,0 +1,170 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-describe-portal-response-schema.json",
+  "title": "DescribePortalResponse",
+  "description": "DescribePortalResponse schema",
+  "type": "object",
+  "properties": {
+    "portalId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ID"
+        },
+        {
+          "description": "The ID of the portal."
+        }
+      ]
+    },
+    "portalArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ARN"
+        },
+        {
+          "description": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the portal, which has the following format.</p> <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>"
+        }
+      ]
+    },
+    "portalName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Name"
+        },
+        {
+          "description": "The name of the portal."
+        }
+      ]
+    },
+    "portalDescription": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Description"
+        },
+        {
+          "description": "The portal's description."
+        }
+      ]
+    },
+    "portalClientId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PortalClientId"
+        },
+        {
+          "description": "The IAM Identity Center application generated client ID (used with IAM Identity Center APIs). IoT SiteWise includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users."
+        }
+      ]
+    },
+    "portalStartUrl": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Url"
+        },
+        {
+          "description": "The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal."
+        }
+      ]
+    },
+    "portalContactEmail": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Email"
+        },
+        {
+          "description": "The Amazon Web Services administrator's contact email address."
+        }
+      ]
+    },
+    "portalStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PortalStatus"
+        },
+        {
+          "description": "The current status of the portal, which contains a state and any error message."
+        }
+      ]
+    },
+    "portalCreationDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The date the portal was created, in Unix epoch time."
+        }
+      ]
+    },
+    "portalLastUpdateDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The date the portal was last updated, in Unix epoch time."
+        }
+      ]
+    },
+    "portalLogoImageLocation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ImageLocation"
+        },
+        {
+          "description": "The portal's logo image, which is available at a URL."
+        }
+      ]
+    },
+    "roleArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ARN"
+        },
+        {
+          "description": "The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html\">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>."
+        }
+      ]
+    },
+    "portalAuthMode": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AuthMode"
+        },
+        {
+          "description": "The service to use to authenticate users to the portal."
+        }
+      ]
+    },
+    "notificationSenderEmail": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Email"
+        },
+        {
+          "description": "The email address that sends alarm notifications."
+        }
+      ]
+    },
+    "alarms": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Alarms"
+        },
+        {
+          "description": "Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal."
+        }
+      ]
+    }
+  },
+  "required": [
+    "portalId",
+    "portalArn",
+    "portalName",
+    "portalClientId",
+    "portalStartUrl",
+    "portalContactEmail",
+    "portalStatus",
+    "portalCreationDate",
+    "portalLastUpdateDate"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-delete-portal-response-structure.json",
+  "name": "DeletePortalResponse",
+  "description": "DeletePortalResponse schema",
+  "type": "object",
+  "properties": {
+    "portalStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PortalStatus"
+        },
+        {
+          "description": "The status of the portal, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message."
+        }
+      ]
+    }
+  },
+  "required": [
+    "portalStatus"
+  ]
+}

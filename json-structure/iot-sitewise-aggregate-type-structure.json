@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-aggregate-type-structure.json",
+  "name": "AggregateType",
+  "description": "AggregateType schema",
+  "type": "string",
+  "enum": [
+    "AVERAGE",
+    "COUNT",
+    "MAXIMUM",
+    "MINIMUM",
+    "SUM",
+    "STANDARD_DEVIATION"
+  ]
+}

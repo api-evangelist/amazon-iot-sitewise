@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-update-asset-response-schema.json",
+  "title": "UpdateAssetResponse",
+  "description": "UpdateAssetResponse schema",
+  "type": "object",
+  "properties": {
+    "assetStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AssetStatus"
+        },
+        {
+          "description": "The status of the asset, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message."
+        }
+      ]
+    }
+  },
+  "required": [
+    "assetStatus"
+  ]
+}

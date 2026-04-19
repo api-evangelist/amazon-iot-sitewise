@@ -1,0 +1,5 @@
+{
+  "encryptionType": "example-value",
+  "kmsKeyArn": "arn:aws:iot:us-east-1:123456789012:thing/example",
+  "configurationStatus": "ACTIVE"
+}

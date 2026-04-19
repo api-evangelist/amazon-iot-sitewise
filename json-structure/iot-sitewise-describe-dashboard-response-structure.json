@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-describe-dashboard-response-structure.json",
+  "name": "DescribeDashboardResponse",
+  "description": "DescribeDashboardResponse schema",
+  "type": "object",
+  "properties": {
+    "dashboardId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ID"
+        },
+        {
+          "description": "The ID of the dashboard."
+        }
+      ]
+    },
+    "dashboardArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ARN"
+        },
+        {
+          "description": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the dashboard, which has the following format.</p> <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code> </p>"
+        }
+      ]
+    },
+    "dashboardName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Name"
+        },
+        {
+          "description": "The name of the dashboard."
+        }
+      ]
+    },
+    "projectId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ID"
+        },
+        {
+          "description": "The ID of the project that the dashboard is in."
+        }
+      ]
+    },
+    "dashboardDescription": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Description"
+        },
+        {
+          "description": "The dashboard's description."
+        }
+      ]
+    },
+    "dashboardDefinition": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DashboardDefinition"
+        },
+        {
+          "description": "The dashboard's definition JSON literal. For detailed information, see <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html\">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>."
+        }
+      ]
+    },
+    "dashboardCreationDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The date the dashboard was created, in Unix epoch time."
+        }
+      ]
+    },
+    "dashboardLastUpdateDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The date the dashboard was last updated, in Unix epoch time."
+        }
+      ]
+    }
+  },
+  "required": [
+    "dashboardId",
+    "dashboardArn",
+    "dashboardName",
+    "projectId",
+    "dashboardDefinition",
+    "dashboardCreationDate",
+    "dashboardLastUpdateDate"
+  ]
+}

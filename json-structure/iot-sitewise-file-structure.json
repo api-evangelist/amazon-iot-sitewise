@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-file-structure.json",
+  "name": "File",
+  "description": "The file in Amazon S3 where your data is saved. ",
+  "type": "object",
+  "properties": {
+    "bucket": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Bucket"
+        },
+        {
+          "description": "The name of the Amazon S3 bucket from which data is imported."
+        }
+      ]
+    },
+    "key": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The key of the Amazon S3 object that contains your data. Each object has a key that is a unique identifier. Each object has exactly one key."
+        }
+      ]
+    },
+    "versionId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The version ID to identify a specific version of the Amazon S3 object that contains your data."
+        }
+      ]
+    }
+  },
+  "required": [
+    "bucket",
+    "key"
+  ]
+}

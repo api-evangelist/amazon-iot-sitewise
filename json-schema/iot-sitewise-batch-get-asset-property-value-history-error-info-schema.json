@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-batch-get-asset-property-value-history-error-info-schema.json",
+  "title": "BatchGetAssetPropertyValueHistoryErrorInfo",
+  "description": "The error information, such as the error code and the timestamp.",
+  "type": "object",
+  "properties": {
+    "errorCode": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BatchGetAssetPropertyValueHistoryErrorCode"
+        },
+        {
+          "description": "The error code."
+        }
+      ]
+    },
+    "errorTimestamp": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The date the error occurred, in Unix epoch time."
+        }
+      ]
+    }
+  },
+  "required": [
+    "errorCode",
+    "errorTimestamp"
+  ]
+}

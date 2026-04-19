@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-create-bulk-import-job-response-schema.json",
+  "title": "CreateBulkImportJobResponse",
+  "description": "CreateBulkImportJobResponse schema",
+  "type": "object",
+  "properties": {
+    "jobId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ID"
+        },
+        {
+          "description": "The ID of the job."
+        }
+      ]
+    },
+    "jobName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Name"
+        },
+        {
+          "description": "The unique name that helps identify the job request."
+        }
+      ]
+    },
+    "jobStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobStatus"
+        },
+        {
+          "description": "<p>The status of the bulk import job can be one of following values.</p> <ul> <li> <p> <code>PENDING</code> \u2013 IoT SiteWise is waiting for the current bulk import job to finish.</p> </li> <li> <p> <code>CANCELLED</code> \u2013 The bulk import job has been canceled.</p> </li> <li> <p> <code>RUNNING</code> \u2013 IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li> <li> <p> <code>COMPLETED</code> \u2013 IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li> <li> <p> <code>FAILED</code> \u2013 IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> <li> <p> <code>COMPLETED_WITH_FAILURES</code> \u2013 IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> </ul>"
+        }
+      ]
+    }
+  },
+  "required": [
+    "jobId",
+    "jobName",
+    "jobStatus"
+  ]
+}

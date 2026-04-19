@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-quality-structure.json",
+  "name": "Quality",
+  "description": "Quality schema",
+  "type": "string",
+  "enum": [
+    "GOOD",
+    "BAD",
+    "UNCERTAIN"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-time-ordering-structure.json",
+  "name": "TimeOrdering",
+  "description": "TimeOrdering schema",
+  "type": "string",
+  "enum": [
+    "ASCENDING",
+    "DESCENDING"
+  ]
+}

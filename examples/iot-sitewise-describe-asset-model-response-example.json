@@ -1,0 +1,12 @@
+{
+  "assetModelId": "id-abc123",
+  "assetModelArn": "arn:aws:iot:us-east-1:123456789012:thing/example",
+  "assetModelName": "example-resource",
+  "assetModelDescription": "example-value",
+  "assetModelProperties": "example-value",
+  "assetModelHierarchies": "example-value",
+  "assetModelCompositeModels": "example-value",
+  "assetModelCreationDate": "example-value",
+  "assetModelLastUpdateDate": "example-value",
+  "assetModelStatus": "ACTIVE"
+}

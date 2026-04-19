@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-asset-property-value-schema.json",
+  "title": "AssetPropertyValue",
+  "description": "Contains asset property value information.",
+  "type": "object",
+  "properties": {
+    "value": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Variant"
+        },
+        {
+          "description": "The value of the asset property (see <code>Variant</code>)."
+        }
+      ]
+    },
+    "timestamp": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeInNanos"
+        },
+        {
+          "description": "The timestamp of the asset property value."
+        }
+      ]
+    },
+    "quality": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Quality"
+        },
+        {
+          "description": "The quality of the asset property value."
+        }
+      ]
+    }
+  },
+  "required": [
+    "value",
+    "timestamp"
+  ]
+}

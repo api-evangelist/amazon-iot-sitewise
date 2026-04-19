@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-list-time-series-response-structure.json",
+  "name": "ListTimeSeriesResponse",
+  "description": "ListTimeSeriesResponse schema",
+  "type": "object",
+  "properties": {
+    "TimeSeriesSummaries": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeSeriesSummaries"
+        },
+        {
+          "description": "One or more time series summaries to list."
+        }
+      ]
+    },
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "The token for the next set of results, or null if there are no additional results."
+        }
+      ]
+    }
+  },
+  "required": [
+    "TimeSeriesSummaries"
+  ]
+}

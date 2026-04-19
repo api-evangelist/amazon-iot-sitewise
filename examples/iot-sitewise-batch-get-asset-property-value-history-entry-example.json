@@ -1,0 +1,10 @@
+{
+  "entryId": "id-abc123",
+  "assetId": "id-abc123",
+  "propertyId": "id-abc123",
+  "propertyAlias": "example-value",
+  "startDate": "example-value",
+  "endDate": "example-value",
+  "qualities": "example-value",
+  "timeOrdering": "2025-03-15T14:30:00Z"
+}

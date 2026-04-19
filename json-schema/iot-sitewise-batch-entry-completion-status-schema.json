@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-batch-entry-completion-status-schema.json",
+  "title": "BatchEntryCompletionStatus",
+  "description": "BatchEntryCompletionStatus schema",
+  "type": "string",
+  "enum": [
+    "SUCCESS",
+    "ERROR"
+  ]
+}

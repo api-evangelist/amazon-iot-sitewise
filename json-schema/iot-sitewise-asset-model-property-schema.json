@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-asset-model-property-schema.json",
+  "title": "AssetModelProperty",
+  "description": "Contains information about an asset model property.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ID"
+        },
+        {
+          "description": "The ID of the asset model property."
+        }
+      ]
+    },
+    "name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Name"
+        },
+        {
+          "description": "The name of the asset model property."
+        }
+      ]
+    },
+    "dataType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PropertyDataType"
+        },
+        {
+          "description": "The data type of the asset model property."
+        }
+      ]
+    },
+    "dataTypeSpec": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Name"
+        },
+        {
+          "description": "The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type."
+        }
+      ]
+    },
+    "unit": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PropertyUnit"
+        },
+        {
+          "description": "The unit of the asset model property, such as <code>Newtons</code> or <code>RPM</code>."
+        }
+      ]
+    },
+    "type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PropertyType"
+        },
+        {
+          "description": "The property type (see <code>PropertyType</code>)."
+        }
+      ]
+    }
+  },
+  "required": [
+    "name",
+    "dataType",
+    "type"
+  ]
+}

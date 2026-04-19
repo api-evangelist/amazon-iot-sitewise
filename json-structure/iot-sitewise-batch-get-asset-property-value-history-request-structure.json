@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-batch-get-asset-property-value-history-request-structure.json",
+  "name": "BatchGetAssetPropertyValueHistoryRequest",
+  "description": "BatchGetAssetPropertyValueHistoryRequest schema",
+  "type": "object",
+  "properties": {
+    "entries": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BatchGetAssetPropertyValueHistoryEntries"
+        },
+        {
+          "description": "The list of asset property historical value entries for the batch get request. You can specify up to 16 entries per request."
+        }
+      ]
+    },
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "The token to be used for the next set of paginated results."
+        }
+      ]
+    },
+    "maxResults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BatchGetAssetPropertyValueHistoryMaxResults"
+        },
+        {
+          "description": "<p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p> <ul> <li> <p>The size of the result set is equal to 4 MB.</p> </li> <li> <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 20000.</p> </li> </ul>"
+        }
+      ]
+    }
+  },
+  "required": [
+    "entries"
+  ]
+}

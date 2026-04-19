@@ -1,0 +1,14 @@
+{
+  "id": "id-abc123",
+  "name": "example-resource",
+  "dataType": "example-value",
+  "dataTypeSpec": "example-value",
+  "unit": "example-value",
+  "type": {
+    "attribute": "example-value",
+    "measurement": "example-value",
+    "transform": "example-value",
+    "metric": "example-value"
+  },
+  "assetModelCompositeModelId": "id-abc123"
+}

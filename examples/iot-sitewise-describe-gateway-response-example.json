@@ -1,0 +1,9 @@
+{
+  "gatewayId": "id-abc123",
+  "gatewayName": "example-resource",
+  "gatewayArn": "arn:aws:iot:us-east-1:123456789012:thing/example",
+  "gatewayPlatform": "example-value",
+  "gatewayCapabilitySummaries": "example-value",
+  "creationDate": "example-value",
+  "lastUpdateDate": "example-value"
+}

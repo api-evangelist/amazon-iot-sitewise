@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-create-asset-model-response-structure.json",
+  "name": "CreateAssetModelResponse",
+  "description": "CreateAssetModelResponse schema",
+  "type": "object",
+  "properties": {
+    "assetModelId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ID"
+        },
+        {
+          "description": "The ID of the asset model. You can use this ID when you call other IoT SiteWise APIs."
+        }
+      ]
+    },
+    "assetModelArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ARN"
+        },
+        {
+          "description": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the asset model, which has the following format.</p> <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>"
+        }
+      ]
+    },
+    "assetModelStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AssetModelStatus"
+        },
+        {
+          "description": "The status of the asset model, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message."
+        }
+      ]
+    }
+  },
+  "required": [
+    "assetModelId",
+    "assetModelArn",
+    "assetModelStatus"
+  ]
+}

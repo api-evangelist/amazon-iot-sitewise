@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-user-identity-schema.json",
+  "title": "UserIdentity",
+  "description": "Contains information for a user identity in an access policy.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IdentityId"
+        },
+        {
+          "description": "The IAM Identity Center ID of the user."
+        }
+      ]
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

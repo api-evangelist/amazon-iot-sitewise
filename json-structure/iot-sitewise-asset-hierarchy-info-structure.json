@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-asset-hierarchy-info-structure.json",
+  "name": "AssetHierarchyInfo",
+  "description": "Contains information about a parent asset and a child asset that are related through an asset hierarchy.",
+  "type": "object",
+  "properties": {
+    "parentAssetId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ID"
+        },
+        {
+          "description": "The ID of the parent asset in this asset relationship."
+        }
+      ]
+    },
+    "childAssetId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ID"
+        },
+        {
+          "description": "The ID of the child asset in this asset relationship."
+        }
+      ]
+    }
+  }
+}

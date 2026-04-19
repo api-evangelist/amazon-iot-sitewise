@@ -1,0 +1,13 @@
+{
+  "storageType": "example-value",
+  "multiLayerStorage": "example-value",
+  "disassociatedDataStorage": "example-value",
+  "retentionPeriod": {
+    "numberOfDays": "example-value",
+    "unlimited": "example-value"
+  },
+  "configurationStatus": {
+    "state": "example-value",
+    "error": "example-value"
+  }
+}

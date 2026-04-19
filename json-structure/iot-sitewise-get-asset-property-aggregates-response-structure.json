@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-get-asset-property-aggregates-response-structure.json",
+  "name": "GetAssetPropertyAggregatesResponse",
+  "description": "GetAssetPropertyAggregatesResponse schema",
+  "type": "object",
+  "properties": {
+    "aggregatedValues": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AggregatedValues"
+        },
+        {
+          "description": "The requested aggregated values."
+        }
+      ]
+    },
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "The token for the next set of results, or null if there are no additional results."
+        }
+      ]
+    }
+  },
+  "required": [
+    "aggregatedValues"
+  ]
+}

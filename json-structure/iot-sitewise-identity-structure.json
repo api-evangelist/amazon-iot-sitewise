@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-identity-structure.json",
+  "name": "Identity",
+  "description": "<p>Contains an identity that can access an IoT SiteWise Monitor resource.</p> <note> <p>Currently, you can't use Amazon Web Services APIs to retrieve IAM Identity Center identity IDs. You can find the IAM Identity Center identity IDs in the URL of user and group pages in the <a href=\"https://console.aws.amazon.com/singlesignon\">IAM Identity Center console</a>.</p> </note>",
+  "type": "object",
+  "properties": {
+    "user": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UserIdentity"
+        },
+        {
+          "description": "An IAM Identity Center user identity."
+        }
+      ]
+    },
+    "group": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GroupIdentity"
+        },
+        {
+          "description": "An IAM Identity Center group identity."
+        }
+      ]
+    },
+    "iamUser": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IAMUserIdentity"
+        },
+        {
+          "description": "An IAM user identity."
+        }
+      ]
+    },
+    "iamRole": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IAMRoleIdentity"
+        },
+        {
+          "description": "An IAM role identity."
+        }
+      ]
+    }
+  }
+}

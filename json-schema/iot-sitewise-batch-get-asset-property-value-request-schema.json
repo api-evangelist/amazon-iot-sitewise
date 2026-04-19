@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-batch-get-asset-property-value-request-schema.json",
+  "title": "BatchGetAssetPropertyValueRequest",
+  "description": "BatchGetAssetPropertyValueRequest schema",
+  "type": "object",
+  "properties": {
+    "entries": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BatchGetAssetPropertyValueEntries"
+        },
+        {
+          "description": "The list of asset property value entries for the batch get request. You can specify up to 128 entries per request."
+        }
+      ]
+    },
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "The token to be used for the next set of paginated results."
+        }
+      ]
+    }
+  },
+  "required": [
+    "entries"
+  ]
+}

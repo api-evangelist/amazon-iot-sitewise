@@ -1,0 +1,11 @@
+{
+  "jobId": "id-abc123",
+  "jobName": "example-resource",
+  "jobStatus": "ACTIVE",
+  "jobRoleArn": "arn:aws:iot:us-east-1:123456789012:thing/example",
+  "files": "example-value",
+  "errorReportLocation": "example-value",
+  "jobConfiguration": "example-value",
+  "jobCreationDate": "example-value",
+  "jobLastUpdateDate": "example-value"
+}

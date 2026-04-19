@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-describe-access-policy-response-schema.json",
+  "title": "DescribeAccessPolicyResponse",
+  "description": "DescribeAccessPolicyResponse schema",
+  "type": "object",
+  "properties": {
+    "accessPolicyId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ID"
+        },
+        {
+          "description": "The ID of the access policy."
+        }
+      ]
+    },
+    "accessPolicyArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ARN"
+        },
+        {
+          "description": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the access policy, which has the following format.</p> <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>"
+        }
+      ]
+    },
+    "accessPolicyIdentity": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Identity"
+        },
+        {
+          "description": "The identity (IAM Identity Center user, IAM Identity Center group, or IAM user) to which this access policy applies."
+        }
+      ]
+    },
+    "accessPolicyResource": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Resource"
+        },
+        {
+          "description": "The IoT SiteWise Monitor resource (portal or project) to which this access policy provides access."
+        }
+      ]
+    },
+    "accessPolicyPermission": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Permission"
+        },
+        {
+          "description": "The access policy permission. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner."
+        }
+      ]
+    },
+    "accessPolicyCreationDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The date the access policy was created, in Unix epoch time."
+        }
+      ]
+    },
+    "accessPolicyLastUpdateDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The date the access policy was last updated, in Unix epoch time."
+        }
+      ]
+    }
+  },
+  "required": [
+    "accessPolicyId",
+    "accessPolicyArn",
+    "accessPolicyIdentity",
+    "accessPolicyResource",
+    "accessPolicyPermission",
+    "accessPolicyCreationDate",
+    "accessPolicyLastUpdateDate"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "id": "id-abc123",
+  "alias": "example-value",
+  "unit": "example-value",
+  "notification": {
+    "topic": "example-value",
+    "state": "example-value"
+  },
+  "assetCompositeModelId": "id-abc123"
+}

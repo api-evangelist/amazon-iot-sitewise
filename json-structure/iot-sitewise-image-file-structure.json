@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-image-file-structure.json",
+  "name": "ImageFile",
+  "description": "Contains an image file.",
+  "type": "object",
+  "properties": {
+    "data": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ImageFileData"
+        },
+        {
+          "description": "The image file contents, represented as a base64-encoded string. The file size must be less than 1 MB."
+        }
+      ]
+    },
+    "type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ImageFileType"
+        },
+        {
+          "description": "The file type of the image."
+        }
+      ]
+    }
+  },
+  "required": [
+    "data",
+    "type"
+  ]
+}

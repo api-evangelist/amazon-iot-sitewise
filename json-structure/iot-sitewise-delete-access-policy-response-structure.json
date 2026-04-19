@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-delete-access-policy-response-structure.json",
+  "name": "DeleteAccessPolicyResponse",
+  "description": "DeleteAccessPolicyResponse schema",
+  "type": "object",
+  "properties": {}
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-list-portals-response-structure.json",
+  "name": "ListPortalsResponse",
+  "description": "ListPortalsResponse schema",
+  "type": "object",
+  "properties": {
+    "portalSummaries": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PortalSummaries"
+        },
+        {
+          "description": "A list that summarizes each portal."
+        }
+      ]
+    },
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "The token for the next set of results, or null if there are no additional results."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "s3ResourceArn": "arn:aws:iot:us-east-1:123456789012:thing/example",
+  "roleArn": "arn:aws:iot:us-east-1:123456789012:thing/example"
+}

@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-batch-get-asset-property-value-history-success-entries-schema.json",
+  "title": "BatchGetAssetPropertyValueHistorySuccessEntries",
+  "description": "BatchGetAssetPropertyValueHistorySuccessEntries schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "entryId",
+      "assetPropertyValueHistory"
+    ],
+    "properties": {
+      "entryId": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/EntryId"
+          },
+          {
+            "description": "The ID of the entry."
+          }
+        ]
+      },
+      "assetPropertyValueHistory": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AssetPropertyValueHistory"
+          },
+          {
+            "description": "The requested historical values for the specified asset property."
+          }
+        ]
+      }
+    },
+    "description": "Contains success information for an entry that is associated with the <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html\">BatchGetAssetPropertyValueHistory</a> API."
+  }
+}

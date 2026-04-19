@@ -1,0 +1,8 @@
+{
+  "id": "id-abc123",
+  "identity": "id-abc123",
+  "resource": "example-value",
+  "permission": "example-value",
+  "creationDate": "example-value",
+  "lastUpdateDate": "example-value"
+}

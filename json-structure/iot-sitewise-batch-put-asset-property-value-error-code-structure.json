@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-batch-put-asset-property-value-error-code-structure.json",
+  "name": "BatchPutAssetPropertyValueErrorCode",
+  "description": "BatchPutAssetPropertyValueErrorCode schema",
+  "type": "string",
+  "enum": [
+    "ResourceNotFoundException",
+    "InvalidRequestException",
+    "InternalFailureException",
+    "ServiceUnavailableException",
+    "ThrottlingException",
+    "LimitExceededException",
+    "ConflictingOperationException",
+    "TimestampOutOfRangeException",
+    "AccessDeniedException"
+  ]
+}

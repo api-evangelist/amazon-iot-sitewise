@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-list-asset-model-properties-response-schema.json",
+  "title": "ListAssetModelPropertiesResponse",
+  "description": "ListAssetModelPropertiesResponse schema",
+  "type": "object",
+  "properties": {
+    "assetModelPropertySummaries": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AssetModelPropertySummaries"
+        },
+        {
+          "description": "A list that summarizes the properties associated with the specified asset model."
+        }
+      ]
+    },
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "The token for the next set of results, or null if there are no additional results."
+        }
+      ]
+    }
+  },
+  "required": [
+    "assetModelPropertySummaries"
+  ]
+}

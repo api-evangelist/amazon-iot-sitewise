@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-describe-project-response-structure.json",
+  "name": "DescribeProjectResponse",
+  "description": "DescribeProjectResponse schema",
+  "type": "object",
+  "properties": {
+    "projectId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ID"
+        },
+        {
+          "description": "The ID of the project."
+        }
+      ]
+    },
+    "projectArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ARN"
+        },
+        {
+          "description": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the project, which has the following format.</p> <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>"
+        }
+      ]
+    },
+    "projectName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Name"
+        },
+        {
+          "description": "The name of the project."
+        }
+      ]
+    },
+    "portalId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ID"
+        },
+        {
+          "description": "The ID of the portal that the project is in."
+        }
+      ]
+    },
+    "projectDescription": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Description"
+        },
+        {
+          "description": "The project's description."
+        }
+      ]
+    },
+    "projectCreationDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The date the project was created, in Unix epoch time."
+        }
+      ]
+    },
+    "projectLastUpdateDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The date the project was last updated, in Unix epoch time."
+        }
+      ]
+    }
+  },
+  "required": [
+    "projectId",
+    "projectArn",
+    "projectName",
+    "portalId",
+    "projectCreationDate",
+    "projectLastUpdateDate"
+  ]
+}

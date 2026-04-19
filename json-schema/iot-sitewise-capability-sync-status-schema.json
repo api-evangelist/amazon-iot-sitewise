@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-capability-sync-status-schema.json",
+  "title": "CapabilitySyncStatus",
+  "description": "CapabilitySyncStatus schema",
+  "type": "string",
+  "enum": [
+    "IN_SYNC",
+    "OUT_OF_SYNC",
+    "SYNC_FAILED",
+    "UNKNOWN"
+  ]
+}

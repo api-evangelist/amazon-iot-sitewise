@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-asset-model-property-definitions-schema.json",
+  "title": "AssetModelPropertyDefinitions",
+  "description": "AssetModelPropertyDefinitions schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "name",
+      "dataType",
+      "type"
+    ],
+    "properties": {
+      "name": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Name"
+          },
+          {
+            "description": "The name of the property definition."
+          }
+        ]
+      },
+      "dataType": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PropertyDataType"
+          },
+          {
+            "description": "<p>The data type of the property definition.</p> <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this property.</p>"
+          }
+        ]
+      },
+      "dataTypeSpec": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Name"
+          },
+          {
+            "description": "<p>The data type of the structure for this property. This parameter is required on properties that have the <code>STRUCT</code> data type.</p> <p>The options for this parameter depend on the type of the composite model in which you define this property. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>"
+          }
+        ]
+      },
+      "unit": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PropertyUnit"
+          },
+          {
+            "description": "The unit of the property definition, such as <code>Newtons</code> or <code>RPM</code>."
+          }
+        ]
+      },
+      "type": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PropertyType"
+          },
+          {
+            "description": "The property definition type (see <code>PropertyType</code>). You can only specify one type in a property definition."
+          }
+        ]
+      }
+    },
+    "description": "Contains an asset model property definition. This property definition is applied to all assets created from the asset model."
+  }
+}

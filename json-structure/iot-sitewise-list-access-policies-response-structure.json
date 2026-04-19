@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-list-access-policies-response-structure.json",
+  "name": "ListAccessPoliciesResponse",
+  "description": "ListAccessPoliciesResponse schema",
+  "type": "object",
+  "properties": {
+    "accessPolicySummaries": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccessPolicySummaries"
+        },
+        {
+          "description": "A list that summarizes each access policy."
+        }
+      ]
+    },
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "The token for the next set of results, or null if there are no additional results."
+        }
+      ]
+    }
+  },
+  "required": [
+    "accessPolicySummaries"
+  ]
+}

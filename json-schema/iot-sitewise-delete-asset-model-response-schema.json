@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-delete-asset-model-response-schema.json",
+  "title": "DeleteAssetModelResponse",
+  "description": "DeleteAssetModelResponse schema",
+  "type": "object",
+  "properties": {
+    "assetModelStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AssetModelStatus"
+        },
+        {
+          "description": "The status of the asset model, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message."
+        }
+      ]
+    }
+  },
+  "required": [
+    "assetModelStatus"
+  ]
+}

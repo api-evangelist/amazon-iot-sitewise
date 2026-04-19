@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-batch-get-asset-property-aggregates-error-code-structure.json",
+  "name": "BatchGetAssetPropertyAggregatesErrorCode",
+  "description": "BatchGetAssetPropertyAggregatesErrorCode schema",
+  "type": "string",
+  "enum": [
+    "ResourceNotFoundException",
+    "InvalidRequestException",
+    "AccessDeniedException"
+  ]
+}

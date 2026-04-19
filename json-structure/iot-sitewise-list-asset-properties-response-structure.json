@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-list-asset-properties-response-structure.json",
+  "name": "ListAssetPropertiesResponse",
+  "description": "ListAssetPropertiesResponse schema",
+  "type": "object",
+  "properties": {
+    "assetPropertySummaries": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AssetPropertySummaries"
+        },
+        {
+          "description": "A list that summarizes the properties associated with the specified asset."
+        }
+      ]
+    },
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "The token for the next set of results, or null if there are no additional results."
+        }
+      ]
+    }
+  },
+  "required": [
+    "assetPropertySummaries"
+  ]
+}

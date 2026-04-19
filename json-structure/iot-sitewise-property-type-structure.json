@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-property-type-structure.json",
+  "name": "PropertyType",
+  "description": "Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>.",
+  "type": "object",
+  "properties": {
+    "attribute": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Attribute"
+        },
+        {
+          "description": "Specifies an asset attribute property. An attribute generally contains static information, such as the serial number of an <a href=\"https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications\">IIoT</a> wind turbine."
+        }
+      ]
+    },
+    "measurement": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Measurement"
+        },
+        {
+          "description": "Specifies an asset measurement property. A measurement represents a device's raw sensor data stream, such as timestamped temperature values or timestamped power values."
+        }
+      ]
+    },
+    "transform": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Transform"
+        },
+        {
+          "description": "Specifies an asset transform property. A transform contains a mathematical expression that maps a property's data points from one form to another, such as a unit conversion from Celsius to Fahrenheit."
+        }
+      ]
+    },
+    "metric": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Metric"
+        },
+        {
+          "description": "Specifies an asset metric property. A metric contains a mathematical expression that uses aggregate functions to process all input data points over a time interval and output a single data point, such as to calculate the average hourly temperature."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-asset-model-property-summary-structure.json",
+  "name": "AssetModelPropertySummary",
+  "description": "Contains a summary of a property associated with a model.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ID"
+        },
+        {
+          "description": "The ID of the property."
+        }
+      ]
+    },
+    "name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Name"
+        },
+        {
+          "description": "The name of the property."
+        }
+      ]
+    },
+    "dataType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PropertyDataType"
+        },
+        {
+          "description": "The data type of the property."
+        }
+      ]
+    },
+    "dataTypeSpec": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Name"
+        },
+        {
+          "description": "The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type."
+        }
+      ]
+    },
+    "unit": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PropertyUnit"
+        },
+        {
+          "description": "The unit (such as <code>Newtons</code> or <code>RPM</code>) of the property."
+        }
+      ]
+    },
+    "type": {
+      "type": "object",
+      "properties": {
+        "attribute": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/Attribute"
+            },
+            {
+              "description": "Specifies an asset attribute property. An attribute generally contains static information, such as the serial number of an <a href=\"https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications\">IIoT</a> wind turbine."
+            }
+          ]
+        },
+        "measurement": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/Measurement"
+            },
+            {
+              "description": "Specifies an asset measurement property. A measurement represents a device's raw sensor data stream, such as timestamped temperature values or timestamped power values."
+            }
+          ]
+        },
+        "transform": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/Transform"
+            },
+            {
+              "description": "Specifies an asset transform property. A transform contains a mathematical expression that maps a property's data points from one form to another, such as a unit conversion from Celsius to Fahrenheit."
+            }
+          ]
+        },
+        "metric": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/Metric"
+            },
+            {
+              "description": "Specifies an asset metric property. A metric contains a mathematical expression that uses aggregate functions to process all input data points over a time interval and output a single data point, such as to calculate the average hourly temperature."
+            }
+          ]
+        }
+      },
+      "description": "Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>."
+    },
+    "assetModelCompositeModelId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ID"
+        },
+        {
+          "description": " The ID of the composite model that contains the asset model property. "
+        }
+      ]
+    }
+  },
+  "required": [
+    "name",
+    "dataType",
+    "type"
+  ]
+}

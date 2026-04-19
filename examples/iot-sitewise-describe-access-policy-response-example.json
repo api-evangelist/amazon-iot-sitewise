@@ -1,0 +1,9 @@
+{
+  "accessPolicyId": "id-abc123",
+  "accessPolicyArn": "arn:aws:iot:us-east-1:123456789012:thing/example",
+  "accessPolicyIdentity": "id-abc123",
+  "accessPolicyResource": "example-value",
+  "accessPolicyPermission": "example-value",
+  "accessPolicyCreationDate": "example-value",
+  "accessPolicyLastUpdateDate": "example-value"
+}

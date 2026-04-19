@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-batch-put-asset-property-value-request-schema.json",
+  "title": "BatchPutAssetPropertyValueRequest",
+  "description": "BatchPutAssetPropertyValueRequest schema",
+  "type": "object",
+  "properties": {
+    "entries": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PutAssetPropertyValueEntries"
+        },
+        {
+          "description": "The list of asset property value entries for the batch put request. You can specify up to 10 entries per request."
+        }
+      ]
+    }
+  },
+  "required": [
+    "entries"
+  ]
+}

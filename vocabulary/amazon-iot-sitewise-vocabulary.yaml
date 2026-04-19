@@ -1,0 +1,67 @@
+vocabulary: "1.0.0"
+info:
+  provider: Amazon IoT SiteWise
+  description: Vocabulary for Amazon IoT SiteWise covering all API resources and operations.
+  created: "2026-04-19"
+  modified: "2026-04-19"
+operational:
+  apis:
+    - namespace: iot-sitewise
+      version: "2024-01-01"
+      baseUrl: https://iotsitewise.amazonaws.com
+      status: active
+  resources:
+    - name: resources
+      api: iot-sitewise
+      actions: [list, create, delete, get, update]
+  actions:
+    - name: list
+      methods: [GET]
+      pattern: read
+    - name: create
+      methods: [POST]
+      pattern: write
+    - name: get
+      methods: [GET]
+      pattern: read
+    - name: update
+      methods: [PUT, PATCH]
+      pattern: write
+    - name: delete
+      methods: [DELETE]
+      pattern: destructive
+  authentication:
+    schemes:
+      - type: AWS Signature Version 4
+        placement: header
+capability:
+  workflows:
+    - name: Industrial Asset Management
+      file: capabilities/industrial-asset-management.yaml
+      apis: [iot-sitewise]
+      toolCount: 8
+      personas: [OT Engineer, Data Analyst]
+  personas:
+    - id: primary-persona
+      name: OT Engineer
+      description: Manages Amazon IoT SiteWise resources and operations
+  domains:
+    - name: IoT
+      description: Collect, organize, and analyze industrial equipment data.
+  namespaces:
+    - name: iot-sitewise
+      type: consumed
+    - name: industrial-asset-management-api
+      type: rest
+      port: 8080
+    - name: industrial-asset-management-mcp
+      type: mcp
+      port: 9090
+  binds:
+    - AWS_ACCESS_KEY_ID
+    - AWS_SECRET_ACCESS_KEY
+crossReference:
+  - resource: resources
+    operations: [listassets, createasset, listassetmodels, createassetmodel]
+    workflows: [Industrial Asset Management]
+    personas: [OT Engineer, Data Analyst]

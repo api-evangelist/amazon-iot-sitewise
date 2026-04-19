@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-aggregated-value-structure.json",
+  "name": "AggregatedValue",
+  "description": "Contains aggregated asset property values (for example, average, minimum, and maximum).",
+  "type": "object",
+  "properties": {
+    "timestamp": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The date the aggregating computations occurred, in Unix epoch time."
+        }
+      ]
+    },
+    "quality": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Quality"
+        },
+        {
+          "description": "The quality of the aggregated data."
+        }
+      ]
+    },
+    "value": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Aggregates"
+        },
+        {
+          "description": "The value of the aggregates."
+        }
+      ]
+    }
+  },
+  "required": [
+    "timestamp",
+    "value"
+  ]
+}

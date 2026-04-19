@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-batch-get-asset-property-aggregates-request-schema.json",
+  "title": "BatchGetAssetPropertyAggregatesRequest",
+  "description": "BatchGetAssetPropertyAggregatesRequest schema",
+  "type": "object",
+  "properties": {
+    "entries": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BatchGetAssetPropertyAggregatesEntries"
+        },
+        {
+          "description": "The list of asset property aggregate entries for the batch get request. You can specify up to 16 entries per request."
+        }
+      ]
+    },
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "The token to be used for the next set of paginated results."
+        }
+      ]
+    },
+    "maxResults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BatchGetAssetPropertyAggregatesMaxResults"
+        },
+        {
+          "description": "<p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p> <ul> <li> <p>The size of the result set is equal to 1 MB.</p> </li> <li> <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 4000.</p> </li> </ul>"
+        }
+      ]
+    }
+  },
+  "required": [
+    "entries"
+  ]
+}

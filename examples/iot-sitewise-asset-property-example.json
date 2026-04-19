@@ -1,0 +1,9 @@
+{
+  "id": "id-abc123",
+  "name": "example-resource",
+  "alias": "example-value",
+  "notification": "example-value",
+  "dataType": "example-value",
+  "dataTypeSpec": "example-value",
+  "unit": "example-value"
+}

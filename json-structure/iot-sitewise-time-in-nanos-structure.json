@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-time-in-nanos-structure.json",
+  "name": "TimeInNanos",
+  "description": "Contains a timestamp with optional nanosecond granularity.",
+  "type": "object",
+  "properties": {
+    "timeInSeconds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeInSeconds"
+        },
+        {
+          "description": "The timestamp date, in seconds, in the Unix epoch format. Fractional nanosecond data is provided by <code>offsetInNanos</code>."
+        }
+      ]
+    },
+    "offsetInNanos": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OffsetInNanos"
+        },
+        {
+          "description": "The nanosecond offset from <code>timeInSeconds</code>."
+        }
+      ]
+    }
+  },
+  "required": [
+    "timeInSeconds"
+  ]
+}

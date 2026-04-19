@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-group-identity-structure.json",
+  "name": "GroupIdentity",
+  "description": "Contains information for a group identity in an access policy.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IdentityId"
+        },
+        {
+          "description": "The IAM Identity Center ID of the group."
+        }
+      ]
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

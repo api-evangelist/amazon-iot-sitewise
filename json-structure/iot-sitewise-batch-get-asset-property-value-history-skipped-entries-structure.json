@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-batch-get-asset-property-value-history-skipped-entries-structure.json",
+  "name": "BatchGetAssetPropertyValueHistorySkippedEntries",
+  "description": "BatchGetAssetPropertyValueHistorySkippedEntries schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "entryId",
+      "completionStatus"
+    ],
+    "properties": {
+      "entryId": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/EntryId"
+          },
+          {
+            "description": "The ID of the entry."
+          }
+        ]
+      },
+      "completionStatus": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BatchEntryCompletionStatus"
+          },
+          {
+            "description": "The completion status of each entry that is associated with the <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValueHistory.html\">BatchGetAssetPropertyValueHistory</a> API."
+          }
+        ]
+      },
+      "errorInfo": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BatchGetAssetPropertyValueHistoryErrorInfo"
+          },
+          {
+            "description": "The error information, such as the error code and the timestamp."
+          }
+        ]
+      }
+    },
+    "description": "Contains information for an entry that has been processed by the previous <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html\">BatchGetAssetPropertyValueHistory</a> request."
+  }
+}

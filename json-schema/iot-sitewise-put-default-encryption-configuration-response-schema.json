@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-put-default-encryption-configuration-response-schema.json",
+  "title": "PutDefaultEncryptionConfigurationResponse",
+  "description": "PutDefaultEncryptionConfigurationResponse schema",
+  "type": "object",
+  "properties": {
+    "encryptionType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EncryptionType"
+        },
+        {
+          "description": "The type of encryption used for the encryption configuration."
+        }
+      ]
+    },
+    "kmsKeyArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ARN"
+        },
+        {
+          "description": "The Key ARN of the KMS key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>."
+        }
+      ]
+    },
+    "configurationStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ConfigurationStatus"
+        },
+        {
+          "description": "The status of the account configuration. This contains the <code>ConfigurationState</code>. If there is an error, it also contains the <code>ErrorDetails</code>."
+        }
+      ]
+    }
+  },
+  "required": [
+    "encryptionType",
+    "configurationStatus"
+  ]
+}

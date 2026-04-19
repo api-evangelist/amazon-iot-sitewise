@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-asset-model-state-structure.json",
+  "name": "AssetModelState",
+  "description": "AssetModelState schema",
+  "type": "string",
+  "enum": [
+    "CREATING",
+    "ACTIVE",
+    "UPDATING",
+    "PROPAGATING",
+    "DELETING",
+    "FAILED"
+  ]
+}

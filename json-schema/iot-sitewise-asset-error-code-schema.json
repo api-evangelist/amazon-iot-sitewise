@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-asset-error-code-schema.json",
+  "title": "AssetErrorCode",
+  "description": "AssetErrorCode schema",
+  "type": "string",
+  "enum": [
+    "INTERNAL_FAILURE"
+  ]
+}

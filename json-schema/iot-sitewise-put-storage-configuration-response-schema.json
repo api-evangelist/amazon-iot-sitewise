@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-put-storage-configuration-response-schema.json",
+  "title": "PutStorageConfigurationResponse",
+  "description": "PutStorageConfigurationResponse schema",
+  "type": "object",
+  "properties": {
+    "storageType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StorageType"
+        },
+        {
+          "description": "<p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p> <ul> <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> \u2013 IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li> <li> <p> <code>MULTI_LAYER_STORAGE</code> \u2013 IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li> </ul>"
+        }
+      ]
+    },
+    "multiLayerStorage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MultiLayerStorage"
+        },
+        {
+          "description": "Contains information about the storage destination."
+        }
+      ]
+    },
+    "disassociatedDataStorage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DisassociatedDataStorageState"
+        },
+        {
+          "description": "<p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p> <ul> <li> <p> <code>ENABLED</code> \u2013 IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important> <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p> </important> </li> <li> <p> <code>DISABLED</code> \u2013 IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html\">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>"
+        }
+      ]
+    },
+    "retentionPeriod": {
+      "type": "object",
+      "properties": {
+        "numberOfDays": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/NumberOfDays"
+            },
+            {
+              "description": "<p>The number of days that your data is kept.</p> <note> <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must be <code>false</code>.</p> </note>"
+            }
+          ]
+        },
+        "unlimited": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/Unlimited"
+            },
+            {
+              "description": "<p>If true, your data is kept indefinitely.</p> <note> <p>If configured to <code>true</code>, you must not specify a value for the <code>numberOfDays</code> parameter.</p> </note>"
+            }
+          ]
+        }
+      },
+      "description": "How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier."
+    },
+    "configurationStatus": {
+      "type": "object",
+      "required": [
+        "state"
+      ],
+      "properties": {
+        "state": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/ConfigurationState"
+            },
+            {
+              "description": "The current state of the configuration."
+            }
+          ]
+        },
+        "error": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/ConfigurationErrorDetails"
+            },
+            {
+              "description": "Contains associated error information, if any."
+            }
+          ]
+        }
+      },
+      "description": "Contains current status information for the configuration."
+    }
+  },
+  "required": [
+    "storageType",
+    "configurationStatus"
+  ]
+}

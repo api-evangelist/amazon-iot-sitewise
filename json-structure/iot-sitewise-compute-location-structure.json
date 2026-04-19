@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-compute-location-structure.json",
+  "name": "ComputeLocation",
+  "description": "ComputeLocation schema",
+  "type": "string",
+  "enum": [
+    "EDGE",
+    "CLOUD"
+  ]
+}

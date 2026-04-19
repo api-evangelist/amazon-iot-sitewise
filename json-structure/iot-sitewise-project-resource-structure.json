@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-project-resource-structure.json",
+  "name": "ProjectResource",
+  "description": "Identifies a specific IoT SiteWise Monitor project.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ID"
+        },
+        {
+          "description": "The ID of the project."
+        }
+      ]
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

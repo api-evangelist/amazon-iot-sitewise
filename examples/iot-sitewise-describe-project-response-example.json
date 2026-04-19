@@ -1,0 +1,9 @@
+{
+  "projectId": "id-abc123",
+  "projectArn": "arn:aws:iot:us-east-1:123456789012:thing/example",
+  "projectName": "example-resource",
+  "portalId": "id-abc123",
+  "projectDescription": "example-value",
+  "projectCreationDate": "example-value",
+  "projectLastUpdateDate": "example-value"
+}

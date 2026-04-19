@@ -1,0 +1,14 @@
+{
+  "name": "example-resource",
+  "type": "example-value",
+  "assetProperty": {
+    "id": "id-abc123",
+    "name": "example-resource",
+    "alias": "example-value",
+    "notification": "example-value",
+    "dataType": "example-value",
+    "unit": "example-value",
+    "type": "example-value"
+  },
+  "id": "id-abc123"
+}

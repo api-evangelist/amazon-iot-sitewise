@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-create-access-policy-response-structure.json",
+  "name": "CreateAccessPolicyResponse",
+  "description": "CreateAccessPolicyResponse schema",
+  "type": "object",
+  "properties": {
+    "accessPolicyId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ID"
+        },
+        {
+          "description": "The ID of the access policy."
+        }
+      ]
+    },
+    "accessPolicyArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ARN"
+        },
+        {
+          "description": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the access policy, which has the following format.</p> <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>"
+        }
+      ]
+    }
+  },
+  "required": [
+    "accessPolicyId",
+    "accessPolicyArn"
+  ]
+}

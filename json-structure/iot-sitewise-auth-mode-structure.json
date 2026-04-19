@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-auth-mode-structure.json",
+  "name": "AuthMode",
+  "description": "AuthMode schema",
+  "type": "string",
+  "enum": [
+    "IAM",
+    "SSO"
+  ]
+}

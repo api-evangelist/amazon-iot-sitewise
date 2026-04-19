@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-timestamps-schema.json",
+  "title": "Timestamps",
+  "description": "Timestamps schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "timeInSeconds"
+    ],
+    "properties": {
+      "timeInSeconds": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TimeInSeconds"
+          },
+          {
+            "description": "The timestamp date, in seconds, in the Unix epoch format. Fractional nanosecond data is provided by <code>offsetInNanos</code>."
+          }
+        ]
+      },
+      "offsetInNanos": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/OffsetInNanos"
+          },
+          {
+            "description": "The nanosecond offset from <code>timeInSeconds</code>."
+          }
+        ]
+      }
+    },
+    "description": "Contains a timestamp with optional nanosecond granularity."
+  }
+}

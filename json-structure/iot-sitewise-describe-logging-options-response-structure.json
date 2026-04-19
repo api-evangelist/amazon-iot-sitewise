@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-describe-logging-options-response-structure.json",
+  "name": "DescribeLoggingOptionsResponse",
+  "description": "DescribeLoggingOptionsResponse schema",
+  "type": "object",
+  "properties": {
+    "loggingOptions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LoggingOptions"
+        },
+        {
+          "description": "The current logging options."
+        }
+      ]
+    }
+  },
+  "required": [
+    "loggingOptions"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-update-dashboard-response-structure.json",
+  "name": "UpdateDashboardResponse",
+  "description": "UpdateDashboardResponse schema",
+  "type": "object",
+  "properties": {}
+}

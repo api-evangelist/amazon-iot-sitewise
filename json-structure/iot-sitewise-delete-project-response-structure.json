@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-delete-project-response-structure.json",
+  "name": "DeleteProjectResponse",
+  "description": "DeleteProjectResponse schema",
+  "type": "object",
+  "properties": {}
+}

@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-describe-asset-model-response-structure.json",
+  "name": "DescribeAssetModelResponse",
+  "description": "DescribeAssetModelResponse schema",
+  "type": "object",
+  "properties": {
+    "assetModelId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ID"
+        },
+        {
+          "description": "The ID of the asset model."
+        }
+      ]
+    },
+    "assetModelArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ARN"
+        },
+        {
+          "description": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the asset model, which has the following format.</p> <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>"
+        }
+      ]
+    },
+    "assetModelName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Name"
+        },
+        {
+          "description": "The name of the asset model."
+        }
+      ]
+    },
+    "assetModelDescription": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Description"
+        },
+        {
+          "description": "The asset model's description."
+        }
+      ]
+    },
+    "assetModelProperties": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AssetModelProperties"
+        },
+        {
+          "description": "<p>The list of asset properties for the asset model.</p> <p>This object doesn't include properties that you define in composite models. You can find composite model properties in the <code>assetModelCompositeModels</code> object.</p>"
+        }
+      ]
+    },
+    "assetModelHierarchies": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AssetModelHierarchies"
+        },
+        {
+          "description": "A list of asset model hierarchies that each contain a <code>childAssetModelId</code> and a <code>hierarchyId</code> (named <code>id</code>). A hierarchy specifies allowed parent/child asset relationships for an asset model."
+        }
+      ]
+    },
+    "assetModelCompositeModels": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AssetModelCompositeModels"
+        },
+        {
+          "description": "The list of composite asset models for the asset model."
+        }
+      ]
+    },
+    "assetModelCreationDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The date the asset model was created, in Unix epoch time."
+        }
+      ]
+    },
+    "assetModelLastUpdateDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The date the asset model was last updated, in Unix epoch time."
+        }
+      ]
+    },
+    "assetModelStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AssetModelStatus"
+        },
+        {
+          "description": "The current status of the asset model, which contains a state and any error message."
+        }
+      ]
+    }
+  },
+  "required": [
+    "assetModelId",
+    "assetModelArn",
+    "assetModelName",
+    "assetModelDescription",
+    "assetModelProperties",
+    "assetModelHierarchies",
+    "assetModelCreationDate",
+    "assetModelLastUpdateDate",
+    "assetModelStatus"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "id-abc123",
+  "arn": "arn:aws:iot:us-east-1:123456789012:thing/example",
+  "name": "example-resource",
+  "description": "example-value",
+  "creationDate": "example-value",
+  "lastUpdateDate": "example-value",
+  "status": "ACTIVE"
+}

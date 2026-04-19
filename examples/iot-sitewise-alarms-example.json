@@ -1,0 +1,4 @@
+{
+  "alarmRoleArn": "arn:aws:iot:us-east-1:123456789012:thing/example",
+  "notificationLambdaArn": "arn:aws:iot:us-east-1:123456789012:thing/example"
+}

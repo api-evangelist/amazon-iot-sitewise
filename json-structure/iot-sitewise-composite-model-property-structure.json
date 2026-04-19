@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-composite-model-property-structure.json",
+  "name": "CompositeModelProperty",
+  "description": "Contains information about a composite model property on an asset.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Name"
+        },
+        {
+          "description": "The name of the property."
+        }
+      ]
+    },
+    "type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Name"
+        },
+        {
+          "description": "The type of the composite model that defines this property."
+        }
+      ]
+    },
+    "assetProperty": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "dataType"
+      ],
+      "properties": {
+        "id": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/ID"
+            },
+            {
+              "description": "The ID of the asset property."
+            }
+          ]
+        },
+        "name": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/Name"
+            },
+            {
+              "description": "The name of the property."
+            }
+          ]
+        },
+        "alias": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/PropertyAlias"
+            },
+            {
+              "description": "The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html\">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>."
+            }
+          ]
+        },
+        "notification": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/PropertyNotification"
+            },
+            {
+              "description": "The asset property's notification topic and state. For more information, see <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html\">UpdateAssetProperty</a>."
+            }
+          ]
+        },
+        "dataType": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/PropertyDataType"
+            },
+            {
+              "description": "The property data type."
+            }
+          ]
+        },
+        "unit": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/PropertyUnit"
+            },
+            {
+              "description": "The unit (such as <code>Newtons</code> or <code>RPM</code>) of the asset property."
+            }
+          ]
+        },
+        "type": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/PropertyType"
+            },
+            {
+              "description": "The property type (see <code>PropertyType</code>). A property contains one type."
+            }
+          ]
+        }
+      },
+      "description": "Contains asset property information."
+    },
+    "id": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ID"
+        },
+        {
+          "description": " The ID of the composite model that contains the property. "
+        }
+      ]
+    }
+  },
+  "required": [
+    "name",
+    "type",
+    "assetProperty"
+  ]
+}

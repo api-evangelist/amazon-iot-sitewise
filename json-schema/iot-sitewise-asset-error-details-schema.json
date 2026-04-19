@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-asset-error-details-schema.json",
+  "title": "AssetErrorDetails",
+  "description": "Contains error details for the requested associate project asset action.",
+  "type": "object",
+  "properties": {
+    "assetId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ID"
+        },
+        {
+          "description": "The ID of the asset."
+        }
+      ]
+    },
+    "code": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AssetErrorCode"
+        },
+        {
+          "description": "The error code."
+        }
+      ]
+    },
+    "message": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AssetErrorMessage"
+        },
+        {
+          "description": "The error message."
+        }
+      ]
+    }
+  },
+  "required": [
+    "assetId",
+    "code",
+    "message"
+  ]
+}

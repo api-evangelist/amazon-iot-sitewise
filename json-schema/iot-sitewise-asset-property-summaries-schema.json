@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-asset-property-summaries-schema.json",
+  "title": "AssetPropertySummaries",
+  "description": "AssetPropertySummaries schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ID"
+          },
+          {
+            "description": "The ID of the property."
+          }
+        ]
+      },
+      "alias": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PropertyAlias"
+          },
+          {
+            "description": "The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html\">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>."
+          }
+        ]
+      },
+      "unit": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PropertyUnit"
+          },
+          {
+            "description": " The unit of measure (such as Newtons or RPM) of the asset property. "
+          }
+        ]
+      },
+      "notification": {
+        "$ref": "#/components/schemas/PropertyNotification"
+      },
+      "assetCompositeModelId": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ID"
+          },
+          {
+            "description": " The ID of the composite model that contains the asset property. "
+          }
+        ]
+      }
+    },
+    "description": "Contains a summary of a property associated with an asset."
+  }
+}

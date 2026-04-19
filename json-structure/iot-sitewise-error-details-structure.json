@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-error-details-structure.json",
+  "name": "ErrorDetails",
+  "description": "Contains the details of an IoT SiteWise error.",
+  "type": "object",
+  "properties": {
+    "code": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ErrorCode"
+        },
+        {
+          "description": "The error code."
+        }
+      ]
+    },
+    "message": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ErrorMessage"
+        },
+        {
+          "description": "The error message."
+        }
+      ]
+    },
+    "details": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DetailedErrors"
+        },
+        {
+          "description": " A list of detailed errors. "
+        }
+      ]
+    }
+  },
+  "required": [
+    "code",
+    "message"
+  ]
+}

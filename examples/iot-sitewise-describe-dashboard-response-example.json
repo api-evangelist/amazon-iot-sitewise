@@ -1,0 +1,10 @@
+{
+  "dashboardId": "id-abc123",
+  "dashboardArn": "arn:aws:iot:us-east-1:123456789012:thing/example",
+  "dashboardName": "example-resource",
+  "projectId": "id-abc123",
+  "dashboardDescription": "example-value",
+  "dashboardDefinition": "example-value",
+  "dashboardCreationDate": "example-value",
+  "dashboardLastUpdateDate": "example-value"
+}

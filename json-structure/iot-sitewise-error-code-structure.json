@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-error-code-structure.json",
+  "name": "ErrorCode",
+  "description": "ErrorCode schema",
+  "type": "string",
+  "enum": [
+    "VALIDATION_ERROR",
+    "INTERNAL_FAILURE"
+  ]
+}

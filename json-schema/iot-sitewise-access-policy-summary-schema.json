@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-access-policy-summary-schema.json",
+  "title": "AccessPolicySummary",
+  "description": "Contains an access policy that defines an identity's access to an IoT SiteWise Monitor resource.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ID"
+        },
+        {
+          "description": "The ID of the access policy."
+        }
+      ]
+    },
+    "identity": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Identity"
+        },
+        {
+          "description": "The identity (an IAM Identity Center user, an IAM Identity Center group, or an IAM user)."
+        }
+      ]
+    },
+    "resource": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Resource"
+        },
+        {
+          "description": "The IoT SiteWise Monitor resource (a portal or project)."
+        }
+      ]
+    },
+    "permission": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Permission"
+        },
+        {
+          "description": "The permissions for the access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner."
+        }
+      ]
+    },
+    "creationDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The date the access policy was created, in Unix epoch time."
+        }
+      ]
+    },
+    "lastUpdateDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The date the access policy was last updated, in Unix epoch time."
+        }
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "identity",
+    "resource",
+    "permission"
+  ]
+}

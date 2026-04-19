@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-update-gateway-capability-configuration-response-structure.json",
+  "name": "UpdateGatewayCapabilityConfigurationResponse",
+  "description": "UpdateGatewayCapabilityConfigurationResponse schema",
+  "type": "object",
+  "properties": {
+    "capabilityNamespace": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CapabilityNamespace"
+        },
+        {
+          "description": "The namespace of the gateway capability."
+        }
+      ]
+    },
+    "capabilitySyncStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CapabilitySyncStatus"
+        },
+        {
+          "description": "<p>The synchronization status of the capability configuration. The sync status can be one of the following:</p> <ul> <li> <p> <code>IN_SYNC</code> \u2013 The gateway is running the capability configuration.</p> </li> <li> <p> <code>OUT_OF_SYNC</code> \u2013 The gateway hasn't received the capability configuration.</p> </li> <li> <p> <code>SYNC_FAILED</code> \u2013 The gateway rejected the capability configuration.</p> </li> </ul> <p>After you update a capability configuration, its sync status is <code>OUT_OF_SYNC</code> until the gateway receives and applies or rejects the updated configuration.</p>"
+        }
+      ]
+    }
+  },
+  "required": [
+    "capabilityNamespace",
+    "capabilitySyncStatus"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-list-project-assets-response-schema.json",
+  "title": "ListProjectAssetsResponse",
+  "description": "ListProjectAssetsResponse schema",
+  "type": "object",
+  "properties": {
+    "assetIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AssetIDs"
+        },
+        {
+          "description": "A list that contains the IDs of each asset associated with the project."
+        }
+      ]
+    },
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "The token for the next set of results, or null if there are no additional results."
+        }
+      ]
+    }
+  },
+  "required": [
+    "assetIds"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-batch-put-asset-property-error-schema.json",
+  "title": "BatchPutAssetPropertyError",
+  "description": "Contains error information from updating a batch of asset property values.",
+  "type": "object",
+  "properties": {
+    "errorCode": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BatchPutAssetPropertyValueErrorCode"
+        },
+        {
+          "description": "The error code."
+        }
+      ]
+    },
+    "errorMessage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ErrorMessage"
+        },
+        {
+          "description": "The associated error message."
+        }
+      ]
+    },
+    "timestamps": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamps"
+        },
+        {
+          "description": "A list of timestamps for each error, if any."
+        }
+      ]
+    }
+  },
+  "required": [
+    "errorCode",
+    "errorMessage",
+    "timestamps"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-property-data-type-structure.json",
+  "name": "PropertyDataType",
+  "description": "PropertyDataType schema",
+  "type": "string",
+  "enum": [
+    "STRING",
+    "INTEGER",
+    "DOUBLE",
+    "BOOLEAN",
+    "STRUCT"
+  ]
+}

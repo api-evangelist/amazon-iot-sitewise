@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-create-asset-response-schema.json",
+  "title": "CreateAssetResponse",
+  "description": "CreateAssetResponse schema",
+  "type": "object",
+  "properties": {
+    "assetId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ID"
+        },
+        {
+          "description": "The ID of the asset. This ID uniquely identifies the asset within IoT SiteWise and can be used with other IoT SiteWise APIs."
+        }
+      ]
+    },
+    "assetArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ARN"
+        },
+        {
+          "description": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the asset, which has the following format.</p> <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>"
+        }
+      ]
+    },
+    "assetStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AssetStatus"
+        },
+        {
+          "description": "The status of the asset, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message."
+        }
+      ]
+    }
+  },
+  "required": [
+    "assetId",
+    "assetArn",
+    "assetStatus"
+  ]
+}

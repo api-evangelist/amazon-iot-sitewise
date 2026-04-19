@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-asset-property-summary-schema.json",
+  "title": "AssetPropertySummary",
+  "description": "Contains a summary of a property associated with an asset.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ID"
+        },
+        {
+          "description": "The ID of the property."
+        }
+      ]
+    },
+    "alias": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PropertyAlias"
+        },
+        {
+          "description": "The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html\">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>."
+        }
+      ]
+    },
+    "unit": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PropertyUnit"
+        },
+        {
+          "description": " The unit of measure (such as Newtons or RPM) of the asset property. "
+        }
+      ]
+    },
+    "notification": {
+      "type": "object",
+      "required": [
+        "topic",
+        "state"
+      ],
+      "properties": {
+        "topic": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/PropertyNotificationTopic"
+            },
+            {
+              "description": "The MQTT topic to which IoT SiteWise publishes property value update notifications."
+            }
+          ]
+        },
+        "state": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/PropertyNotificationState"
+            },
+            {
+              "description": "The current notification state."
+            }
+          ]
+        }
+      },
+      "description": "Contains asset property value notification information. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html\">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>."
+    },
+    "assetCompositeModelId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ID"
+        },
+        {
+          "description": " The ID of the composite model that contains the asset property. "
+        }
+      ]
+    }
+  }
+}

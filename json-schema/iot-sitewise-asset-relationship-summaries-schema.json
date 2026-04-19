@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-asset-relationship-summaries-schema.json",
+  "title": "AssetRelationshipSummaries",
+  "description": "AssetRelationshipSummaries schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "relationshipType"
+    ],
+    "properties": {
+      "hierarchyInfo": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AssetHierarchyInfo"
+          },
+          {
+            "description": "<p>The assets that are related through an asset hierarchy.</p> <p>This object is present if the <code>relationshipType</code> is <code>HIERARCHY</code>.</p>"
+          }
+        ]
+      },
+      "relationshipType": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AssetRelationshipType"
+          },
+          {
+            "description": "<p>The relationship type of the assets in this relationship. This value is one of the following:</p> <ul> <li> <p> <code>HIERARCHY</code> \u2013 The assets are related through an asset hierarchy. If you specify this relationship type, this asset relationship includes the <code>hierarchyInfo</code> object.</p> </li> </ul>"
+          }
+        ]
+      }
+    },
+    "description": "Contains information about assets that are related to one another."
+  }
+}

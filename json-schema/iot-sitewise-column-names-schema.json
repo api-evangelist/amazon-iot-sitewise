@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-column-names-schema.json",
+  "title": "ColumnNames",
+  "description": "ColumnNames schema",
+  "type": "array",
+  "items": {
+    "type": "string",
+    "enum": [
+      "ALIAS",
+      "ASSET_ID",
+      "PROPERTY_ID",
+      "DATA_TYPE",
+      "TIMESTAMP_SECONDS",
+      "TIMESTAMP_NANO_OFFSET",
+      "QUALITY",
+      "VALUE"
+    ]
+  }
+}

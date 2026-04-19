@@ -1,0 +1,13 @@
+{
+  "assetId": "id-abc123",
+  "assetArn": "arn:aws:iot:us-east-1:123456789012:thing/example",
+  "assetName": "example-resource",
+  "assetModelId": "id-abc123",
+  "assetProperties": "example-value",
+  "assetHierarchies": "example-value",
+  "assetCompositeModels": "example-value",
+  "assetCreationDate": "example-value",
+  "assetLastUpdateDate": "example-value",
+  "assetStatus": "ACTIVE",
+  "assetDescription": "example-value"
+}

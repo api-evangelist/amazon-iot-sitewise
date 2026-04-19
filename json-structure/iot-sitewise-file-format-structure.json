@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-file-format-structure.json",
+  "name": "FileFormat",
+  "description": "The file format of the data.",
+  "type": "object",
+  "properties": {
+    "csv": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Csv"
+        },
+        {
+          "description": "The .csv file format."
+        }
+      ]
+    }
+  }
+}

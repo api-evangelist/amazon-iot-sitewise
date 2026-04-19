@@ -1,0 +1,7 @@
+{
+  "portalId": "id-abc123",
+  "portalArn": "arn:aws:iot:us-east-1:123456789012:thing/example",
+  "portalStartUrl": "https://example.com/path",
+  "portalStatus": "ACTIVE",
+  "ssoApplicationId": "id-abc123"
+}

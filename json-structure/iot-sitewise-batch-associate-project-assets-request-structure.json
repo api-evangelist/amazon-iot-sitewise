@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-batch-associate-project-assets-request-structure.json",
+  "name": "BatchAssociateProjectAssetsRequest",
+  "description": "BatchAssociateProjectAssetsRequest schema",
+  "type": "object",
+  "properties": {
+    "assetIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IDs"
+        },
+        {
+          "description": "The IDs of the assets to be associated to the project."
+        }
+      ]
+    },
+    "clientToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ClientToken"
+        },
+        {
+          "description": "A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required."
+        }
+      ]
+    }
+  },
+  "required": [
+    "assetIds"
+  ]
+}

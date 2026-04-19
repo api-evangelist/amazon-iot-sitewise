@@ -1,0 +1,6 @@
+{
+  "gatewayId": "id-abc123",
+  "capabilityNamespace": "example-resource",
+  "capabilityConfiguration": "example-value",
+  "capabilitySyncStatus": "ACTIVE"
+}

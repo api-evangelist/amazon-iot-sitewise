@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-resource-structure.json",
+  "name": "Resource",
+  "description": "Contains an IoT SiteWise Monitor resource ID for a portal or project.",
+  "type": "object",
+  "properties": {
+    "portal": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PortalResource"
+        },
+        {
+          "description": "A portal resource."
+        }
+      ]
+    },
+    "project": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProjectResource"
+        },
+        {
+          "description": "A project resource."
+        }
+      ]
+    }
+  }
+}

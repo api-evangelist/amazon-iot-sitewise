@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-schema/iot-sitewise-create-dashboard-response-schema.json",
+  "title": "CreateDashboardResponse",
+  "description": "CreateDashboardResponse schema",
+  "type": "object",
+  "properties": {
+    "dashboardId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ID"
+        },
+        {
+          "description": "The ID of the dashboard."
+        }
+      ]
+    },
+    "dashboardArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ARN"
+        },
+        {
+          "description": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the dashboard, which has the following format.</p> <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code> </p>"
+        }
+      ]
+    }
+  },
+  "required": [
+    "dashboardId",
+    "dashboardArn"
+  ]
+}

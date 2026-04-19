@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/json-structure/iot-sitewise-put-asset-property-value-entries-structure.json",
+  "name": "PutAssetPropertyValueEntries",
+  "description": "PutAssetPropertyValueEntries schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "entryId",
+      "propertyValues"
+    ],
+    "properties": {
+      "entryId": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/EntryId"
+          },
+          {
+            "description": "The user specified ID for the entry. You can use this ID to identify which entries failed."
+          }
+        ]
+      },
+      "assetId": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ID"
+          },
+          {
+            "description": "The ID of the asset to update."
+          }
+        ]
+      },
+      "propertyId": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ID"
+          },
+          {
+            "description": "The ID of the asset property for this entry."
+          }
+        ]
+      },
+      "propertyAlias": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AssetPropertyAlias"
+          },
+          {
+            "description": "The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html\">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>."
+          }
+        ]
+      },
+      "propertyValues": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AssetPropertyValues"
+          },
+          {
+            "description": "The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements. "
+          }
+        ]
+      }
+    },
+    "description": "Contains a list of value updates for an asset property in the list of asset entries consumed by the <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchPutAssetPropertyValue.html\">BatchPutAssetPropertyValue</a> API operation."
+  }
+}

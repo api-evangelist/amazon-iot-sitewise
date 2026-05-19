@@ -1,0 +1,3630 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: AWS IoT SiteWise
+  description: 'AWS IoT SiteWise. 73 operations. Lead operation: Amazon IoT SiteWise Create Gateway. Self-contained Naftiko
+    capability covering one Amazon Iot Sitewise business surface.'
+  tags:
+  - Amazon Iot Sitewise
+  - AWS IoT SiteWise
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AMAZON_IOT_SITEWISE_API_KEY: AMAZON_IOT_SITEWISE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: amazon-iot-sitewise
+    baseUri: http://iotsitewise.{region}.amazonaws.com
+    description: AWS IoT SiteWise business capability. Self-contained, no shared references.
+    resources:
+    - name: 20200301-gateways
+      path: /20200301/gateways
+      operations:
+      - name: creategateway
+        method: POST
+        description: Amazon IoT SiteWise Create Gateway
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: listgateways
+        method: GET
+        description: Amazon IoT SiteWise List Gateways
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: nextToken
+          in: query
+          type: string
+          description: The token to be used for the next set of paginated results.
+        - name: maxResults
+          in: query
+          type: integer
+          description: '<p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>'
+    - name: 20200301-gateways-gatewayId
+      path: /20200301/gateways/{gatewayId}
+      operations:
+      - name: deletegateway
+        method: DELETE
+        description: Amazon IoT SiteWise Delete Gateway
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: gatewayId
+          in: path
+          type: string
+          description: The ID of the gateway to delete.
+          required: true
+      - name: describegateway
+        method: GET
+        description: Amazon IoT SiteWise Describe Gateway
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: gatewayId
+          in: path
+          type: string
+          description: The ID of the gateway device.
+          required: true
+      - name: updategateway
+        method: PUT
+        description: Amazon IoT SiteWise Update Gateway
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: gatewayId
+          in: path
+          type: string
+          description: The ID of the gateway to update.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: 20200301-gateways-gatewayId-capability
+      path: /20200301/gateways/{gatewayId}/capability
+      operations:
+      - name: updategatewaycapabilityconfiguration
+        method: POST
+        description: Amazon IoT SiteWise Update Gateway Capability Configuration
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: gatewayId
+          in: path
+          type: string
+          description: The ID of the gateway to be updated.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: 20200301-gateways-gatewayId-capability-capabilityNamespace
+      path: /20200301/gateways/{gatewayId}/capability/{capabilityNamespace}
+      operations:
+      - name: describegatewaycapabilityconfiguration
+        method: GET
+        description: Amazon IoT SiteWise Describe Gateway Capability Configuration
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: gatewayId
+          in: path
+          type: string
+          description: The ID of the gateway that defines the capability configuration.
+          required: true
+        - name: capabilityNamespace
+          in: path
+          type: string
+          description: 'The namespace of the capability configuration. For example, if you configure OPC-UA sources from the
+            IoT SiteWise console, your OPC-UA capability configuration '
+          required: true
+    - name: access-policies
+      path: /access-policies
+      operations:
+      - name: createaccesspolicy
+        method: POST
+        description: Amazon IoT SiteWise Create Access Policy
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: listaccesspolicies
+        method: GET
+        description: Amazon IoT SiteWise List Access Policies
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: identityType
+          in: query
+          type: string
+          description: The type of identity (IAM Identity Center user, IAM Identity Center group, or IAM user). This parameter
+            is required if you specify <code>identityId</code>.
+        - name: identityId
+          in: query
+          type: string
+          description: The ID of the identity. This parameter is required if you specify <code>USER</code> or <code>GROUP</code>
+            for <code>identityType</code>.
+        - name: resourceType
+          in: query
+          type: string
+          description: The type of resource (portal or project). This parameter is required if you specify <code>resourceId</code>.
+        - name: resourceId
+          in: query
+          type: string
+          description: The ID of the resource. This parameter is required if you specify <code>resourceType</code>.
+        - name: iamArn
+          in: query
+          type: string
+          description: The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+            ARNs</a> in the <i>
+        - name: nextToken
+          in: query
+          type: string
+          description: The token to be used for the next set of paginated results.
+        - name: maxResults
+          in: query
+          type: integer
+          description: '<p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>'
+    - name: access-policies-accessPolicyId
+      path: /access-policies/{accessPolicyId}
+      operations:
+      - name: deleteaccesspolicy
+        method: DELETE
+        description: Amazon IoT SiteWise Delete Access Policy
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: accessPolicyId
+          in: path
+          type: string
+          description: The ID of the access policy to be deleted.
+          required: true
+        - name: clientToken
+          in: query
+          type: string
+          description: A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't
+            reuse this client token if a new idempotent request is r
+      - name: describeaccesspolicy
+        method: GET
+        description: Amazon IoT SiteWise Describe Access Policy
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: accessPolicyId
+          in: path
+          type: string
+          description: The ID of the access policy.
+          required: true
+      - name: updateaccesspolicy
+        method: PUT
+        description: Amazon IoT SiteWise Update Access Policy
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: accessPolicyId
+          in: path
+          type: string
+          description: The ID of the access policy.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: asset-models
+      path: /asset-models
+      operations:
+      - name: createassetmodel
+        method: POST
+        description: Amazon IoT SiteWise Create Asset Model
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: listassetmodels
+        method: GET
+        description: Amazon IoT SiteWise List Asset Models
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: nextToken
+          in: query
+          type: string
+          description: The token to be used for the next set of paginated results.
+        - name: maxResults
+          in: query
+          type: integer
+          description: '<p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>'
+    - name: asset-models-assetModelId
+      path: /asset-models/{assetModelId}
+      operations:
+      - name: deleteassetmodel
+        method: DELETE
+        description: Amazon IoT SiteWise Delete Asset Model
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: assetModelId
+          in: path
+          type: string
+          description: The ID of the asset model to delete.
+          required: true
+        - name: clientToken
+          in: query
+          type: string
+          description: A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't
+            reuse this client token if a new idempotent request is r
+      - name: describeassetmodel
+        method: GET
+        description: Amazon IoT SiteWise Describe Asset Model
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: assetModelId
+          in: path
+          type: string
+          description: The ID of the asset model.
+          required: true
+        - name: excludeProperties
+          in: query
+          type: boolean
+          description: Whether or not to exclude asset model properties from the response.
+      - name: updateassetmodel
+        method: PUT
+        description: Amazon IoT SiteWise Update Asset Model
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: assetModelId
+          in: path
+          type: string
+          description: The ID of the asset model to update.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: asset-models-assetModelId-properties
+      path: /asset-models/{assetModelId}/properties
+      operations:
+      - name: listassetmodelproperties
+        method: GET
+        description: Amazon IoT SiteWise List Asset Model Properties
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: assetModelId
+          in: path
+          type: string
+          description: The ID of the asset model.
+          required: true
+        - name: nextToken
+          in: query
+          type: string
+          description: The token to be used for the next set of paginated results.
+        - name: maxResults
+          in: query
+          type: integer
+          description: The maximum number of results to return for each paginated request. If not specified, the default value
+            is 50.
+        - name: filter
+          in: query
+          type: string
+          description: <p> Filters the requested list of asset model properties. You can choose one of the following options:</p>
+            <ul> <li> <p> <code>ALL</code> – The list includes al
+    - name: assets
+      path: /assets
+      operations:
+      - name: createasset
+        method: POST
+        description: Amazon IoT SiteWise Create Asset
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: listassets
+        method: GET
+        description: Amazon IoT SiteWise List Assets
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: nextToken
+          in: query
+          type: string
+          description: The token to be used for the next set of paginated results.
+        - name: maxResults
+          in: query
+          type: integer
+          description: '<p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>'
+        - name: assetModelId
+          in: query
+          type: string
+          description: The ID of the asset model by which to filter the list of assets. This parameter is required if you
+            choose <code>ALL</code> for <code>filter</code>.
+        - name: filter
+          in: query
+          type: string
+          description: <p>The filter for the requested list of assets. Choose one of the following options:</p> <ul> <li>
+            <p> <code>ALL</code> – The list includes all assets for a giv
+    - name: assets-assetId
+      path: /assets/{assetId}
+      operations:
+      - name: deleteasset
+        method: DELETE
+        description: Amazon IoT SiteWise Delete Asset
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: assetId
+          in: path
+          type: string
+          description: The ID of the asset to delete.
+          required: true
+        - name: clientToken
+          in: query
+          type: string
+          description: A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't
+            reuse this client token if a new idempotent request is r
+      - name: describeasset
+        method: GET
+        description: Amazon IoT SiteWise Describe Asset
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: assetId
+          in: path
+          type: string
+          description: The ID of the asset.
+          required: true
+        - name: excludeProperties
+          in: query
+          type: boolean
+          description: Whether or not to exclude asset properties from the response.
+      - name: updateasset
+        method: PUT
+        description: Amazon IoT SiteWise Update Asset
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: assetId
+          in: path
+          type: string
+          description: The ID of the asset to update.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: assets-assetId-assetRelationships#traversalType
+      path: /assets/{assetId}/assetRelationships#traversalType
+      operations:
+      - name: listassetrelationships
+        method: GET
+        description: Amazon IoT SiteWise List Asset Relationships
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: assetId
+          in: path
+          type: string
+          description: The ID of the asset.
+          required: true
+        - name: traversalType
+          in: query
+          type: string
+          description: <p>The type of traversal to use to identify asset relationships. Choose the following option:</p> <ul>
+            <li> <p> <code>PATH_TO_ROOT</code> – Identify the asset's
+          required: true
+        - name: nextToken
+          in: query
+          type: string
+          description: The token to be used for the next set of paginated results.
+        - name: maxResults
+          in: query
+          type: integer
+          description: The maximum number of results to return for each paginated request.
+    - name: assets-assetId-associate
+      path: /assets/{assetId}/associate
+      operations:
+      - name: associateassets
+        method: POST
+        description: Amazon IoT SiteWise Associate Assets
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: assetId
+          in: path
+          type: string
+          description: The ID of the parent asset.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: assets-assetId-disassociate
+      path: /assets/{assetId}/disassociate
+      operations:
+      - name: disassociateassets
+        method: POST
+        description: Amazon IoT SiteWise Disassociate Assets
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: assetId
+          in: path
+          type: string
+          description: The ID of the parent asset from which to disassociate the child asset.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: assets-assetId-hierarchies
+      path: /assets/{assetId}/hierarchies
+      operations:
+      - name: listassociatedassets
+        method: GET
+        description: Amazon IoT SiteWise List Associated Assets
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: assetId
+          in: path
+          type: string
+          description: The ID of the asset to query.
+          required: true
+        - name: hierarchyId
+          in: query
+          type: string
+          description: <p>The ID of the hierarchy by which child assets are associated to the asset. To find a hierarchy ID,
+            use the <a href="https://docs.aws.amazon.com/iot-sitewise/
+        - name: traversalDirection
+          in: query
+          type: string
+          description: <p>The direction to list associated assets. Choose one of the following options:</p> <ul> <li> <p>
+            <code>CHILD</code> – The list includes all child assets assoc
+        - name: nextToken
+          in: query
+          type: string
+          description: The token to be used for the next set of paginated results.
+        - name: maxResults
+          in: query
+          type: integer
+          description: '<p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>'
+    - name: assets-assetId-properties
+      path: /assets/{assetId}/properties
+      operations:
+      - name: listassetproperties
+        method: GET
+        description: Amazon IoT SiteWise List Asset Properties
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: assetId
+          in: path
+          type: string
+          description: The ID of the asset.
+          required: true
+        - name: nextToken
+          in: query
+          type: string
+          description: The token to be used for the next set of paginated results.
+        - name: maxResults
+          in: query
+          type: integer
+          description: The maximum number of results to return for each paginated request. If not specified, the default value
+            is 50.
+        - name: filter
+          in: query
+          type: string
+          description: <p> Filters the requested list of asset properties. You can choose one of the following options:</p>
+            <ul> <li> <p> <code>ALL</code> – The list includes all asse
+    - name: assets-assetId-properties-propertyId
+      path: /assets/{assetId}/properties/{propertyId}
+      operations:
+      - name: describeassetproperty
+        method: GET
+        description: Amazon IoT SiteWise Describe Asset Property
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: assetId
+          in: path
+          type: string
+          description: The ID of the asset.
+          required: true
+        - name: propertyId
+          in: path
+          type: string
+          description: The ID of the asset property.
+          required: true
+      - name: updateassetproperty
+        method: PUT
+        description: Amazon IoT SiteWise Update Asset Property
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: assetId
+          in: path
+          type: string
+          description: The ID of the asset to be updated.
+          required: true
+        - name: propertyId
+          in: path
+          type: string
+          description: The ID of the asset property to be updated.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: configuration-account-encryption
+      path: /configuration/account/encryption
+      operations:
+      - name: describedefaultencryptionconfiguration
+        method: GET
+        description: Amazon IoT SiteWise Describe Default Encryption Configuration
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: putdefaultencryptionconfiguration
+        method: POST
+        description: Amazon IoT SiteWise Put Default Encryption Configuration
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: configuration-account-storage
+      path: /configuration/account/storage
+      operations:
+      - name: describestorageconfiguration
+        method: GET
+        description: Amazon IoT SiteWise Describe Storage Configuration
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: putstorageconfiguration
+        method: POST
+        description: Amazon IoT SiteWise Put Storage Configuration
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: dashboards
+      path: /dashboards
+      operations:
+      - name: createdashboard
+        method: POST
+        description: Amazon IoT SiteWise Create Dashboard
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: dashboards#projectId
+      path: /dashboards#projectId
+      operations:
+      - name: listdashboards
+        method: GET
+        description: Amazon IoT SiteWise List Dashboards
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: query
+          type: string
+          description: The ID of the project.
+          required: true
+        - name: nextToken
+          in: query
+          type: string
+          description: The token to be used for the next set of paginated results.
+        - name: maxResults
+          in: query
+          type: integer
+          description: '<p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>'
+    - name: dashboards-dashboardId
+      path: /dashboards/{dashboardId}
+      operations:
+      - name: deletedashboard
+        method: DELETE
+        description: Amazon IoT SiteWise Delete Dashboard
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: dashboardId
+          in: path
+          type: string
+          description: The ID of the dashboard to delete.
+          required: true
+        - name: clientToken
+          in: query
+          type: string
+          description: A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't
+            reuse this client token if a new idempotent request is r
+      - name: describedashboard
+        method: GET
+        description: Amazon IoT SiteWise Describe Dashboard
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: dashboardId
+          in: path
+          type: string
+          description: The ID of the dashboard.
+          required: true
+      - name: updatedashboard
+        method: PUT
+        description: Amazon IoT SiteWise Update Dashboard
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: dashboardId
+          in: path
+          type: string
+          description: The ID of the dashboard to update.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: jobs
+      path: /jobs
+      operations:
+      - name: createbulkimportjob
+        method: POST
+        description: Amazon IoT SiteWise Create Bulk Import Job
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: listbulkimportjobs
+        method: GET
+        description: Amazon IoT SiteWise List Bulk Import Jobs
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: nextToken
+          in: query
+          type: string
+          description: The token to be used for the next set of paginated results.
+        - name: maxResults
+          in: query
+          type: integer
+          description: The maximum number of results to return for each paginated request.
+        - name: filter
+          in: query
+          type: string
+          description: You can use a filter to select the bulk import jobs that you want to retrieve.
+    - name: jobs-jobId
+      path: /jobs/{jobId}
+      operations:
+      - name: describebulkimportjob
+        method: GET
+        description: Amazon IoT SiteWise Describe Bulk Import Job
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: jobId
+          in: path
+          type: string
+          description: The ID of the job.
+          required: true
+    - name: logging
+      path: /logging
+      operations:
+      - name: describeloggingoptions
+        method: GET
+        description: Amazon IoT SiteWise Describe Logging Options
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: putloggingoptions
+        method: PUT
+        description: Amazon IoT SiteWise Put Logging Options
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: portals
+      path: /portals
+      operations:
+      - name: createportal
+        method: POST
+        description: Amazon IoT SiteWise Create Portal
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: listportals
+        method: GET
+        description: Amazon IoT SiteWise List Portals
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: nextToken
+          in: query
+          type: string
+          description: The token to be used for the next set of paginated results.
+        - name: maxResults
+          in: query
+          type: integer
+          description: '<p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>'
+    - name: portals-portalId
+      path: /portals/{portalId}
+      operations:
+      - name: deleteportal
+        method: DELETE
+        description: Amazon IoT SiteWise Delete Portal
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: portalId
+          in: path
+          type: string
+          description: The ID of the portal to delete.
+          required: true
+        - name: clientToken
+          in: query
+          type: string
+          description: A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't
+            reuse this client token if a new idempotent request is r
+      - name: describeportal
+        method: GET
+        description: Amazon IoT SiteWise Describe Portal
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: portalId
+          in: path
+          type: string
+          description: The ID of the portal.
+          required: true
+      - name: updateportal
+        method: PUT
+        description: Amazon IoT SiteWise Update Portal
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: portalId
+          in: path
+          type: string
+          description: The ID of the portal to update.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: projects
+      path: /projects
+      operations:
+      - name: createproject
+        method: POST
+        description: Amazon IoT SiteWise Create Project
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: projects#portalId
+      path: /projects#portalId
+      operations:
+      - name: listprojects
+        method: GET
+        description: Amazon IoT SiteWise List Projects
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: portalId
+          in: query
+          type: string
+          description: The ID of the portal.
+          required: true
+        - name: nextToken
+          in: query
+          type: string
+          description: The token to be used for the next set of paginated results.
+        - name: maxResults
+          in: query
+          type: integer
+          description: '<p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>'
+    - name: projects-projectId
+      path: /projects/{projectId}
+      operations:
+      - name: deleteproject
+        method: DELETE
+        description: Amazon IoT SiteWise Delete Project
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          description: The ID of the project.
+          required: true
+        - name: clientToken
+          in: query
+          type: string
+          description: A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't
+            reuse this client token if a new idempotent request is r
+      - name: describeproject
+        method: GET
+        description: Amazon IoT SiteWise Describe Project
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          description: The ID of the project.
+          required: true
+      - name: updateproject
+        method: PUT
+        description: Amazon IoT SiteWise Update Project
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          description: The ID of the project to update.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: projects-projectId-assets
+      path: /projects/{projectId}/assets
+      operations:
+      - name: listprojectassets
+        method: GET
+        description: Amazon IoT SiteWise List Project Assets
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          description: The ID of the project.
+          required: true
+        - name: nextToken
+          in: query
+          type: string
+          description: The token to be used for the next set of paginated results.
+        - name: maxResults
+          in: query
+          type: integer
+          description: '<p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>'
+    - name: projects-projectId-assets-associate
+      path: /projects/{projectId}/assets/associate
+      operations:
+      - name: batchassociateprojectassets
+        method: POST
+        description: Amazon IoT SiteWise Batch Associate Project Assets
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          description: The ID of the project to which to associate the assets.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: projects-projectId-assets-disassociate
+      path: /projects/{projectId}/assets/disassociate
+      operations:
+      - name: batchdisassociateprojectassets
+        method: POST
+        description: Amazon IoT SiteWise Batch Disassociate Project Assets
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          description: The ID of the project from which to disassociate the assets.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: properties
+      path: /properties
+      operations:
+      - name: batchputassetpropertyvalue
+        method: POST
+        description: Amazon IoT SiteWise Batch Put Asset Property Value
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: properties-aggregates#aggregateTypes&resolution&startDate&endDate
+      path: /properties/aggregates#aggregateTypes&resolution&startDate&endDate
+      operations:
+      - name: getassetpropertyaggregates
+        method: GET
+        description: Amazon IoT SiteWise Get Asset Property Aggregates
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: assetId
+          in: query
+          type: string
+          description: The ID of the asset.
+        - name: propertyId
+          in: query
+          type: string
+          description: The ID of the asset property.
+        - name: propertyAlias
+          in: query
+          type: string
+          description: The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>).
+            For mor
+        - name: aggregateTypes
+          in: query
+          type: array
+          description: The data aggregating function.
+          required: true
+        - name: resolution
+          in: query
+          type: string
+          description: The time interval over which to aggregate data.
+          required: true
+        - name: qualities
+          in: query
+          type: array
+          description: The quality by which to filter asset data.
+        - name: startDate
+          in: query
+          type: string
+          description: The exclusive start of the range from which to query historical data, expressed in seconds in Unix
+            epoch time.
+          required: true
+        - name: endDate
+          in: query
+          type: string
+          description: The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch
+            time.
+          required: true
+        - name: timeOrdering
+          in: query
+          type: string
+          description: '<p>The chronological sorting order of the requested information.</p> <p>Default: <code>ASCENDING</code>
+            </p>'
+        - name: nextToken
+          in: query
+          type: string
+          description: The token to be used for the next set of paginated results.
+        - name: maxResults
+          in: query
+          type: integer
+          description: <p>The maximum number of results to return for each paginated request. A result set is returned in
+            the two cases, whichever occurs first.</p> <ul> <li> <p>The s
+    - name: properties-batch-aggregates
+      path: /properties/batch/aggregates
+      operations:
+      - name: batchgetassetpropertyaggregates
+        method: POST
+        description: Amazon IoT SiteWise Batch Get Asset Property Aggregates
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: nextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: properties-batch-history
+      path: /properties/batch/history
+      operations:
+      - name: batchgetassetpropertyvaluehistory
+        method: POST
+        description: Amazon IoT SiteWise Batch Get Asset Property Value History
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: nextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: properties-batch-latest
+      path: /properties/batch/latest
+      operations:
+      - name: batchgetassetpropertyvalue
+        method: POST
+        description: Amazon IoT SiteWise Batch Get Asset Property Value
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: nextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: properties-history
+      path: /properties/history
+      operations:
+      - name: getassetpropertyvaluehistory
+        method: GET
+        description: Amazon IoT SiteWise Get Asset Property Value History
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: assetId
+          in: query
+          type: string
+          description: The ID of the asset.
+        - name: propertyId
+          in: query
+          type: string
+          description: The ID of the asset property.
+        - name: propertyAlias
+          in: query
+          type: string
+          description: The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>).
+            For mor
+        - name: startDate
+          in: query
+          type: string
+          description: The exclusive start of the range from which to query historical data, expressed in seconds in Unix
+            epoch time.
+        - name: endDate
+          in: query
+          type: string
+          description: The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch
+            time.
+        - name: qualities
+          in: query
+          type: array
+          description: The quality by which to filter asset data.
+        - name: timeOrdering
+          in: query
+          type: string
+          description: '<p>The chronological sorting order of the requested information.</p> <p>Default: <code>ASCENDING</code>
+            </p>'
+        - name: nextToken
+          in: query
+          type: string
+          description: The token to be used for the next set of paginated results.
+        - name: maxResults
+          in: query
+          type: integer
+          description: <p>The maximum number of results to return for each paginated request. A result set is returned in
+            the two cases, whichever occurs first.</p> <ul> <li> <p>The s
+    - name: properties-interpolated#startTimeInSeconds&endTimeInSeconds&quality&intervalInSe
+      path: /properties/interpolated#startTimeInSeconds&endTimeInSeconds&quality&intervalInSeconds&type
+      operations:
+      - name: getinterpolatedassetpropertyvalues
+        method: GET
+        description: Amazon IoT SiteWise Get Interpolated Asset Property Values
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: assetId
+          in: query
+          type: string
+          description: The ID of the asset.
+        - name: propertyId
+          in: query
+          type: string
+          description: The ID of the asset property.
+        - name: propertyAlias
+          in: query
+          type: string
+          description: The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>).
+            For mor
+        - name: startTimeInSeconds
+          in: query
+          type: integer
+          description: The exclusive start of the range from which to interpolate data, expressed in seconds in Unix epoch
+            time.
+          required: true
+        - name: startTimeOffsetInNanos
+          in: query
+          type: integer
+          description: The nanosecond offset converted from <code>startTimeInSeconds</code>.
+        - name: endTimeInSeconds
+          in: query
+          type: integer
+          description: The inclusive end of the range from which to interpolate data, expressed in seconds in Unix epoch time.
+          required: true
+        - name: endTimeOffsetInNanos
+          in: query
+          type: integer
+          description: The nanosecond offset converted from <code>endTimeInSeconds</code>.
+        - name: quality
+          in: query
+          type: string
+          description: The quality of the asset property value. You can use this parameter as a filter to choose only the
+            asset property values that have a specific quality.
+          required: true
+        - name: intervalInSeconds
+          in: query
+          type: integer
+          description: The time interval in seconds over which to interpolate data. Each interval starts when the previous
+            one ends.
+          required: true
+        - name: nextToken
+          in: query
+          type: string
+          description: The token to be used for the next set of paginated results.
+        - name: maxResults
+          in: query
+          type: integer
+          description: The maximum number of results to return for each paginated request. If not specified, the default value
+            is 10.
+        - name: type
+          in: query
+          type: string
+          description: '<p>The interpolation type.</p> <p>Valid values: <code>LINEAR_INTERPOLATION | LOCF_INTERPOLATION</code>
+            </p> <ul> <li> <p> <code>LINEAR_INTERPOLATION</code> – Es'
+          required: true
+        - name: intervalWindowInSeconds
+          in: query
+          type: integer
+          description: '<p>The query interval for the window, in seconds. IoT SiteWise computes each interpolated value by
+            using data points from the timestamp of each interval, minus '
+    - name: properties-latest
+      path: /properties/latest
+      operations:
+      - name: getassetpropertyvalue
+        method: GET
+        description: Amazon IoT SiteWise Get Asset Property Value
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: assetId
+          in: query
+          type: string
+          description: The ID of the asset.
+        - name: propertyId
+          in: query
+          type: string
+          description: The ID of the asset property.
+        - name: propertyAlias
+          in: query
+          type: string
+          description: The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>).
+            For mor
+    - name: tags#resourceArn
+      path: /tags#resourceArn
+      operations:
+      - name: listtagsforresource
+        method: GET
+        description: Amazon IoT SiteWise List Tags for Resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceArn
+          in: query
+          type: string
+          description: The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of
+            the resource.
+          required: true
+      - name: tagresource
+        method: POST
+        description: Amazon IoT SiteWise Tag Resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceArn
+          in: query
+          type: string
+          description: The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of
+            the resource to tag.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: tags#resourceArn&tagKeys
+      path: /tags#resourceArn&tagKeys
+      operations:
+      - name: untagresource
+        method: DELETE
+        description: Amazon IoT SiteWise Untag Resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceArn
+          in: query
+          type: string
+          description: The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of
+            the resource to untag.
+          required: true
+        - name: tagKeys
+          in: query
+          type: array
+          description: A list of keys for tags to remove from the resource.
+          required: true
+    - name: timeseries
+      path: /timeseries/
+      operations:
+      - name: listtimeseries
+        method: GET
+        description: Amazon IoT SiteWise List Time Series
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: nextToken
+          in: query
+          type: string
+          description: The token to be used for the next set of paginated results.
+        - name: maxResults
+          in: query
+          type: integer
+          description: The maximum number of results to return for each paginated request.
+        - name: assetId
+          in: query
+          type: string
+          description: The ID of the asset in which the asset property was created.
+        - name: aliasPrefix
+          in: query
+          type: string
+          description: The alias prefix of the time series.
+        - name: timeSeriesType
+          in: query
+          type: string
+          description: <p>The type of the time series. The time series type can be one of the following values:</p> <ul> <li>
+            <p> <code>ASSOCIATED</code> – The time series is associat
+    - name: timeseries-associate-#alias&assetId&propertyId
+      path: /timeseries/associate/#alias&assetId&propertyId
+      operations:
+      - name: associatetimeseriestoassetproperty
+        method: POST
+        description: Amazon IoT SiteWise Associate Time Series to Asset Property
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: alias
+          in: query
+          type: string
+          description: The alias that identifies the time series.
+          required: true
+        - name: assetId
+          in: query
+          type: string
+          description: The ID of the asset in which the asset property was created.
+          required: true
+        - name: propertyId
+          in: query
+          type: string
+          description: The ID of the asset property.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: timeseries-delete
+      path: /timeseries/delete/
+      operations:
+      - name: deletetimeseries
+        method: POST
+        description: Amazon IoT SiteWise Delete Time Series
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: alias
+          in: query
+          type: string
+          description: The alias that identifies the time series.
+        - name: assetId
+          in: query
+          type: string
+          description: The ID of the asset in which the asset property was created.
+        - name: propertyId
+          in: query
+          type: string
+          description: The ID of the asset property.
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: timeseries-describe
+      path: /timeseries/describe/
+      operations:
+      - name: describetimeseries
+        method: GET
+        description: Amazon IoT SiteWise Describe Time Series
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: alias
+          in: query
+          type: string
+          description: The alias that identifies the time series.
+        - name: assetId
+          in: query
+          type: string
+          description: The ID of the asset in which the asset property was created.
+        - name: propertyId
+          in: query
+          type: string
+          description: The ID of the asset property.
+    - name: timeseries-disassociate-#alias&assetId&propertyId
+      path: /timeseries/disassociate/#alias&assetId&propertyId
+      operations:
+      - name: disassociatetimeseriesfromassetproperty
+        method: POST
+        description: Amazon IoT SiteWise Disassociate Time Series from Asset Property
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: alias
+          in: query
+          type: string
+          description: The alias that identifies the time series.
+          required: true
+        - name: assetId
+          in: query
+          type: string
+          description: The ID of the asset in which the asset property was created.
+          required: true
+        - name: propertyId
+          in: query
+          type: string
+          description: The ID of the asset property.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.AMAZON_IOT_SITEWISE_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: amazon-iot-sitewise-rest
+    port: 8080
+    description: REST adapter for AWS IoT SiteWise. One Spectral-compliant resource per consumed operation, prefixed with
+      /v1.
+    resources:
+    - path: /v1/20200301/gateways
+      name: 20200301-gateways
+      description: REST surface for 20200301-gateways.
+      operations:
+      - method: POST
+        name: creategateway
+        description: Amazon IoT SiteWise Create Gateway
+        call: amazon-iot-sitewise.creategateway
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: listgateways
+        description: Amazon IoT SiteWise List Gateways
+        call: amazon-iot-sitewise.listgateways
+        with:
+          nextToken: rest.nextToken
+          maxResults: rest.maxResults
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/20200301/gateways/{gatewayid}
+      name: 20200301-gateways-gatewayid
+      description: REST surface for 20200301-gateways-gatewayId.
+      operations:
+      - method: DELETE
+        name: deletegateway
+        description: Amazon IoT SiteWise Delete Gateway
+        call: amazon-iot-sitewise.deletegateway
+        with:
+          gatewayId: rest.gatewayId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: describegateway
+        description: Amazon IoT SiteWise Describe Gateway
+        call: amazon-iot-sitewise.describegateway
+        with:
+          gatewayId: rest.gatewayId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updategateway
+        description: Amazon IoT SiteWise Update Gateway
+        call: amazon-iot-sitewise.updategateway
+        with:
+          gatewayId: rest.gatewayId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/20200301/gateways/{gatewayid}/capability
+      name: 20200301-gateways-gatewayid-capability
+      description: REST surface for 20200301-gateways-gatewayId-capability.
+      operations:
+      - method: POST
+        name: updategatewaycapabilityconfiguration
+        description: Amazon IoT SiteWise Update Gateway Capability Configuration
+        call: amazon-iot-sitewise.updategatewaycapabilityconfiguration
+        with:
+          gatewayId: rest.gatewayId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/20200301/gateways/{gatewayid}/capability/{capabilitynamespace}
+      name: 20200301-gateways-gatewayid-capability-capabilitynamespace
+      description: REST surface for 20200301-gateways-gatewayId-capability-capabilityNamespace.
+      operations:
+      - method: GET
+        name: describegatewaycapabilityconfiguration
+        description: Amazon IoT SiteWise Describe Gateway Capability Configuration
+        call: amazon-iot-sitewise.describegatewaycapabilityconfiguration
+        with:
+          gatewayId: rest.gatewayId
+          capabilityNamespace: rest.capabilityNamespace
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/access-policies
+      name: access-policies
+      description: REST surface for access-policies.
+      operations:
+      - method: POST
+        name: createaccesspolicy
+        description: Amazon IoT SiteWise Create Access Policy
+        call: amazon-iot-sitewise.createaccesspolicy
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: listaccesspolicies
+        description: Amazon IoT SiteWise List Access Policies
+        call: amazon-iot-sitewise.listaccesspolicies
+        with:
+          identityType: rest.identityType
+          identityId: rest.identityId
+          resourceType: rest.resourceType
+          resourceId: rest.resourceId
+          iamArn: rest.iamArn
+          nextToken: rest.nextToken
+          maxResults: rest.maxResults
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/access-policies/{accesspolicyid}
+      name: access-policies-accesspolicyid
+      description: REST surface for access-policies-accessPolicyId.
+      operations:
+      - method: DELETE
+        name: deleteaccesspolicy
+        description: Amazon IoT SiteWise Delete Access Policy
+        call: amazon-iot-sitewise.deleteaccesspolicy
+        with:
+          accessPolicyId: rest.accessPolicyId
+          clientToken: rest.clientToken
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: describeaccesspolicy
+        description: Amazon IoT SiteWise Describe Access Policy
+        call: amazon-iot-sitewise.describeaccesspolicy
+        with:
+          accessPolicyId: rest.accessPolicyId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updateaccesspolicy
+        description: Amazon IoT SiteWise Update Access Policy
+        call: amazon-iot-sitewise.updateaccesspolicy
+        with:
+          accessPolicyId: rest.accessPolicyId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/asset-models
+      name: asset-models
+      description: REST surface for asset-models.
+      operations:
+      - method: POST
+        name: createassetmodel
+        description: Amazon IoT SiteWise Create Asset Model
+        call: amazon-iot-sitewise.createassetmodel
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: listassetmodels
+        description: Amazon IoT SiteWise List Asset Models
+        call: amazon-iot-sitewise.listassetmodels
+        with:
+          nextToken: rest.nextToken
+          maxResults: rest.maxResults
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/asset-models/{assetmodelid}
+      name: asset-models-assetmodelid
+      description: REST surface for asset-models-assetModelId.
+      operations:
+      - method: DELETE
+        name: deleteassetmodel
+        description: Amazon IoT SiteWise Delete Asset Model
+        call: amazon-iot-sitewise.deleteassetmodel
+        with:
+          assetModelId: rest.assetModelId
+          clientToken: rest.clientToken
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: describeassetmodel
+        description: Amazon IoT SiteWise Describe Asset Model
+        call: amazon-iot-sitewise.describeassetmodel
+        with:
+          assetModelId: rest.assetModelId
+          excludeProperties: rest.excludeProperties
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updateassetmodel
+        description: Amazon IoT SiteWise Update Asset Model
+        call: amazon-iot-sitewise.updateassetmodel
+        with:
+          assetModelId: rest.assetModelId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/asset-models/{assetmodelid}/properties
+      name: asset-models-assetmodelid-properties
+      description: REST surface for asset-models-assetModelId-properties.
+      operations:
+      - method: GET
+        name: listassetmodelproperties
+        description: Amazon IoT SiteWise List Asset Model Properties
+        call: amazon-iot-sitewise.listassetmodelproperties
+        with:
+          assetModelId: rest.assetModelId
+          nextToken: rest.nextToken
+          maxResults: rest.maxResults
+          filter: rest.filter
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/assets
+      name: assets
+      description: REST surface for assets.
+      operations:
+      - method: POST
+        name: createasset
+        description: Amazon IoT SiteWise Create Asset
+        call: amazon-iot-sitewise.createasset
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: listassets
+        description: Amazon IoT SiteWise List Assets
+        call: amazon-iot-sitewise.listassets
+        with:
+          nextToken: rest.nextToken
+          maxResults: rest.maxResults
+          assetModelId: rest.assetModelId
+          filter: rest.filter
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/assets/{assetid}
+      name: assets-assetid
+      description: REST surface for assets-assetId.
+      operations:
+      - method: DELETE
+        name: deleteasset
+        description: Amazon IoT SiteWise Delete Asset
+        call: amazon-iot-sitewise.deleteasset
+        with:
+          assetId: rest.assetId
+          clientToken: rest.clientToken
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: describeasset
+        description: Amazon IoT SiteWise Describe Asset
+        call: amazon-iot-sitewise.describeasset
+        with:
+          assetId: rest.assetId
+          excludeProperties: rest.excludeProperties
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updateasset
+        description: Amazon IoT SiteWise Update Asset
+        call: amazon-iot-sitewise.updateasset
+        with:
+          assetId: rest.assetId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/assets/{assetid}/assetrelationships-traversaltype
+      name: assets-assetid-assetrelationships-traversaltype
+      description: REST surface for assets-assetId-assetRelationships#traversalType.
+      operations:
+      - method: GET
+        name: listassetrelationships
+        description: Amazon IoT SiteWise List Asset Relationships
+        call: amazon-iot-sitewise.listassetrelationships
+        with:
+          assetId: rest.assetId
+          traversalType: rest.traversalType
+          nextToken: rest.nextToken
+          maxResults: rest.maxResults
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/assets/{assetid}/associate
+      name: assets-assetid-associate
+      description: REST surface for assets-assetId-associate.
+      operations:
+      - method: POST
+        name: associateassets
+        description: Amazon IoT SiteWise Associate Assets
+        call: amazon-iot-sitewise.associateassets
+        with:
+          assetId: rest.assetId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/assets/{assetid}/disassociate
+      name: assets-assetid-disassociate
+      description: REST surface for assets-assetId-disassociate.
+      operations:
+      - method: POST
+        name: disassociateassets
+        description: Amazon IoT SiteWise Disassociate Assets
+        call: amazon-iot-sitewise.disassociateassets
+        with:
+          assetId: rest.assetId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/assets/{assetid}/hierarchies
+      name: assets-assetid-hierarchies
+      description: REST surface for assets-assetId-hierarchies.
+      operations:
+      - method: GET
+        name: listassociatedassets
+        description: Amazon IoT SiteWise List Associated Assets
+        call: amazon-iot-sitewise.listassociatedassets
+        with:
+          assetId: rest.assetId
+          hierarchyId: rest.hierarchyId
+          traversalDirection: rest.traversalDirection
+          nextToken: rest.nextToken
+          maxResults: rest.maxResults
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/assets/{assetid}/properties
+      name: assets-assetid-properties
+      description: REST surface for assets-assetId-properties.
+      operations:
+      - method: GET
+        name: listassetproperties
+        description: Amazon IoT SiteWise List Asset Properties
+        call: amazon-iot-sitewise.listassetproperties
+        with:
+          assetId: rest.assetId
+          nextToken: rest.nextToken
+          maxResults: rest.maxResults
+          filter: rest.filter
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/assets/{assetid}/properties/{propertyid}
+      name: assets-assetid-properties-propertyid
+      description: REST surface for assets-assetId-properties-propertyId.
+      operations:
+      - method: GET
+        name: describeassetproperty
+        description: Amazon IoT SiteWise Describe Asset Property
+        call: amazon-iot-sitewise.describeassetproperty
+        with:
+          assetId: rest.assetId
+          propertyId: rest.propertyId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updateassetproperty
+        description: Amazon IoT SiteWise Update Asset Property
+        call: amazon-iot-sitewise.updateassetproperty
+        with:
+          assetId: rest.assetId
+          propertyId: rest.propertyId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/configuration/account/encryption
+      name: configuration-account-encryption
+      description: REST surface for configuration-account-encryption.
+      operations:
+      - method: GET
+        name: describedefaultencryptionconfiguration
+        description: Amazon IoT SiteWise Describe Default Encryption Configuration
+        call: amazon-iot-sitewise.describedefaultencryptionconfiguration
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: putdefaultencryptionconfiguration
+        description: Amazon IoT SiteWise Put Default Encryption Configuration
+        call: amazon-iot-sitewise.putdefaultencryptionconfiguration
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/configuration/account/storage
+      name: configuration-account-storage
+      description: REST surface for configuration-account-storage.
+      operations:
+      - method: GET
+        name: describestorageconfiguration
+        description: Amazon IoT SiteWise Describe Storage Configuration
+        call: amazon-iot-sitewise.describestorageconfiguration
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: putstorageconfiguration
+        description: Amazon IoT SiteWise Put Storage Configuration
+        call: amazon-iot-sitewise.putstorageconfiguration
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/dashboards
+      name: dashboards
+      description: REST surface for dashboards.
+      operations:
+      - method: POST
+        name: createdashboard
+        description: Amazon IoT SiteWise Create Dashboard
+        call: amazon-iot-sitewise.createdashboard
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/dashboards-projectid
+      name: dashboards-projectid
+      description: REST surface for dashboards#projectId.
+      operations:
+      - method: GET
+        name: listdashboards
+        description: Amazon IoT SiteWise List Dashboards
+        call: amazon-iot-sitewise.listdashboards
+        with:
+          projectId: rest.projectId
+          nextToken: rest.nextToken
+          maxResults: rest.maxResults
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/dashboards/{dashboardid}
+      name: dashboards-dashboardid
+      description: REST surface for dashboards-dashboardId.
+      operations:
+      - method: DELETE
+        name: deletedashboard
+        description: Amazon IoT SiteWise Delete Dashboard
+        call: amazon-iot-sitewise.deletedashboard
+        with:
+          dashboardId: rest.dashboardId
+          clientToken: rest.clientToken
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: describedashboard
+        description: Amazon IoT SiteWise Describe Dashboard
+        call: amazon-iot-sitewise.describedashboard
+        with:
+          dashboardId: rest.dashboardId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updatedashboard
+        description: Amazon IoT SiteWise Update Dashboard
+        call: amazon-iot-sitewise.updatedashboard
+        with:
+          dashboardId: rest.dashboardId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/jobs
+      name: jobs
+      description: REST surface for jobs.
+      operations:
+      - method: POST
+        name: createbulkimportjob
+        description: Amazon IoT SiteWise Create Bulk Import Job
+        call: amazon-iot-sitewise.createbulkimportjob
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: listbulkimportjobs
+        description: Amazon IoT SiteWise List Bulk Import Jobs
+        call: amazon-iot-sitewise.listbulkimportjobs
+        with:
+          nextToken: rest.nextToken
+          maxResults: rest.maxResults
+          filter: rest.filter
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/jobs/{jobid}
+      name: jobs-jobid
+      description: REST surface for jobs-jobId.
+      operations:
+      - method: GET
+        name: describebulkimportjob
+        description: Amazon IoT SiteWise Describe Bulk Import Job
+        call: amazon-iot-sitewise.describebulkimportjob
+        with:
+          jobId: rest.jobId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/logging
+      name: logging
+      description: REST surface for logging.
+      operations:
+      - method: GET
+        name: describeloggingoptions
+        description: Amazon IoT SiteWise Describe Logging Options
+        call: amazon-iot-sitewise.describeloggingoptions
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: putloggingoptions
+        description: Amazon IoT SiteWise Put Logging Options
+        call: amazon-iot-sitewise.putloggingoptions
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/portals
+      name: portals
+      description: REST surface for portals.
+      operations:
+      - method: POST
+        name: createportal
+        description: Amazon IoT SiteWise Create Portal
+        call: amazon-iot-sitewise.createportal
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: listportals
+        description: Amazon IoT SiteWise List Portals
+        call: amazon-iot-sitewise.listportals
+        with:
+          nextToken: rest.nextToken
+          maxResults: rest.maxResults
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/portals/{portalid}
+      name: portals-portalid
+      description: REST surface for portals-portalId.
+      operations:
+      - method: DELETE
+        name: deleteportal
+        description: Amazon IoT SiteWise Delete Portal
+        call: amazon-iot-sitewise.deleteportal
+        with:
+          portalId: rest.portalId
+          clientToken: rest.clientToken
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: describeportal
+        description: Amazon IoT SiteWise Describe Portal
+        call: amazon-iot-sitewise.describeportal
+        with:
+          portalId: rest.portalId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updateportal
+        description: Amazon IoT SiteWise Update Portal
+        call: amazon-iot-sitewise.updateportal
+        with:
+          portalId: rest.portalId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/projects
+      name: projects
+      description: REST surface for projects.
+      operations:
+      - method: POST
+        name: createproject
+        description: Amazon IoT SiteWise Create Project
+        call: amazon-iot-sitewise.createproject
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/projects-portalid
+      name: projects-portalid
+      description: REST surface for projects#portalId.
+      operations:
+      - method: GET
+        name: listprojects
+        description: Amazon IoT SiteWise List Projects
+        call: amazon-iot-sitewise.listprojects
+        with:
+          portalId: rest.portalId
+          nextToken: rest.nextToken
+          maxResults: rest.maxResults
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/projects/{projectid}
+      name: projects-projectid
+      description: REST surface for projects-projectId.
+      operations:
+      - method: DELETE
+        name: deleteproject
+        description: Amazon IoT SiteWise Delete Project
+        call: amazon-iot-sitewise.deleteproject
+        with:
+          projectId: rest.projectId
+          clientToken: rest.clientToken
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: describeproject
+        description: Amazon IoT SiteWise Describe Project
+        call: amazon-iot-sitewise.describeproject
+        with:
+          projectId: rest.projectId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updateproject
+        description: Amazon IoT SiteWise Update Project
+        call: amazon-iot-sitewise.updateproject
+        with:
+          projectId: rest.projectId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/projects/{projectid}/assets
+      name: projects-projectid-assets
+      description: REST surface for projects-projectId-assets.
+      operations:
+      - method: GET
+        name: listprojectassets
+        description: Amazon IoT SiteWise List Project Assets
+        call: amazon-iot-sitewise.listprojectassets
+        with:
+          projectId: rest.projectId
+          nextToken: rest.nextToken
+          maxResults: rest.maxResults
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/projects/{projectid}/assets/associate
+      name: projects-projectid-assets-associate
+      description: REST surface for projects-projectId-assets-associate.
+      operations:
+      - method: POST
+        name: batchassociateprojectassets
+        description: Amazon IoT SiteWise Batch Associate Project Assets
+        call: amazon-iot-sitewise.batchassociateprojectassets
+        with:
+          projectId: rest.projectId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/projects/{projectid}/assets/disassociate
+      name: projects-projectid-assets-disassociate
+      description: REST surface for projects-projectId-assets-disassociate.
+      operations:
+      - method: POST
+        name: batchdisassociateprojectassets
+        description: Amazon IoT SiteWise Batch Disassociate Project Assets
+        call: amazon-iot-sitewise.batchdisassociateprojectassets
+        with:
+          projectId: rest.projectId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/properties
+      name: properties
+      description: REST surface for properties.
+      operations:
+      - method: POST
+        name: batchputassetpropertyvalue
+        description: Amazon IoT SiteWise Batch Put Asset Property Value
+        call: amazon-iot-sitewise.batchputassetpropertyvalue
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/properties/aggregates-aggregatetypes-resolution-startdate-enddate
+      name: properties-aggregates-aggregatetypes-resolution-startdate-enddate
+      description: REST surface for properties-aggregates#aggregateTypes&resolution&startDate&endDate.
+      operations:
+      - method: GET
+        name: getassetpropertyaggregates
+        description: Amazon IoT SiteWise Get Asset Property Aggregates
+        call: amazon-iot-sitewise.getassetpropertyaggregates
+        with:
+          assetId: rest.assetId
+          propertyId: rest.propertyId
+          propertyAlias: rest.propertyAlias
+          aggregateTypes: rest.aggregateTypes
+          resolution: rest.resolution
+          qualities: rest.qualities
+          startDate: rest.startDate
+          endDate: rest.endDate
+          timeOrdering: rest.timeOrdering
+          nextToken: rest.nextToken
+          maxResults: rest.maxResults
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/properties/batch/aggregates
+      name: properties-batch-aggregates
+      description: REST surface for properties-batch-aggregates.
+      operations:
+      - method: POST
+        name: batchgetassetpropertyaggregates
+        description: Amazon IoT SiteWise Batch Get Asset Property Aggregates
+        call: amazon-iot-sitewise.batchgetassetpropertyaggregates
+        with:
+          maxResults: rest.maxResults
+          nextToken: rest.nextToken
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/properties/batch/history
+      name: properties-batch-history
+      description: REST surface for properties-batch-history.
+      operations:
+      - method: POST
+        name: batchgetassetpropertyvaluehistory
+        description: Amazon IoT SiteWise Batch Get Asset Property Value History
+        call: amazon-iot-sitewise.batchgetassetpropertyvaluehistory
+        with:
+          maxResults: rest.maxResults
+          nextToken: rest.nextToken
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/properties/batch/latest
+      name: properties-batch-latest
+      description: REST surface for properties-batch-latest.
+      operations:
+      - method: POST
+        name: batchgetassetpropertyvalue
+        description: Amazon IoT SiteWise Batch Get Asset Property Value
+        call: amazon-iot-sitewise.batchgetassetpropertyvalue
+        with:
+          nextToken: rest.nextToken
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/properties/history
+      name: properties-history
+      description: REST surface for properties-history.
+      operations:
+      - method: GET
+        name: getassetpropertyvaluehistory
+        description: Amazon IoT SiteWise Get Asset Property Value History
+        call: amazon-iot-sitewise.getassetpropertyvaluehistory
+        with:
+          assetId: rest.assetId
+          propertyId: rest.propertyId
+          propertyAlias: rest.propertyAlias
+          startDate: rest.startDate
+          endDate: rest.endDate
+          qualities: rest.qualities
+          timeOrdering: rest.timeOrdering
+          nextToken: rest.nextToken
+          maxResults: rest.maxResults
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/properties/interpolated-starttimeinseconds-endtimeinseconds-quality-intervalinseconds-type
+      name: properties-interpolated-starttimeinseconds-endtimeinseconds-quality-intervalinse
+      description: REST surface for properties-interpolated#startTimeInSeconds&endTimeInSeconds&quality&intervalInSe.
+      operations:
+      - method: GET
+        name: getinterpolatedassetpropertyvalues
+        description: Amazon IoT SiteWise Get Interpolated Asset Property Values
+        call: amazon-iot-sitewise.getinterpolatedassetpropertyvalues
+        with:
+          assetId: rest.assetId
+          propertyId: rest.propertyId
+          propertyAlias: rest.propertyAlias
+          startTimeInSeconds: rest.startTimeInSeconds
+          startTimeOffsetInNanos: rest.startTimeOffsetInNanos
+          endTimeInSeconds: rest.endTimeInSeconds
+          endTimeOffsetInNanos: rest.endTimeOffsetInNanos
+          quality: rest.quality
+          intervalInSeconds: rest.intervalInSeconds
+          nextToken: rest.nextToken
+          maxResults: rest.maxResults
+          type: rest.type
+          intervalWindowInSeconds: rest.intervalWindowInSeconds
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/properties/latest
+      name: properties-latest
+      description: REST surface for properties-latest.
+      operations:
+      - method: GET
+        name: getassetpropertyvalue
+        description: Amazon IoT SiteWise Get Asset Property Value
+        call: amazon-iot-sitewise.getassetpropertyvalue
+        with:
+          assetId: rest.assetId
+          propertyId: rest.propertyId
+          propertyAlias: rest.propertyAlias
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/tags-resourcearn
+      name: tags-resourcearn
+      description: REST surface for tags#resourceArn.
+      operations:
+      - method: GET
+        name: listtagsforresource
+        description: Amazon IoT SiteWise List Tags for Resource
+        call: amazon-iot-sitewise.listtagsforresource
+        with:
+          resourceArn: rest.resourceArn
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: tagresource
+        description: Amazon IoT SiteWise Tag Resource
+        call: amazon-iot-sitewise.tagresource
+        with:
+          resourceArn: rest.resourceArn
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/tags-resourcearn-tagkeys
+      name: tags-resourcearn-tagkeys
+      description: REST surface for tags#resourceArn&tagKeys.
+      operations:
+      - method: DELETE
+        name: untagresource
+        description: Amazon IoT SiteWise Untag Resource
+        call: amazon-iot-sitewise.untagresource
+        with:
+          resourceArn: rest.resourceArn
+          tagKeys: rest.tagKeys
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/timeseries
+      name: timeseries
+      description: REST surface for timeseries.
+      operations:
+      - method: GET
+        name: listtimeseries
+        description: Amazon IoT SiteWise List Time Series
+        call: amazon-iot-sitewise.listtimeseries
+        with:
+          nextToken: rest.nextToken
+          maxResults: rest.maxResults
+          assetId: rest.assetId
+          aliasPrefix: rest.aliasPrefix
+          timeSeriesType: rest.timeSeriesType
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/timeseries/associate/alias-assetid-propertyid
+      name: timeseries-associate-alias-assetid-propertyid
+      description: REST surface for timeseries-associate-#alias&assetId&propertyId.
+      operations:
+      - method: POST
+        name: associatetimeseriestoassetproperty
+        description: Amazon IoT SiteWise Associate Time Series to Asset Property
+        call: amazon-iot-sitewise.associatetimeseriestoassetproperty
+        with:
+          alias: rest.alias
+          assetId: rest.assetId
+          propertyId: rest.propertyId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/timeseries/delete
+      name: timeseries-delete
+      description: REST surface for timeseries-delete.
+      operations:
+      - method: POST
+        name: deletetimeseries
+        description: Amazon IoT SiteWise Delete Time Series
+        call: amazon-iot-sitewise.deletetimeseries
+        with:
+          alias: rest.alias
+          assetId: rest.assetId
+          propertyId: rest.propertyId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/timeseries/describe
+      name: timeseries-describe
+      description: REST surface for timeseries-describe.
+      operations:
+      - method: GET
+        name: describetimeseries
+        description: Amazon IoT SiteWise Describe Time Series
+        call: amazon-iot-sitewise.describetimeseries
+        with:
+          alias: rest.alias
+          assetId: rest.assetId
+          propertyId: rest.propertyId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/timeseries/disassociate/alias-assetid-propertyid
+      name: timeseries-disassociate-alias-assetid-propertyid
+      description: REST surface for timeseries-disassociate-#alias&assetId&propertyId.
+      operations:
+      - method: POST
+        name: disassociatetimeseriesfromassetproperty
+        description: Amazon IoT SiteWise Disassociate Time Series from Asset Property
+        call: amazon-iot-sitewise.disassociatetimeseriesfromassetproperty
+        with:
+          alias: rest.alias
+          assetId: rest.assetId
+          propertyId: rest.propertyId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: amazon-iot-sitewise-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for AWS IoT SiteWise. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: amazon-iot-sitewise-create-gateway
+      description: Amazon IoT SiteWise Create Gateway
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-iot-sitewise.creategateway
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-list-gateways
+      description: Amazon IoT SiteWise List Gateways
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.listgateways
+      with:
+        nextToken: tools.nextToken
+        maxResults: tools.maxResults
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-delete-gateway
+      description: Amazon IoT SiteWise Delete Gateway
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: amazon-iot-sitewise.deletegateway
+      with:
+        gatewayId: tools.gatewayId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-describe-gateway
+      description: Amazon IoT SiteWise Describe Gateway
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.describegateway
+      with:
+        gatewayId: tools.gatewayId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-update-gateway
+      description: Amazon IoT SiteWise Update Gateway
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.updategateway
+      with:
+        gatewayId: tools.gatewayId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-update-gateway-2
+      description: Amazon IoT SiteWise Update Gateway Capability Configuration
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-iot-sitewise.updategatewaycapabilityconfiguration
+      with:
+        gatewayId: tools.gatewayId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-describe-gateway-2
+      description: Amazon IoT SiteWise Describe Gateway Capability Configuration
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.describegatewaycapabilityconfiguration
+      with:
+        gatewayId: tools.gatewayId
+        capabilityNamespace: tools.capabilityNamespace
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-create-access
+      description: Amazon IoT SiteWise Create Access Policy
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-iot-sitewise.createaccesspolicy
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-list-access
+      description: Amazon IoT SiteWise List Access Policies
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.listaccesspolicies
+      with:
+        identityType: tools.identityType
+        identityId: tools.identityId
+        resourceType: tools.resourceType
+        resourceId: tools.resourceId
+        iamArn: tools.iamArn
+        nextToken: tools.nextToken
+        maxResults: tools.maxResults
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-delete-access
+      description: Amazon IoT SiteWise Delete Access Policy
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: amazon-iot-sitewise.deleteaccesspolicy
+      with:
+        accessPolicyId: tools.accessPolicyId
+        clientToken: tools.clientToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-describe-access
+      description: Amazon IoT SiteWise Describe Access Policy
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.describeaccesspolicy
+      with:
+        accessPolicyId: tools.accessPolicyId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-update-access
+      description: Amazon IoT SiteWise Update Access Policy
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.updateaccesspolicy
+      with:
+        accessPolicyId: tools.accessPolicyId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-create-asset
+      description: Amazon IoT SiteWise Create Asset Model
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-iot-sitewise.createassetmodel
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-list-asset
+      description: Amazon IoT SiteWise List Asset Models
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.listassetmodels
+      with:
+        nextToken: tools.nextToken
+        maxResults: tools.maxResults
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-delete-asset
+      description: Amazon IoT SiteWise Delete Asset Model
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: amazon-iot-sitewise.deleteassetmodel
+      with:
+        assetModelId: tools.assetModelId
+        clientToken: tools.clientToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-describe-asset
+      description: Amazon IoT SiteWise Describe Asset Model
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.describeassetmodel
+      with:
+        assetModelId: tools.assetModelId
+        excludeProperties: tools.excludeProperties
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-update-asset
+      description: Amazon IoT SiteWise Update Asset Model
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.updateassetmodel
+      with:
+        assetModelId: tools.assetModelId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-list-asset-2
+      description: Amazon IoT SiteWise List Asset Model Properties
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.listassetmodelproperties
+      with:
+        assetModelId: tools.assetModelId
+        nextToken: tools.nextToken
+        maxResults: tools.maxResults
+        filter: tools.filter
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-create-asset-2
+      description: Amazon IoT SiteWise Create Asset
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-iot-sitewise.createasset
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-list-assets
+      description: Amazon IoT SiteWise List Assets
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.listassets
+      with:
+        nextToken: tools.nextToken
+        maxResults: tools.maxResults
+        assetModelId: tools.assetModelId
+        filter: tools.filter
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-delete-asset-2
+      description: Amazon IoT SiteWise Delete Asset
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: amazon-iot-sitewise.deleteasset
+      with:
+        assetId: tools.assetId
+        clientToken: tools.clientToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-describe-asset-2
+      description: Amazon IoT SiteWise Describe Asset
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.describeasset
+      with:
+        assetId: tools.assetId
+        excludeProperties: tools.excludeProperties
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-update-asset-2
+      description: Amazon IoT SiteWise Update Asset
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.updateasset
+      with:
+        assetId: tools.assetId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-list-asset-3
+      description: Amazon IoT SiteWise List Asset Relationships
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.listassetrelationships
+      with:
+        assetId: tools.assetId
+        traversalType: tools.traversalType
+        nextToken: tools.nextToken
+        maxResults: tools.maxResults
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-associate-assets
+      description: Amazon IoT SiteWise Associate Assets
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-iot-sitewise.associateassets
+      with:
+        assetId: tools.assetId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-disassociate-assets
+      description: Amazon IoT SiteWise Disassociate Assets
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-iot-sitewise.disassociateassets
+      with:
+        assetId: tools.assetId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-list-associated
+      description: Amazon IoT SiteWise List Associated Assets
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.listassociatedassets
+      with:
+        assetId: tools.assetId
+        hierarchyId: tools.hierarchyId
+        traversalDirection: tools.traversalDirection
+        nextToken: tools.nextToken
+        maxResults: tools.maxResults
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-list-asset-4
+      description: Amazon IoT SiteWise List Asset Properties
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.listassetproperties
+      with:
+        assetId: tools.assetId
+        nextToken: tools.nextToken
+        maxResults: tools.maxResults
+        filter: tools.filter
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-describe-asset-3
+      description: Amazon IoT SiteWise Describe Asset Property
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.describeassetproperty
+      with:
+        assetId: tools.assetId
+        propertyId: tools.propertyId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-update-asset-3
+      description: Amazon IoT SiteWise Update Asset Property
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.updateassetproperty
+      with:
+        assetId: tools.assetId
+        propertyId: tools.propertyId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-describe-default
+      description: Amazon IoT SiteWise Describe Default Encryption Configuration
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.describedefaultencryptionconfiguration
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-put-default
+      description: Amazon IoT SiteWise Put Default Encryption Configuration
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-iot-sitewise.putdefaultencryptionconfiguration
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-describe-storage
+      description: Amazon IoT SiteWise Describe Storage Configuration
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.describestorageconfiguration
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-put-storage
+      description: Amazon IoT SiteWise Put Storage Configuration
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-iot-sitewise.putstorageconfiguration
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-create-dashboard
+      description: Amazon IoT SiteWise Create Dashboard
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-iot-sitewise.createdashboard
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-list-dashboards
+      description: Amazon IoT SiteWise List Dashboards
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.listdashboards
+      with:
+        projectId: tools.projectId
+        nextToken: tools.nextToken
+        maxResults: tools.maxResults
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-delete-dashboard
+      description: Amazon IoT SiteWise Delete Dashboard
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: amazon-iot-sitewise.deletedashboard
+      with:
+        dashboardId: tools.dashboardId
+        clientToken: tools.clientToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-describe-dashboard
+      description: Amazon IoT SiteWise Describe Dashboard
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.describedashboard
+      with:
+        dashboardId: tools.dashboardId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-update-dashboard
+      description: Amazon IoT SiteWise Update Dashboard
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.updatedashboard
+      with:
+        dashboardId: tools.dashboardId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-create-bulk
+      description: Amazon IoT SiteWise Create Bulk Import Job
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-iot-sitewise.createbulkimportjob
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-list-bulk
+      description: Amazon IoT SiteWise List Bulk Import Jobs
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.listbulkimportjobs
+      with:
+        nextToken: tools.nextToken
+        maxResults: tools.maxResults
+        filter: tools.filter
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-describe-bulk
+      description: Amazon IoT SiteWise Describe Bulk Import Job
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.describebulkimportjob
+      with:
+        jobId: tools.jobId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-describe-logging
+      description: Amazon IoT SiteWise Describe Logging Options
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.describeloggingoptions
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-put-logging
+      description: Amazon IoT SiteWise Put Logging Options
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.putloggingoptions
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-create-portal
+      description: Amazon IoT SiteWise Create Portal
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-iot-sitewise.createportal
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-list-portals
+      description: Amazon IoT SiteWise List Portals
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.listportals
+      with:
+        nextToken: tools.nextToken
+        maxResults: tools.maxResults
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-delete-portal
+      description: Amazon IoT SiteWise Delete Portal
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: amazon-iot-sitewise.deleteportal
+      with:
+        portalId: tools.portalId
+        clientToken: tools.clientToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-describe-portal
+      description: Amazon IoT SiteWise Describe Portal
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.describeportal
+      with:
+        portalId: tools.portalId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-update-portal
+      description: Amazon IoT SiteWise Update Portal
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.updateportal
+      with:
+        portalId: tools.portalId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-create-project
+      description: Amazon IoT SiteWise Create Project
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-iot-sitewise.createproject
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-list-projects
+      description: Amazon IoT SiteWise List Projects
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.listprojects
+      with:
+        portalId: tools.portalId
+        nextToken: tools.nextToken
+        maxResults: tools.maxResults
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-delete-project
+      description: Amazon IoT SiteWise Delete Project
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: amazon-iot-sitewise.deleteproject
+      with:
+        projectId: tools.projectId
+        clientToken: tools.clientToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-describe-project
+      description: Amazon IoT SiteWise Describe Project
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.describeproject
+      with:
+        projectId: tools.projectId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-update-project
+      description: Amazon IoT SiteWise Update Project
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.updateproject
+      with:
+        projectId: tools.projectId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-list-project
+      description: Amazon IoT SiteWise List Project Assets
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.listprojectassets
+      with:
+        projectId: tools.projectId
+        nextToken: tools.nextToken
+        maxResults: tools.maxResults
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-batch-associate
+      description: Amazon IoT SiteWise Batch Associate Project Assets
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-iot-sitewise.batchassociateprojectassets
+      with:
+        projectId: tools.projectId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-batch-disassociate
+      description: Amazon IoT SiteWise Batch Disassociate Project Assets
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-iot-sitewise.batchdisassociateprojectassets
+      with:
+        projectId: tools.projectId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-batch-put
+      description: Amazon IoT SiteWise Batch Put Asset Property Value
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-iot-sitewise.batchputassetpropertyvalue
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-get-asset
+      description: Amazon IoT SiteWise Get Asset Property Aggregates
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.getassetpropertyaggregates
+      with:
+        assetId: tools.assetId
+        propertyId: tools.propertyId
+        propertyAlias: tools.propertyAlias
+        aggregateTypes: tools.aggregateTypes
+        resolution: tools.resolution
+        qualities: tools.qualities
+        startDate: tools.startDate
+        endDate: tools.endDate
+        timeOrdering: tools.timeOrdering
+        nextToken: tools.nextToken
+        maxResults: tools.maxResults
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-batch-get
+      description: Amazon IoT SiteWise Batch Get Asset Property Aggregates
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-iot-sitewise.batchgetassetpropertyaggregates
+      with:
+        maxResults: tools.maxResults
+        nextToken: tools.nextToken
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-batch-get-2
+      description: Amazon IoT SiteWise Batch Get Asset Property Value History
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-iot-sitewise.batchgetassetpropertyvaluehistory
+      with:
+        maxResults: tools.maxResults
+        nextToken: tools.nextToken
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-batch-get-3
+      description: Amazon IoT SiteWise Batch Get Asset Property Value
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-iot-sitewise.batchgetassetpropertyvalue
+      with:
+        nextToken: tools.nextToken
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-get-asset-2
+      description: Amazon IoT SiteWise Get Asset Property Value History
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.getassetpropertyvaluehistory
+      with:
+        assetId: tools.assetId
+        propertyId: tools.propertyId
+        propertyAlias: tools.propertyAlias
+        startDate: tools.startDate
+        endDate: tools.endDate
+        qualities: tools.qualities
+        timeOrdering: tools.timeOrdering
+        nextToken: tools.nextToken
+        maxResults: tools.maxResults
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-get-interpolated
+      description: Amazon IoT SiteWise Get Interpolated Asset Property Values
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.getinterpolatedassetpropertyvalues
+      with:
+        assetId: tools.assetId
+        propertyId: tools.propertyId
+        propertyAlias: tools.propertyAlias
+        startTimeInSeconds: tools.startTimeInSeconds
+        startTimeOffsetInNanos: tools.startTimeOffsetInNanos
+        endTimeInSeconds: tools.endTimeInSeconds
+        endTimeOffsetInNanos: tools.endTimeOffsetInNanos
+        quality: tools.quality
+        intervalInSeconds: tools.intervalInSeconds
+        nextToken: tools.nextToken
+        maxResults: tools.maxResults
+        type: tools.type
+        intervalWindowInSeconds: tools.intervalWindowInSeconds
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-get-asset-3
+      description: Amazon IoT SiteWise Get Asset Property Value
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.getassetpropertyvalue
+      with:
+        assetId: tools.assetId
+        propertyId: tools.propertyId
+        propertyAlias: tools.propertyAlias
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-list-tags
+      description: Amazon IoT SiteWise List Tags for Resource
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.listtagsforresource
+      with:
+        resourceArn: tools.resourceArn
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-tag-resource
+      description: Amazon IoT SiteWise Tag Resource
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-iot-sitewise.tagresource
+      with:
+        resourceArn: tools.resourceArn
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-untag-resource
+      description: Amazon IoT SiteWise Untag Resource
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: amazon-iot-sitewise.untagresource
+      with:
+        resourceArn: tools.resourceArn
+        tagKeys: tools.tagKeys
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-list-time
+      description: Amazon IoT SiteWise List Time Series
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.listtimeseries
+      with:
+        nextToken: tools.nextToken
+        maxResults: tools.maxResults
+        assetId: tools.assetId
+        aliasPrefix: tools.aliasPrefix
+        timeSeriesType: tools.timeSeriesType
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-associate-time
+      description: Amazon IoT SiteWise Associate Time Series to Asset Property
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-iot-sitewise.associatetimeseriestoassetproperty
+      with:
+        alias: tools.alias
+        assetId: tools.assetId
+        propertyId: tools.propertyId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-delete-time
+      description: Amazon IoT SiteWise Delete Time Series
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-iot-sitewise.deletetimeseries
+      with:
+        alias: tools.alias
+        assetId: tools.assetId
+        propertyId: tools.propertyId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-describe-time
+      description: Amazon IoT SiteWise Describe Time Series
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-iot-sitewise.describetimeseries
+      with:
+        alias: tools.alias
+        assetId: tools.assetId
+        propertyId: tools.propertyId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iot-sitewise-disassociate-time
+      description: Amazon IoT SiteWise Disassociate Time Series from Asset Property
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-iot-sitewise.disassociatetimeseriesfromassetproperty
+      with:
+        alias: tools.alias
+        assetId: tools.assetId
+        propertyId: tools.propertyId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

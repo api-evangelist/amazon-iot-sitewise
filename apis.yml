@@ -38,7 +38,7 @@ apis:
     url: https://aws.amazon.com/iot-sitewise/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-sitewise/faqs/
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/amazon-iot-sitewise.yaml
 common:
 - type: Portal
@@ -59,7 +59,7 @@ common:
   url: https://github.com/aws
 - type: Console
   url: https://console.aws.amazon.com/iotsitewise/
-- type: SignUp
+- type: Signup
   url: https://portal.aws.amazon.com/billing/signup
 - type: Login
   url: https://signin.aws.amazon.com/

@@ -41,6 +41,14 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/amazon-iot-sitewise.yaml
 common:
+- type: TrustCenter
+  url: security/amazon-iot-sitewise-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/amazon-iot-sitewise-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/amazon-iot-sitewise-domain-security.yml
+- type: Authentication
+  url: authentication/amazon-iot-sitewise-authentication.yml
 - type: Portal
   url: https://aws.amazon.com/iot-sitewise/
 - type: Website

@@ -41,6 +41,8 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/amazon-iot-sitewise.yaml
 common:
+- type: AgenticAccess
+  url: agentic-access/amazon-iot-sitewise-agentic-access.yml
 - type: TrustCenter
   url: security/amazon-iot-sitewise-trust-center.yml
 - type: VulnerabilityDisclosure

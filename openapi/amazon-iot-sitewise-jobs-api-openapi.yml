@@ -1,0 +1,651 @@
+openapi: 3.0.0
+info:
+  version: '2019-12-02'
+  x-release: v4
+  title: AWS IoT SiteWise Access Policies Jobs API
+  description: Welcome to the IoT SiteWise API Reference. IoT SiteWise is an Amazon Web Services service that connects <a href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">Industrial Internet of Things (IIoT)</a> devices to the power of the Amazon Web Services Cloud. For more information, see the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/">IoT SiteWise User Guide</a>. For information about IoT SiteWise quotas, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.
+  x-logo:
+    url: https://twitter.com/awscloud/profile_image?size=original
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: iotsitewise
+  x-aws-signingName: iotsitewise
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/iotsitewise-2019-12-02.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://iotsitewise.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS IoT SiteWise multi-region endpoint
+- url: https://iotsitewise.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS IoT SiteWise multi-region endpoint
+- url: http://iotsitewise.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS IoT SiteWise endpoint for China (Beijing) and China (Ningxia)
+- url: https://iotsitewise.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS IoT SiteWise endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Jobs
+paths:
+  /jobs:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: CreateBulkImportJob
+      description: <p>Defines a job to ingest data to IoT SiteWise from Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/CreateBulkImportJob.html">Create a bulk import job (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p> <important> <p>You must enable IoT SiteWise to export data to Amazon S3 before you create a bulk import job. For more information about how to configure storage settings, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutStorageConfiguration.html">PutStorageConfiguration</a>.</p> </important>
+      responses:
+        '202':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateBulkImportJobResponse'
+        '480':
+          description: InvalidRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidRequestException'
+        '481':
+          description: ResourceAlreadyExistsException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceAlreadyExistsException'
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '483':
+          description: InternalFailureException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalFailureException'
+        '484':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+        '485':
+          description: LimitExceededException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LimitExceededException'
+        '486':
+          description: ConflictingOperationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictingOperationException'
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - jobName
+              - jobRoleArn
+              - files
+              - errorReportLocation
+              - jobConfiguration
+              properties:
+                jobName:
+                  description: The unique name that helps identify the job request.
+                  type: string
+                  pattern: '[^\u0000-\u001F\u007F]+'
+                  minLength: 1
+                  maxLength: 256
+                jobRoleArn:
+                  description: The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows IoT SiteWise to read Amazon S3 data.
+                  type: string
+                  pattern: .*
+                  minLength: 1
+                  maxLength: 1600
+                files:
+                  description: The files in the specified Amazon S3 bucket that contain your data.
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/File'
+                errorReportLocation:
+                  description: The Amazon S3 destination where errors associated with the job creation request are saved.
+                  type: object
+                  properties:
+                    bucket:
+                      allOf:
+                      - $ref: '#/components/schemas/Bucket'
+                      - description: The name of the Amazon S3 bucket to which errors associated with the bulk import job are sent.
+                    prefix:
+                      allOf:
+                      - $ref: '#/components/schemas/String'
+                      - description: Amazon S3 uses the prefix as a folder name to organize data in the bucket. Each Amazon S3 object has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing objects using prefixes</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+                jobConfiguration:
+                  description: Contains the configuration information of a job, such as the file format used to save data in Amazon S3.
+                  type: object
+                  properties:
+                    fileFormat:
+                      allOf:
+                      - $ref: '#/components/schemas/FileFormat'
+                      - description: The file format of the data in Amazon S3.
+      summary: Amazon IoT SiteWise Create Bulk Import Job
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Jobs
+    get:
+      operationId: ListBulkImportJobs
+      description: Retrieves a paginated list of bulk import job requests. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ListBulkImportJobs.html">List bulk import jobs (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListBulkImportJobsResponse'
+        '480':
+          description: InvalidRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidRequestException'
+        '481':
+          description: InternalFailureException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalFailureException'
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '483':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+      parameters:
+      - name: nextToken
+        in: query
+        required: false
+        description: The token to be used for the next set of paginated results.
+        schema:
+          type: string
+          pattern: '[A-Za-z0-9+/=]+'
+          minLength: 1
+          maxLength: 4096
+      - name: maxResults
+        in: query
+        required: false
+        description: The maximum number of results to return for each paginated request.
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 250
+      - name: filter
+        in: query
+        required: false
+        description: You can use a filter to select the bulk import jobs that you want to retrieve.
+        schema:
+          type: string
+          enum:
+          - ALL
+          - PENDING
+          - RUNNING
+          - CANCELLED
+          - FAILED
+          - COMPLETED_WITH_FAILURES
+          - COMPLETED
+      summary: Amazon IoT SiteWise List Bulk Import Jobs
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Jobs
+  /jobs/{jobId}:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      operationId: DescribeBulkImportJob
+      description: Retrieves information about a bulk import job request. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/DescribeBulkImportJob.html">Describe a bulk import job (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DescribeBulkImportJobResponse'
+        '480':
+          description: InvalidRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidRequestException'
+        '481':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '482':
+          description: InternalFailureException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalFailureException'
+        '483':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+      parameters:
+      - name: jobId
+        in: path
+        required: true
+        description: The ID of the job.
+        schema:
+          type: string
+          pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
+          minLength: 36
+          maxLength: 36
+      summary: Amazon IoT SiteWise Describe Bulk Import Job
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Jobs
+components:
+  schemas:
+    JobSummary:
+      type: object
+      required:
+      - id
+      - name
+      - status
+      properties:
+        id:
+          allOf:
+          - $ref: '#/components/schemas/ID'
+          - description: The ID of the job.
+        name:
+          allOf:
+          - $ref: '#/components/schemas/Name'
+          - description: The unique name that helps identify the job request.
+        status:
+          allOf:
+          - $ref: '#/components/schemas/JobStatus'
+          - description: <p>The status of the bulk import job can be one of following values.</p> <ul> <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li> <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li> <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li> <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li> <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> </ul>
+      description: Contains a job summary information.
+    CreateBulkImportJobResponse:
+      type: object
+      required:
+      - jobId
+      - jobName
+      - jobStatus
+      properties:
+        jobId:
+          allOf:
+          - $ref: '#/components/schemas/ID'
+          - description: The ID of the job.
+        jobName:
+          allOf:
+          - $ref: '#/components/schemas/Name'
+          - description: The unique name that helps identify the job request.
+        jobStatus:
+          allOf:
+          - $ref: '#/components/schemas/JobStatus'
+          - description: <p>The status of the bulk import job can be one of following values.</p> <ul> <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li> <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li> <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li> <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li> <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> </ul>
+    File:
+      type: object
+      required:
+      - bucket
+      - key
+      properties:
+        bucket:
+          allOf:
+          - $ref: '#/components/schemas/Bucket'
+          - description: The name of the Amazon S3 bucket from which data is imported.
+        key:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The key of the Amazon S3 object that contains your data. Each object has a key that is a unique identifier. Each object has exactly one key.
+        versionId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The version ID to identify a specific version of the Amazon S3 object that contains your data.
+      description: 'The file in Amazon S3 where your data is saved. '
+    InternalFailureException: {}
+    DescribeBulkImportJobResponse:
+      type: object
+      required:
+      - jobId
+      - jobName
+      - jobStatus
+      - jobRoleArn
+      - files
+      - errorReportLocation
+      - jobConfiguration
+      - jobCreationDate
+      - jobLastUpdateDate
+      properties:
+        jobId:
+          allOf:
+          - $ref: '#/components/schemas/ID'
+          - description: The ID of the job.
+        jobName:
+          allOf:
+          - $ref: '#/components/schemas/Name'
+          - description: The unique name that helps identify the job request.
+        jobStatus:
+          allOf:
+          - $ref: '#/components/schemas/JobStatus'
+          - description: <p>The status of the bulk import job can be one of following values.</p> <ul> <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li> <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li> <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li> <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li> <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> </ul>
+        jobRoleArn:
+          allOf:
+          - $ref: '#/components/schemas/ARN'
+          - description: The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows IoT SiteWise to read Amazon S3 data.
+        files:
+          allOf:
+          - $ref: '#/components/schemas/Files'
+          - description: The files in the specified Amazon S3 bucket that contain your data.
+        errorReportLocation:
+          allOf:
+          - $ref: '#/components/schemas/ErrorReportLocation'
+          - description: The Amazon S3 destination where errors associated with the job creation request are saved.
+        jobConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/JobConfiguration'
+          - description: Contains the configuration information of a job, such as the file format used to save data in Amazon S3.
+        jobCreationDate:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The date the job was created, in Unix epoch TIME.
+        jobLastUpdateDate:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The date the job was last updated, in Unix epoch time.
+    Timestamp:
+      type: string
+      format: date-time
+    Files:
+      type: array
+      items:
+        $ref: '#/components/schemas/File'
+    ColumnNames:
+      type: array
+      items:
+        $ref: '#/components/schemas/ColumnName'
+    JobStatus:
+      type: string
+      enum:
+      - PENDING
+      - CANCELLED
+      - RUNNING
+      - COMPLETED
+      - FAILED
+      - COMPLETED_WITH_FAILURES
+    Bucket:
+      type: string
+      minLength: 3
+      maxLength: 63
+    ColumnName:
+      type: string
+      enum:
+      - ALIAS
+      - ASSET_ID
+      - PROPERTY_ID
+      - DATA_TYPE
+      - TIMESTAMP_SECONDS
+      - TIMESTAMP_NANO_OFFSET
+      - QUALITY
+      - VALUE
+    ListBulkImportJobsResponse:
+      type: object
+      required:
+      - jobSummaries
+      properties:
+        jobSummaries:
+          allOf:
+          - $ref: '#/components/schemas/JobSummaries'
+          - description: One or more job summaries to list.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The token for the next set of results, or null if there are no additional results.
+    InvalidRequestException: {}
+    ConflictingOperationException: {}
+    LimitExceededException: {}
+    Csv:
+      type: object
+      properties:
+        columnNames:
+          allOf:
+          - $ref: '#/components/schemas/ColumnNames'
+          - description: The column names specified in the .csv file.
+      description: A .csv file.
+    ResourceAlreadyExistsException: {}
+    FileFormat:
+      type: object
+      properties:
+        csv:
+          allOf:
+          - $ref: '#/components/schemas/Csv'
+          - description: The .csv file format.
+      description: The file format of the data.
+    Name:
+      type: string
+      pattern: '[^\u0000-\u001F\u007F]+'
+      minLength: 1
+      maxLength: 256
+    ErrorReportLocation:
+      type: object
+      required:
+      - bucket
+      - prefix
+      properties:
+        bucket:
+          allOf:
+          - $ref: '#/components/schemas/Bucket'
+          - description: The name of the Amazon S3 bucket to which errors associated with the bulk import job are sent.
+        prefix:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Amazon S3 uses the prefix as a folder name to organize data in the bucket. Each Amazon S3 object has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing objects using prefixes</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+      description: The Amazon S3 destination where errors associated with the job creation request are saved.
+    String:
+      type: string
+    JobSummaries:
+      type: array
+      items:
+        $ref: '#/components/schemas/JobSummary'
+    ID:
+      type: string
+      pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
+      minLength: 36
+      maxLength: 36
+    JobConfiguration:
+      type: object
+      required:
+      - fileFormat
+      properties:
+        fileFormat:
+          allOf:
+          - $ref: '#/components/schemas/FileFormat'
+          - description: The file format of the data in Amazon S3.
+      description: Contains the configuration information of a job, such as the file format used to save data in Amazon S3.
+    ThrottlingException: {}
+    ResourceNotFoundException: {}
+    NextToken:
+      type: string
+      pattern: '[A-Za-z0-9+/=]+'
+      minLength: 1
+      maxLength: 4096
+    ARN:
+      type: string
+      pattern: .*
+      minLength: 1
+      maxLength: 1600
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/iotsitewise/
+x-hasEquivalentPaths: true

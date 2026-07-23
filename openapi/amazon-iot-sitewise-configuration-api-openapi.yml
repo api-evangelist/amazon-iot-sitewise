@@ -1,0 +1,646 @@
+openapi: 3.0.0
+info:
+  version: '2019-12-02'
+  x-release: v4
+  title: AWS IoT SiteWise Access Policies Configuration API
+  description: Welcome to the IoT SiteWise API Reference. IoT SiteWise is an Amazon Web Services service that connects <a href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">Industrial Internet of Things (IIoT)</a> devices to the power of the Amazon Web Services Cloud. For more information, see the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/">IoT SiteWise User Guide</a>. For information about IoT SiteWise quotas, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.
+  x-logo:
+    url: https://twitter.com/awscloud/profile_image?size=original
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: iotsitewise
+  x-aws-signingName: iotsitewise
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/iotsitewise-2019-12-02.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://iotsitewise.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS IoT SiteWise multi-region endpoint
+- url: https://iotsitewise.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS IoT SiteWise multi-region endpoint
+- url: http://iotsitewise.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS IoT SiteWise endpoint for China (Beijing) and China (Ningxia)
+- url: https://iotsitewise.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS IoT SiteWise endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Configuration
+paths:
+  /configuration/account/encryption:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      operationId: DescribeDefaultEncryptionConfiguration
+      description: Retrieves information about the default encryption configuration for the Amazon Web Services account in the default or specified Region. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key management</a> in the <i>IoT SiteWise User Guide</i>.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DescribeDefaultEncryptionConfigurationResponse'
+        '480':
+          description: InvalidRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidRequestException'
+        '481':
+          description: InternalFailureException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalFailureException'
+        '482':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+      parameters: []
+      summary: Amazon IoT SiteWise Describe Default Encryption Configuration
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Configuration
+    post:
+      operationId: PutDefaultEncryptionConfiguration
+      description: Sets the default encryption configuration for the Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key management</a> in the <i>IoT SiteWise User Guide</i>.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutDefaultEncryptionConfigurationResponse'
+        '480':
+          description: InvalidRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidRequestException'
+        '481':
+          description: InternalFailureException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalFailureException'
+        '482':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+        '483':
+          description: LimitExceededException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LimitExceededException'
+        '484':
+          description: ConflictingOperationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictingOperationException'
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - encryptionType
+              properties:
+                encryptionType:
+                  description: The type of encryption used for the encryption configuration.
+                  type: string
+                  enum:
+                  - SITEWISE_DEFAULT_ENCRYPTION
+                  - KMS_BASED_ENCRYPTION
+                kmsKeyId:
+                  description: The Key ID of the customer managed key used for KMS encryption. This is required if you use <code>KMS_BASED_ENCRYPTION</code>.
+                  type: string
+                  minLength: 1
+                  maxLength: 2048
+      summary: Amazon IoT SiteWise Put Default Encryption Configuration
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Configuration
+  /configuration/account/storage:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      operationId: DescribeStorageConfiguration
+      description: Retrieves information about the storage configuration for IoT SiteWise.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DescribeStorageConfigurationResponse'
+        '480':
+          description: InvalidRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidRequestException'
+        '481':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '482':
+          description: InternalFailureException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalFailureException'
+        '483':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+        '484':
+          description: LimitExceededException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LimitExceededException'
+        '485':
+          description: ConflictingOperationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictingOperationException'
+      parameters: []
+      summary: Amazon IoT SiteWise Describe Storage Configuration
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Configuration
+    post:
+      operationId: PutStorageConfiguration
+      description: Configures storage settings for IoT SiteWise.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutStorageConfigurationResponse'
+        '480':
+          description: InvalidRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidRequestException'
+        '481':
+          description: ResourceAlreadyExistsException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceAlreadyExistsException'
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '483':
+          description: InternalFailureException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalFailureException'
+        '484':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+        '485':
+          description: LimitExceededException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LimitExceededException'
+        '486':
+          description: ConflictingOperationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictingOperationException'
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - storageType
+              properties:
+                storageType:
+                  description: <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p> <ul> <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li> <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li> </ul>
+                  type: string
+                  enum:
+                  - SITEWISE_DEFAULT_STORAGE
+                  - MULTI_LAYER_STORAGE
+                multiLayerStorage:
+                  description: Contains information about the storage destination.
+                  type: object
+                  properties:
+                    customerManagedS3Storage:
+                      allOf:
+                      - $ref: '#/components/schemas/CustomerManagedS3Storage'
+                      - description: Contains information about a customer managed Amazon S3 bucket.
+                disassociatedDataStorage:
+                  description: <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p> <ul> <li> <p> <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important> <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p> </important> </li> <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li> </ul> <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
+                  type: string
+                  enum:
+                  - ENABLED
+                  - DISABLED
+                retentionPeriod:
+                  description: How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.
+                  type: object
+                  properties:
+                    numberOfDays:
+                      allOf:
+                      - $ref: '#/components/schemas/NumberOfDays'
+                      - description: <p>The number of days that your data is kept.</p> <note> <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must be <code>false</code>.</p> </note>
+                    unlimited:
+                      allOf:
+                      - $ref: '#/components/schemas/Unlimited'
+                      - description: <p>If true, your data is kept indefinitely.</p> <note> <p>If configured to <code>true</code>, you must not specify a value for the <code>numberOfDays</code> parameter.</p> </note>
+      summary: Amazon IoT SiteWise Put Storage Configuration
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Configuration
+components:
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    ConfigurationState:
+      type: string
+      enum:
+      - ACTIVE
+      - UPDATE_IN_PROGRESS
+      - UPDATE_FAILED
+    InternalFailureException: {}
+    Timestamp:
+      type: string
+      format: date-time
+    RetentionPeriod:
+      type: object
+      properties:
+        numberOfDays:
+          allOf:
+          - $ref: '#/components/schemas/NumberOfDays'
+          - description: <p>The number of days that your data is kept.</p> <note> <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must be <code>false</code>.</p> </note>
+        unlimited:
+          allOf:
+          - $ref: '#/components/schemas/Unlimited'
+          - description: <p>If true, your data is kept indefinitely.</p> <note> <p>If configured to <code>true</code>, you must not specify a value for the <code>numberOfDays</code> parameter.</p> </note>
+      description: How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.
+    MultiLayerStorage:
+      type: object
+      required:
+      - customerManagedS3Storage
+      properties:
+        customerManagedS3Storage:
+          allOf:
+          - $ref: '#/components/schemas/CustomerManagedS3Storage'
+          - description: Contains information about a customer managed Amazon S3 bucket.
+      description: Contains information about the storage destination.
+    PutDefaultEncryptionConfigurationResponse:
+      type: object
+      required:
+      - encryptionType
+      - configurationStatus
+      properties:
+        encryptionType:
+          allOf:
+          - $ref: '#/components/schemas/EncryptionType'
+          - description: The type of encryption used for the encryption configuration.
+        kmsKeyArn:
+          allOf:
+          - $ref: '#/components/schemas/ARN'
+          - description: The Key ARN of the KMS key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.
+        configurationStatus:
+          allOf:
+          - $ref: '#/components/schemas/ConfigurationStatus'
+          - description: The status of the account configuration. This contains the <code>ConfigurationState</code>. If there is an error, it also contains the <code>ErrorDetails</code>.
+    DescribeDefaultEncryptionConfigurationResponse:
+      type: object
+      required:
+      - encryptionType
+      - configurationStatus
+      properties:
+        encryptionType:
+          allOf:
+          - $ref: '#/components/schemas/EncryptionType'
+          - description: The type of encryption used for the encryption configuration.
+        kmsKeyArn:
+          allOf:
+          - $ref: '#/components/schemas/ARN'
+          - description: The key ARN of the customer managed key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.
+        configurationStatus:
+          allOf:
+          - $ref: '#/components/schemas/ConfigurationStatus'
+          - description: The status of the account configuration. This contains the <code>ConfigurationState</code>. If there's an error, it also contains the <code>ErrorDetails</code>.
+    ConfigurationErrorDetails:
+      type: object
+      required:
+      - code
+      - message
+      properties:
+        code:
+          allOf:
+          - $ref: '#/components/schemas/ErrorCode'
+          - description: The error code.
+        message:
+          allOf:
+          - $ref: '#/components/schemas/ErrorMessage'
+          - description: The error message.
+      description: Contains the details of an IoT SiteWise configuration error.
+    DisassociatedDataStorageState:
+      type: string
+      enum:
+      - ENABLED
+      - DISABLED
+    InvalidRequestException: {}
+    ConflictingOperationException: {}
+    LimitExceededException: {}
+    PutStorageConfigurationResponse:
+      type: object
+      required:
+      - storageType
+      - configurationStatus
+      properties:
+        storageType:
+          allOf:
+          - $ref: '#/components/schemas/StorageType'
+          - description: <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p> <ul> <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li> <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li> </ul>
+        multiLayerStorage:
+          allOf:
+          - $ref: '#/components/schemas/MultiLayerStorage'
+          - description: Contains information about the storage destination.
+        disassociatedDataStorage:
+          allOf:
+          - $ref: '#/components/schemas/DisassociatedDataStorageState'
+          - description: <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p> <ul> <li> <p> <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important> <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p> </important> </li> <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li> </ul> <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        retentionPeriod:
+          $ref: '#/components/schemas/RetentionPeriod'
+        configurationStatus:
+          $ref: '#/components/schemas/ConfigurationStatus'
+    NumberOfDays:
+      type: integer
+      minimum: 30
+    ThrottlingException: {}
+    EncryptionType:
+      type: string
+      enum:
+      - SITEWISE_DEFAULT_ENCRYPTION
+      - KMS_BASED_ENCRYPTION
+    ResourceAlreadyExistsException: {}
+    ErrorMessage:
+      type: string
+    DescribeStorageConfigurationResponse:
+      type: object
+      required:
+      - storageType
+      - configurationStatus
+      properties:
+        storageType:
+          allOf:
+          - $ref: '#/components/schemas/StorageType'
+          - description: <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p> <ul> <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li> <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li> </ul>
+        multiLayerStorage:
+          allOf:
+          - $ref: '#/components/schemas/MultiLayerStorage'
+          - description: Contains information about the storage destination.
+        disassociatedDataStorage:
+          allOf:
+          - $ref: '#/components/schemas/DisassociatedDataStorageState'
+          - description: <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p> <ul> <li> <p> <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important> <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p> </important> </li> <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li> </ul> <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        retentionPeriod:
+          allOf:
+          - $ref: '#/components/schemas/RetentionPeriod'
+          - description: How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.
+        configurationStatus:
+          $ref: '#/components/schemas/ConfigurationStatus'
+        lastUpdateDate:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The date the storage configuration was last updated, in Unix epoch time.
+    ConfigurationStatus:
+      type: object
+      required:
+      - state
+      properties:
+        state:
+          allOf:
+          - $ref: '#/components/schemas/ConfigurationState'
+          - description: The current state of the configuration.
+        error:
+          allOf:
+          - $ref: '#/components/schemas/ConfigurationErrorDetails'
+          - description: Contains associated error information, if any.
+      description: Contains current status information for the configuration.
+    ErrorCode:
+      type: string
+      enum:
+      - VALIDATION_ERROR
+      - INTERNAL_FAILURE
+    CustomerManagedS3Storage:
+      type: object
+      required:
+      - s3ResourceArn
+      - roleArn
+      properties:
+        s3ResourceArn:
+          allOf:
+          - $ref: '#/components/schemas/ARN'
+          - description: The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Amazon S3 object. For more information about how to find the ARN for an Amazon S3 object, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-arn-format.html">Amazon S3 resources</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+        roleArn:
+          allOf:
+          - $ref: '#/components/schemas/ARN'
+          - description: The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Identity and Access Management role that allows IoT SiteWise to send data to Amazon S3.
+      description: Contains information about a customer managed Amazon S3 bucket.
+    Unlimited:
+      type: boolean
+    StorageType:
+      type: string
+      enum:
+      - SITEWISE_DEFAULT_STORAGE
+      - MULTI_LAYER_STORAGE
+    ResourceNotFoundException: {}
+    ARN:
+      type: string
+      pattern: .*
+      minLength: 1
+      maxLength: 1600
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/iotsitewise/
+x-hasEquivalentPaths: true

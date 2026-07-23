@@ -1,0 +1,945 @@
+openapi: 3.0.0
+info:
+  version: '2019-12-02'
+  x-release: v4
+  title: AWS IoT SiteWise Access Policies Portals API
+  description: Welcome to the IoT SiteWise API Reference. IoT SiteWise is an Amazon Web Services service that connects <a href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">Industrial Internet of Things (IIoT)</a> devices to the power of the Amazon Web Services Cloud. For more information, see the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/">IoT SiteWise User Guide</a>. For information about IoT SiteWise quotas, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.
+  x-logo:
+    url: https://twitter.com/awscloud/profile_image?size=original
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: iotsitewise
+  x-aws-signingName: iotsitewise
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/iotsitewise-2019-12-02.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://iotsitewise.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS IoT SiteWise multi-region endpoint
+- url: https://iotsitewise.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS IoT SiteWise multi-region endpoint
+- url: http://iotsitewise.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS IoT SiteWise endpoint for China (Beijing) and China (Ningxia)
+- url: https://iotsitewise.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS IoT SiteWise endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Portals
+paths:
+  /portals:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: CreatePortal
+      description: <p>Creates a portal, which can contain projects and dashboards. IoT SiteWise Monitor uses IAM Identity Center or IAM to authenticate portal users and manage user permissions.</p> <note> <p>Before you can sign in to a new portal, you must add at least one identity to that portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins">Adding or removing portal administrators</a> in the <i>IoT SiteWise User Guide</i>.</p> </note>
+      responses:
+        '202':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreatePortalResponse'
+        '480':
+          description: InvalidRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidRequestException'
+        '481':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '482':
+          description: InternalFailureException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalFailureException'
+        '483':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+        '484':
+          description: LimitExceededException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LimitExceededException'
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - portalName
+              - portalContactEmail
+              - roleArn
+              properties:
+                portalName:
+                  description: A friendly name for the portal.
+                  type: string
+                  pattern: '[^\u0000-\u001F\u007F]+'
+                  minLength: 1
+                  maxLength: 256
+                portalDescription:
+                  description: A description for the portal.
+                  type: string
+                  pattern: '[^\u0000-\u001F\u007F]+'
+                  minLength: 1
+                  maxLength: 2048
+                portalContactEmail:
+                  description: The Amazon Web Services administrator's contact email address.
+                  type: string
+                  pattern: '[^@]+@[^@]+'
+                  minLength: 1
+                  maxLength: 255
+                clientToken:
+                  description: A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
+                  type: string
+                  pattern: \S{36,64}
+                  minLength: 36
+                  maxLength: 64
+                portalLogoImageFile:
+                  description: Contains an image file.
+                  type: object
+                  properties:
+                    data:
+                      allOf:
+                      - $ref: '#/components/schemas/ImageFileData'
+                      - description: The image file contents, represented as a base64-encoded string. The file size must be less than 1 MB.
+                    type:
+                      allOf:
+                      - $ref: '#/components/schemas/ImageFileType'
+                      - description: The file type of the image.
+                roleArn:
+                  description: The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.
+                  type: string
+                  pattern: .*
+                  minLength: 1
+                  maxLength: 1600
+                tags:
+                  description: A list of key-value pairs that contain metadata for the portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.
+                  type: object
+                  minProperties: 1
+                  maxProperties: 50
+                  additionalProperties:
+                    $ref: '#/components/schemas/TagValue'
+                portalAuthMode:
+                  description: '<p>The service to use to authenticate users to the portal. Choose from the following options:</p> <ul> <li> <p> <code>SSO</code> – The portal uses IAM Identity Center (successor to Single Sign-On) to authenticate users and manage user permissions. Before you can create a portal that uses IAM Identity Center, you must enable IAM Identity Center. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling IAM Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p> </li> <li> <p> <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user permissions.</p> </li> </ul> <p>You can''t change this value after you create a portal.</p> <p>Default: <code>SSO</code> </p>'
+                  type: string
+                  enum:
+                  - IAM
+                  - SSO
+                notificationSenderEmail:
+                  description: <p>The email address that sends alarm notifications.</p> <important> <p>If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT Events managed Lambda function</a> to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email address in Amazon SES</a>.</p> </important>
+                  type: string
+                  pattern: '[^@]+@[^@]+'
+                  minLength: 1
+                  maxLength: 255
+                alarms:
+                  description: Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.
+                  type: object
+                  properties:
+                    alarmRoleArn:
+                      allOf:
+                      - $ref: '#/components/schemas/ARN'
+                      - description: The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows the alarm to perform actions and access Amazon Web Services resources and services, such as IoT Events.
+                    notificationLambdaArn:
+                      allOf:
+                      - $ref: '#/components/schemas/ARN'
+                      - description: The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function that manages alarm notifications. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing alarm notifications</a> in the <i>IoT Events Developer Guide</i>.
+      summary: Amazon IoT SiteWise Create Portal
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Portals
+    get:
+      operationId: ListPortals
+      description: Retrieves a paginated list of IoT SiteWise Monitor portals.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListPortalsResponse'
+        '480':
+          description: InvalidRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidRequestException'
+        '481':
+          description: InternalFailureException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalFailureException'
+        '482':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+      parameters:
+      - name: nextToken
+        in: query
+        required: false
+        description: The token to be used for the next set of paginated results.
+        schema:
+          type: string
+          pattern: '[A-Za-z0-9+/=]+'
+          minLength: 1
+          maxLength: 4096
+      - name: maxResults
+        in: query
+        required: false
+        description: '<p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>'
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 250
+      summary: Amazon IoT SiteWise List Portals
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Portals
+  /portals/{portalId}:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    delete:
+      operationId: DeletePortal
+      description: Deletes a portal from IoT SiteWise Monitor.
+      responses:
+        '202':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeletePortalResponse'
+        '480':
+          description: InvalidRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidRequestException'
+        '481':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '482':
+          description: InternalFailureException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalFailureException'
+        '483':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+        '484':
+          description: ConflictingOperationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictingOperationException'
+      parameters:
+      - name: portalId
+        in: path
+        required: true
+        description: The ID of the portal to delete.
+        schema:
+          type: string
+          pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
+          minLength: 36
+          maxLength: 36
+      - name: clientToken
+        in: query
+        required: false
+        description: A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
+        schema:
+          type: string
+          pattern: \S{36,64}
+          minLength: 36
+          maxLength: 64
+      summary: Amazon IoT SiteWise Delete Portal
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Portals
+    get:
+      operationId: DescribePortal
+      description: Retrieves information about a portal.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DescribePortalResponse'
+        '480':
+          description: InvalidRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidRequestException'
+        '481':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '482':
+          description: InternalFailureException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalFailureException'
+        '483':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+      parameters:
+      - name: portalId
+        in: path
+        required: true
+        description: The ID of the portal.
+        schema:
+          type: string
+          pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
+          minLength: 36
+          maxLength: 36
+      summary: Amazon IoT SiteWise Describe Portal
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Portals
+    put:
+      operationId: UpdatePortal
+      description: Updates an IoT SiteWise Monitor portal.
+      responses:
+        '202':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdatePortalResponse'
+        '480':
+          description: InvalidRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidRequestException'
+        '481':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '482':
+          description: InternalFailureException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalFailureException'
+        '483':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+        '484':
+          description: ConflictingOperationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictingOperationException'
+      parameters:
+      - name: portalId
+        in: path
+        required: true
+        description: The ID of the portal to update.
+        schema:
+          type: string
+          pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
+          minLength: 36
+          maxLength: 36
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - portalName
+              - portalContactEmail
+              - roleArn
+              properties:
+                portalName:
+                  description: A new friendly name for the portal.
+                  type: string
+                  pattern: '[^\u0000-\u001F\u007F]+'
+                  minLength: 1
+                  maxLength: 256
+                portalDescription:
+                  description: A new description for the portal.
+                  type: string
+                  pattern: '[^\u0000-\u001F\u007F]+'
+                  minLength: 1
+                  maxLength: 2048
+                portalContactEmail:
+                  description: The Amazon Web Services administrator's contact email address.
+                  type: string
+                  pattern: '[^@]+@[^@]+'
+                  minLength: 1
+                  maxLength: 255
+                portalLogoImage:
+                  description: <p>Contains an image that is one of the following:</p> <ul> <li> <p>An image file. Choose this option to upload a new image.</p> </li> <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li> </ul>
+                  type: object
+                  properties:
+                    id:
+                      allOf:
+                      - $ref: '#/components/schemas/ID'
+                      - description: The ID of an existing image. Specify this parameter to keep an existing image.
+                    file:
+                      $ref: '#/components/schemas/ImageFile'
+                roleArn:
+                  description: The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.
+                  type: string
+                  pattern: .*
+                  minLength: 1
+                  maxLength: 1600
+                clientToken:
+                  description: A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
+                  type: string
+                  pattern: \S{36,64}
+                  minLength: 36
+                  maxLength: 64
+                notificationSenderEmail:
+                  description: The email address that sends alarm notifications.
+                  type: string
+                  pattern: '[^@]+@[^@]+'
+                  minLength: 1
+                  maxLength: 255
+                alarms:
+                  description: Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.
+                  type: object
+                  properties:
+                    alarmRoleArn:
+                      allOf:
+                      - $ref: '#/components/schemas/ARN'
+                      - description: The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows the alarm to perform actions and access Amazon Web Services resources and services, such as IoT Events.
+                    notificationLambdaArn:
+                      allOf:
+                      - $ref: '#/components/schemas/ARN'
+                      - description: The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function that manages alarm notifications. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing alarm notifications</a> in the <i>IoT Events Developer Guide</i>.
+      summary: Amazon IoT SiteWise Update Portal
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Portals
+components:
+  schemas:
+    MonitorErrorMessage:
+      type: string
+    SSOApplicationId:
+      type: string
+      pattern: ^[!-~]*
+      minLength: 1
+      maxLength: 64
+    InternalFailureException: {}
+    PortalStatus:
+      type: object
+      required:
+      - state
+      properties:
+        state:
+          allOf:
+          - $ref: '#/components/schemas/PortalState'
+          - description: The current state of the portal.
+        error:
+          allOf:
+          - $ref: '#/components/schemas/MonitorErrorDetails'
+          - description: Contains associated error information, if any.
+      description: Contains information about the current status of a portal.
+    MonitorErrorCode:
+      type: string
+      enum:
+      - INTERNAL_FAILURE
+      - VALIDATION_ERROR
+      - LIMIT_EXCEEDED
+    ImageFileType:
+      type: string
+      enum:
+      - PNG
+    AuthMode:
+      type: string
+      enum:
+      - IAM
+      - SSO
+    Timestamp:
+      type: string
+      format: date-time
+    ListPortalsResponse:
+      type: object
+      properties:
+        portalSummaries:
+          allOf:
+          - $ref: '#/components/schemas/PortalSummaries'
+          - description: A list that summarizes each portal.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The token for the next set of results, or null if there are no additional results.
+    CreatePortalResponse:
+      type: object
+      required:
+      - portalId
+      - portalArn
+      - portalStartUrl
+      - portalStatus
+      - ssoApplicationId
+      properties:
+        portalId:
+          allOf:
+          - $ref: '#/components/schemas/ID'
+          - description: The ID of the created portal.
+        portalArn:
+          allOf:
+          - $ref: '#/components/schemas/ARN'
+          - description: <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p> <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
+        portalStartUrl:
+          allOf:
+          - $ref: '#/components/schemas/Url'
+          - description: The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.
+        portalStatus:
+          allOf:
+          - $ref: '#/components/schemas/PortalStatus'
+          - description: The status of the portal, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.
+        ssoApplicationId:
+          allOf:
+          - $ref: '#/components/schemas/SSOApplicationId'
+          - description: The associated IAM Identity Center application ID, if the portal uses IAM Identity Center.
+    PortalSummaries:
+      type: array
+      items:
+        $ref: '#/components/schemas/PortalSummary'
+    DeletePortalResponse:
+      type: object
+      required:
+      - portalStatus
+      properties:
+        portalStatus:
+          allOf:
+          - $ref: '#/components/schemas/PortalStatus'
+          - description: The status of the portal, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    ImageFile:
+      type: object
+      required:
+      - data
+      - type
+      properties:
+        data:
+          allOf:
+          - $ref: '#/components/schemas/ImageFileData'
+          - description: The image file contents, represented as a base64-encoded string. The file size must be less than 1 MB.
+        type:
+          allOf:
+          - $ref: '#/components/schemas/ImageFileType'
+          - description: The file type of the image.
+      description: Contains an image file.
+    InvalidRequestException: {}
+    LimitExceededException: {}
+    ConflictingOperationException: {}
+    NextToken:
+      type: string
+      pattern: '[A-Za-z0-9+/=]+'
+      minLength: 1
+      maxLength: 4096
+    ImageFileData:
+      type: string
+      minLength: 1
+      maxLength: 1500000
+    ImageLocation:
+      type: object
+      required:
+      - id
+      - url
+      properties:
+        id:
+          allOf:
+          - $ref: '#/components/schemas/ID'
+          - description: The ID of the image.
+        url:
+          allOf:
+          - $ref: '#/components/schemas/Url'
+          - description: The URL where the image is available. The URL is valid for 15 minutes so that you can view and download the image
+      description: Contains an image that is uploaded to IoT SiteWise and available at a URL.
+    DescribePortalResponse:
+      type: object
+      required:
+      - portalId
+      - portalArn
+      - portalName
+      - portalClientId
+      - portalStartUrl
+      - portalContactEmail
+      - portalStatus
+      - portalCreationDate
+      - portalLastUpdateDate
+      properties:
+        portalId:
+          allOf:
+          - $ref: '#/components/schemas/ID'
+          - description: The ID of the portal.
+        portalArn:
+          allOf:
+          - $ref: '#/components/schemas/ARN'
+          - description: <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p> <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
+        portalName:
+          allOf:
+          - $ref: '#/components/schemas/Name'
+          - description: The name of the portal.
+        portalDescription:
+          allOf:
+          - $ref: '#/components/schemas/Description'
+          - description: The portal's description.
+        portalClientId:
+          allOf:
+          - $ref: '#/components/schemas/PortalClientId'
+          - description: The IAM Identity Center application generated client ID (used with IAM Identity Center APIs). IoT SiteWise includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.
+        portalStartUrl:
+          allOf:
+          - $ref: '#/components/schemas/Url'
+          - description: The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.
+        portalContactEmail:
+          allOf:
+          - $ref: '#/components/schemas/Email'
+          - description: The Amazon Web Services administrator's contact email address.
+        portalStatus:
+          allOf:
+          - $ref: '#/components/schemas/PortalStatus'
+          - description: The current status of the portal, which contains a state and any error message.
+        portalCreationDate:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The date the portal was created, in Unix epoch time.
+        portalLastUpdateDate:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The date the portal was last updated, in Unix epoch time.
+        portalLogoImageLocation:
+          allOf:
+          - $ref: '#/components/schemas/ImageLocation'
+          - description: The portal's logo image, which is available at a URL.
+        roleArn:
+          allOf:
+          - $ref: '#/components/schemas/ARN'
+          - description: The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.
+        portalAuthMode:
+          allOf:
+          - $ref: '#/components/schemas/AuthMode'
+          - description: The service to use to authenticate users to the portal.
+        notificationSenderEmail:
+          allOf:
+          - $ref: '#/components/schemas/Email'
+          - description: The email address that sends alarm notifications.
+        alarms:
+          allOf:
+          - $ref: '#/components/schemas/Alarms'
+          - description: Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal.
+    Description:
+      type: string
+      pattern: '[^\u0000-\u001F\u007F]+'
+      minLength: 1
+      maxLength: 2048
+    UpdatePortalResponse:
+      type: object
+      required:
+      - portalStatus
+      properties:
+        portalStatus:
+          allOf:
+          - $ref: '#/components/schemas/PortalStatus'
+          - description: The status of the portal, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.
+    Name:
+      type: string
+      pattern: '[^\u0000-\u001F\u007F]+'
+      minLength: 1
+      maxLength: 256
+    Url:
+      type: string
+      pattern: ^(http|https)\://\S+
+      minLength: 1
+      maxLength: 256
+    Alarms:
+      type: object
+      required:
+      - alarmRoleArn
+      properties:
+        alarmRoleArn:
+          allOf:
+          - $ref: '#/components/schemas/ARN'
+          - description: The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows the alarm to perform actions and access Amazon Web Services resources and services, such as IoT Events.
+        notificationLambdaArn:
+          allOf:
+          - $ref: '#/components/schemas/ARN'
+          - description: The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function that manages alarm notifications. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing alarm notifications</a> in the <i>IoT Events Developer Guide</i>.
+      description: Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.
+    PortalState:
+      type: string
+      enum:
+      - CREATING
+      - UPDATING
+      - DELETING
+      - ACTIVE
+      - FAILED
+    ID:
+      type: string
+      pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
+      minLength: 36
+      maxLength: 36
+    MonitorErrorDetails:
+      type: object
+      properties:
+        code:
+          allOf:
+          - $ref: '#/components/schemas/MonitorErrorCode'
+          - description: The error code.
+        message:
+          allOf:
+          - $ref: '#/components/schemas/MonitorErrorMessage'
+          - description: The error message.
+      description: Contains IoT SiteWise Monitor error details.
+    Email:
+      type: string
+      pattern: '[^@]+@[^@]+'
+      minLength: 1
+      maxLength: 255
+    PortalSummary:
+      type: object
+      required:
+      - id
+      - name
+      - startUrl
+      - status
+      properties:
+        id:
+          allOf:
+          - $ref: '#/components/schemas/ID'
+          - description: The ID of the portal.
+        name:
+          allOf:
+          - $ref: '#/components/schemas/Name'
+          - description: The name of the portal.
+        description:
+          allOf:
+          - $ref: '#/components/schemas/Description'
+          - description: The portal's description.
+        startUrl:
+          allOf:
+          - $ref: '#/components/schemas/Url'
+          - description: The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.
+        creationDate:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The date the portal was created, in Unix epoch time.
+        lastUpdateDate:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The date the portal was last updated, in Unix epoch time.
+        roleArn:
+          allOf:
+          - $ref: '#/components/schemas/ARN'
+          - description: The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.
+        status:
+          $ref: '#/components/schemas/PortalStatus'
+      description: Contains a portal summary.
+    ThrottlingException: {}
+    ResourceNotFoundException: {}
+    PortalClientId:
+      type: string
+      pattern: ^[!-~]*
+      minLength: 1
+      maxLength: 256
+    ARN:
+      type: string
+      pattern: .*
+      minLength: 1
+      maxLength: 1600
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/iotsitewise/
+x-hasEquivalentPaths: true

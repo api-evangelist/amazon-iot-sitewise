@@ -4,7 +4,20 @@ description: AWS IoT SiteWise is a managed service that makes it easy to collect
   data at scale. It provides tools to create asset models representing your industrial operations and analyze equipment performance
   across your facilities.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amazon-iot-sitewise.png
 tags:
 - AWS
 - Asset Management
@@ -16,22 +29,321 @@ created: '2026-03-16'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-- aid: amazon-iot-sitewise:aws-iot-sitewise-api
-  name: AWS IoT SiteWise API
-  description: The AWS IoT SiteWise API provides access to asset model management, asset data ingestion, time-series data
-    queries, portals, and dashboards for industrial IoT monitoring.
+- aid: amazon-iot-sitewise:amazon-iot-sitewise-access-policies-api
+  name: Amazon IoT SiteWise Access Policies API
+  description: The Access Policies API from Amazon IoT SiteWise — 2 operation(s) for access policies.
   humanURL: https://aws.amazon.com/iot-sitewise/
   baseURL: https://iotsitewise.amazonaws.com
   tags:
-  - Asset Management
-  - Industrial IoT
-  - IoT
-  - Time Series
+  - Access Policies
   properties:
+  - type: OpenAPI
+    url: openapi/amazon-iot-sitewise-access-policies-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/iot-sitewise/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/iot-sitewise/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iot-sitewise/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-iot-sitewise.yaml
+- aid: amazon-iot-sitewise:amazon-iot-sitewise-asset-models-api
+  name: Amazon IoT SiteWise Asset Models API
+  description: The Asset Models API from Amazon IoT SiteWise — 3 operation(s) for asset models.
+  humanURL: https://aws.amazon.com/iot-sitewise/
+  baseURL: https://iotsitewise.amazonaws.com
+  tags:
+  - Asset Models
+  properties:
   - type: OpenAPI
-    url: openapi/amazon-iot-sitewise-openapi-original.yml
+    url: openapi/amazon-iot-sitewise-asset-models-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/iot-sitewise/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/iot-sitewise/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iot-sitewise/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-iot-sitewise.yaml
+- aid: amazon-iot-sitewise:amazon-iot-sitewise-assets-api
+  name: Amazon IoT SiteWise Assets API
+  description: The Assets API from Amazon IoT SiteWise — 8 operation(s) for assets.
+  humanURL: https://aws.amazon.com/iot-sitewise/
+  baseURL: https://iotsitewise.amazonaws.com
+  tags:
+  - Assets
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-iot-sitewise-assets-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/iot-sitewise/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/iot-sitewise/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iot-sitewise/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-iot-sitewise.yaml
+- aid: amazon-iot-sitewise:amazon-iot-sitewise-configuration-api
+  name: Amazon IoT SiteWise Configuration API
+  description: The Configuration API from Amazon IoT SiteWise — 2 operation(s) for configuration.
+  humanURL: https://aws.amazon.com/iot-sitewise/
+  baseURL: https://iotsitewise.amazonaws.com
+  tags:
+  - Configuration
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-iot-sitewise-configuration-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/iot-sitewise/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/iot-sitewise/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iot-sitewise/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-iot-sitewise.yaml
+- aid: amazon-iot-sitewise:amazon-iot-sitewise-dashboards-api
+  name: Amazon IoT SiteWise Dashboards API
+  description: The Dashboards API from Amazon IoT SiteWise — 2 operation(s) for dashboards.
+  humanURL: https://aws.amazon.com/iot-sitewise/
+  baseURL: https://iotsitewise.amazonaws.com
+  tags:
+  - Dashboards
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-iot-sitewise-dashboards-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/iot-sitewise/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/iot-sitewise/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iot-sitewise/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-iot-sitewise.yaml
+- aid: amazon-iot-sitewise:amazon-iot-sitewise-dashboards-projectid-api
+  name: Amazon IoT SiteWise Dashboards#projectId API
+  description: >-
+    The Dashboards#projectId API from Amazon IoT SiteWise — 1 operation(s) for dashboards#projectid.
+  humanURL: https://aws.amazon.com/iot-sitewise/
+  baseURL: https://iotsitewise.amazonaws.com
+  tags:
+  - Dashboards#projectId
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-iot-sitewise-dashboards-projectid-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/iot-sitewise/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/iot-sitewise/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iot-sitewise/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-iot-sitewise.yaml
+- aid: amazon-iot-sitewise:amazon-iot-sitewise-gateways-api
+  name: Amazon IoT SiteWise Gateways API
+  description: The Gateways API from Amazon IoT SiteWise — 4 operation(s) for gateways.
+  humanURL: https://aws.amazon.com/iot-sitewise/
+  baseURL: https://iotsitewise.amazonaws.com
+  tags:
+  - Gateways
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-iot-sitewise-gateways-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/iot-sitewise/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/iot-sitewise/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iot-sitewise/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-iot-sitewise.yaml
+- aid: amazon-iot-sitewise:amazon-iot-sitewise-jobs-api
+  name: Amazon IoT SiteWise Jobs API
+  description: The Jobs API from Amazon IoT SiteWise — 2 operation(s) for jobs.
+  humanURL: https://aws.amazon.com/iot-sitewise/
+  baseURL: https://iotsitewise.amazonaws.com
+  tags:
+  - Jobs
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-iot-sitewise-jobs-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/iot-sitewise/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/iot-sitewise/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iot-sitewise/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-iot-sitewise.yaml
+- aid: amazon-iot-sitewise:amazon-iot-sitewise-logging-api
+  name: Amazon IoT SiteWise Logging API
+  description: The Logging API from Amazon IoT SiteWise — 1 operation(s) for logging.
+  humanURL: https://aws.amazon.com/iot-sitewise/
+  baseURL: https://iotsitewise.amazonaws.com
+  tags:
+  - Logging
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-iot-sitewise-logging-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/iot-sitewise/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/iot-sitewise/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iot-sitewise/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-iot-sitewise.yaml
+- aid: amazon-iot-sitewise:amazon-iot-sitewise-portals-api
+  name: Amazon IoT SiteWise Portals API
+  description: The Portals API from Amazon IoT SiteWise — 2 operation(s) for portals.
+  humanURL: https://aws.amazon.com/iot-sitewise/
+  baseURL: https://iotsitewise.amazonaws.com
+  tags:
+  - Portals
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-iot-sitewise-portals-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/iot-sitewise/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/iot-sitewise/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iot-sitewise/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-iot-sitewise.yaml
+- aid: amazon-iot-sitewise:amazon-iot-sitewise-projects-api
+  name: Amazon IoT SiteWise Projects API
+  description: The Projects API from Amazon IoT SiteWise — 5 operation(s) for projects.
+  humanURL: https://aws.amazon.com/iot-sitewise/
+  baseURL: https://iotsitewise.amazonaws.com
+  tags:
+  - Projects
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-iot-sitewise-projects-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/iot-sitewise/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/iot-sitewise/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iot-sitewise/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-iot-sitewise.yaml
+- aid: amazon-iot-sitewise:amazon-iot-sitewise-projects-portalid-api
+  name: Amazon IoT SiteWise Projects#portalId API
+  description: >-
+    The Projects#portalId API from Amazon IoT SiteWise — 1 operation(s) for projects#portalid.
+  humanURL: https://aws.amazon.com/iot-sitewise/
+  baseURL: https://iotsitewise.amazonaws.com
+  tags:
+  - Projects#portalId
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-iot-sitewise-projects-portalid-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/iot-sitewise/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/iot-sitewise/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iot-sitewise/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-iot-sitewise.yaml
+- aid: amazon-iot-sitewise:amazon-iot-sitewise-properties-api
+  name: Amazon IoT SiteWise Properties API
+  description: The Properties API from Amazon IoT SiteWise — 8 operation(s) for properties.
+  humanURL: https://aws.amazon.com/iot-sitewise/
+  baseURL: https://iotsitewise.amazonaws.com
+  tags:
+  - Properties
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-iot-sitewise-properties-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/iot-sitewise/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/iot-sitewise/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iot-sitewise/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-iot-sitewise.yaml
+- aid: amazon-iot-sitewise:amazon-iot-sitewise-tags-resourcearn-api
+  name: Amazon IoT SiteWise Tags#resourceArn API
+  description: The Tags#resourceArn API from Amazon IoT SiteWise — 1 operation(s) for tags#resourcearn.
+  humanURL: https://aws.amazon.com/iot-sitewise/
+  baseURL: https://iotsitewise.amazonaws.com
+  tags:
+  - Tags#resourceArn
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-iot-sitewise-tags-resourcearn-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/iot-sitewise/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/iot-sitewise/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iot-sitewise/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-iot-sitewise.yaml
+- aid: amazon-iot-sitewise:amazon-iot-sitewise-tags-resourcearn-tagkeys-api
+  name: Amazon IoT SiteWise Tags#resourceArn&tagKeys API
+  description: >-
+    The Tags#resourceArn&tagKeys API from Amazon IoT SiteWise — 1 operation(s) for tags#resourcearn&tagkeys.
+  humanURL: https://aws.amazon.com/iot-sitewise/
+  baseURL: https://iotsitewise.amazonaws.com
+  tags:
+  - Tags#resourceArn&tagKeys
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-iot-sitewise-tags-resourcearn-tagkeys-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/iot-sitewise/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/iot-sitewise/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iot-sitewise/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-iot-sitewise.yaml
+- aid: amazon-iot-sitewise:amazon-iot-sitewise-timeseries-api
+  name: Amazon IoT SiteWise Timeseries API
+  description: The Timeseries API from Amazon IoT SiteWise — 5 operation(s) for timeseries.
+  humanURL: https://aws.amazon.com/iot-sitewise/
+  baseURL: https://iotsitewise.amazonaws.com
+  tags:
+  - Timeseries
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-iot-sitewise-timeseries-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/
   - type: GettingStarted
     url: https://docs.aws.amazon.com/iot-sitewise/latest/userguide/getting-started.html
   - type: Pricing
@@ -41,6 +353,8 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/amazon-iot-sitewise.yaml
 common:
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/amazon-iot-sitewise/overview
 - type: AgenticAccess
   url: agentic-access/amazon-iot-sitewise-agentic-access.yml
 - type: TrustCenter

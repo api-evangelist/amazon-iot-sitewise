@@ -1,0 +1,2637 @@
+{
+  "info": {
+    "_postman_id": "0a16503c-efa5-4c69-b50b-bb06c7a26be9",
+    "name": "AWS IoT SiteWise Access Policies Portals API",
+    "description": "Welcome to the IoT SiteWise API Reference. IoT SiteWise is an Amazon Web Services service that connects <a href=\"https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications\">Industrial Internet of Things (IIoT)</a> devices to the power of the Amazon Web Services Cloud. For more information, see the <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/userguide/\">IoT SiteWise User Guide</a>. For information about IoT SiteWise quotas, see <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html\">Quotas</a> in the <i>IoT SiteWise User Guide</i>.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:35:42.000Z",
+    "updatedAt": "2026-07-28T10:35:43.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-0a16503c-efa5-4c69-b50b-bb06c7a26be9"
+  },
+  "item": [
+    {
+      "name": "portals",
+      "item": [
+        {
+          "name": "{portalId}",
+          "item": [
+            {
+              "name": "Amazon IoT SiteWise Delete Portal",
+              "id": "758f6576-07ff-4639-996f-5883dc868c9a",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/portals/:portalId?clientToken=9o$2G9mt5{`%267>osi!7n%26DeY_:%23MB-gqZ5>zRzF5>pe=_",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "portals",
+                    ":portalId"
+                  ],
+                  "query": [
+                    {
+                      "description": "A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.",
+                      "key": "clientToken",
+                      "value": "9o$2G9mt5{`&7>osi!7n&DeY_:#MB-gqZ5>zRzF5>pe=_"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "c005dc4c-7346-4c78-a5ef-0ea05f4ef22c",
+                      "key": "portalId",
+                      "value": "127e52d6-f20d-594f-60f5-b374f39b6c87",
+                      "description": "(Required) The ID of the portal to delete."
+                    }
+                  ]
+                },
+                "description": "Deletes a portal from IoT SiteWise Monitor."
+              },
+              "response": [
+                {
+                  "id": "bb232bcd-5c3f-4a6f-a731-06b94b28384f",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/portals/:portalId?clientToken=9o$2G9mt5{`%267>osi!7n%26DeY_:%23MB-gqZ5>zRzF5>pe=_",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "portals",
+                        ":portalId"
+                      ],
+                      "query": [
+                        {
+                          "description": "A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.",
+                          "key": "clientToken",
+                          "value": "9o$2G9mt5{`&7>osi!7n&DeY_:#MB-gqZ5>zRzF5>pe=_"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "portalId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Accepted",
+                  "code": 202,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"portalStatus\": {\n    \"state\": \"ACTIVE\",\n    \"error\": {\n      \"code\": \"VALIDATION_ERROR\",\n      \"message\": \"<string>\"\n    }\n  }\n}",
+                  "createdAt": "2026-07-28T10:35:43.000Z",
+                  "updatedAt": "2026-07-28T10:35:43.000Z",
+                  "uid": "35240-bb232bcd-5c3f-4a6f-a731-06b94b28384f"
+                },
+                {
+                  "id": "bbbf030e-076d-4793-b470-b3735d2d9650",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/portals/:portalId?clientToken=9o$2G9mt5{`%267>osi!7n%26DeY_:%23MB-gqZ5>zRzF5>pe=_",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "portals",
+                        ":portalId"
+                      ],
+                      "query": [
+                        {
+                          "description": "A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.",
+                          "key": "clientToken",
+                          "value": "9o$2G9mt5{`&7>osi!7n&DeY_:#MB-gqZ5>zRzF5>pe=_"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "portalId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:35:43.000Z",
+                  "updatedAt": "2026-07-28T10:35:43.000Z",
+                  "uid": "35240-bbbf030e-076d-4793-b470-b3735d2d9650"
+                },
+                {
+                  "id": "4e9fda3f-141b-4ac3-ab5b-3da7b08a1b99",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/portals/:portalId?clientToken=9o$2G9mt5{`%267>osi!7n%26DeY_:%23MB-gqZ5>zRzF5>pe=_",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "portals",
+                        ":portalId"
+                      ],
+                      "query": [
+                        {
+                          "description": "A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.",
+                          "key": "clientToken",
+                          "value": "9o$2G9mt5{`&7>osi!7n&DeY_:#MB-gqZ5>zRzF5>pe=_"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "portalId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:35:43.000Z",
+                  "updatedAt": "2026-07-28T10:35:43.000Z",
+                  "uid": "35240-4e9fda3f-141b-4ac3-ab5b-3da7b08a1b99"
+                },
+                {
+                  "id": "7db4daa5-6abc-41c9-b62b-3cfe0329b483",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/portals/:portalId?clientToken=9o$2G9mt5{`%267>osi!7n%26DeY_:%23MB-gqZ5>zRzF5>pe=_",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "portals",
+                        ":portalId"
+                      ],
+                      "query": [
+                        {
+                          "description": "A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.",
+                          "key": "clientToken",
+                          "value": "9o$2G9mt5{`&7>osi!7n&DeY_:#MB-gqZ5>zRzF5>pe=_"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "portalId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:35:43.000Z",
+                  "updatedAt": "2026-07-28T10:35:43.000Z",
+                  "uid": "35240-7db4daa5-6abc-41c9-b62b-3cfe0329b483"
+                },
+                {
+                  "id": "4fd57285-36a6-4d7e-8825-118877dff3ae",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/portals/:portalId?clientToken=9o$2G9mt5{`%267>osi!7n%26DeY_:%23MB-gqZ5>zRzF5>pe=_",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "portals",
+                        ":portalId"
+                      ],
+                      "query": [
+                        {
+                          "description": "A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.",
+                          "key": "clientToken",
+                          "value": "9o$2G9mt5{`&7>osi!7n&DeY_:#MB-gqZ5>zRzF5>pe=_"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "portalId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:35:43.000Z",
+                  "updatedAt": "2026-07-28T10:35:43.000Z",
+                  "uid": "35240-4fd57285-36a6-4d7e-8825-118877dff3ae"
+                },
+                {
+                  "id": "009ac84e-2f33-4ea0-8d7e-ef1b38a25ad2",
+                  "name": "ConflictingOperationException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/portals/:portalId?clientToken=9o$2G9mt5{`%267>osi!7n%26DeY_:%23MB-gqZ5>zRzF5>pe=_",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "portals",
+                        ":portalId"
+                      ],
+                      "query": [
+                        {
+                          "description": "A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.",
+                          "key": "clientToken",
+                          "value": "9o$2G9mt5{`&7>osi!7n&DeY_:#MB-gqZ5>zRzF5>pe=_"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "portalId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:35:43.000Z",
+                  "updatedAt": "2026-07-28T10:35:43.000Z",
+                  "uid": "35240-009ac84e-2f33-4ea0-8d7e-ef1b38a25ad2"
+                }
+              ],
+              "createdAt": "2026-07-28T10:35:43.000Z",
+              "updatedAt": "2026-07-28T10:35:43.000Z",
+              "uid": "35240-758f6576-07ff-4639-996f-5883dc868c9a"
+            },
+            {
+              "name": "Amazon IoT SiteWise Describe Portal",
+              "id": "56cc9a87-2db9-409a-8b5f-fbabea1bba38",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/portals/:portalId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "portals",
+                    ":portalId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "32365163-bd1a-48df-94a6-0dd4cd706785",
+                      "key": "portalId",
+                      "value": "127e52d6-f20d-594f-60f5-b374f39b6c87",
+                      "description": "(Required) The ID of the portal."
+                    }
+                  ]
+                },
+                "description": "Retrieves information about a portal."
+              },
+              "response": [
+                {
+                  "id": "7338e57e-d5d3-4a97-8960-db5bd5621ea7",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/portals/:portalId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "portals",
+                        ":portalId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "portalId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"portalId\": \"804a60b1-e454-ec65-710a-06a0190386b5\",\n  \"portalArn\": \")tuqF*\",\n  \"portalName\": \"x7\\\"+\",\n  \"portalClientId\": \"/1Y>M_Ox+I\",\n  \"portalStartUrl\": \"http://ttW@/I*GSr\",\n  \"portalContactEmail\": \"M p_q\\\"jn *@R6qF.2l\",\n  \"portalStatus\": {\n    \"state\": \"UPDATING\",\n    \"error\": {\n      \"code\": \"VALIDATION_ERROR\",\n      \"message\": \"<string>\"\n    }\n  },\n  \"portalCreationDate\": \"<dateTime>\",\n  \"portalLastUpdateDate\": \"<dateTime>\",\n  \"portalDescription\": \"!&ROW&5\",\n  \"portalLogoImageLocation\": {\n    \"id\": \"afb17605-c066-0363-67b6-c7ee8e9f3356\",\n    \"url\": \"http://[NGzs\"\n  },\n  \"roleArn\": \">#wJH$?}&n\",\n  \"portalAuthMode\": \"IAM\",\n  \"notificationSenderEmail\": \"jb,9@Q\",\n  \"alarms\": {\n    \"alarmRoleArn\": \" \",\n    \"notificationLambdaArn\": \":af\"\n  }\n}",
+                  "createdAt": "2026-07-28T10:35:43.000Z",
+                  "updatedAt": "2026-07-28T10:35:43.000Z",
+                  "uid": "35240-7338e57e-d5d3-4a97-8960-db5bd5621ea7"
+                },
+                {
+                  "id": "be2bda1e-d47e-461e-a199-e5ca5126f90a",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/portals/:portalId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "portals",
+                        ":portalId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "portalId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:35:43.000Z",
+                  "updatedAt": "2026-07-28T10:35:43.000Z",
+                  "uid": "35240-be2bda1e-d47e-461e-a199-e5ca5126f90a"
+                },
+                {
+                  "id": "106e72c0-2182-4c7d-9693-eaed714186b1",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/portals/:portalId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "portals",
+                        ":portalId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "portalId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:35:43.000Z",
+                  "updatedAt": "2026-07-28T10:35:43.000Z",
+                  "uid": "35240-106e72c0-2182-4c7d-9693-eaed714186b1"
+                },
+                {
+                  "id": "d8a4348d-6886-4b63-9edc-480a5c4b948c",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/portals/:portalId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "portals",
+                        ":portalId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "portalId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:35:43.000Z",
+                  "updatedAt": "2026-07-28T10:35:43.000Z",
+                  "uid": "35240-d8a4348d-6886-4b63-9edc-480a5c4b948c"
+                },
+                {
+                  "id": "67eb3d62-5f37-4eb3-ab0b-7d58c52c0a28",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/portals/:portalId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "portals",
+                        ":portalId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "portalId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:35:43.000Z",
+                  "updatedAt": "2026-07-28T10:35:43.000Z",
+                  "uid": "35240-67eb3d62-5f37-4eb3-ab0b-7d58c52c0a28"
+                }
+              ],
+              "createdAt": "2026-07-28T10:35:43.000Z",
+              "updatedAt": "2026-07-28T10:35:43.000Z",
+              "uid": "35240-56cc9a87-2db9-409a-8b5f-fbabea1bba38"
+            },
+            {
+              "name": "Amazon IoT SiteWise Update Portal",
+              "id": "dd8575d1-148d-4622-9087-4cd4627039a0",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"portalName\": \"G4\",\n  \"portalContactEmail\": \"jGK7fAPvb~F@N52n\",\n  \"roleArn\": \"B\",\n  \"portalDescription\": \"YD&\\\"EG0gY?z\",\n  \"portalLogoImage\": {\n    \"id\": \"fa67a9e0-8008-93fa-2e06-919595421cc7\",\n    \"file\": {\n      \"data\": \"<string>\",\n      \"type\": \"PNG\"\n    }\n  },\n  \"clientToken\": \"27p+|L3k_)U8R!D3s/<$!\\\\D=-pwYKwMV+BOyA\",\n  \"notificationSenderEmail\": \"N[w /*;Ah@\\\"82\",\n  \"alarms\": {\n    \"alarmRoleArn\": \"@uTk/?6+\",\n    \"notificationLambdaArn\": \"<Q B0p)\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/portals/:portalId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "portals",
+                    ":portalId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "5932829b-b460-4558-9be7-5a795189ca67",
+                      "key": "portalId",
+                      "value": "127e52d6-f20d-594f-60f5-b374f39b6c87",
+                      "description": "(Required) The ID of the portal to update."
+                    }
+                  ]
+                },
+                "description": "Updates an IoT SiteWise Monitor portal."
+              },
+              "response": [
+                {
+                  "id": "ce0dc08d-9839-420d-a00e-ff024eba48bb",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"portalName\": \"G4\",\n  \"portalContactEmail\": \"jGK7fAPvb~F@N52n\",\n  \"roleArn\": \"B\",\n  \"portalDescription\": \"YD&\\\"EG0gY?z\",\n  \"portalLogoImage\": {\n    \"id\": \"fa67a9e0-8008-93fa-2e06-919595421cc7\",\n    \"file\": {\n      \"data\": \"<string>\",\n      \"type\": \"PNG\"\n    }\n  },\n  \"clientToken\": \"27p+|L3k_)U8R!D3s/<$!\\\\D=-pwYKwMV+BOyA\",\n  \"notificationSenderEmail\": \"N[w /*;Ah@\\\"82\",\n  \"alarms\": {\n    \"alarmRoleArn\": \"@uTk/?6+\",\n    \"notificationLambdaArn\": \"<Q B0p)\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/portals/:portalId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "portals",
+                        ":portalId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "portalId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Accepted",
+                  "code": 202,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"portalStatus\": {\n    \"state\": \"ACTIVE\",\n    \"error\": {\n      \"code\": \"VALIDATION_ERROR\",\n      \"message\": \"<string>\"\n    }\n  }\n}",
+                  "createdAt": "2026-07-28T10:35:43.000Z",
+                  "updatedAt": "2026-07-28T10:35:43.000Z",
+                  "uid": "35240-ce0dc08d-9839-420d-a00e-ff024eba48bb"
+                },
+                {
+                  "id": "e9a1f5f1-1323-4bde-8336-042bcc42625b",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"portalName\": \"G4\",\n  \"portalContactEmail\": \"jGK7fAPvb~F@N52n\",\n  \"roleArn\": \"B\",\n  \"portalDescription\": \"YD&\\\"EG0gY?z\",\n  \"portalLogoImage\": {\n    \"id\": \"fa67a9e0-8008-93fa-2e06-919595421cc7\",\n    \"file\": {\n      \"data\": \"<string>\",\n      \"type\": \"PNG\"\n    }\n  },\n  \"clientToken\": \"27p+|L3k_)U8R!D3s/<$!\\\\D=-pwYKwMV+BOyA\",\n  \"notificationSenderEmail\": \"N[w /*;Ah@\\\"82\",\n  \"alarms\": {\n    \"alarmRoleArn\": \"@uTk/?6+\",\n    \"notificationLambdaArn\": \"<Q B0p)\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/portals/:portalId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "portals",
+                        ":portalId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "portalId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:35:43.000Z",
+                  "updatedAt": "2026-07-28T10:35:43.000Z",
+                  "uid": "35240-e9a1f5f1-1323-4bde-8336-042bcc42625b"
+                },
+                {
+                  "id": "3125da03-c93f-43d0-889d-8a788e9f2c1b",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"portalName\": \"G4\",\n  \"portalContactEmail\": \"jGK7fAPvb~F@N52n\",\n  \"roleArn\": \"B\",\n  \"portalDescription\": \"YD&\\\"EG0gY?z\",\n  \"portalLogoImage\": {\n    \"id\": \"fa67a9e0-8008-93fa-2e06-919595421cc7\",\n    \"file\": {\n      \"data\": \"<string>\",\n      \"type\": \"PNG\"\n    }\n  },\n  \"clientToken\": \"27p+|L3k_)U8R!D3s/<$!\\\\D=-pwYKwMV+BOyA\",\n  \"notificationSenderEmail\": \"N[w /*;Ah@\\\"82\",\n  \"alarms\": {\n    \"alarmRoleArn\": \"@uTk/?6+\",\n    \"notificationLambdaArn\": \"<Q B0p)\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/portals/:portalId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "portals",
+                        ":portalId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "portalId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:35:43.000Z",
+                  "updatedAt": "2026-07-28T10:35:43.000Z",
+                  "uid": "35240-3125da03-c93f-43d0-889d-8a788e9f2c1b"
+                },
+                {
+                  "id": "c39f63b5-7fb6-44c0-abda-7871be1328fd",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"portalName\": \"G4\",\n  \"portalContactEmail\": \"jGK7fAPvb~F@N52n\",\n  \"roleArn\": \"B\",\n  \"portalDescription\": \"YD&\\\"EG0gY?z\",\n  \"portalLogoImage\": {\n    \"id\": \"fa67a9e0-8008-93fa-2e06-919595421cc7\",\n    \"file\": {\n      \"data\": \"<string>\",\n      \"type\": \"PNG\"\n    }\n  },\n  \"clientToken\": \"27p+|L3k_)U8R!D3s/<$!\\\\D=-pwYKwMV+BOyA\",\n  \"notificationSenderEmail\": \"N[w /*;Ah@\\\"82\",\n  \"alarms\": {\n    \"alarmRoleArn\": \"@uTk/?6+\",\n    \"notificationLambdaArn\": \"<Q B0p)\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/portals/:portalId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "portals",
+                        ":portalId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "portalId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:35:43.000Z",
+                  "updatedAt": "2026-07-28T10:35:43.000Z",
+                  "uid": "35240-c39f63b5-7fb6-44c0-abda-7871be1328fd"
+                },
+                {
+                  "id": "4902064b-123e-4c06-b500-0f7914160b51",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"portalName\": \"G4\",\n  \"portalContactEmail\": \"jGK7fAPvb~F@N52n\",\n  \"roleArn\": \"B\",\n  \"portalDescription\": \"YD&\\\"EG0gY?z\",\n  \"portalLogoImage\": {\n    \"id\": \"fa67a9e0-8008-93fa-2e06-919595421cc7\",\n    \"file\": {\n      \"data\": \"<string>\",\n      \"type\": \"PNG\"\n    }\n  },\n  \"clientToken\": \"27p+|L3k_)U8R!D3s/<$!\\\\D=-pwYKwMV+BOyA\",\n  \"notificationSenderEmail\": \"N[w /*;Ah@\\\"82\",\n  \"alarms\": {\n    \"alarmRoleArn\": \"@uTk/?6+\",\n    \"notificationLambdaArn\": \"<Q B0p)\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/portals/:portalId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "portals",
+                        ":portalId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "portalId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:35:43.000Z",
+                  "updatedAt": "2026-07-28T10:35:43.000Z",
+                  "uid": "35240-4902064b-123e-4c06-b500-0f7914160b51"
+                },
+                {
+                  "id": "751dd276-1d9a-4f73-9af1-e46d2e05f7e9",
+                  "name": "ConflictingOperationException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"portalName\": \"G4\",\n  \"portalContactEmail\": \"jGK7fAPvb~F@N52n\",\n  \"roleArn\": \"B\",\n  \"portalDescription\": \"YD&\\\"EG0gY?z\",\n  \"portalLogoImage\": {\n    \"id\": \"fa67a9e0-8008-93fa-2e06-919595421cc7\",\n    \"file\": {\n      \"data\": \"<string>\",\n      \"type\": \"PNG\"\n    }\n  },\n  \"clientToken\": \"27p+|L3k_)U8R!D3s/<$!\\\\D=-pwYKwMV+BOyA\",\n  \"notificationSenderEmail\": \"N[w /*;Ah@\\\"82\",\n  \"alarms\": {\n    \"alarmRoleArn\": \"@uTk/?6+\",\n    \"notificationLambdaArn\": \"<Q B0p)\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/portals/:portalId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "portals",
+                        ":portalId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "portalId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:35:43.000Z",
+                  "updatedAt": "2026-07-28T10:35:43.000Z",
+                  "uid": "35240-751dd276-1d9a-4f73-9af1-e46d2e05f7e9"
+                }
+              ],
+              "createdAt": "2026-07-28T10:35:43.000Z",
+              "updatedAt": "2026-07-28T10:35:43.000Z",
+              "uid": "35240-dd8575d1-148d-4622-9087-4cd4627039a0"
+            }
+          ],
+          "id": "3249d284-a61b-4e5f-b295-62529d5fbd31",
+          "createdAt": "2026-07-28T10:35:43.000Z",
+          "updatedAt": "2026-07-28T10:35:43.000Z",
+          "uid": "35240-3249d284-a61b-4e5f-b295-62529d5fbd31"
+        },
+        {
+          "name": "Amazon IoT SiteWise Create Portal",
+          "id": "3fedb331-a572-45c5-99a3-452e9e020262",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"portalName\": \"/Y\",\n  \"portalContactEmail\": \"\\\"K`j{fO@6SvLAs7O\",\n  \"roleArn\": \":reQ$'5v\",\n  \"portalDescription\": \"mIk>(}\",\n  \"clientToken\": \"eD^NCuSvqEs\\\\>'Yb:CyAy>6&v?4{hki~N29G`d1R>r\",\n  \"portalLogoImageFile\": {\n    \"data\": \"<string>\",\n    \"type\": \"PNG\"\n  },\n  \"tags\": {\n    \"sit__5\": \"<string>\",\n    \"culpa__4\": \"<string>\",\n    \"aliqua2_a\": \"<string>\",\n    \"ut_16\": \"<string>\",\n    \"adipisicing_04\": \"<string>\",\n    \"dolor_8bf\": \"<string>\",\n    \"eu_a\": \"<string>\",\n    \"labore__1\": \"<string>\",\n    \"commodo__\": \"<string>\",\n    \"occaecatb8e\": \"<string>\",\n    \"id6f8\": \"<string>\",\n    \"cupidatat_72\": \"<string>\",\n    \"reprehenderit6_\": \"<string>\",\n    \"laboris_72\": \"<string>\",\n    \"nisi5\": \"<string>\",\n    \"labore_b_\": \"<string>\",\n    \"nulla3b0\": \"<string>\",\n    \"sit3d1\": \"<string>\",\n    \"proident28\": \"<string>\",\n    \"sit1d9\": \"<string>\",\n    \"proident_b90\": \"<string>\",\n    \"deserunt4\": \"<string>\",\n    \"cillum_1a5\": \"<string>\",\n    \"ut_3\": \"<string>\",\n    \"Duis_f\": \"<string>\",\n    \"cupidatat_f2\": \"<string>\",\n    \"reprehenderit_9c5\": \"<string>\",\n    \"tempor_8\": \"<string>\",\n    \"consectetur29\": \"<string>\",\n    \"eua38\": \"<string>\",\n    \"veniam43\": \"<string>\",\n    \"laborum88\": \"<string>\",\n    \"ea_1e\": \"<string>\",\n    \"ullamco_3_\": \"<string>\",\n    \"utc1\": \"<string>\",\n    \"occaecat9\": \"<string>\",\n    \"ut_ff\": \"<string>\",\n    \"dolor_89\": \"<string>\",\n    \"dolor4\": \"<string>\"\n  },\n  \"portalAuthMode\": \"SSO\",\n  \"notificationSenderEmail\": \"GduEw3%=&<s@k<>j-X$s!\",\n  \"alarms\": {\n    \"alarmRoleArn\": \"!OKY52D\",\n    \"notificationLambdaArn\": \" \"\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/portals",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "portals"
+              ]
+            },
+            "description": "<p>Creates a portal, which can contain projects and dashboards. IoT SiteWise Monitor uses IAM Identity Center or IAM to authenticate portal users and manage user permissions.</p> <note> <p>Before you can sign in to a new portal, you must add at least one identity to that portal. For more information, see <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins\">Adding or removing portal administrators</a> in the <i>IoT SiteWise User Guide</i>.</p> </note>"
+          },
+          "response": [
+            {
+              "id": "4b5578bd-225f-4a1e-a98d-387af811e70f",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"portalName\": \"/Y\",\n  \"portalContactEmail\": \"\\\"K`j{fO@6SvLAs7O\",\n  \"roleArn\": \":reQ$'5v\",\n  \"portalDescription\": \"mIk>(}\",\n  \"clientToken\": \"eD^NCuSvqEs\\\\>'Yb:CyAy>6&v?4{hki~N29G`d1R>r\",\n  \"portalLogoImageFile\": {\n    \"data\": \"<string>\",\n    \"type\": \"PNG\"\n  },\n  \"tags\": {\n    \"sit__5\": \"<string>\",\n    \"culpa__4\": \"<string>\",\n    \"aliqua2_a\": \"<string>\",\n    \"ut_16\": \"<string>\",\n    \"adipisicing_04\": \"<string>\",\n    \"dolor_8bf\": \"<string>\",\n    \"eu_a\": \"<string>\",\n    \"labore__1\": \"<string>\",\n    \"commodo__\": \"<string>\",\n    \"occaecatb8e\": \"<string>\",\n    \"id6f8\": \"<string>\",\n    \"cupidatat_72\": \"<string>\",\n    \"reprehenderit6_\": \"<string>\",\n    \"laboris_72\": \"<string>\",\n    \"nisi5\": \"<string>\",\n    \"labore_b_\": \"<string>\",\n    \"nulla3b0\": \"<string>\",\n    \"sit3d1\": \"<string>\",\n    \"proident28\": \"<string>\",\n    \"sit1d9\": \"<string>\",\n    \"proident_b90\": \"<string>\",\n    \"deserunt4\": \"<string>\",\n    \"cillum_1a5\": \"<string>\",\n    \"ut_3\": \"<string>\",\n    \"Duis_f\": \"<string>\",\n    \"cupidatat_f2\": \"<string>\",\n    \"reprehenderit_9c5\": \"<string>\",\n    \"tempor_8\": \"<string>\",\n    \"consectetur29\": \"<string>\",\n    \"eua38\": \"<string>\",\n    \"veniam43\": \"<string>\",\n    \"laborum88\": \"<string>\",\n    \"ea_1e\": \"<string>\",\n    \"ullamco_3_\": \"<string>\",\n    \"utc1\": \"<string>\",\n    \"occaecat9\": \"<string>\",\n    \"ut_ff\": \"<string>\",\n    \"dolor_89\": \"<string>\",\n    \"dolor4\": \"<string>\"\n  },\n  \"portalAuthMode\": \"SSO\",\n  \"notificationSenderEmail\": \"GduEw3%=&<s@k<>j-X$s!\",\n  \"alarms\": {\n    \"alarmRoleArn\": \"!OKY52D\",\n    \"notificationLambdaArn\": \" \"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/portals",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "portals"
+                  ]
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"portalId\": \"18bd3d0f-1361-e8d4-2d99-01963db05017\",\n  \"portalArn\": \"=t{<#)}\",\n  \"portalStartUrl\": \"http://}Y[F\",\n  \"portalStatus\": {\n    \"state\": \"ACTIVE\",\n    \"error\": {\n      \"code\": \"LIMIT_EXCEEDED\",\n      \"message\": \"<string>\"\n    }\n  },\n  \"ssoApplicationId\": \"9[n\"\n}",
+              "createdAt": "2026-07-28T10:35:43.000Z",
+              "updatedAt": "2026-07-28T10:35:43.000Z",
+              "uid": "35240-4b5578bd-225f-4a1e-a98d-387af811e70f"
+            },
+            {
+              "id": "e89ef4fc-92d6-405c-8d16-d3ccacbf55e6",
+              "name": "InvalidRequestException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"portalName\": \"/Y\",\n  \"portalContactEmail\": \"\\\"K`j{fO@6SvLAs7O\",\n  \"roleArn\": \":reQ$'5v\",\n  \"portalDescription\": \"mIk>(}\",\n  \"clientToken\": \"eD^NCuSvqEs\\\\>'Yb:CyAy>6&v?4{hki~N29G`d1R>r\",\n  \"portalLogoImageFile\": {\n    \"data\": \"<string>\",\n    \"type\": \"PNG\"\n  },\n  \"tags\": {\n    \"sit__5\": \"<string>\",\n    \"culpa__4\": \"<string>\",\n    \"aliqua2_a\": \"<string>\",\n    \"ut_16\": \"<string>\",\n    \"adipisicing_04\": \"<string>\",\n    \"dolor_8bf\": \"<string>\",\n    \"eu_a\": \"<string>\",\n    \"labore__1\": \"<string>\",\n    \"commodo__\": \"<string>\",\n    \"occaecatb8e\": \"<string>\",\n    \"id6f8\": \"<string>\",\n    \"cupidatat_72\": \"<string>\",\n    \"reprehenderit6_\": \"<string>\",\n    \"laboris_72\": \"<string>\",\n    \"nisi5\": \"<string>\",\n    \"labore_b_\": \"<string>\",\n    \"nulla3b0\": \"<string>\",\n    \"sit3d1\": \"<string>\",\n    \"proident28\": \"<string>\",\n    \"sit1d9\": \"<string>\",\n    \"proident_b90\": \"<string>\",\n    \"deserunt4\": \"<string>\",\n    \"cillum_1a5\": \"<string>\",\n    \"ut_3\": \"<string>\",\n    \"Duis_f\": \"<string>\",\n    \"cupidatat_f2\": \"<string>\",\n    \"reprehenderit_9c5\": \"<string>\",\n    \"tempor_8\": \"<string>\",\n    \"consectetur29\": \"<string>\",\n    \"eua38\": \"<string>\",\n    \"veniam43\": \"<string>\",\n    \"laborum88\": \"<string>\",\n    \"ea_1e\": \"<string>\",\n    \"ullamco_3_\": \"<string>\",\n    \"utc1\": \"<string>\",\n    \"occaecat9\": \"<string>\",\n    \"ut_ff\": \"<string>\",\n    \"dolor_89\": \"<string>\",\n    \"dolor4\": \"<string>\"\n  },\n  \"portalAuthMode\": \"SSO\",\n  \"notificationSenderEmail\": \"GduEw3%=&<s@k<>j-X$s!\",\n  \"alarms\": {\n    \"alarmRoleArn\": \"!OKY52D\",\n    \"notificationLambdaArn\": \" \"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/portals",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "portals"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:43.000Z",
+              "updatedAt": "2026-07-28T10:35:43.000Z",
+              "uid": "35240-e89ef4fc-92d6-405c-8d16-d3ccacbf55e6"
+            },
+            {
+              "id": "88c23fbc-0d3e-4f6c-a085-f7fb97c4a121",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"portalName\": \"/Y\",\n  \"portalContactEmail\": \"\\\"K`j{fO@6SvLAs7O\",\n  \"roleArn\": \":reQ$'5v\",\n  \"portalDescription\": \"mIk>(}\",\n  \"clientToken\": \"eD^NCuSvqEs\\\\>'Yb:CyAy>6&v?4{hki~N29G`d1R>r\",\n  \"portalLogoImageFile\": {\n    \"data\": \"<string>\",\n    \"type\": \"PNG\"\n  },\n  \"tags\": {\n    \"sit__5\": \"<string>\",\n    \"culpa__4\": \"<string>\",\n    \"aliqua2_a\": \"<string>\",\n    \"ut_16\": \"<string>\",\n    \"adipisicing_04\": \"<string>\",\n    \"dolor_8bf\": \"<string>\",\n    \"eu_a\": \"<string>\",\n    \"labore__1\": \"<string>\",\n    \"commodo__\": \"<string>\",\n    \"occaecatb8e\": \"<string>\",\n    \"id6f8\": \"<string>\",\n    \"cupidatat_72\": \"<string>\",\n    \"reprehenderit6_\": \"<string>\",\n    \"laboris_72\": \"<string>\",\n    \"nisi5\": \"<string>\",\n    \"labore_b_\": \"<string>\",\n    \"nulla3b0\": \"<string>\",\n    \"sit3d1\": \"<string>\",\n    \"proident28\": \"<string>\",\n    \"sit1d9\": \"<string>\",\n    \"proident_b90\": \"<string>\",\n    \"deserunt4\": \"<string>\",\n    \"cillum_1a5\": \"<string>\",\n    \"ut_3\": \"<string>\",\n    \"Duis_f\": \"<string>\",\n    \"cupidatat_f2\": \"<string>\",\n    \"reprehenderit_9c5\": \"<string>\",\n    \"tempor_8\": \"<string>\",\n    \"consectetur29\": \"<string>\",\n    \"eua38\": \"<string>\",\n    \"veniam43\": \"<string>\",\n    \"laborum88\": \"<string>\",\n    \"ea_1e\": \"<string>\",\n    \"ullamco_3_\": \"<string>\",\n    \"utc1\": \"<string>\",\n    \"occaecat9\": \"<string>\",\n    \"ut_ff\": \"<string>\",\n    \"dolor_89\": \"<string>\",\n    \"dolor4\": \"<string>\"\n  },\n  \"portalAuthMode\": \"SSO\",\n  \"notificationSenderEmail\": \"GduEw3%=&<s@k<>j-X$s!\",\n  \"alarms\": {\n    \"alarmRoleArn\": \"!OKY52D\",\n    \"notificationLambdaArn\": \" \"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/portals",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "portals"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:43.000Z",
+              "updatedAt": "2026-07-28T10:35:43.000Z",
+              "uid": "35240-88c23fbc-0d3e-4f6c-a085-f7fb97c4a121"
+            },
+            {
+              "id": "f41b2fdd-a731-483e-8846-7185df6c114f",
+              "name": "InternalFailureException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"portalName\": \"/Y\",\n  \"portalContactEmail\": \"\\\"K`j{fO@6SvLAs7O\",\n  \"roleArn\": \":reQ$'5v\",\n  \"portalDescription\": \"mIk>(}\",\n  \"clientToken\": \"eD^NCuSvqEs\\\\>'Yb:CyAy>6&v?4{hki~N29G`d1R>r\",\n  \"portalLogoImageFile\": {\n    \"data\": \"<string>\",\n    \"type\": \"PNG\"\n  },\n  \"tags\": {\n    \"sit__5\": \"<string>\",\n    \"culpa__4\": \"<string>\",\n    \"aliqua2_a\": \"<string>\",\n    \"ut_16\": \"<string>\",\n    \"adipisicing_04\": \"<string>\",\n    \"dolor_8bf\": \"<string>\",\n    \"eu_a\": \"<string>\",\n    \"labore__1\": \"<string>\",\n    \"commodo__\": \"<string>\",\n    \"occaecatb8e\": \"<string>\",\n    \"id6f8\": \"<string>\",\n    \"cupidatat_72\": \"<string>\",\n    \"reprehenderit6_\": \"<string>\",\n    \"laboris_72\": \"<string>\",\n    \"nisi5\": \"<string>\",\n    \"labore_b_\": \"<string>\",\n    \"nulla3b0\": \"<string>\",\n    \"sit3d1\": \"<string>\",\n    \"proident28\": \"<string>\",\n    \"sit1d9\": \"<string>\",\n    \"proident_b90\": \"<string>\",\n    \"deserunt4\": \"<string>\",\n    \"cillum_1a5\": \"<string>\",\n    \"ut_3\": \"<string>\",\n    \"Duis_f\": \"<string>\",\n    \"cupidatat_f2\": \"<string>\",\n    \"reprehenderit_9c5\": \"<string>\",\n    \"tempor_8\": \"<string>\",\n    \"consectetur29\": \"<string>\",\n    \"eua38\": \"<string>\",\n    \"veniam43\": \"<string>\",\n    \"laborum88\": \"<string>\",\n    \"ea_1e\": \"<string>\",\n    \"ullamco_3_\": \"<string>\",\n    \"utc1\": \"<string>\",\n    \"occaecat9\": \"<string>\",\n    \"ut_ff\": \"<string>\",\n    \"dolor_89\": \"<string>\",\n    \"dolor4\": \"<string>\"\n  },\n  \"portalAuthMode\": \"SSO\",\n  \"notificationSenderEmail\": \"GduEw3%=&<s@k<>j-X$s!\",\n  \"alarms\": {\n    \"alarmRoleArn\": \"!OKY52D\",\n    \"notificationLambdaArn\": \" \"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/portals",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "portals"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:43.000Z",
+              "updatedAt": "2026-07-28T10:35:43.000Z",
+              "uid": "35240-f41b2fdd-a731-483e-8846-7185df6c114f"
+            },
+            {
+              "id": "f130714a-d4a4-4a13-9073-8fc280bd5ae8",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"portalName\": \"/Y\",\n  \"portalContactEmail\": \"\\\"K`j{fO@6SvLAs7O\",\n  \"roleArn\": \":reQ$'5v\",\n  \"portalDescription\": \"mIk>(}\",\n  \"clientToken\": \"eD^NCuSvqEs\\\\>'Yb:CyAy>6&v?4{hki~N29G`d1R>r\",\n  \"portalLogoImageFile\": {\n    \"data\": \"<string>\",\n    \"type\": \"PNG\"\n  },\n  \"tags\": {\n    \"sit__5\": \"<string>\",\n    \"culpa__4\": \"<string>\",\n    \"aliqua2_a\": \"<string>\",\n    \"ut_16\": \"<string>\",\n    \"adipisicing_04\": \"<string>\",\n    \"dolor_8bf\": \"<string>\",\n    \"eu_a\": \"<string>\",\n    \"labore__1\": \"<string>\",\n    \"commodo__\": \"<string>\",\n    \"occaecatb8e\": \"<string>\",\n    \"id6f8\": \"<string>\",\n    \"cupidatat_72\": \"<string>\",\n    \"reprehenderit6_\": \"<string>\",\n    \"laboris_72\": \"<string>\",\n    \"nisi5\": \"<string>\",\n    \"labore_b_\": \"<string>\",\n    \"nulla3b0\": \"<string>\",\n    \"sit3d1\": \"<string>\",\n    \"proident28\": \"<string>\",\n    \"sit1d9\": \"<string>\",\n    \"proident_b90\": \"<string>\",\n    \"deserunt4\": \"<string>\",\n    \"cillum_1a5\": \"<string>\",\n    \"ut_3\": \"<string>\",\n    \"Duis_f\": \"<string>\",\n    \"cupidatat_f2\": \"<string>\",\n    \"reprehenderit_9c5\": \"<string>\",\n    \"tempor_8\": \"<string>\",\n    \"consectetur29\": \"<string>\",\n    \"eua38\": \"<string>\",\n    \"veniam43\": \"<string>\",\n    \"laborum88\": \"<string>\",\n    \"ea_1e\": \"<string>\",\n    \"ullamco_3_\": \"<string>\",\n    \"utc1\": \"<string>\",\n    \"occaecat9\": \"<string>\",\n    \"ut_ff\": \"<string>\",\n    \"dolor_89\": \"<string>\",\n    \"dolor4\": \"<string>\"\n  },\n  \"portalAuthMode\": \"SSO\",\n  \"notificationSenderEmail\": \"GduEw3%=&<s@k<>j-X$s!\",\n  \"alarms\": {\n    \"alarmRoleArn\": \"!OKY52D\",\n    \"notificationLambdaArn\": \" \"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/portals",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "portals"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:43.000Z",
+              "updatedAt": "2026-07-28T10:35:43.000Z",
+              "uid": "35240-f130714a-d4a4-4a13-9073-8fc280bd5ae8"
+            },
+            {
+              "id": "b72e6ed2-f0f2-403e-8730-289f62a92a16",
+              "name": "LimitExceededException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"portalName\": \"/Y\",\n  \"portalContactEmail\": \"\\\"K`j{fO@6SvLAs7O\",\n  \"roleArn\": \":reQ$'5v\",\n  \"portalDescription\": \"mIk>(}\",\n  \"clientToken\": \"eD^NCuSvqEs\\\\>'Yb:CyAy>6&v?4{hki~N29G`d1R>r\",\n  \"portalLogoImageFile\": {\n    \"data\": \"<string>\",\n    \"type\": \"PNG\"\n  },\n  \"tags\": {\n    \"sit__5\": \"<string>\",\n    \"culpa__4\": \"<string>\",\n    \"aliqua2_a\": \"<string>\",\n    \"ut_16\": \"<string>\",\n    \"adipisicing_04\": \"<string>\",\n    \"dolor_8bf\": \"<string>\",\n    \"eu_a\": \"<string>\",\n    \"labore__1\": \"<string>\",\n    \"commodo__\": \"<string>\",\n    \"occaecatb8e\": \"<string>\",\n    \"id6f8\": \"<string>\",\n    \"cupidatat_72\": \"<string>\",\n    \"reprehenderit6_\": \"<string>\",\n    \"laboris_72\": \"<string>\",\n    \"nisi5\": \"<string>\",\n    \"labore_b_\": \"<string>\",\n    \"nulla3b0\": \"<string>\",\n    \"sit3d1\": \"<string>\",\n    \"proident28\": \"<string>\",\n    \"sit1d9\": \"<string>\",\n    \"proident_b90\": \"<string>\",\n    \"deserunt4\": \"<string>\",\n    \"cillum_1a5\": \"<string>\",\n    \"ut_3\": \"<string>\",\n    \"Duis_f\": \"<string>\",\n    \"cupidatat_f2\": \"<string>\",\n    \"reprehenderit_9c5\": \"<string>\",\n    \"tempor_8\": \"<string>\",\n    \"consectetur29\": \"<string>\",\n    \"eua38\": \"<string>\",\n    \"veniam43\": \"<string>\",\n    \"laborum88\": \"<string>\",\n    \"ea_1e\": \"<string>\",\n    \"ullamco_3_\": \"<string>\",\n    \"utc1\": \"<string>\",\n    \"occaecat9\": \"<string>\",\n    \"ut_ff\": \"<string>\",\n    \"dolor_89\": \"<string>\",\n    \"dolor4\": \"<string>\"\n  },\n  \"portalAuthMode\": \"SSO\",\n  \"notificationSenderEmail\": \"GduEw3%=&<s@k<>j-X$s!\",\n  \"alarms\": {\n    \"alarmRoleArn\": \"!OKY52D\",\n    \"notificationLambdaArn\": \" \"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/portals",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "portals"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:43.000Z",
+              "updatedAt": "2026-07-28T10:35:43.000Z",
+              "uid": "35240-b72e6ed2-f0f2-403e-8730-289f62a92a16"
+            }
+          ],
+          "createdAt": "2026-07-28T10:35:43.000Z",
+          "updatedAt": "2026-07-28T10:35:43.000Z",
+          "uid": "35240-3fedb331-a572-45c5-99a3-452e9e020262"
+        },
+        {
+          "name": "Amazon IoT SiteWise List Portals",
+          "id": "2b5a9db0-6563-4c34-87ba-e6ced3282f40",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/portals?nextToken=bhjZh&maxResults=<integer>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "portals"
+              ],
+              "query": [
+                {
+                  "description": "The token to be used for the next set of paginated results.",
+                  "key": "nextToken",
+                  "value": "bhjZh"
+                },
+                {
+                  "description": "<p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>",
+                  "key": "maxResults",
+                  "value": "<integer>"
+                }
+              ]
+            },
+            "description": "Retrieves a paginated list of IoT SiteWise Monitor portals."
+          },
+          "response": [
+            {
+              "id": "bedb0690-7efc-4553-a217-faf8c9a258da",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/portals?nextToken=bhjZh&maxResults=<integer>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "portals"
+                  ],
+                  "query": [
+                    {
+                      "description": "The token to be used for the next set of paginated results.",
+                      "key": "nextToken",
+                      "value": "bhjZh"
+                    },
+                    {
+                      "description": "<p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"portalSummaries\": [\n    {\n      \"id\": \"3d74a75e-cdc9-a873-1e37-9cb53e3ec6d9\",\n      \"name\": \"mz)G\",\n      \"startUrl\": \"http://s3I\",\n      \"status\": {\n        \"state\": \"UPDATING\",\n        \"error\": {\n          \"code\": \"INTERNAL_FAILURE\",\n          \"message\": \"<string>\"\n        }\n      },\n      \"description\": \"c|D\",\n      \"creationDate\": \"<dateTime>\",\n      \"lastUpdateDate\": \"<dateTime>\",\n      \"roleArn\": \"N\"\n    },\n    {\n      \"id\": \"02f64adc-2a95-f25c-ba2b-861329306d31\",\n      \"name\": \"7}s=p\",\n      \"startUrl\": \"https://S.;q\",\n      \"status\": {\n        \"state\": \"ACTIVE\",\n        \"error\": {\n          \"code\": \"VALIDATION_ERROR\",\n          \"message\": \"<string>\"\n        }\n      },\n      \"description\": \"Ynk*NW4Z;G\",\n      \"creationDate\": \"<dateTime>\",\n      \"lastUpdateDate\": \"<dateTime>\",\n      \"roleArn\": \"g{O\"\n    }\n  ],\n  \"nextToken\": \"8Sx7Q\"\n}",
+              "createdAt": "2026-07-28T10:35:43.000Z",
+              "updatedAt": "2026-07-28T10:35:43.000Z",
+              "uid": "35240-bedb0690-7efc-4553-a217-faf8c9a258da"
+            },
+            {
+              "id": "95ebb488-fd58-478e-a08d-a73e8f1ce7b7",
+              "name": "InvalidRequestException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/portals?nextToken=bhjZh&maxResults=<integer>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "portals"
+                  ],
+                  "query": [
+                    {
+                      "description": "The token to be used for the next set of paginated results.",
+                      "key": "nextToken",
+                      "value": "bhjZh"
+                    },
+                    {
+                      "description": "<p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:43.000Z",
+              "updatedAt": "2026-07-28T10:35:43.000Z",
+              "uid": "35240-95ebb488-fd58-478e-a08d-a73e8f1ce7b7"
+            },
+            {
+              "id": "c291fc97-89a8-4976-9c28-28aa90c8ad5d",
+              "name": "InternalFailureException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/portals?nextToken=bhjZh&maxResults=<integer>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "portals"
+                  ],
+                  "query": [
+                    {
+                      "description": "The token to be used for the next set of paginated results.",
+                      "key": "nextToken",
+                      "value": "bhjZh"
+                    },
+                    {
+                      "description": "<p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:43.000Z",
+              "updatedAt": "2026-07-28T10:35:43.000Z",
+              "uid": "35240-c291fc97-89a8-4976-9c28-28aa90c8ad5d"
+            },
+            {
+              "id": "f5f48c5a-9ccc-442d-a242-5974310a5c1c",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/portals?nextToken=bhjZh&maxResults=<integer>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "portals"
+                  ],
+                  "query": [
+                    {
+                      "description": "The token to be used for the next set of paginated results.",
+                      "key": "nextToken",
+                      "value": "bhjZh"
+                    },
+                    {
+                      "description": "<p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:43.000Z",
+              "updatedAt": "2026-07-28T10:35:43.000Z",
+              "uid": "35240-f5f48c5a-9ccc-442d-a242-5974310a5c1c"
+            }
+          ],
+          "createdAt": "2026-07-28T10:35:43.000Z",
+          "updatedAt": "2026-07-28T10:35:43.000Z",
+          "uid": "35240-2b5a9db0-6563-4c34-87ba-e6ced3282f40"
+        }
+      ],
+      "id": "59fd446e-e01a-4883-9061-29d864a5eb88",
+      "createdAt": "2026-07-28T10:35:43.000Z",
+      "updatedAt": "2026-07-28T10:35:43.000Z",
+      "uid": "35240-59fd446e-e01a-4883-9061-29d864a5eb88"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://iotsitewise.{{region}}.amazonaws.com"
+    }
+  ]
+}

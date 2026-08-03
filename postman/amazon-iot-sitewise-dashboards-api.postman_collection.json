@@ -1,0 +1,2075 @@
+{
+  "info": {
+    "_postman_id": "0bb76fa7-a2a9-4e9e-93cd-589dd03f0b43",
+    "name": "AWS IoT SiteWise Access Policies Dashboards API",
+    "description": "Welcome to the IoT SiteWise API Reference. IoT SiteWise is an Amazon Web Services service that connects <a href=\"https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications\">Industrial Internet of Things (IIoT)</a> devices to the power of the Amazon Web Services Cloud. For more information, see the <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/userguide/\">IoT SiteWise User Guide</a>. For information about IoT SiteWise quotas, see <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html\">Quotas</a> in the <i>IoT SiteWise User Guide</i>.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:35:29.000Z",
+    "updatedAt": "2026-07-28T10:35:30.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-0bb76fa7-a2a9-4e9e-93cd-589dd03f0b43"
+  },
+  "item": [
+    {
+      "name": "dashboards",
+      "item": [
+        {
+          "name": "{dashboardId}",
+          "item": [
+            {
+              "name": "Amazon IoT SiteWise Delete Dashboard",
+              "id": "f82f1343-ef46-4cf1-bd8a-f58ee1570031",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/dashboards/:dashboardId?clientToken=bb%23BeM\"SLU*(L_RIs,I%26PT\"%23`+R%I@~[~T'jd)kLBiv!]d6F",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "dashboards",
+                    ":dashboardId"
+                  ],
+                  "query": [
+                    {
+                      "description": "A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.",
+                      "key": "clientToken",
+                      "value": "bb#BeM\"SLU*(L_RIs,I&PT\"#`+R%I@~[~T'jd)kLBiv!]d6F"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "f08444ca-0b82-45f1-af27-bab81b78ca46",
+                      "key": "dashboardId",
+                      "value": "c3dcf245-0c71-7cd6-c8ce-690cbe87fe13",
+                      "description": "(Required) The ID of the dashboard to delete."
+                    }
+                  ]
+                },
+                "description": "Deletes a dashboard from IoT SiteWise Monitor."
+              },
+              "response": [
+                {
+                  "id": "4ad3c955-d7ed-4ecf-aae0-04efb7272c45",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/dashboards/:dashboardId?clientToken=bb%23BeM\"SLU*(L_RIs,I%26PT\"%23`+R%I@~[~T'jd)kLBiv!]d6F",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dashboards",
+                        ":dashboardId"
+                      ],
+                      "query": [
+                        {
+                          "description": "A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.",
+                          "key": "clientToken",
+                          "value": "bb#BeM\"SLU*(L_RIs,I&PT\"#`+R%I@~[~T'jd)kLBiv!]d6F"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "dashboardId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "No Content",
+                  "code": 204,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:35:30.000Z",
+                  "updatedAt": "2026-07-28T10:35:30.000Z",
+                  "uid": "35240-4ad3c955-d7ed-4ecf-aae0-04efb7272c45"
+                },
+                {
+                  "id": "c348ff13-b071-45b6-85ca-3f2d1fb78b53",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/dashboards/:dashboardId?clientToken=bb%23BeM\"SLU*(L_RIs,I%26PT\"%23`+R%I@~[~T'jd)kLBiv!]d6F",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dashboards",
+                        ":dashboardId"
+                      ],
+                      "query": [
+                        {
+                          "description": "A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.",
+                          "key": "clientToken",
+                          "value": "bb#BeM\"SLU*(L_RIs,I&PT\"#`+R%I@~[~T'jd)kLBiv!]d6F"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "dashboardId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:35:30.000Z",
+                  "updatedAt": "2026-07-28T10:35:30.000Z",
+                  "uid": "35240-c348ff13-b071-45b6-85ca-3f2d1fb78b53"
+                },
+                {
+                  "id": "885b5817-89db-4cd0-91f5-43a62755dcfe",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/dashboards/:dashboardId?clientToken=bb%23BeM\"SLU*(L_RIs,I%26PT\"%23`+R%I@~[~T'jd)kLBiv!]d6F",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dashboards",
+                        ":dashboardId"
+                      ],
+                      "query": [
+                        {
+                          "description": "A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.",
+                          "key": "clientToken",
+                          "value": "bb#BeM\"SLU*(L_RIs,I&PT\"#`+R%I@~[~T'jd)kLBiv!]d6F"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "dashboardId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:35:30.000Z",
+                  "updatedAt": "2026-07-28T10:35:30.000Z",
+                  "uid": "35240-885b5817-89db-4cd0-91f5-43a62755dcfe"
+                },
+                {
+                  "id": "6defe007-eeac-4b29-810d-24dc12396616",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/dashboards/:dashboardId?clientToken=bb%23BeM\"SLU*(L_RIs,I%26PT\"%23`+R%I@~[~T'jd)kLBiv!]d6F",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dashboards",
+                        ":dashboardId"
+                      ],
+                      "query": [
+                        {
+                          "description": "A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.",
+                          "key": "clientToken",
+                          "value": "bb#BeM\"SLU*(L_RIs,I&PT\"#`+R%I@~[~T'jd)kLBiv!]d6F"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "dashboardId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:35:30.000Z",
+                  "updatedAt": "2026-07-28T10:35:30.000Z",
+                  "uid": "35240-6defe007-eeac-4b29-810d-24dc12396616"
+                },
+                {
+                  "id": "5260d2ea-7bc1-4c98-8514-3ffe2b99d506",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/dashboards/:dashboardId?clientToken=bb%23BeM\"SLU*(L_RIs,I%26PT\"%23`+R%I@~[~T'jd)kLBiv!]d6F",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dashboards",
+                        ":dashboardId"
+                      ],
+                      "query": [
+                        {
+                          "description": "A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.",
+                          "key": "clientToken",
+                          "value": "bb#BeM\"SLU*(L_RIs,I&PT\"#`+R%I@~[~T'jd)kLBiv!]d6F"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "dashboardId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:35:30.000Z",
+                  "updatedAt": "2026-07-28T10:35:30.000Z",
+                  "uid": "35240-5260d2ea-7bc1-4c98-8514-3ffe2b99d506"
+                }
+              ],
+              "createdAt": "2026-07-28T10:35:30.000Z",
+              "updatedAt": "2026-07-28T10:35:30.000Z",
+              "uid": "35240-f82f1343-ef46-4cf1-bd8a-f58ee1570031"
+            },
+            {
+              "name": "Amazon IoT SiteWise Describe Dashboard",
+              "id": "fbc3abea-4f37-4908-a474-5684ecc71e1a",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/dashboards/:dashboardId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "dashboards",
+                    ":dashboardId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "6deff35f-1be7-47e6-a92b-c3456f047888",
+                      "key": "dashboardId",
+                      "value": "c3dcf245-0c71-7cd6-c8ce-690cbe87fe13",
+                      "description": "(Required) The ID of the dashboard."
+                    }
+                  ]
+                },
+                "description": "Retrieves information about a dashboard."
+              },
+              "response": [
+                {
+                  "id": "3c10b04d-6214-4f21-9d48-3bb6e2527042",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/dashboards/:dashboardId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dashboards",
+                        ":dashboardId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "dashboardId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"dashboardId\": \"42fb5189-e626-7ff9-5597-7543e8722a7b\",\n  \"dashboardArn\": \"@\",\n  \"dashboardName\": \"+Xu?\",\n  \"projectId\": \"49c8fb4f-66b2-6949-940f-5efe4c18e5e3\",\n  \"dashboardDefinition\": \"1X1q\",\n  \"dashboardCreationDate\": \"<dateTime>\",\n  \"dashboardLastUpdateDate\": \"<dateTime>\",\n  \"dashboardDescription\": \"Fi\"\n}",
+                  "createdAt": "2026-07-28T10:35:30.000Z",
+                  "updatedAt": "2026-07-28T10:35:30.000Z",
+                  "uid": "35240-3c10b04d-6214-4f21-9d48-3bb6e2527042"
+                },
+                {
+                  "id": "aa4d08f1-f194-4768-b1ca-2c5263fb5621",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/dashboards/:dashboardId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dashboards",
+                        ":dashboardId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "dashboardId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:35:30.000Z",
+                  "updatedAt": "2026-07-28T10:35:30.000Z",
+                  "uid": "35240-aa4d08f1-f194-4768-b1ca-2c5263fb5621"
+                },
+                {
+                  "id": "9eae1a9f-748f-403a-8c24-73a3ec0c8c3b",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/dashboards/:dashboardId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dashboards",
+                        ":dashboardId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "dashboardId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:35:30.000Z",
+                  "updatedAt": "2026-07-28T10:35:30.000Z",
+                  "uid": "35240-9eae1a9f-748f-403a-8c24-73a3ec0c8c3b"
+                },
+                {
+                  "id": "f9103cb2-0375-42a6-9209-d66a12800b29",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/dashboards/:dashboardId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dashboards",
+                        ":dashboardId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "dashboardId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:35:30.000Z",
+                  "updatedAt": "2026-07-28T10:35:30.000Z",
+                  "uid": "35240-f9103cb2-0375-42a6-9209-d66a12800b29"
+                },
+                {
+                  "id": "91b3f66d-1681-4625-8c31-afbd6fb2317c",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/dashboards/:dashboardId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dashboards",
+                        ":dashboardId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "dashboardId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:35:30.000Z",
+                  "updatedAt": "2026-07-28T10:35:30.000Z",
+                  "uid": "35240-91b3f66d-1681-4625-8c31-afbd6fb2317c"
+                }
+              ],
+              "createdAt": "2026-07-28T10:35:30.000Z",
+              "updatedAt": "2026-07-28T10:35:30.000Z",
+              "uid": "35240-fbc3abea-4f37-4908-a474-5684ecc71e1a"
+            },
+            {
+              "name": "Amazon IoT SiteWise Update Dashboard",
+              "id": "095047ca-2084-4a29-88bd-f973e105dac9",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dashboardName\": \"^x\",\n  \"dashboardDefinition\": \"t=_qXHjj\",\n  \"dashboardDescription\": \"@5Ry0u_\",\n  \"clientToken\": \"wK>~^}.:Xb03HQPG*Z,E`+-J++a\\\\$^1qb)5@\\\"J(\\\"GNq(>P%gC9g[hQ1\\\\\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/dashboards/:dashboardId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "dashboards",
+                    ":dashboardId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "e62f4e6a-54a1-4161-a425-1b6187263fe6",
+                      "key": "dashboardId",
+                      "value": "c3dcf245-0c71-7cd6-c8ce-690cbe87fe13",
+                      "description": "(Required) The ID of the dashboard to update."
+                    }
+                  ]
+                },
+                "description": "Updates an IoT SiteWise Monitor dashboard."
+              },
+              "response": [
+                {
+                  "id": "a503bb1d-a5ec-4516-80e5-34e189a99247",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"dashboardName\": \"^x\",\n  \"dashboardDefinition\": \"t=_qXHjj\",\n  \"dashboardDescription\": \"@5Ry0u_\",\n  \"clientToken\": \"wK>~^}.:Xb03HQPG*Z,E`+-J++a\\\\$^1qb)5@\\\"J(\\\"GNq(>P%gC9g[hQ1\\\\\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/dashboards/:dashboardId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dashboards",
+                        ":dashboardId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "dashboardId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:35:30.000Z",
+                  "updatedAt": "2026-07-28T10:35:30.000Z",
+                  "uid": "35240-a503bb1d-a5ec-4516-80e5-34e189a99247"
+                },
+                {
+                  "id": "a10625d8-31a9-4871-9d28-4e7dab9aa90b",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"dashboardName\": \"^x\",\n  \"dashboardDefinition\": \"t=_qXHjj\",\n  \"dashboardDescription\": \"@5Ry0u_\",\n  \"clientToken\": \"wK>~^}.:Xb03HQPG*Z,E`+-J++a\\\\$^1qb)5@\\\"J(\\\"GNq(>P%gC9g[hQ1\\\\\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/dashboards/:dashboardId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dashboards",
+                        ":dashboardId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "dashboardId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:35:30.000Z",
+                  "updatedAt": "2026-07-28T10:35:30.000Z",
+                  "uid": "35240-a10625d8-31a9-4871-9d28-4e7dab9aa90b"
+                },
+                {
+                  "id": "409d5f20-da45-4421-a01b-d21be4d63970",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"dashboardName\": \"^x\",\n  \"dashboardDefinition\": \"t=_qXHjj\",\n  \"dashboardDescription\": \"@5Ry0u_\",\n  \"clientToken\": \"wK>~^}.:Xb03HQPG*Z,E`+-J++a\\\\$^1qb)5@\\\"J(\\\"GNq(>P%gC9g[hQ1\\\\\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/dashboards/:dashboardId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dashboards",
+                        ":dashboardId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "dashboardId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:35:30.000Z",
+                  "updatedAt": "2026-07-28T10:35:30.000Z",
+                  "uid": "35240-409d5f20-da45-4421-a01b-d21be4d63970"
+                },
+                {
+                  "id": "1beab607-35e9-4e92-82bc-03a56bcbdf28",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"dashboardName\": \"^x\",\n  \"dashboardDefinition\": \"t=_qXHjj\",\n  \"dashboardDescription\": \"@5Ry0u_\",\n  \"clientToken\": \"wK>~^}.:Xb03HQPG*Z,E`+-J++a\\\\$^1qb)5@\\\"J(\\\"GNq(>P%gC9g[hQ1\\\\\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/dashboards/:dashboardId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dashboards",
+                        ":dashboardId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "dashboardId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:35:30.000Z",
+                  "updatedAt": "2026-07-28T10:35:30.000Z",
+                  "uid": "35240-1beab607-35e9-4e92-82bc-03a56bcbdf28"
+                },
+                {
+                  "id": "6e5deee0-e37d-4fbc-bc19-2f53c84554d0",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"dashboardName\": \"^x\",\n  \"dashboardDefinition\": \"t=_qXHjj\",\n  \"dashboardDescription\": \"@5Ry0u_\",\n  \"clientToken\": \"wK>~^}.:Xb03HQPG*Z,E`+-J++a\\\\$^1qb)5@\\\"J(\\\"GNq(>P%gC9g[hQ1\\\\\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/dashboards/:dashboardId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dashboards",
+                        ":dashboardId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "dashboardId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:35:30.000Z",
+                  "updatedAt": "2026-07-28T10:35:30.000Z",
+                  "uid": "35240-6e5deee0-e37d-4fbc-bc19-2f53c84554d0"
+                }
+              ],
+              "createdAt": "2026-07-28T10:35:30.000Z",
+              "updatedAt": "2026-07-28T10:35:30.000Z",
+              "uid": "35240-095047ca-2084-4a29-88bd-f973e105dac9"
+            }
+          ],
+          "id": "12186a44-4bbc-45bb-876e-6a844b4317f2",
+          "createdAt": "2026-07-28T10:35:30.000Z",
+          "updatedAt": "2026-07-28T10:35:30.000Z",
+          "uid": "35240-12186a44-4bbc-45bb-876e-6a844b4317f2"
+        },
+        {
+          "name": "Amazon IoT SiteWise Create Dashboard",
+          "id": "a1fe33d2-7627-4c94-81ed-a65a84e63fac",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"projectId\": \"f809ec01-b4da-58d7-91c2-31b336cc613c\",\n  \"dashboardName\": \"Ad]rL}f,]\",\n  \"dashboardDefinition\": \"TFX\",\n  \"dashboardDescription\": \"[VhB-nhGyR,\",\n  \"clientToken\": \"IVlt(F7D5QJegRs\\\\MZ>4=pf64?@6pnp[O!O#6sQURv;'&HgHeRZ@=\",\n  \"tags\": {\n    \"veniam_1\": \"<string>\",\n    \"aliqua1ac\": \"<string>\",\n    \"nisi_6\": \"<string>\",\n    \"doloree_f\": \"<string>\",\n    \"ut_d0\": \"<string>\",\n    \"enim_845\": \"<string>\",\n    \"in_b_8\": \"<string>\",\n    \"ipsum_d55\": \"<string>\",\n    \"occaecat7fd\": \"<string>\",\n    \"aute_0\": \"<string>\",\n    \"Lorem_1e1\": \"<string>\",\n    \"ad14\": \"<string>\",\n    \"tempor_2ea\": \"<string>\",\n    \"cupidatat6aa\": \"<string>\",\n    \"aliquip_5c\": \"<string>\",\n    \"dolore613\": \"<string>\",\n    \"nullaa\": \"<string>\",\n    \"elit_24\": \"<string>\",\n    \"adipisicing_1b4\": \"<string>\",\n    \"mollit_8\": \"<string>\",\n    \"in_4a7\": \"<string>\",\n    \"voluptate_f9\": \"<string>\",\n    \"noneb\": \"<string>\",\n    \"Ut_148\": \"<string>\",\n    \"anim4\": \"<string>\",\n    \"officia_58\": \"<string>\",\n    \"incididunt8\": \"<string>\",\n    \"mollit0\": \"<string>\",\n    \"sit_0\": \"<string>\",\n    \"enimcf_\": \"<string>\",\n    \"culpa3\": \"<string>\",\n    \"exf2\": \"<string>\",\n    \"nisi_101\": \"<string>\",\n    \"ex_64b\": \"<string>\",\n    \"incididuntf84\": \"<string>\",\n    \"dolore_5b3\": \"<string>\",\n    \"est_4\": \"<string>\",\n    \"aliqua_2_a\": \"<string>\",\n    \"in_5\": \"<string>\",\n    \"exercitation4\": \"<string>\",\n    \"veniam_1f5\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/dashboards",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dashboards"
+              ]
+            },
+            "description": "Creates a dashboard in an IoT SiteWise Monitor project."
+          },
+          "response": [
+            {
+              "id": "cf72df78-c7d3-4c04-a537-a2e28770a390",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"projectId\": \"f809ec01-b4da-58d7-91c2-31b336cc613c\",\n  \"dashboardName\": \"Ad]rL}f,]\",\n  \"dashboardDefinition\": \"TFX\",\n  \"dashboardDescription\": \"[VhB-nhGyR,\",\n  \"clientToken\": \"IVlt(F7D5QJegRs\\\\MZ>4=pf64?@6pnp[O!O#6sQURv;'&HgHeRZ@=\",\n  \"tags\": {\n    \"veniam_1\": \"<string>\",\n    \"aliqua1ac\": \"<string>\",\n    \"nisi_6\": \"<string>\",\n    \"doloree_f\": \"<string>\",\n    \"ut_d0\": \"<string>\",\n    \"enim_845\": \"<string>\",\n    \"in_b_8\": \"<string>\",\n    \"ipsum_d55\": \"<string>\",\n    \"occaecat7fd\": \"<string>\",\n    \"aute_0\": \"<string>\",\n    \"Lorem_1e1\": \"<string>\",\n    \"ad14\": \"<string>\",\n    \"tempor_2ea\": \"<string>\",\n    \"cupidatat6aa\": \"<string>\",\n    \"aliquip_5c\": \"<string>\",\n    \"dolore613\": \"<string>\",\n    \"nullaa\": \"<string>\",\n    \"elit_24\": \"<string>\",\n    \"adipisicing_1b4\": \"<string>\",\n    \"mollit_8\": \"<string>\",\n    \"in_4a7\": \"<string>\",\n    \"voluptate_f9\": \"<string>\",\n    \"noneb\": \"<string>\",\n    \"Ut_148\": \"<string>\",\n    \"anim4\": \"<string>\",\n    \"officia_58\": \"<string>\",\n    \"incididunt8\": \"<string>\",\n    \"mollit0\": \"<string>\",\n    \"sit_0\": \"<string>\",\n    \"enimcf_\": \"<string>\",\n    \"culpa3\": \"<string>\",\n    \"exf2\": \"<string>\",\n    \"nisi_101\": \"<string>\",\n    \"ex_64b\": \"<string>\",\n    \"incididuntf84\": \"<string>\",\n    \"dolore_5b3\": \"<string>\",\n    \"est_4\": \"<string>\",\n    \"aliqua_2_a\": \"<string>\",\n    \"in_5\": \"<string>\",\n    \"exercitation4\": \"<string>\",\n    \"veniam_1f5\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/dashboards",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "dashboards"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"dashboardId\": \"bd9c8c88-ae39-5a8c-35d3-21dac8a9e164\",\n  \"dashboardArn\": \" \"\n}",
+              "createdAt": "2026-07-28T10:35:30.000Z",
+              "updatedAt": "2026-07-28T10:35:30.000Z",
+              "uid": "35240-cf72df78-c7d3-4c04-a537-a2e28770a390"
+            },
+            {
+              "id": "56b88405-a9b1-4e70-b627-03a74cdba0f7",
+              "name": "InvalidRequestException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"projectId\": \"f809ec01-b4da-58d7-91c2-31b336cc613c\",\n  \"dashboardName\": \"Ad]rL}f,]\",\n  \"dashboardDefinition\": \"TFX\",\n  \"dashboardDescription\": \"[VhB-nhGyR,\",\n  \"clientToken\": \"IVlt(F7D5QJegRs\\\\MZ>4=pf64?@6pnp[O!O#6sQURv;'&HgHeRZ@=\",\n  \"tags\": {\n    \"veniam_1\": \"<string>\",\n    \"aliqua1ac\": \"<string>\",\n    \"nisi_6\": \"<string>\",\n    \"doloree_f\": \"<string>\",\n    \"ut_d0\": \"<string>\",\n    \"enim_845\": \"<string>\",\n    \"in_b_8\": \"<string>\",\n    \"ipsum_d55\": \"<string>\",\n    \"occaecat7fd\": \"<string>\",\n    \"aute_0\": \"<string>\",\n    \"Lorem_1e1\": \"<string>\",\n    \"ad14\": \"<string>\",\n    \"tempor_2ea\": \"<string>\",\n    \"cupidatat6aa\": \"<string>\",\n    \"aliquip_5c\": \"<string>\",\n    \"dolore613\": \"<string>\",\n    \"nullaa\": \"<string>\",\n    \"elit_24\": \"<string>\",\n    \"adipisicing_1b4\": \"<string>\",\n    \"mollit_8\": \"<string>\",\n    \"in_4a7\": \"<string>\",\n    \"voluptate_f9\": \"<string>\",\n    \"noneb\": \"<string>\",\n    \"Ut_148\": \"<string>\",\n    \"anim4\": \"<string>\",\n    \"officia_58\": \"<string>\",\n    \"incididunt8\": \"<string>\",\n    \"mollit0\": \"<string>\",\n    \"sit_0\": \"<string>\",\n    \"enimcf_\": \"<string>\",\n    \"culpa3\": \"<string>\",\n    \"exf2\": \"<string>\",\n    \"nisi_101\": \"<string>\",\n    \"ex_64b\": \"<string>\",\n    \"incididuntf84\": \"<string>\",\n    \"dolore_5b3\": \"<string>\",\n    \"est_4\": \"<string>\",\n    \"aliqua_2_a\": \"<string>\",\n    \"in_5\": \"<string>\",\n    \"exercitation4\": \"<string>\",\n    \"veniam_1f5\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/dashboards",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "dashboards"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:30.000Z",
+              "updatedAt": "2026-07-28T10:35:30.000Z",
+              "uid": "35240-56b88405-a9b1-4e70-b627-03a74cdba0f7"
+            },
+            {
+              "id": "2d930c06-ae33-4432-bfe3-73b08aa1a266",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"projectId\": \"f809ec01-b4da-58d7-91c2-31b336cc613c\",\n  \"dashboardName\": \"Ad]rL}f,]\",\n  \"dashboardDefinition\": \"TFX\",\n  \"dashboardDescription\": \"[VhB-nhGyR,\",\n  \"clientToken\": \"IVlt(F7D5QJegRs\\\\MZ>4=pf64?@6pnp[O!O#6sQURv;'&HgHeRZ@=\",\n  \"tags\": {\n    \"veniam_1\": \"<string>\",\n    \"aliqua1ac\": \"<string>\",\n    \"nisi_6\": \"<string>\",\n    \"doloree_f\": \"<string>\",\n    \"ut_d0\": \"<string>\",\n    \"enim_845\": \"<string>\",\n    \"in_b_8\": \"<string>\",\n    \"ipsum_d55\": \"<string>\",\n    \"occaecat7fd\": \"<string>\",\n    \"aute_0\": \"<string>\",\n    \"Lorem_1e1\": \"<string>\",\n    \"ad14\": \"<string>\",\n    \"tempor_2ea\": \"<string>\",\n    \"cupidatat6aa\": \"<string>\",\n    \"aliquip_5c\": \"<string>\",\n    \"dolore613\": \"<string>\",\n    \"nullaa\": \"<string>\",\n    \"elit_24\": \"<string>\",\n    \"adipisicing_1b4\": \"<string>\",\n    \"mollit_8\": \"<string>\",\n    \"in_4a7\": \"<string>\",\n    \"voluptate_f9\": \"<string>\",\n    \"noneb\": \"<string>\",\n    \"Ut_148\": \"<string>\",\n    \"anim4\": \"<string>\",\n    \"officia_58\": \"<string>\",\n    \"incididunt8\": \"<string>\",\n    \"mollit0\": \"<string>\",\n    \"sit_0\": \"<string>\",\n    \"enimcf_\": \"<string>\",\n    \"culpa3\": \"<string>\",\n    \"exf2\": \"<string>\",\n    \"nisi_101\": \"<string>\",\n    \"ex_64b\": \"<string>\",\n    \"incididuntf84\": \"<string>\",\n    \"dolore_5b3\": \"<string>\",\n    \"est_4\": \"<string>\",\n    \"aliqua_2_a\": \"<string>\",\n    \"in_5\": \"<string>\",\n    \"exercitation4\": \"<string>\",\n    \"veniam_1f5\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/dashboards",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "dashboards"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:30.000Z",
+              "updatedAt": "2026-07-28T10:35:30.000Z",
+              "uid": "35240-2d930c06-ae33-4432-bfe3-73b08aa1a266"
+            },
+            {
+              "id": "7f67c186-4e34-4443-8871-c321ef5864e0",
+              "name": "InternalFailureException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"projectId\": \"f809ec01-b4da-58d7-91c2-31b336cc613c\",\n  \"dashboardName\": \"Ad]rL}f,]\",\n  \"dashboardDefinition\": \"TFX\",\n  \"dashboardDescription\": \"[VhB-nhGyR,\",\n  \"clientToken\": \"IVlt(F7D5QJegRs\\\\MZ>4=pf64?@6pnp[O!O#6sQURv;'&HgHeRZ@=\",\n  \"tags\": {\n    \"veniam_1\": \"<string>\",\n    \"aliqua1ac\": \"<string>\",\n    \"nisi_6\": \"<string>\",\n    \"doloree_f\": \"<string>\",\n    \"ut_d0\": \"<string>\",\n    \"enim_845\": \"<string>\",\n    \"in_b_8\": \"<string>\",\n    \"ipsum_d55\": \"<string>\",\n    \"occaecat7fd\": \"<string>\",\n    \"aute_0\": \"<string>\",\n    \"Lorem_1e1\": \"<string>\",\n    \"ad14\": \"<string>\",\n    \"tempor_2ea\": \"<string>\",\n    \"cupidatat6aa\": \"<string>\",\n    \"aliquip_5c\": \"<string>\",\n    \"dolore613\": \"<string>\",\n    \"nullaa\": \"<string>\",\n    \"elit_24\": \"<string>\",\n    \"adipisicing_1b4\": \"<string>\",\n    \"mollit_8\": \"<string>\",\n    \"in_4a7\": \"<string>\",\n    \"voluptate_f9\": \"<string>\",\n    \"noneb\": \"<string>\",\n    \"Ut_148\": \"<string>\",\n    \"anim4\": \"<string>\",\n    \"officia_58\": \"<string>\",\n    \"incididunt8\": \"<string>\",\n    \"mollit0\": \"<string>\",\n    \"sit_0\": \"<string>\",\n    \"enimcf_\": \"<string>\",\n    \"culpa3\": \"<string>\",\n    \"exf2\": \"<string>\",\n    \"nisi_101\": \"<string>\",\n    \"ex_64b\": \"<string>\",\n    \"incididuntf84\": \"<string>\",\n    \"dolore_5b3\": \"<string>\",\n    \"est_4\": \"<string>\",\n    \"aliqua_2_a\": \"<string>\",\n    \"in_5\": \"<string>\",\n    \"exercitation4\": \"<string>\",\n    \"veniam_1f5\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/dashboards",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "dashboards"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:30.000Z",
+              "updatedAt": "2026-07-28T10:35:30.000Z",
+              "uid": "35240-7f67c186-4e34-4443-8871-c321ef5864e0"
+            },
+            {
+              "id": "84eef1be-70ee-4a1f-b2fc-4d024df288ad",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"projectId\": \"f809ec01-b4da-58d7-91c2-31b336cc613c\",\n  \"dashboardName\": \"Ad]rL}f,]\",\n  \"dashboardDefinition\": \"TFX\",\n  \"dashboardDescription\": \"[VhB-nhGyR,\",\n  \"clientToken\": \"IVlt(F7D5QJegRs\\\\MZ>4=pf64?@6pnp[O!O#6sQURv;'&HgHeRZ@=\",\n  \"tags\": {\n    \"veniam_1\": \"<string>\",\n    \"aliqua1ac\": \"<string>\",\n    \"nisi_6\": \"<string>\",\n    \"doloree_f\": \"<string>\",\n    \"ut_d0\": \"<string>\",\n    \"enim_845\": \"<string>\",\n    \"in_b_8\": \"<string>\",\n    \"ipsum_d55\": \"<string>\",\n    \"occaecat7fd\": \"<string>\",\n    \"aute_0\": \"<string>\",\n    \"Lorem_1e1\": \"<string>\",\n    \"ad14\": \"<string>\",\n    \"tempor_2ea\": \"<string>\",\n    \"cupidatat6aa\": \"<string>\",\n    \"aliquip_5c\": \"<string>\",\n    \"dolore613\": \"<string>\",\n    \"nullaa\": \"<string>\",\n    \"elit_24\": \"<string>\",\n    \"adipisicing_1b4\": \"<string>\",\n    \"mollit_8\": \"<string>\",\n    \"in_4a7\": \"<string>\",\n    \"voluptate_f9\": \"<string>\",\n    \"noneb\": \"<string>\",\n    \"Ut_148\": \"<string>\",\n    \"anim4\": \"<string>\",\n    \"officia_58\": \"<string>\",\n    \"incididunt8\": \"<string>\",\n    \"mollit0\": \"<string>\",\n    \"sit_0\": \"<string>\",\n    \"enimcf_\": \"<string>\",\n    \"culpa3\": \"<string>\",\n    \"exf2\": \"<string>\",\n    \"nisi_101\": \"<string>\",\n    \"ex_64b\": \"<string>\",\n    \"incididuntf84\": \"<string>\",\n    \"dolore_5b3\": \"<string>\",\n    \"est_4\": \"<string>\",\n    \"aliqua_2_a\": \"<string>\",\n    \"in_5\": \"<string>\",\n    \"exercitation4\": \"<string>\",\n    \"veniam_1f5\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/dashboards",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "dashboards"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:30.000Z",
+              "updatedAt": "2026-07-28T10:35:30.000Z",
+              "uid": "35240-84eef1be-70ee-4a1f-b2fc-4d024df288ad"
+            },
+            {
+              "id": "fd5b73c0-8632-4e01-9e98-bb2a5982fc3f",
+              "name": "LimitExceededException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"projectId\": \"f809ec01-b4da-58d7-91c2-31b336cc613c\",\n  \"dashboardName\": \"Ad]rL}f,]\",\n  \"dashboardDefinition\": \"TFX\",\n  \"dashboardDescription\": \"[VhB-nhGyR,\",\n  \"clientToken\": \"IVlt(F7D5QJegRs\\\\MZ>4=pf64?@6pnp[O!O#6sQURv;'&HgHeRZ@=\",\n  \"tags\": {\n    \"veniam_1\": \"<string>\",\n    \"aliqua1ac\": \"<string>\",\n    \"nisi_6\": \"<string>\",\n    \"doloree_f\": \"<string>\",\n    \"ut_d0\": \"<string>\",\n    \"enim_845\": \"<string>\",\n    \"in_b_8\": \"<string>\",\n    \"ipsum_d55\": \"<string>\",\n    \"occaecat7fd\": \"<string>\",\n    \"aute_0\": \"<string>\",\n    \"Lorem_1e1\": \"<string>\",\n    \"ad14\": \"<string>\",\n    \"tempor_2ea\": \"<string>\",\n    \"cupidatat6aa\": \"<string>\",\n    \"aliquip_5c\": \"<string>\",\n    \"dolore613\": \"<string>\",\n    \"nullaa\": \"<string>\",\n    \"elit_24\": \"<string>\",\n    \"adipisicing_1b4\": \"<string>\",\n    \"mollit_8\": \"<string>\",\n    \"in_4a7\": \"<string>\",\n    \"voluptate_f9\": \"<string>\",\n    \"noneb\": \"<string>\",\n    \"Ut_148\": \"<string>\",\n    \"anim4\": \"<string>\",\n    \"officia_58\": \"<string>\",\n    \"incididunt8\": \"<string>\",\n    \"mollit0\": \"<string>\",\n    \"sit_0\": \"<string>\",\n    \"enimcf_\": \"<string>\",\n    \"culpa3\": \"<string>\",\n    \"exf2\": \"<string>\",\n    \"nisi_101\": \"<string>\",\n    \"ex_64b\": \"<string>\",\n    \"incididuntf84\": \"<string>\",\n    \"dolore_5b3\": \"<string>\",\n    \"est_4\": \"<string>\",\n    \"aliqua_2_a\": \"<string>\",\n    \"in_5\": \"<string>\",\n    \"exercitation4\": \"<string>\",\n    \"veniam_1f5\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/dashboards",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "dashboards"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:30.000Z",
+              "updatedAt": "2026-07-28T10:35:30.000Z",
+              "uid": "35240-fd5b73c0-8632-4e01-9e98-bb2a5982fc3f"
+            }
+          ],
+          "createdAt": "2026-07-28T10:35:30.000Z",
+          "updatedAt": "2026-07-28T10:35:30.000Z",
+          "uid": "35240-a1fe33d2-7627-4c94-81ed-a65a84e63fac"
+        }
+      ],
+      "id": "b0af8ae8-f36a-4a96-bc02-83df8d5f74cb",
+      "createdAt": "2026-07-28T10:35:30.000Z",
+      "updatedAt": "2026-07-28T10:35:30.000Z",
+      "uid": "35240-b0af8ae8-f36a-4a96-bc02-83df8d5f74cb"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://iotsitewise.{{region}}.amazonaws.com"
+    }
+  ]
+}

@@ -1,0 +1,3749 @@
+{
+  "info": {
+    "_postman_id": "9dad4d87-d78c-46d5-94ac-787f56e9a5ad",
+    "name": "AWS IoT SiteWise Access Policies Gateways API",
+    "description": "Welcome to the IoT SiteWise API Reference. IoT SiteWise is an Amazon Web Services service that connects <a href=\"https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications\">Industrial Internet of Things (IIoT)</a> devices to the power of the Amazon Web Services Cloud. For more information, see the <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/userguide/\">IoT SiteWise User Guide</a>. For information about IoT SiteWise quotas, see <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html\">Quotas</a> in the <i>IoT SiteWise User Guide</i>.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:35:33.000Z",
+    "updatedAt": "2026-07-28T10:35:34.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-9dad4d87-d78c-46d5-94ac-787f56e9a5ad"
+  },
+  "item": [
+    {
+      "name": "20200301",
+      "item": [
+        {
+          "name": "gateways",
+          "item": [
+            {
+              "name": "{gatewayId}",
+              "item": [
+                {
+                  "name": "capability",
+                  "item": [
+                    {
+                      "name": "{capabilityNamespace}",
+                      "item": [
+                        {
+                          "name": "Amazon IoT SiteWise Describe Gateway Capability Configuration",
+                          "id": "6073dcb8-ca44-4f50-b036-d5818aa76ed2",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "X-Amz-Content-Sha256",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Date",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Algorithm",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Credential",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Security-Token",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Signature",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-SignedHeaders",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/20200301/gateways/:gatewayId/capability/:capabilityNamespace",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "20200301",
+                                "gateways",
+                                ":gatewayId",
+                                "capability",
+                                ":capabilityNamespace"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "fbf3cd9d-9460-4a21-94cf-1353ceab08a8",
+                                  "key": "gatewayId",
+                                  "value": "71f3313a-ffd4-c749-6f0e-d809f7fc9d28",
+                                  "description": "(Required) The ID of the gateway that defines the capability configuration."
+                                },
+                                {
+                                  "id": "ffb63869-2624-42ea-a0b0-de500e1e086f",
+                                  "key": "capabilityNamespace",
+                                  "value": "DuMrEsv:iSgPZvNI:078917",
+                                  "description": "(Required) The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>."
+                                }
+                              ]
+                            },
+                            "description": "Retrieves information about a gateway capability configuration. Each gateway capability defines data sources for a gateway. A capability configuration can contain multiple data source configurations. If you define OPC-UA sources for a gateway in the IoT SiteWise console, all of your OPC-UA sources are stored in one capability configuration. To list all capability configurations for a gateway, use <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html\">DescribeGateway</a>."
+                          },
+                          "response": [
+                            {
+                              "id": "f8e6a948-66ac-42e1-ad85-0270bffb18f9",
+                              "name": "Success",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "X-Amz-Content-Sha256",
+                                    "value": "<string>"
+                                  },
+                                  {
+                                    "key": "X-Amz-Date",
+                                    "value": "<string>"
+                                  },
+                                  {
+                                    "key": "X-Amz-Algorithm",
+                                    "value": "<string>"
+                                  },
+                                  {
+                                    "key": "X-Amz-Credential",
+                                    "value": "<string>"
+                                  },
+                                  {
+                                    "key": "X-Amz-Security-Token",
+                                    "value": "<string>"
+                                  },
+                                  {
+                                    "key": "X-Amz-Signature",
+                                    "value": "<string>"
+                                  },
+                                  {
+                                    "key": "X-Amz-SignedHeaders",
+                                    "value": "<string>"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Authorization",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/20200301/gateways/:gatewayId/capability/:capabilityNamespace",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "20200301",
+                                    "gateways",
+                                    ":gatewayId",
+                                    "capability",
+                                    ":capabilityNamespace"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "gatewayId"
+                                    },
+                                    {
+                                      "key": "capabilityNamespace"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"gatewayId\": \"d442ba68-208f-ae03-1fc5-f013c943b82a\",\n  \"capabilityNamespace\": \"nQQwCyD:jkYuUbfrNL:35256294741\",\n  \"capabilityConfiguration\": \"<string>\",\n  \"capabilitySyncStatus\": \"SYNC_FAILED\"\n}",
+                              "createdAt": "2026-07-28T10:35:34.000Z",
+                              "updatedAt": "2026-07-28T10:35:34.000Z",
+                              "uid": "35240-f8e6a948-66ac-42e1-ad85-0270bffb18f9"
+                            },
+                            {
+                              "id": "c7d12e7f-3883-47ae-8889-122028e62299",
+                              "name": "InvalidRequestException",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "X-Amz-Content-Sha256",
+                                    "value": "<string>"
+                                  },
+                                  {
+                                    "key": "X-Amz-Date",
+                                    "value": "<string>"
+                                  },
+                                  {
+                                    "key": "X-Amz-Algorithm",
+                                    "value": "<string>"
+                                  },
+                                  {
+                                    "key": "X-Amz-Credential",
+                                    "value": "<string>"
+                                  },
+                                  {
+                                    "key": "X-Amz-Security-Token",
+                                    "value": "<string>"
+                                  },
+                                  {
+                                    "key": "X-Amz-Signature",
+                                    "value": "<string>"
+                                  },
+                                  {
+                                    "key": "X-Amz-SignedHeaders",
+                                    "value": "<string>"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Authorization",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/20200301/gateways/:gatewayId/capability/:capabilityNamespace",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "20200301",
+                                    "gateways",
+                                    ":gatewayId",
+                                    "capability",
+                                    ":capabilityNamespace"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "gatewayId"
+                                    },
+                                    {
+                                      "key": "capabilityNamespace"
+                                    }
+                                  ]
+                                }
+                              },
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{}",
+                              "createdAt": "2026-07-28T10:35:34.000Z",
+                              "updatedAt": "2026-07-28T10:35:34.000Z",
+                              "uid": "35240-c7d12e7f-3883-47ae-8889-122028e62299"
+                            },
+                            {
+                              "id": "f87218c0-3cdc-4dab-a0a8-266c4e2bf4d0",
+                              "name": "ResourceNotFoundException",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "X-Amz-Content-Sha256",
+                                    "value": "<string>"
+                                  },
+                                  {
+                                    "key": "X-Amz-Date",
+                                    "value": "<string>"
+                                  },
+                                  {
+                                    "key": "X-Amz-Algorithm",
+                                    "value": "<string>"
+                                  },
+                                  {
+                                    "key": "X-Amz-Credential",
+                                    "value": "<string>"
+                                  },
+                                  {
+                                    "key": "X-Amz-Security-Token",
+                                    "value": "<string>"
+                                  },
+                                  {
+                                    "key": "X-Amz-Signature",
+                                    "value": "<string>"
+                                  },
+                                  {
+                                    "key": "X-Amz-SignedHeaders",
+                                    "value": "<string>"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Authorization",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/20200301/gateways/:gatewayId/capability/:capabilityNamespace",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "20200301",
+                                    "gateways",
+                                    ":gatewayId",
+                                    "capability",
+                                    ":capabilityNamespace"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "gatewayId"
+                                    },
+                                    {
+                                      "key": "capabilityNamespace"
+                                    }
+                                  ]
+                                }
+                              },
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{}",
+                              "createdAt": "2026-07-28T10:35:34.000Z",
+                              "updatedAt": "2026-07-28T10:35:34.000Z",
+                              "uid": "35240-f87218c0-3cdc-4dab-a0a8-266c4e2bf4d0"
+                            },
+                            {
+                              "id": "434fc7a8-957d-4fe8-9cb4-af824dfbb7e7",
+                              "name": "InternalFailureException",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "X-Amz-Content-Sha256",
+                                    "value": "<string>"
+                                  },
+                                  {
+                                    "key": "X-Amz-Date",
+                                    "value": "<string>"
+                                  },
+                                  {
+                                    "key": "X-Amz-Algorithm",
+                                    "value": "<string>"
+                                  },
+                                  {
+                                    "key": "X-Amz-Credential",
+                                    "value": "<string>"
+                                  },
+                                  {
+                                    "key": "X-Amz-Security-Token",
+                                    "value": "<string>"
+                                  },
+                                  {
+                                    "key": "X-Amz-Signature",
+                                    "value": "<string>"
+                                  },
+                                  {
+                                    "key": "X-Amz-SignedHeaders",
+                                    "value": "<string>"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Authorization",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/20200301/gateways/:gatewayId/capability/:capabilityNamespace",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "20200301",
+                                    "gateways",
+                                    ":gatewayId",
+                                    "capability",
+                                    ":capabilityNamespace"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "gatewayId"
+                                    },
+                                    {
+                                      "key": "capabilityNamespace"
+                                    }
+                                  ]
+                                }
+                              },
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{}",
+                              "createdAt": "2026-07-28T10:35:34.000Z",
+                              "updatedAt": "2026-07-28T10:35:34.000Z",
+                              "uid": "35240-434fc7a8-957d-4fe8-9cb4-af824dfbb7e7"
+                            },
+                            {
+                              "id": "99d8b08b-4b41-4a24-88f5-7fc41ffdff63",
+                              "name": "ThrottlingException",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "X-Amz-Content-Sha256",
+                                    "value": "<string>"
+                                  },
+                                  {
+                                    "key": "X-Amz-Date",
+                                    "value": "<string>"
+                                  },
+                                  {
+                                    "key": "X-Amz-Algorithm",
+                                    "value": "<string>"
+                                  },
+                                  {
+                                    "key": "X-Amz-Credential",
+                                    "value": "<string>"
+                                  },
+                                  {
+                                    "key": "X-Amz-Security-Token",
+                                    "value": "<string>"
+                                  },
+                                  {
+                                    "key": "X-Amz-Signature",
+                                    "value": "<string>"
+                                  },
+                                  {
+                                    "key": "X-Amz-SignedHeaders",
+                                    "value": "<string>"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Authorization",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/20200301/gateways/:gatewayId/capability/:capabilityNamespace",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "20200301",
+                                    "gateways",
+                                    ":gatewayId",
+                                    "capability",
+                                    ":capabilityNamespace"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "gatewayId"
+                                    },
+                                    {
+                                      "key": "capabilityNamespace"
+                                    }
+                                  ]
+                                }
+                              },
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{}",
+                              "createdAt": "2026-07-28T10:35:34.000Z",
+                              "updatedAt": "2026-07-28T10:35:34.000Z",
+                              "uid": "35240-99d8b08b-4b41-4a24-88f5-7fc41ffdff63"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T10:35:34.000Z",
+                          "updatedAt": "2026-07-28T10:35:34.000Z",
+                          "uid": "35240-6073dcb8-ca44-4f50-b036-d5818aa76ed2"
+                        }
+                      ],
+                      "id": "3b71fba9-c8cc-4ad3-932e-da9fde1006ac",
+                      "createdAt": "2026-07-28T10:35:34.000Z",
+                      "updatedAt": "2026-07-28T10:35:34.000Z",
+                      "uid": "35240-3b71fba9-c8cc-4ad3-932e-da9fde1006ac"
+                    },
+                    {
+                      "name": "Amazon IoT SiteWise Update Gateway Capability Configuration",
+                      "id": "10db4294-5c6d-4d8b-9de1-90ffb8bf4649",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"capabilityNamespace\": \"YadwKrR:nAvUM:90702774\",\n  \"capabilityConfiguration\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/20200301/gateways/:gatewayId/capability",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "20200301",
+                            "gateways",
+                            ":gatewayId",
+                            "capability"
+                          ],
+                          "variable": [
+                            {
+                              "id": "262c0edc-008a-4aec-9cb9-d794d0f8d44b",
+                              "key": "gatewayId",
+                              "value": "71f3313a-ffd4-c749-6f0e-d809f7fc9d28",
+                              "description": "(Required) The ID of the gateway to be updated."
+                            }
+                          ]
+                        },
+                        "description": "Updates a gateway capability configuration or defines a new capability configuration. Each gateway capability defines data sources for a gateway. A capability configuration can contain multiple data source configurations. If you define OPC-UA sources for a gateway in the IoT SiteWise console, all of your OPC-UA sources are stored in one capability configuration. To list all capability configurations for a gateway, use <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html\">DescribeGateway</a>."
+                      },
+                      "response": [
+                        {
+                          "id": "32d01f38-1955-4d0e-bfb0-0824e8ce89a6",
+                          "name": "Success",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "X-Amz-Content-Sha256",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Date",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Algorithm",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Credential",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Security-Token",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Signature",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-SignedHeaders",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"capabilityNamespace\": \"YadwKrR:nAvUM:90702774\",\n  \"capabilityConfiguration\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/20200301/gateways/:gatewayId/capability",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "20200301",
+                                "gateways",
+                                ":gatewayId",
+                                "capability"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "gatewayId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"capabilityNamespace\": \"AxrvkaKPtEG:y:82818\",\n  \"capabilitySyncStatus\": \"OUT_OF_SYNC\"\n}",
+                          "createdAt": "2026-07-28T10:35:34.000Z",
+                          "updatedAt": "2026-07-28T10:35:34.000Z",
+                          "uid": "35240-32d01f38-1955-4d0e-bfb0-0824e8ce89a6"
+                        },
+                        {
+                          "id": "95a2d5f7-8522-492e-ad98-e81794665e88",
+                          "name": "InvalidRequestException",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "X-Amz-Content-Sha256",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Date",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Algorithm",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Credential",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Security-Token",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Signature",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-SignedHeaders",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"capabilityNamespace\": \"YadwKrR:nAvUM:90702774\",\n  \"capabilityConfiguration\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/20200301/gateways/:gatewayId/capability",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "20200301",
+                                "gateways",
+                                ":gatewayId",
+                                "capability"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "gatewayId"
+                                }
+                              ]
+                            }
+                          },
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T10:35:34.000Z",
+                          "updatedAt": "2026-07-28T10:35:34.000Z",
+                          "uid": "35240-95a2d5f7-8522-492e-ad98-e81794665e88"
+                        },
+                        {
+                          "id": "78e2a244-bb11-4526-bb0f-3bb6731bd348",
+                          "name": "ResourceNotFoundException",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "X-Amz-Content-Sha256",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Date",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Algorithm",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Credential",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Security-Token",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Signature",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-SignedHeaders",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"capabilityNamespace\": \"YadwKrR:nAvUM:90702774\",\n  \"capabilityConfiguration\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/20200301/gateways/:gatewayId/capability",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "20200301",
+                                "gateways",
+                                ":gatewayId",
+                                "capability"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "gatewayId"
+                                }
+                              ]
+                            }
+                          },
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T10:35:34.000Z",
+                          "updatedAt": "2026-07-28T10:35:34.000Z",
+                          "uid": "35240-78e2a244-bb11-4526-bb0f-3bb6731bd348"
+                        },
+                        {
+                          "id": "78853e44-46fc-4dc7-a79e-9f6c47a30143",
+                          "name": "ConflictingOperationException",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "X-Amz-Content-Sha256",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Date",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Algorithm",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Credential",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Security-Token",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Signature",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-SignedHeaders",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"capabilityNamespace\": \"YadwKrR:nAvUM:90702774\",\n  \"capabilityConfiguration\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/20200301/gateways/:gatewayId/capability",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "20200301",
+                                "gateways",
+                                ":gatewayId",
+                                "capability"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "gatewayId"
+                                }
+                              ]
+                            }
+                          },
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T10:35:34.000Z",
+                          "updatedAt": "2026-07-28T10:35:34.000Z",
+                          "uid": "35240-78853e44-46fc-4dc7-a79e-9f6c47a30143"
+                        },
+                        {
+                          "id": "d9debb43-a3d1-4306-bfa0-b7f8af59ba4a",
+                          "name": "InternalFailureException",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "X-Amz-Content-Sha256",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Date",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Algorithm",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Credential",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Security-Token",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Signature",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-SignedHeaders",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"capabilityNamespace\": \"YadwKrR:nAvUM:90702774\",\n  \"capabilityConfiguration\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/20200301/gateways/:gatewayId/capability",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "20200301",
+                                "gateways",
+                                ":gatewayId",
+                                "capability"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "gatewayId"
+                                }
+                              ]
+                            }
+                          },
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T10:35:34.000Z",
+                          "updatedAt": "2026-07-28T10:35:34.000Z",
+                          "uid": "35240-d9debb43-a3d1-4306-bfa0-b7f8af59ba4a"
+                        },
+                        {
+                          "id": "80fb481b-4098-47a0-95b4-64842a88ff44",
+                          "name": "ThrottlingException",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "X-Amz-Content-Sha256",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Date",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Algorithm",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Credential",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Security-Token",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Signature",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-SignedHeaders",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"capabilityNamespace\": \"YadwKrR:nAvUM:90702774\",\n  \"capabilityConfiguration\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/20200301/gateways/:gatewayId/capability",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "20200301",
+                                "gateways",
+                                ":gatewayId",
+                                "capability"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "gatewayId"
+                                }
+                              ]
+                            }
+                          },
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T10:35:34.000Z",
+                          "updatedAt": "2026-07-28T10:35:34.000Z",
+                          "uid": "35240-80fb481b-4098-47a0-95b4-64842a88ff44"
+                        },
+                        {
+                          "id": "2aa6af00-9275-4935-8292-4fe1a06adfd9",
+                          "name": "LimitExceededException",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "X-Amz-Content-Sha256",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Date",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Algorithm",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Credential",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Security-Token",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Signature",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-SignedHeaders",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"capabilityNamespace\": \"YadwKrR:nAvUM:90702774\",\n  \"capabilityConfiguration\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/20200301/gateways/:gatewayId/capability",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "20200301",
+                                "gateways",
+                                ":gatewayId",
+                                "capability"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "gatewayId"
+                                }
+                              ]
+                            }
+                          },
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T10:35:34.000Z",
+                          "updatedAt": "2026-07-28T10:35:34.000Z",
+                          "uid": "35240-2aa6af00-9275-4935-8292-4fe1a06adfd9"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T10:35:34.000Z",
+                      "updatedAt": "2026-07-28T10:35:34.000Z",
+                      "uid": "35240-10db4294-5c6d-4d8b-9de1-90ffb8bf4649"
+                    }
+                  ],
+                  "id": "9371e574-abea-41e2-a498-4c3143cd2318",
+                  "createdAt": "2026-07-28T10:35:34.000Z",
+                  "updatedAt": "2026-07-28T10:35:34.000Z",
+                  "uid": "35240-9371e574-abea-41e2-a498-4c3143cd2318"
+                },
+                {
+                  "name": "Amazon IoT SiteWise Delete Gateway",
+                  "id": "17a296c1-9b79-4d8e-8390-ad7bc0312570",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/20200301/gateways/:gatewayId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "20200301",
+                        "gateways",
+                        ":gatewayId"
+                      ],
+                      "variable": [
+                        {
+                          "id": "0a6933b9-103d-404d-8043-14a595dfc582",
+                          "key": "gatewayId",
+                          "value": "71f3313a-ffd4-c749-6f0e-d809f7fc9d28",
+                          "description": "(Required) The ID of the gateway to delete."
+                        }
+                      ]
+                    },
+                    "description": "Deletes a gateway from IoT SiteWise. When you delete a gateway, some of the gateway's files remain in your gateway's file system."
+                  },
+                  "response": [
+                    {
+                      "id": "86d57c72-95e4-424f-88d2-17859fc444a8",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/20200301/gateways/:gatewayId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "20200301",
+                            "gateways",
+                            ":gatewayId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "gatewayId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T10:35:34.000Z",
+                      "updatedAt": "2026-07-28T10:35:34.000Z",
+                      "uid": "35240-86d57c72-95e4-424f-88d2-17859fc444a8"
+                    },
+                    {
+                      "id": "bf8d0205-c190-471a-b728-fb9938513753",
+                      "name": "InvalidRequestException",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/20200301/gateways/:gatewayId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "20200301",
+                            "gateways",
+                            ":gatewayId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "gatewayId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:35:34.000Z",
+                      "updatedAt": "2026-07-28T10:35:34.000Z",
+                      "uid": "35240-bf8d0205-c190-471a-b728-fb9938513753"
+                    },
+                    {
+                      "id": "023fe449-b860-43e2-a9ab-b9915dbdd591",
+                      "name": "ResourceNotFoundException",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/20200301/gateways/:gatewayId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "20200301",
+                            "gateways",
+                            ":gatewayId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "gatewayId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:35:34.000Z",
+                      "updatedAt": "2026-07-28T10:35:34.000Z",
+                      "uid": "35240-023fe449-b860-43e2-a9ab-b9915dbdd591"
+                    },
+                    {
+                      "id": "a76fc146-9e5e-405b-a71c-da79a6038f4f",
+                      "name": "InternalFailureException",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/20200301/gateways/:gatewayId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "20200301",
+                            "gateways",
+                            ":gatewayId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "gatewayId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:35:34.000Z",
+                      "updatedAt": "2026-07-28T10:35:34.000Z",
+                      "uid": "35240-a76fc146-9e5e-405b-a71c-da79a6038f4f"
+                    },
+                    {
+                      "id": "c43dab10-973d-4b63-9bf4-dc1e2d68e4ec",
+                      "name": "ThrottlingException",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/20200301/gateways/:gatewayId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "20200301",
+                            "gateways",
+                            ":gatewayId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "gatewayId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:35:34.000Z",
+                      "updatedAt": "2026-07-28T10:35:34.000Z",
+                      "uid": "35240-c43dab10-973d-4b63-9bf4-dc1e2d68e4ec"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:35:34.000Z",
+                  "updatedAt": "2026-07-28T10:35:34.000Z",
+                  "uid": "35240-17a296c1-9b79-4d8e-8390-ad7bc0312570"
+                },
+                {
+                  "name": "Amazon IoT SiteWise Describe Gateway",
+                  "id": "69347bb3-3e39-406f-b4ae-cac481e92979",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/20200301/gateways/:gatewayId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "20200301",
+                        "gateways",
+                        ":gatewayId"
+                      ],
+                      "variable": [
+                        {
+                          "id": "750149ce-d9b1-4b3a-b4e7-425db4ff0d57",
+                          "key": "gatewayId",
+                          "value": "71f3313a-ffd4-c749-6f0e-d809f7fc9d28",
+                          "description": "(Required) The ID of the gateway device."
+                        }
+                      ]
+                    },
+                    "description": "Retrieves information about a gateway."
+                  },
+                  "response": [
+                    {
+                      "id": "6e574148-5d1e-4f50-a7a5-60be38455b97",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/20200301/gateways/:gatewayId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "20200301",
+                            "gateways",
+                            ":gatewayId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "gatewayId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"gatewayId\": \"9c15fbb3-57b7-e8e8-0ab1-bd4eebf9858a\",\n  \"gatewayName\": \"l=Pu,)d\",\n  \"gatewayArn\": \"o%\",\n  \"gatewayCapabilitySummaries\": [\n    {\n      \"capabilityNamespace\": \"tK:sYzkckKu:32238476\",\n      \"capabilitySyncStatus\": \"UNKNOWN\"\n    },\n    {\n      \"capabilityNamespace\": \"DfChUjnTER:CFTk:0176651577\",\n      \"capabilitySyncStatus\": \"IN_SYNC\"\n    }\n  ],\n  \"creationDate\": \"<dateTime>\",\n  \"lastUpdateDate\": \"<dateTime>\",\n  \"gatewayPlatform\": {\n    \"greengrass\": {\n      \"groupArn\": \"OcgimU%X\"\n    },\n    \"greengrassV2\": {\n      \"coreDeviceThingName\": \"<string>\"\n    }\n  }\n}",
+                      "createdAt": "2026-07-28T10:35:34.000Z",
+                      "updatedAt": "2026-07-28T10:35:34.000Z",
+                      "uid": "35240-6e574148-5d1e-4f50-a7a5-60be38455b97"
+                    },
+                    {
+                      "id": "7672586c-78de-4d23-b676-0be3ded25540",
+                      "name": "InvalidRequestException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/20200301/gateways/:gatewayId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "20200301",
+                            "gateways",
+                            ":gatewayId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "gatewayId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:35:34.000Z",
+                      "updatedAt": "2026-07-28T10:35:34.000Z",
+                      "uid": "35240-7672586c-78de-4d23-b676-0be3ded25540"
+                    },
+                    {
+                      "id": "cf06ca24-c6da-4083-b74b-e95347797a1f",
+                      "name": "ResourceNotFoundException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/20200301/gateways/:gatewayId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "20200301",
+                            "gateways",
+                            ":gatewayId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "gatewayId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:35:34.000Z",
+                      "updatedAt": "2026-07-28T10:35:34.000Z",
+                      "uid": "35240-cf06ca24-c6da-4083-b74b-e95347797a1f"
+                    },
+                    {
+                      "id": "5b42754b-6854-4edb-8836-d6576dd92292",
+                      "name": "InternalFailureException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/20200301/gateways/:gatewayId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "20200301",
+                            "gateways",
+                            ":gatewayId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "gatewayId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:35:34.000Z",
+                      "updatedAt": "2026-07-28T10:35:34.000Z",
+                      "uid": "35240-5b42754b-6854-4edb-8836-d6576dd92292"
+                    },
+                    {
+                      "id": "6aa7d517-09c2-4f32-b9d3-2d0e6743fe4a",
+                      "name": "ThrottlingException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/20200301/gateways/:gatewayId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "20200301",
+                            "gateways",
+                            ":gatewayId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "gatewayId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:35:34.000Z",
+                      "updatedAt": "2026-07-28T10:35:34.000Z",
+                      "uid": "35240-6aa7d517-09c2-4f32-b9d3-2d0e6743fe4a"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:35:34.000Z",
+                  "updatedAt": "2026-07-28T10:35:34.000Z",
+                  "uid": "35240-69347bb3-3e39-406f-b4ae-cac481e92979"
+                },
+                {
+                  "name": "Amazon IoT SiteWise Update Gateway",
+                  "id": "668c4b82-e0c6-44c3-88b8-97c8192c1a5e",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"gatewayName\": \"L'oGgVven\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/20200301/gateways/:gatewayId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "20200301",
+                        "gateways",
+                        ":gatewayId"
+                      ],
+                      "variable": [
+                        {
+                          "id": "6e9ceb47-665a-44f8-b71c-3009699de2bf",
+                          "key": "gatewayId",
+                          "value": "71f3313a-ffd4-c749-6f0e-d809f7fc9d28",
+                          "description": "(Required) The ID of the gateway to update."
+                        }
+                      ]
+                    },
+                    "description": "Updates a gateway's name."
+                  },
+                  "response": [
+                    {
+                      "id": "061deb1e-d792-4218-9b6a-463a2486bd6b",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"gatewayName\": \"L'oGgVven\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/20200301/gateways/:gatewayId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "20200301",
+                            "gateways",
+                            ":gatewayId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "gatewayId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T10:35:34.000Z",
+                      "updatedAt": "2026-07-28T10:35:34.000Z",
+                      "uid": "35240-061deb1e-d792-4218-9b6a-463a2486bd6b"
+                    },
+                    {
+                      "id": "d2efeacb-1fad-481f-97e5-3ef75ecae79b",
+                      "name": "InvalidRequestException",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"gatewayName\": \"L'oGgVven\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/20200301/gateways/:gatewayId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "20200301",
+                            "gateways",
+                            ":gatewayId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "gatewayId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:35:34.000Z",
+                      "updatedAt": "2026-07-28T10:35:34.000Z",
+                      "uid": "35240-d2efeacb-1fad-481f-97e5-3ef75ecae79b"
+                    },
+                    {
+                      "id": "65ee9d60-31d4-4f6f-befe-97c380d34674",
+                      "name": "ResourceNotFoundException",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"gatewayName\": \"L'oGgVven\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/20200301/gateways/:gatewayId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "20200301",
+                            "gateways",
+                            ":gatewayId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "gatewayId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:35:34.000Z",
+                      "updatedAt": "2026-07-28T10:35:34.000Z",
+                      "uid": "35240-65ee9d60-31d4-4f6f-befe-97c380d34674"
+                    },
+                    {
+                      "id": "59470e89-d4e4-4029-8a01-c82b2beeeff4",
+                      "name": "ConflictingOperationException",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"gatewayName\": \"L'oGgVven\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/20200301/gateways/:gatewayId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "20200301",
+                            "gateways",
+                            ":gatewayId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "gatewayId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:35:34.000Z",
+                      "updatedAt": "2026-07-28T10:35:34.000Z",
+                      "uid": "35240-59470e89-d4e4-4029-8a01-c82b2beeeff4"
+                    },
+                    {
+                      "id": "da7045d2-b87f-4a29-887d-95794f57b94d",
+                      "name": "InternalFailureException",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"gatewayName\": \"L'oGgVven\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/20200301/gateways/:gatewayId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "20200301",
+                            "gateways",
+                            ":gatewayId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "gatewayId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:35:34.000Z",
+                      "updatedAt": "2026-07-28T10:35:34.000Z",
+                      "uid": "35240-da7045d2-b87f-4a29-887d-95794f57b94d"
+                    },
+                    {
+                      "id": "b1b0a920-77ef-4e40-9c8f-889c301db688",
+                      "name": "ThrottlingException",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"gatewayName\": \"L'oGgVven\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/20200301/gateways/:gatewayId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "20200301",
+                            "gateways",
+                            ":gatewayId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "gatewayId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:35:34.000Z",
+                      "updatedAt": "2026-07-28T10:35:34.000Z",
+                      "uid": "35240-b1b0a920-77ef-4e40-9c8f-889c301db688"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:35:34.000Z",
+                  "updatedAt": "2026-07-28T10:35:34.000Z",
+                  "uid": "35240-668c4b82-e0c6-44c3-88b8-97c8192c1a5e"
+                }
+              ],
+              "id": "3afa8309-4b61-48cf-b8c9-7d60ea7463e3",
+              "createdAt": "2026-07-28T10:35:34.000Z",
+              "updatedAt": "2026-07-28T10:35:34.000Z",
+              "uid": "35240-3afa8309-4b61-48cf-b8c9-7d60ea7463e3"
+            },
+            {
+              "name": "Amazon IoT SiteWise Create Gateway",
+              "id": "82854d6b-b9e4-4263-b035-adbe88611fe0",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"gatewayName\": \"kOQ<[[\",\n  \"gatewayPlatform\": {\n    \"greengrass\": {\n      \"groupArn\": \"x2%]TOfR\"\n    },\n    \"greengrassV2\": {\n      \"coreDeviceThingName\": \"<string>\"\n    }\n  },\n  \"tags\": {\n    \"irure_5d\": \"<string>\",\n    \"dolor_cb6\": \"<string>\",\n    \"eiusmod0c\": \"<string>\",\n    \"amet_68\": \"<string>\",\n    \"fugiat_e6\": \"<string>\",\n    \"aliquip_f\": \"<string>\",\n    \"in_e\": \"<string>\",\n    \"magna_c33\": \"<string>\",\n    \"commodo8\": \"<string>\",\n    \"veniama39\": \"<string>\",\n    \"occaecata8\": \"<string>\",\n    \"sinta70\": \"<string>\",\n    \"in_b\": \"<string>\",\n    \"incididunt_01\": \"<string>\",\n    \"cupidatat78\": \"<string>\",\n    \"deserunt_4\": \"<string>\",\n    \"quis_b21\": \"<string>\",\n    \"estdf5\": \"<string>\",\n    \"dolore52\": \"<string>\",\n    \"eucef\": \"<string>\",\n    \"autef3_\": \"<string>\",\n    \"pariatur2_\": \"<string>\",\n    \"anim20\": \"<string>\",\n    \"ullamco_7\": \"<string>\",\n    \"ex1\": \"<string>\",\n    \"dolore__\": \"<string>\",\n    \"Ut7\": \"<string>\",\n    \"irure5\": \"<string>\",\n    \"nulla_3\": \"<string>\",\n    \"irurea34\": \"<string>\",\n    \"ut32\": \"<string>\",\n    \"non8\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/20200301/gateways",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "20200301",
+                    "gateways"
+                  ]
+                },
+                "description": "Creates a gateway, which is a virtual or edge device that delivers industrial data streams from local servers to IoT SiteWise. For more information, see <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html\">Ingesting data using a gateway</a> in the <i>IoT SiteWise User Guide</i>."
+              },
+              "response": [
+                {
+                  "id": "ec1b3d3a-4ec5-4b46-89e7-33b5cc150242",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"gatewayName\": \"kOQ<[[\",\n  \"gatewayPlatform\": {\n    \"greengrass\": {\n      \"groupArn\": \"x2%]TOfR\"\n    },\n    \"greengrassV2\": {\n      \"coreDeviceThingName\": \"<string>\"\n    }\n  },\n  \"tags\": {\n    \"irure_5d\": \"<string>\",\n    \"dolor_cb6\": \"<string>\",\n    \"eiusmod0c\": \"<string>\",\n    \"amet_68\": \"<string>\",\n    \"fugiat_e6\": \"<string>\",\n    \"aliquip_f\": \"<string>\",\n    \"in_e\": \"<string>\",\n    \"magna_c33\": \"<string>\",\n    \"commodo8\": \"<string>\",\n    \"veniama39\": \"<string>\",\n    \"occaecata8\": \"<string>\",\n    \"sinta70\": \"<string>\",\n    \"in_b\": \"<string>\",\n    \"incididunt_01\": \"<string>\",\n    \"cupidatat78\": \"<string>\",\n    \"deserunt_4\": \"<string>\",\n    \"quis_b21\": \"<string>\",\n    \"estdf5\": \"<string>\",\n    \"dolore52\": \"<string>\",\n    \"eucef\": \"<string>\",\n    \"autef3_\": \"<string>\",\n    \"pariatur2_\": \"<string>\",\n    \"anim20\": \"<string>\",\n    \"ullamco_7\": \"<string>\",\n    \"ex1\": \"<string>\",\n    \"dolore__\": \"<string>\",\n    \"Ut7\": \"<string>\",\n    \"irure5\": \"<string>\",\n    \"nulla_3\": \"<string>\",\n    \"irurea34\": \"<string>\",\n    \"ut32\": \"<string>\",\n    \"non8\": \"<string>\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/20200301/gateways",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "20200301",
+                        "gateways"
+                      ]
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"gatewayId\": \"c60d873e-c60e-524b-f8d4-472127bb26c2\",\n  \"gatewayArn\": \" \"\n}",
+                  "createdAt": "2026-07-28T10:35:34.000Z",
+                  "updatedAt": "2026-07-28T10:35:34.000Z",
+                  "uid": "35240-ec1b3d3a-4ec5-4b46-89e7-33b5cc150242"
+                },
+                {
+                  "id": "90fa1148-2520-4bf9-9eec-2061de43a7ed",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"gatewayName\": \"kOQ<[[\",\n  \"gatewayPlatform\": {\n    \"greengrass\": {\n      \"groupArn\": \"x2%]TOfR\"\n    },\n    \"greengrassV2\": {\n      \"coreDeviceThingName\": \"<string>\"\n    }\n  },\n  \"tags\": {\n    \"irure_5d\": \"<string>\",\n    \"dolor_cb6\": \"<string>\",\n    \"eiusmod0c\": \"<string>\",\n    \"amet_68\": \"<string>\",\n    \"fugiat_e6\": \"<string>\",\n    \"aliquip_f\": \"<string>\",\n    \"in_e\": \"<string>\",\n    \"magna_c33\": \"<string>\",\n    \"commodo8\": \"<string>\",\n    \"veniama39\": \"<string>\",\n    \"occaecata8\": \"<string>\",\n    \"sinta70\": \"<string>\",\n    \"in_b\": \"<string>\",\n    \"incididunt_01\": \"<string>\",\n    \"cupidatat78\": \"<string>\",\n    \"deserunt_4\": \"<string>\",\n    \"quis_b21\": \"<string>\",\n    \"estdf5\": \"<string>\",\n    \"dolore52\": \"<string>\",\n    \"eucef\": \"<string>\",\n    \"autef3_\": \"<string>\",\n    \"pariatur2_\": \"<string>\",\n    \"anim20\": \"<string>\",\n    \"ullamco_7\": \"<string>\",\n    \"ex1\": \"<string>\",\n    \"dolore__\": \"<string>\",\n    \"Ut7\": \"<string>\",\n    \"irure5\": \"<string>\",\n    \"nulla_3\": \"<string>\",\n    \"irurea34\": \"<string>\",\n    \"ut32\": \"<string>\",\n    \"non8\": \"<string>\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/20200301/gateways",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "20200301",
+                        "gateways"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:35:34.000Z",
+                  "updatedAt": "2026-07-28T10:35:34.000Z",
+                  "uid": "35240-90fa1148-2520-4bf9-9eec-2061de43a7ed"
+                },
+                {
+                  "id": "3cc9e395-5301-4b53-a588-3efa8f619115",
+                  "name": "ResourceAlreadyExistsException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"gatewayName\": \"kOQ<[[\",\n  \"gatewayPlatform\": {\n    \"greengrass\": {\n      \"groupArn\": \"x2%]TOfR\"\n    },\n    \"greengrassV2\": {\n      \"coreDeviceThingName\": \"<string>\"\n    }\n  },\n  \"tags\": {\n    \"irure_5d\": \"<string>\",\n    \"dolor_cb6\": \"<string>\",\n    \"eiusmod0c\": \"<string>\",\n    \"amet_68\": \"<string>\",\n    \"fugiat_e6\": \"<string>\",\n    \"aliquip_f\": \"<string>\",\n    \"in_e\": \"<string>\",\n    \"magna_c33\": \"<string>\",\n    \"commodo8\": \"<string>\",\n    \"veniama39\": \"<string>\",\n    \"occaecata8\": \"<string>\",\n    \"sinta70\": \"<string>\",\n    \"in_b\": \"<string>\",\n    \"incididunt_01\": \"<string>\",\n    \"cupidatat78\": \"<string>\",\n    \"deserunt_4\": \"<string>\",\n    \"quis_b21\": \"<string>\",\n    \"estdf5\": \"<string>\",\n    \"dolore52\": \"<string>\",\n    \"eucef\": \"<string>\",\n    \"autef3_\": \"<string>\",\n    \"pariatur2_\": \"<string>\",\n    \"anim20\": \"<string>\",\n    \"ullamco_7\": \"<string>\",\n    \"ex1\": \"<string>\",\n    \"dolore__\": \"<string>\",\n    \"Ut7\": \"<string>\",\n    \"irure5\": \"<string>\",\n    \"nulla_3\": \"<string>\",\n    \"irurea34\": \"<string>\",\n    \"ut32\": \"<string>\",\n    \"non8\": \"<string>\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/20200301/gateways",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "20200301",
+                        "gateways"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:35:34.000Z",
+                  "updatedAt": "2026-07-28T10:35:34.000Z",
+                  "uid": "35240-3cc9e395-5301-4b53-a588-3efa8f619115"
+                },
+                {
+                  "id": "b5194416-3e0a-451b-84f3-fc406b90c96c",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"gatewayName\": \"kOQ<[[\",\n  \"gatewayPlatform\": {\n    \"greengrass\": {\n      \"groupArn\": \"x2%]TOfR\"\n    },\n    \"greengrassV2\": {\n      \"coreDeviceThingName\": \"<string>\"\n    }\n  },\n  \"tags\": {\n    \"irure_5d\": \"<string>\",\n    \"dolor_cb6\": \"<string>\",\n    \"eiusmod0c\": \"<string>\",\n    \"amet_68\": \"<string>\",\n    \"fugiat_e6\": \"<string>\",\n    \"aliquip_f\": \"<string>\",\n    \"in_e\": \"<string>\",\n    \"magna_c33\": \"<string>\",\n    \"commodo8\": \"<string>\",\n    \"veniama39\": \"<string>\",\n    \"occaecata8\": \"<string>\",\n    \"sinta70\": \"<string>\",\n    \"in_b\": \"<string>\",\n    \"incididunt_01\": \"<string>\",\n    \"cupidatat78\": \"<string>\",\n    \"deserunt_4\": \"<string>\",\n    \"quis_b21\": \"<string>\",\n    \"estdf5\": \"<string>\",\n    \"dolore52\": \"<string>\",\n    \"eucef\": \"<string>\",\n    \"autef3_\": \"<string>\",\n    \"pariatur2_\": \"<string>\",\n    \"anim20\": \"<string>\",\n    \"ullamco_7\": \"<string>\",\n    \"ex1\": \"<string>\",\n    \"dolore__\": \"<string>\",\n    \"Ut7\": \"<string>\",\n    \"irure5\": \"<string>\",\n    \"nulla_3\": \"<string>\",\n    \"irurea34\": \"<string>\",\n    \"ut32\": \"<string>\",\n    \"non8\": \"<string>\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/20200301/gateways",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "20200301",
+                        "gateways"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:35:34.000Z",
+                  "updatedAt": "2026-07-28T10:35:34.000Z",
+                  "uid": "35240-b5194416-3e0a-451b-84f3-fc406b90c96c"
+                },
+                {
+                  "id": "ac1e28d5-6351-45ec-9ddb-0e6c1d9175ad",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"gatewayName\": \"kOQ<[[\",\n  \"gatewayPlatform\": {\n    \"greengrass\": {\n      \"groupArn\": \"x2%]TOfR\"\n    },\n    \"greengrassV2\": {\n      \"coreDeviceThingName\": \"<string>\"\n    }\n  },\n  \"tags\": {\n    \"irure_5d\": \"<string>\",\n    \"dolor_cb6\": \"<string>\",\n    \"eiusmod0c\": \"<string>\",\n    \"amet_68\": \"<string>\",\n    \"fugiat_e6\": \"<string>\",\n    \"aliquip_f\": \"<string>\",\n    \"in_e\": \"<string>\",\n    \"magna_c33\": \"<string>\",\n    \"commodo8\": \"<string>\",\n    \"veniama39\": \"<string>\",\n    \"occaecata8\": \"<string>\",\n    \"sinta70\": \"<string>\",\n    \"in_b\": \"<string>\",\n    \"incididunt_01\": \"<string>\",\n    \"cupidatat78\": \"<string>\",\n    \"deserunt_4\": \"<string>\",\n    \"quis_b21\": \"<string>\",\n    \"estdf5\": \"<string>\",\n    \"dolore52\": \"<string>\",\n    \"eucef\": \"<string>\",\n    \"autef3_\": \"<string>\",\n    \"pariatur2_\": \"<string>\",\n    \"anim20\": \"<string>\",\n    \"ullamco_7\": \"<string>\",\n    \"ex1\": \"<string>\",\n    \"dolore__\": \"<string>\",\n    \"Ut7\": \"<string>\",\n    \"irure5\": \"<string>\",\n    \"nulla_3\": \"<string>\",\n    \"irurea34\": \"<string>\",\n    \"ut32\": \"<string>\",\n    \"non8\": \"<string>\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/20200301/gateways",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "20200301",
+                        "gateways"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:35:34.000Z",
+                  "updatedAt": "2026-07-28T10:35:34.000Z",
+                  "uid": "35240-ac1e28d5-6351-45ec-9ddb-0e6c1d9175ad"
+                },
+                {
+                  "id": "a8e7c7c9-e97b-4be3-83b5-2a1283bafce3",
+                  "name": "LimitExceededException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"gatewayName\": \"kOQ<[[\",\n  \"gatewayPlatform\": {\n    \"greengrass\": {\n      \"groupArn\": \"x2%]TOfR\"\n    },\n    \"greengrassV2\": {\n      \"coreDeviceThingName\": \"<string>\"\n    }\n  },\n  \"tags\": {\n    \"irure_5d\": \"<string>\",\n    \"dolor_cb6\": \"<string>\",\n    \"eiusmod0c\": \"<string>\",\n    \"amet_68\": \"<string>\",\n    \"fugiat_e6\": \"<string>\",\n    \"aliquip_f\": \"<string>\",\n    \"in_e\": \"<string>\",\n    \"magna_c33\": \"<string>\",\n    \"commodo8\": \"<string>\",\n    \"veniama39\": \"<string>\",\n    \"occaecata8\": \"<string>\",\n    \"sinta70\": \"<string>\",\n    \"in_b\": \"<string>\",\n    \"incididunt_01\": \"<string>\",\n    \"cupidatat78\": \"<string>\",\n    \"deserunt_4\": \"<string>\",\n    \"quis_b21\": \"<string>\",\n    \"estdf5\": \"<string>\",\n    \"dolore52\": \"<string>\",\n    \"eucef\": \"<string>\",\n    \"autef3_\": \"<string>\",\n    \"pariatur2_\": \"<string>\",\n    \"anim20\": \"<string>\",\n    \"ullamco_7\": \"<string>\",\n    \"ex1\": \"<string>\",\n    \"dolore__\": \"<string>\",\n    \"Ut7\": \"<string>\",\n    \"irure5\": \"<string>\",\n    \"nulla_3\": \"<string>\",\n    \"irurea34\": \"<string>\",\n    \"ut32\": \"<string>\",\n    \"non8\": \"<string>\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/20200301/gateways",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "20200301",
+                        "gateways"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:35:34.000Z",
+                  "updatedAt": "2026-07-28T10:35:34.000Z",
+                  "uid": "35240-a8e7c7c9-e97b-4be3-83b5-2a1283bafce3"
+                }
+              ],
+              "createdAt": "2026-07-28T10:35:34.000Z",
+              "updatedAt": "2026-07-28T10:35:34.000Z",
+              "uid": "35240-82854d6b-b9e4-4263-b035-adbe88611fe0"
+            },
+            {
+              "name": "Amazon IoT SiteWise List Gateways",
+              "id": "2e1cb083-9218-453d-8ec5-0e8e42d9825d",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/20200301/gateways?nextToken=uXN9P=d&maxResults=<integer>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "20200301",
+                    "gateways"
+                  ],
+                  "query": [
+                    {
+                      "description": "The token to be used for the next set of paginated results.",
+                      "key": "nextToken",
+                      "value": "uXN9P=d"
+                    },
+                    {
+                      "description": "<p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    }
+                  ]
+                },
+                "description": "Retrieves a paginated list of gateways."
+              },
+              "response": [
+                {
+                  "id": "5f9f3333-9613-4c87-afdc-b390467da367",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/20200301/gateways?nextToken=uXN9P=d&maxResults=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "20200301",
+                        "gateways"
+                      ],
+                      "query": [
+                        {
+                          "description": "The token to be used for the next set of paginated results.",
+                          "key": "nextToken",
+                          "value": "uXN9P=d"
+                        },
+                        {
+                          "description": "<p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>",
+                          "key": "maxResults",
+                          "value": "<integer>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"gatewaySummaries\": [\n    {\n      \"gatewayId\": \"8b372f90-4b6b-8270-e9f7-6ad4efa0d86d\",\n      \"gatewayName\": \"5HoalOb\",\n      \"creationDate\": \"<dateTime>\",\n      \"lastUpdateDate\": \"<dateTime>\",\n      \"gatewayPlatform\": {\n        \"greengrass\": {\n          \"groupArn\": \":,mgG@)\\\"S<\"\n        },\n        \"greengrassV2\": {\n          \"coreDeviceThingName\": \"<string>\"\n        }\n      },\n      \"gatewayCapabilitySummaries\": [\n        {\n          \"capabilityNamespace\": \"IdPaOH:ShVNCaC:559\",\n          \"capabilitySyncStatus\": \"OUT_OF_SYNC\"\n        },\n        {\n          \"capabilityNamespace\": \"ggg:AKeCjD:077439201\",\n          \"capabilitySyncStatus\": \"IN_SYNC\"\n        }\n      ]\n    },\n    {\n      \"gatewayId\": \"849cf697-682b-bc86-f08e-33c0d046d392\",\n      \"gatewayName\": \"SA>qgMq\",\n      \"creationDate\": \"<dateTime>\",\n      \"lastUpdateDate\": \"<dateTime>\",\n      \"gatewayPlatform\": {\n        \"greengrass\": {\n          \"groupArn\": \"D5rp8\\\\I\"\n        },\n        \"greengrassV2\": {\n          \"coreDeviceThingName\": \"<string>\"\n        }\n      },\n      \"gatewayCapabilitySummaries\": [\n        {\n          \"capabilityNamespace\": \"eXCKnyx:xcVvYdrDw:92\",\n          \"capabilitySyncStatus\": \"SYNC_FAILED\"\n        },\n        {\n          \"capabilityNamespace\": \"XiaLN:Mz:0733459221\",\n          \"capabilitySyncStatus\": \"SYNC_FAILED\"\n        }\n      ]\n    }\n  ],\n  \"nextToken\": \"kFi\"\n}",
+                  "createdAt": "2026-07-28T10:35:34.000Z",
+                  "updatedAt": "2026-07-28T10:35:34.000Z",
+                  "uid": "35240-5f9f3333-9613-4c87-afdc-b390467da367"
+                },
+                {
+                  "id": "39362c65-f40b-4a81-8e9e-238fb385af7e",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/20200301/gateways?nextToken=uXN9P=d&maxResults=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "20200301",
+                        "gateways"
+                      ],
+                      "query": [
+                        {
+                          "description": "The token to be used for the next set of paginated results.",
+                          "key": "nextToken",
+                          "value": "uXN9P=d"
+                        },
+                        {
+                          "description": "<p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>",
+                          "key": "maxResults",
+                          "value": "<integer>"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:35:34.000Z",
+                  "updatedAt": "2026-07-28T10:35:34.000Z",
+                  "uid": "35240-39362c65-f40b-4a81-8e9e-238fb385af7e"
+                },
+                {
+                  "id": "43193d94-9663-4b6b-8e3f-bc903057894a",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/20200301/gateways?nextToken=uXN9P=d&maxResults=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "20200301",
+                        "gateways"
+                      ],
+                      "query": [
+                        {
+                          "description": "The token to be used for the next set of paginated results.",
+                          "key": "nextToken",
+                          "value": "uXN9P=d"
+                        },
+                        {
+                          "description": "<p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>",
+                          "key": "maxResults",
+                          "value": "<integer>"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:35:34.000Z",
+                  "updatedAt": "2026-07-28T10:35:34.000Z",
+                  "uid": "35240-43193d94-9663-4b6b-8e3f-bc903057894a"
+                },
+                {
+                  "id": "20bb6374-f007-455a-b72c-6cc2cb92496a",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/20200301/gateways?nextToken=uXN9P=d&maxResults=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "20200301",
+                        "gateways"
+                      ],
+                      "query": [
+                        {
+                          "description": "The token to be used for the next set of paginated results.",
+                          "key": "nextToken",
+                          "value": "uXN9P=d"
+                        },
+                        {
+                          "description": "<p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>",
+                          "key": "maxResults",
+                          "value": "<integer>"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:35:34.000Z",
+                  "updatedAt": "2026-07-28T10:35:34.000Z",
+                  "uid": "35240-20bb6374-f007-455a-b72c-6cc2cb92496a"
+                }
+              ],
+              "createdAt": "2026-07-28T10:35:34.000Z",
+              "updatedAt": "2026-07-28T10:35:34.000Z",
+              "uid": "35240-2e1cb083-9218-453d-8ec5-0e8e42d9825d"
+            }
+          ],
+          "id": "5a98824d-ce3e-47cb-9e16-9557aedda298",
+          "createdAt": "2026-07-28T10:35:34.000Z",
+          "updatedAt": "2026-07-28T10:35:34.000Z",
+          "uid": "35240-5a98824d-ce3e-47cb-9e16-9557aedda298"
+        }
+      ],
+      "id": "fd3e40e7-1a82-4b72-9d77-d78b67de50fe",
+      "createdAt": "2026-07-28T10:35:34.000Z",
+      "updatedAt": "2026-07-28T10:35:34.000Z",
+      "uid": "35240-fd3e40e7-1a82-4b72-9d77-d78b67de50fe"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://iotsitewise.{{region}}.amazonaws.com"
+    }
+  ]
+}

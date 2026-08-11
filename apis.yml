@@ -47,8 +47,6 @@ apis:
     url: https://aws.amazon.com/iot-sitewise/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-sitewise/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-iot-sitewise.yaml
 - aid: amazon-iot-sitewise:amazon-iot-sitewise-asset-models-api
   name: Amazon IoT SiteWise Asset Models API
   description: The Asset Models API from Amazon IoT SiteWise — 3 operation(s) for asset models.
@@ -67,8 +65,6 @@ apis:
     url: https://aws.amazon.com/iot-sitewise/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-sitewise/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-iot-sitewise.yaml
 - aid: amazon-iot-sitewise:amazon-iot-sitewise-assets-api
   name: Amazon IoT SiteWise Assets API
   description: The Assets API from Amazon IoT SiteWise — 8 operation(s) for assets.
@@ -87,8 +83,6 @@ apis:
     url: https://aws.amazon.com/iot-sitewise/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-sitewise/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-iot-sitewise.yaml
 - aid: amazon-iot-sitewise:amazon-iot-sitewise-configuration-api
   name: Amazon IoT SiteWise Configuration API
   description: The Configuration API from Amazon IoT SiteWise — 2 operation(s) for configuration.
@@ -107,8 +101,6 @@ apis:
     url: https://aws.amazon.com/iot-sitewise/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-sitewise/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-iot-sitewise.yaml
 - aid: amazon-iot-sitewise:amazon-iot-sitewise-dashboards-api
   name: Amazon IoT SiteWise Dashboards API
   description: The Dashboards API from Amazon IoT SiteWise — 2 operation(s) for dashboards.
@@ -127,8 +119,6 @@ apis:
     url: https://aws.amazon.com/iot-sitewise/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-sitewise/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-iot-sitewise.yaml
 - aid: amazon-iot-sitewise:amazon-iot-sitewise-dashboards-projectid-api
   name: Amazon IoT SiteWise Dashboards#projectId API
   description: >-
@@ -148,8 +138,6 @@ apis:
     url: https://aws.amazon.com/iot-sitewise/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-sitewise/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-iot-sitewise.yaml
 - aid: amazon-iot-sitewise:amazon-iot-sitewise-gateways-api
   name: Amazon IoT SiteWise Gateways API
   description: The Gateways API from Amazon IoT SiteWise — 4 operation(s) for gateways.
@@ -168,8 +156,6 @@ apis:
     url: https://aws.amazon.com/iot-sitewise/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-sitewise/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-iot-sitewise.yaml
 - aid: amazon-iot-sitewise:amazon-iot-sitewise-jobs-api
   name: Amazon IoT SiteWise Jobs API
   description: The Jobs API from Amazon IoT SiteWise — 2 operation(s) for jobs.
@@ -188,8 +174,6 @@ apis:
     url: https://aws.amazon.com/iot-sitewise/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-sitewise/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-iot-sitewise.yaml
 - aid: amazon-iot-sitewise:amazon-iot-sitewise-logging-api
   name: Amazon IoT SiteWise Logging API
   description: The Logging API from Amazon IoT SiteWise — 1 operation(s) for logging.
@@ -208,8 +192,6 @@ apis:
     url: https://aws.amazon.com/iot-sitewise/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-sitewise/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-iot-sitewise.yaml
 - aid: amazon-iot-sitewise:amazon-iot-sitewise-portals-api
   name: Amazon IoT SiteWise Portals API
   description: The Portals API from Amazon IoT SiteWise — 2 operation(s) for portals.
@@ -228,8 +210,6 @@ apis:
     url: https://aws.amazon.com/iot-sitewise/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-sitewise/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-iot-sitewise.yaml
 - aid: amazon-iot-sitewise:amazon-iot-sitewise-projects-api
   name: Amazon IoT SiteWise Projects API
   description: The Projects API from Amazon IoT SiteWise — 5 operation(s) for projects.
@@ -248,8 +228,6 @@ apis:
     url: https://aws.amazon.com/iot-sitewise/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-sitewise/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-iot-sitewise.yaml
 - aid: amazon-iot-sitewise:amazon-iot-sitewise-projects-portalid-api
   name: Amazon IoT SiteWise Projects#portalId API
   description: >-
@@ -269,8 +247,6 @@ apis:
     url: https://aws.amazon.com/iot-sitewise/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-sitewise/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-iot-sitewise.yaml
 - aid: amazon-iot-sitewise:amazon-iot-sitewise-properties-api
   name: Amazon IoT SiteWise Properties API
   description: The Properties API from Amazon IoT SiteWise — 8 operation(s) for properties.
@@ -289,8 +265,6 @@ apis:
     url: https://aws.amazon.com/iot-sitewise/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-sitewise/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-iot-sitewise.yaml
 - aid: amazon-iot-sitewise:amazon-iot-sitewise-tags-resourcearn-api
   name: Amazon IoT SiteWise Tags#resourceArn API
   description: The Tags#resourceArn API from Amazon IoT SiteWise — 1 operation(s) for tags#resourcearn.
@@ -309,8 +283,6 @@ apis:
     url: https://aws.amazon.com/iot-sitewise/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-sitewise/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-iot-sitewise.yaml
 - aid: amazon-iot-sitewise:amazon-iot-sitewise-tags-resourcearn-tagkeys-api
   name: Amazon IoT SiteWise Tags#resourceArn&tagKeys API
   description: >-
@@ -330,8 +302,6 @@ apis:
     url: https://aws.amazon.com/iot-sitewise/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-sitewise/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-iot-sitewise.yaml
 - aid: amazon-iot-sitewise:amazon-iot-sitewise-timeseries-api
   name: Amazon IoT SiteWise Timeseries API
   description: The Timeseries API from Amazon IoT SiteWise — 5 operation(s) for timeseries.
@@ -350,8 +320,6 @@ apis:
     url: https://aws.amazon.com/iot-sitewise/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-sitewise/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-iot-sitewise.yaml
 common:
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/amazon-iot-sitewise/overview

@@ -1,0 +1,1687 @@
+{
+  "item": [
+    {
+      "id": "a6bbb10a-8790-4a18-be41-165149899465",
+      "name": "Tags#resourceArn&tagKeys",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f293766b-f477-4bc1-99b5-12ee37085878",
+          "name": "Amazon IoT SiteWise Untag Resource",
+          "request": {
+            "name": "Amazon IoT SiteWise Untag Resource",
+            "description": {
+              "content": "Removes a tag from an IoT SiteWise resource.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "tags"
+              ],
+              "hash": "resourceArn&tagKeys",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "resourceArn",
+                  "value": "<string>",
+                  "description": "(Required) The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the resource to untag."
+                },
+                {
+                  "disabled": false,
+                  "key": "tagKeys",
+                  "value": "<string>",
+                  "description": "(Required) A list of keys for tags to remove from the resource."
+                },
+                {
+                  "disabled": false,
+                  "key": "tagKeys",
+                  "value": "<string>",
+                  "description": "(Required) A list of keys for tags to remove from the resource."
+                },
+                {
+                  "disabled": false,
+                  "key": "tagKeys",
+                  "value": "<string>",
+                  "description": "(Required) A list of keys for tags to remove from the resource."
+                },
+                {
+                  "disabled": false,
+                  "key": "tagKeys",
+                  "value": "<string>",
+                  "description": "(Required) A list of keys for tags to remove from the resource."
+                },
+                {
+                  "disabled": false,
+                  "key": "tagKeys",
+                  "value": "<string>",
+                  "description": "(Required) A list of keys for tags to remove from the resource."
+                },
+                {
+                  "disabled": false,
+                  "key": "tagKeys",
+                  "value": "<string>",
+                  "description": "(Required) A list of keys for tags to remove from the resource."
+                },
+                {
+                  "disabled": false,
+                  "key": "tagKeys",
+                  "value": "<string>",
+                  "description": "(Required) A list of keys for tags to remove from the resource."
+                },
+                {
+                  "disabled": false,
+                  "key": "tagKeys",
+                  "value": "<string>",
+                  "description": "(Required) A list of keys for tags to remove from the resource."
+                },
+                {
+                  "disabled": false,
+                  "key": "tagKeys",
+                  "value": "<string>",
+                  "description": "(Required) A list of keys for tags to remove from the resource."
+                },
+                {
+                  "disabled": false,
+                  "key": "tagKeys",
+                  "value": "<string>",
+                  "description": "(Required) A list of keys for tags to remove from the resource."
+                },
+                {
+                  "disabled": false,
+                  "key": "tagKeys",
+                  "value": "<string>",
+                  "description": "(Required) A list of keys for tags to remove from the resource."
+                },
+                {
+                  "disabled": false,
+                  "key": "tagKeys",
+                  "value": "<string>",
+                  "description": "(Required) A list of keys for tags to remove from the resource."
+                },
+                {
+                  "disabled": false,
+                  "key": "tagKeys",
+                  "value": "<string>",
+                  "description": "(Required) A list of keys for tags to remove from the resource."
+                },
+                {
+                  "disabled": false,
+                  "key": "tagKeys",
+                  "value": "<string>",
+                  "description": "(Required) A list of keys for tags to remove from the resource."
+                },
+                {
+                  "disabled": false,
+                  "key": "tagKeys",
+                  "value": "<string>",
+                  "description": "(Required) A list of keys for tags to remove from the resource."
+                },
+                {
+                  "disabled": false,
+                  "key": "tagKeys",
+                  "value": "<string>",
+                  "description": "(Required) A list of keys for tags to remove from the resource."
+                },
+                {
+                  "disabled": false,
+                  "key": "tagKeys",
+                  "value": "<string>",
+                  "description": "(Required) A list of keys for tags to remove from the resource."
+                },
+                {
+                  "disabled": false,
+                  "key": "tagKeys",
+                  "value": "<string>",
+                  "description": "(Required) A list of keys for tags to remove from the resource."
+                },
+                {
+                  "disabled": false,
+                  "key": "tagKeys",
+                  "value": "<string>",
+                  "description": "(Required) A list of keys for tags to remove from the resource."
+                },
+                {
+                  "disabled": false,
+                  "key": "tagKeys",
+                  "value": "<string>",
+                  "description": "(Required) A list of keys for tags to remove from the resource."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Date",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Algorithm",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Credential",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Security-Token",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Signature",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f4e50fe9-155e-4dba-ad95-29c1900049e0",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tags"
+                  ],
+                  "hash": "resourceArn&tagKeys",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "resourceArn",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d9bda9df-edbf-41fa-a99f-366b09b4703a",
+              "name": "InvalidRequestException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tags"
+                  ],
+                  "hash": "resourceArn&tagKeys",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "resourceArn",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "code": 480,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fc16056a-9dd5-470e-9dd0-4ea9df168da3",
+              "name": "InternalFailureException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tags"
+                  ],
+                  "hash": "resourceArn&tagKeys",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "resourceArn",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "code": 481,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "061232e6-9707-4f19-b149-e8567407af34",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tags"
+                  ],
+                  "hash": "resourceArn&tagKeys",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "resourceArn",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "code": 482,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b3d4ff94-60ab-4c79-baf2-4882b3c899fd",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tags"
+                  ],
+                  "hash": "resourceArn&tagKeys",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "resourceArn",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "code": 483,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6652e6e4-a1bb-4eb1-b55d-ac404195e03d",
+              "name": "ConflictingOperationException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tags"
+                  ],
+                  "hash": "resourceArn&tagKeys",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "resourceArn",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "code": 484,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a8ed08d0-84aa-4654-8683-9b3878ea39f5",
+              "name": "LimitExceededException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tags"
+                  ],
+                  "hash": "resourceArn&tagKeys",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "resourceArn",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "code": 485,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c740bd39-97c2-4039-8717-60fc2a5d6ef1",
+              "name": "UnauthorizedException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tags"
+                  ],
+                  "hash": "resourceArn&tagKeys",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "resourceArn",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "code": 486,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "us-east-1",
+      "key": "region"
+    },
+    {
+      "type": "string",
+      "value": "http://iotsitewise.{{region}}.amazonaws.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "0c4263ba-078e-41af-ba91-c84cabb8c3ec",
+    "name": "AWS IoT SiteWise Access Policies Tags#resourceArn&tagKeys API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Welcome to the IoT SiteWise API Reference. IoT SiteWise is an Amazon Web Services service that connects <a href=\"https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications\">Industrial Internet of Things (IIoT)</a> devices to the power of the Amazon Web Services Cloud. For more information, see the <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/userguide/\">IoT SiteWise User Guide</a>. For information about IoT SiteWise quotas, see <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html\">Quotas</a> in the <i>IoT SiteWise User Guide</i>.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+      "type": "text/plain"
+    }
+  }
+}

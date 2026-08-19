@@ -1,0 +1,355 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AWS IoT SiteWise Access Policies Timeseries API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Timeseries",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon IoT SiteWise Associate Time Series to Asset Property",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://iotsitewise.{region}.amazonaws.com/timeseries/associate/#alias&assetId&propertyId",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "alias",
+                "value": "",
+                "type": "query",
+                "description": "The alias that identifies the time series."
+              },
+              {
+                "name": "assetId",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the asset in which the asset property was created."
+              },
+              {
+                "name": "propertyId",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the asset property."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Associates a time series (data stream) with an asset property."
+        },
+        {
+          "info": {
+            "name": "Amazon IoT SiteWise Delete Time Series",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://iotsitewise.{region}.amazonaws.com/timeseries/delete/",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "alias",
+                "value": "",
+                "type": "query",
+                "description": "The alias that identifies the time series."
+              },
+              {
+                "name": "assetId",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the asset in which the asset property was created."
+              },
+              {
+                "name": "propertyId",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the asset property."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Deletes a time series (data stream). If you delete a time series that's associated with an asset property, the asset property still exists, but the time series will no longer be associated with this asset property.</p> <p>To identify a time series, do one of the following:</p> <ul> <li> <p>If the time series isn't associated with an asset property, specify the <code>alias</code> of the time series.</p> </li> <li> <p>If the time series is associated with an asset property, specify one of the f"
+        },
+        {
+          "info": {
+            "name": "Amazon IoT SiteWise Describe Time Series",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://iotsitewise.{region}.amazonaws.com/timeseries/describe/",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "alias",
+                "value": "",
+                "type": "query",
+                "description": "The alias that identifies the time series."
+              },
+              {
+                "name": "assetId",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the asset in which the asset property was created."
+              },
+              {
+                "name": "propertyId",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the asset property."
+              }
+            ]
+          },
+          "docs": "<p>Retrieves information about a time series (data stream).</p> <p>To identify a time series, do one of the following:</p> <ul> <li> <p>If the time series isn't associated with an asset property, specify the <code>alias</code> of the time series.</p> </li> <li> <p>If the time series is associated with an asset property, specify one of the following: </p> <ul> <li> <p>The <code>alias</code> of the time series.</p> </li> <li> <p>The <code>assetId</code> and <code>propertyId</code> that identifies "
+        },
+        {
+          "info": {
+            "name": "Amazon IoT SiteWise Disassociate Time Series from Asset Property",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://iotsitewise.{region}.amazonaws.com/timeseries/disassociate/#alias&assetId&propertyId",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "alias",
+                "value": "",
+                "type": "query",
+                "description": "The alias that identifies the time series."
+              },
+              {
+                "name": "assetId",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the asset in which the asset property was created."
+              },
+              {
+                "name": "propertyId",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the asset property."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Disassociates a time series (data stream) from an asset property."
+        },
+        {
+          "info": {
+            "name": "Amazon IoT SiteWise List Time Series",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://iotsitewise.{region}.amazonaws.com/timeseries/",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "nextToken",
+                "value": "",
+                "type": "query",
+                "description": "The token to be used for the next set of paginated results."
+              },
+              {
+                "name": "maxResults",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of results to return for each paginated request."
+              },
+              {
+                "name": "assetId",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the asset in which the asset property was created."
+              },
+              {
+                "name": "aliasPrefix",
+                "value": "",
+                "type": "query",
+                "description": "The alias prefix of the time series."
+              },
+              {
+                "name": "timeSeriesType",
+                "value": "",
+                "type": "query",
+                "description": "<p>The type of the time series. The time series type can be one of the following values:</p> <ul> <li> <p> <code>ASSOCIATED</code> – The time series is associated with an asset property.</p> </li> <li> <p> <code>DISASSOCIATED</code> – The time series isn't associated with any asset property.</p> </li> </ul>"
+              }
+            ]
+          },
+          "docs": "Retrieves a paginated list of time series (data streams)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

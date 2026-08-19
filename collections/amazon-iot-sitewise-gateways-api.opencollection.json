@@ -1,0 +1,385 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AWS IoT SiteWise Access Policies Gateways API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Gateways",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon IoT SiteWise List Gateways",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://iotsitewise.{region}.amazonaws.com/20200301/gateways",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "nextToken",
+                "value": "",
+                "type": "query",
+                "description": "The token to be used for the next set of paginated results."
+              },
+              {
+                "name": "maxResults",
+                "value": "",
+                "type": "query",
+                "description": "<p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>"
+              }
+            ]
+          },
+          "docs": "Retrieves a paginated list of gateways."
+        },
+        {
+          "info": {
+            "name": "Amazon IoT SiteWise Create Gateway",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://iotsitewise.{region}.amazonaws.com/20200301/gateways",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a gateway, which is a virtual or edge device that delivers industrial data streams from local servers to IoT SiteWise. For more information, see <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html\">Ingesting data using a gateway</a> in the <i>IoT SiteWise User Guide</i>."
+        },
+        {
+          "info": {
+            "name": "Amazon IoT SiteWise Describe Gateway",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://iotsitewise.{region}.amazonaws.com/20200301/gateways/:gatewayId",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "gatewayId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the gateway device."
+              }
+            ]
+          },
+          "docs": "Retrieves information about a gateway."
+        },
+        {
+          "info": {
+            "name": "Amazon IoT SiteWise Update Gateway",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://iotsitewise.{region}.amazonaws.com/20200301/gateways/:gatewayId",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "gatewayId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the gateway to update."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a gateway's name."
+        },
+        {
+          "info": {
+            "name": "Amazon IoT SiteWise Delete Gateway",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://iotsitewise.{region}.amazonaws.com/20200301/gateways/:gatewayId",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "gatewayId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the gateway to delete."
+              }
+            ]
+          },
+          "docs": "Deletes a gateway from IoT SiteWise. When you delete a gateway, some of the gateway's files remain in your gateway's file system."
+        },
+        {
+          "info": {
+            "name": "Amazon IoT SiteWise Describe Gateway Capability Configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://iotsitewise.{region}.amazonaws.com/20200301/gateways/:gatewayId/capability/:capabilityNamespace",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "gatewayId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the gateway that defines the capability configuration."
+              },
+              {
+                "name": "capabilityNamespace",
+                "value": "",
+                "type": "path",
+                "description": "The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>."
+              }
+            ]
+          },
+          "docs": "Retrieves information about a gateway capability configuration. Each gateway capability defines data sources for a gateway. A capability configuration can contain multiple data source configurations. If you define OPC-UA sources for a gateway in the IoT SiteWise console, all of your OPC-UA sources are stored in one capability configuration. To list all capability configurations for a gateway, use <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html\">Desc"
+        },
+        {
+          "info": {
+            "name": "Amazon IoT SiteWise Update Gateway Capability Configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://iotsitewise.{region}.amazonaws.com/20200301/gateways/:gatewayId/capability",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "gatewayId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the gateway to be updated."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a gateway capability configuration or defines a new capability configuration. Each gateway capability defines data sources for a gateway. A capability configuration can contain multiple data source configurations. If you define OPC-UA sources for a gateway in the IoT SiteWise console, all of your OPC-UA sources are stored in one capability configuration. To list all capability configurations for a gateway, use <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Desc"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

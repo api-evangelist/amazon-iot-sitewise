@@ -1,0 +1,3308 @@
+{
+  "item": [
+    {
+      "id": "f8afb163-256c-49a0-834f-8bfe001ea430",
+      "name": "Portals",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "17c3fd2c-0e34-4b3c-a206-6a1da8ab8518",
+          "name": "Amazon IoT SiteWise Create Portal",
+          "request": {
+            "name": "Amazon IoT SiteWise Create Portal",
+            "description": {
+              "content": "<p>Creates a portal, which can contain projects and dashboards. IoT SiteWise Monitor uses IAM Identity Center or IAM to authenticate portal users and manage user permissions.</p> <note> <p>Before you can sign in to a new portal, you must add at least one identity to that portal. For more information, see <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins\">Adding or removing portal administrators</a> in the <i>IoT SiteWise User Guide</i>.</p> </note>",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "portals"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Date",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Algorithm",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Credential",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Security-Token",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Signature",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"portalName\": \"<string>\",\n  \"portalContactEmail\": \"<string>\",\n  \"roleArn\": \"<string>\",\n  \"portalDescription\": \"<string>\",\n  \"clientToken\": \"<string>\",\n  \"portalLogoImageFile\": {\n    \"data\": \"<string>\",\n    \"type\": \"<string>\"\n  },\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\",\n    \"key_4\": \"<string>\"\n  },\n  \"portalAuthMode\": \"<string>\",\n  \"notificationSenderEmail\": \"<string>\",\n  \"alarms\": {\n    \"alarmRoleArn\": \"<string>\",\n    \"notificationLambdaArn\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "683311ef-3d56-4beb-8102-e9dbd28e00bd",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portals"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"portalName\": \"<string>\",\n  \"portalContactEmail\": \"<string>\",\n  \"roleArn\": \"<string>\",\n  \"portalDescription\": \"<string>\",\n  \"clientToken\": \"<string>\",\n  \"portalLogoImageFile\": {\n    \"data\": \"<string>\",\n    \"type\": \"<string>\"\n  },\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\",\n    \"key_4\": \"<string>\",\n    \"key_5\": \"<string>\",\n    \"key_6\": \"<string>\",\n    \"key_7\": \"<string>\",\n    \"key_8\": \"<string>\",\n    \"key_9\": \"<string>\",\n    \"key_10\": \"<string>\",\n    \"key_11\": \"<string>\",\n    \"key_12\": \"<string>\",\n    \"key_13\": \"<string>\",\n    \"key_14\": \"<string>\",\n    \"key_15\": \"<string>\",\n    \"key_16\": \"<string>\"\n  },\n  \"portalAuthMode\": \"<string>\",\n  \"notificationSenderEmail\": \"<string>\",\n  \"alarms\": {\n    \"alarmRoleArn\": \"<string>\",\n    \"notificationLambdaArn\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"portalId\": \"273c6079-db7d-53d4-c745-b264f7ba9ed2\",\n  \"portalArn\": \"<string>\",\n  \"portalStartUrl\": \"https://J$Jkb^j~6\",\n  \"portalStatus\": {\n    \"state\": \"UPDATING\",\n    \"error\": {\n      \"code\": \"INTERNAL_FAILURE\",\n      \"message\": \"string\"\n    }\n  },\n  \"ssoApplicationId\": \"\\\"u\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "203ef1c3-d637-4267-80d7-f25f8aea77ca",
+              "name": "InvalidRequestException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portals"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"portalName\": \"<string>\",\n  \"portalContactEmail\": \"<string>\",\n  \"roleArn\": \"<string>\",\n  \"portalDescription\": \"<string>\",\n  \"clientToken\": \"<string>\",\n  \"portalLogoImageFile\": {\n    \"data\": \"<string>\",\n    \"type\": \"<string>\"\n  },\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\",\n    \"key_4\": \"<string>\",\n    \"key_5\": \"<string>\",\n    \"key_6\": \"<string>\",\n    \"key_7\": \"<string>\",\n    \"key_8\": \"<string>\",\n    \"key_9\": \"<string>\",\n    \"key_10\": \"<string>\",\n    \"key_11\": \"<string>\",\n    \"key_12\": \"<string>\",\n    \"key_13\": \"<string>\",\n    \"key_14\": \"<string>\",\n    \"key_15\": \"<string>\",\n    \"key_16\": \"<string>\"\n  },\n  \"portalAuthMode\": \"<string>\",\n  \"notificationSenderEmail\": \"<string>\",\n  \"alarms\": {\n    \"alarmRoleArn\": \"<string>\",\n    \"notificationLambdaArn\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 480,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5a60f3c8-5712-404e-985d-2314660bef8a",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portals"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"portalName\": \"<string>\",\n  \"portalContactEmail\": \"<string>\",\n  \"roleArn\": \"<string>\",\n  \"portalDescription\": \"<string>\",\n  \"clientToken\": \"<string>\",\n  \"portalLogoImageFile\": {\n    \"data\": \"<string>\",\n    \"type\": \"<string>\"\n  },\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\",\n    \"key_4\": \"<string>\",\n    \"key_5\": \"<string>\",\n    \"key_6\": \"<string>\",\n    \"key_7\": \"<string>\",\n    \"key_8\": \"<string>\",\n    \"key_9\": \"<string>\",\n    \"key_10\": \"<string>\",\n    \"key_11\": \"<string>\",\n    \"key_12\": \"<string>\",\n    \"key_13\": \"<string>\",\n    \"key_14\": \"<string>\",\n    \"key_15\": \"<string>\",\n    \"key_16\": \"<string>\"\n  },\n  \"portalAuthMode\": \"<string>\",\n  \"notificationSenderEmail\": \"<string>\",\n  \"alarms\": {\n    \"alarmRoleArn\": \"<string>\",\n    \"notificationLambdaArn\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 481,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "defbd104-e617-4bf6-9f3e-813a40f85f06",
+              "name": "InternalFailureException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portals"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"portalName\": \"<string>\",\n  \"portalContactEmail\": \"<string>\",\n  \"roleArn\": \"<string>\",\n  \"portalDescription\": \"<string>\",\n  \"clientToken\": \"<string>\",\n  \"portalLogoImageFile\": {\n    \"data\": \"<string>\",\n    \"type\": \"<string>\"\n  },\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\",\n    \"key_4\": \"<string>\",\n    \"key_5\": \"<string>\",\n    \"key_6\": \"<string>\",\n    \"key_7\": \"<string>\",\n    \"key_8\": \"<string>\",\n    \"key_9\": \"<string>\",\n    \"key_10\": \"<string>\",\n    \"key_11\": \"<string>\",\n    \"key_12\": \"<string>\",\n    \"key_13\": \"<string>\",\n    \"key_14\": \"<string>\",\n    \"key_15\": \"<string>\",\n    \"key_16\": \"<string>\"\n  },\n  \"portalAuthMode\": \"<string>\",\n  \"notificationSenderEmail\": \"<string>\",\n  \"alarms\": {\n    \"alarmRoleArn\": \"<string>\",\n    \"notificationLambdaArn\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 482,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "88d58654-2117-4afc-ac0e-e04734ac7921",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portals"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"portalName\": \"<string>\",\n  \"portalContactEmail\": \"<string>\",\n  \"roleArn\": \"<string>\",\n  \"portalDescription\": \"<string>\",\n  \"clientToken\": \"<string>\",\n  \"portalLogoImageFile\": {\n    \"data\": \"<string>\",\n    \"type\": \"<string>\"\n  },\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\",\n    \"key_4\": \"<string>\",\n    \"key_5\": \"<string>\",\n    \"key_6\": \"<string>\",\n    \"key_7\": \"<string>\",\n    \"key_8\": \"<string>\",\n    \"key_9\": \"<string>\",\n    \"key_10\": \"<string>\",\n    \"key_11\": \"<string>\",\n    \"key_12\": \"<string>\",\n    \"key_13\": \"<string>\",\n    \"key_14\": \"<string>\",\n    \"key_15\": \"<string>\",\n    \"key_16\": \"<string>\"\n  },\n  \"portalAuthMode\": \"<string>\",\n  \"notificationSenderEmail\": \"<string>\",\n  \"alarms\": {\n    \"alarmRoleArn\": \"<string>\",\n    \"notificationLambdaArn\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 483,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dbdf3354-ade8-4ba2-9bfb-8665210be452",
+              "name": "LimitExceededException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portals"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"portalName\": \"<string>\",\n  \"portalContactEmail\": \"<string>\",\n  \"roleArn\": \"<string>\",\n  \"portalDescription\": \"<string>\",\n  \"clientToken\": \"<string>\",\n  \"portalLogoImageFile\": {\n    \"data\": \"<string>\",\n    \"type\": \"<string>\"\n  },\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\",\n    \"key_4\": \"<string>\",\n    \"key_5\": \"<string>\",\n    \"key_6\": \"<string>\",\n    \"key_7\": \"<string>\",\n    \"key_8\": \"<string>\",\n    \"key_9\": \"<string>\",\n    \"key_10\": \"<string>\",\n    \"key_11\": \"<string>\",\n    \"key_12\": \"<string>\",\n    \"key_13\": \"<string>\",\n    \"key_14\": \"<string>\",\n    \"key_15\": \"<string>\",\n    \"key_16\": \"<string>\"\n  },\n  \"portalAuthMode\": \"<string>\",\n  \"notificationSenderEmail\": \"<string>\",\n  \"alarms\": {\n    \"alarmRoleArn\": \"<string>\",\n    \"notificationLambdaArn\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 484,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "15cc7878-6845-4c59-ae6b-e4fe10cbc62a",
+          "name": "Amazon IoT SiteWise List Portals",
+          "request": {
+            "name": "Amazon IoT SiteWise List Portals",
+            "description": {
+              "content": "Retrieves a paginated list of IoT SiteWise Monitor portals.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "portals"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "nextToken",
+                  "value": "<string>",
+                  "description": "The token to be used for the next set of paginated results."
+                },
+                {
+                  "disabled": false,
+                  "key": "maxResults",
+                  "value": "<integer>",
+                  "description": "<p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Date",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Algorithm",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Credential",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Security-Token",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Signature",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "53ab0392-a8b4-4250-9230-08118a042a11",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portals"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"portalSummaries\": [\n    {\n      \"id\": \"98a59487-a38b-bba0-50b1-bac0d7b1d4ab\",\n      \"name\": \"1Mwp `4ARV=\",\n      \"startUrl\": \"https://xJ*\",\n      \"status\": {\n        \"state\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"The current state of the portal.\"\n        },\n        \"error\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"Contains associated error information, if any.\"\n        }\n      },\n      \"description\": \"ib\",\n      \"creationDate\": \"1967-04-12T07:09:39.517Z\",\n      \"lastUpdateDate\": \"2003-11-17T17:25:21.599Z\",\n      \"roleArn\": \"<string>\"\n    },\n    {\n      \"id\": \"a8bb8551-6391-68c5-a823-f41a21bddeab\",\n      \"name\": \"ux@n]Is \",\n      \"startUrl\": \"http://7~-c\",\n      \"status\": {\n        \"state\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"The current state of the portal.\"\n        },\n        \"error\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"Contains associated error information, if any.\"\n        }\n      },\n      \"description\": \"9{,epy\",\n      \"creationDate\": \"1971-02-28T17:03:17.728Z\",\n      \"lastUpdateDate\": \"2017-06-20T12:58:40.184Z\",\n      \"roleArn\": \"<string>\"\n    }\n  ],\n  \"nextToken\": \"b7K\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "94e99f3f-e530-47f4-b4dd-2c530a35b00a",
+              "name": "InvalidRequestException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portals"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "code": 480,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8e5c80e6-c249-429b-bd61-69e8338b26e9",
+              "name": "InternalFailureException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portals"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "code": 481,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a191b1fe-61c4-468e-8b4f-95617a2fe10e",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portals"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "code": 482,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ffb51d24-9f8d-4c97-bf68-c9ab5a35292a",
+          "name": "Amazon IoT SiteWise Delete Portal",
+          "request": {
+            "name": "Amazon IoT SiteWise Delete Portal",
+            "description": {
+              "content": "Deletes a portal from IoT SiteWise Monitor.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "portals",
+                ":portalId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "clientToken",
+                  "value": "<string>",
+                  "description": "A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "portalId",
+                  "description": "(Required) The ID of the portal to delete."
+                },
+                {
+                  "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Date",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Algorithm",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Credential",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Security-Token",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Signature",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5c7863c0-0a30-4bb8-aab8-452393d2a685",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portals",
+                    ":portalId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clientToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "portalId",
+                      "description": "(Required) The ID of the portal to delete."
+                    },
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"portalStatus\": {\n    \"state\": \"FAILED\",\n    \"error\": {\n      \"code\": \"INTERNAL_FAILURE\",\n      \"message\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "51494ac0-ec7b-4e16-b013-65f9ae22b377",
+              "name": "InvalidRequestException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portals",
+                    ":portalId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clientToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "portalId",
+                      "description": "(Required) The ID of the portal to delete."
+                    },
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "code": 480,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f443de39-601a-4ec6-865f-2fcb2dd5f5e4",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portals",
+                    ":portalId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clientToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "portalId",
+                      "description": "(Required) The ID of the portal to delete."
+                    },
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "code": 481,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ffb9d1c3-c1e0-4271-8a64-f3151526335e",
+              "name": "InternalFailureException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portals",
+                    ":portalId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clientToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "portalId",
+                      "description": "(Required) The ID of the portal to delete."
+                    },
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "code": 482,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9481046b-daab-480c-aa25-036036050132",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portals",
+                    ":portalId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clientToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "portalId",
+                      "description": "(Required) The ID of the portal to delete."
+                    },
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "code": 483,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "67a99d01-67e7-4f5b-acd6-feeadae50755",
+              "name": "ConflictingOperationException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portals",
+                    ":portalId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clientToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "portalId",
+                      "description": "(Required) The ID of the portal to delete."
+                    },
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "code": 484,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6bd9482d-0e69-4de7-a053-f1f466021bc3",
+          "name": "Amazon IoT SiteWise Describe Portal",
+          "request": {
+            "name": "Amazon IoT SiteWise Describe Portal",
+            "description": {
+              "content": "Retrieves information about a portal.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "portals",
+                ":portalId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "portalId",
+                  "description": "(Required) The ID of the portal."
+                },
+                {
+                  "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Date",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Algorithm",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Credential",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Security-Token",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Signature",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "81050778-457c-44dc-b0f5-037b427503a3",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portals",
+                    ":portalId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "portalId",
+                      "description": "(Required) The ID of the portal."
+                    },
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"portalId\": \"f3d44a4a-7971-a570-a45f-b5cbaddf595d\",\n  \"portalArn\": \"<string>\",\n  \"portalName\": \"9's6\",\n  \"portalClientId\": \"[rA@Qelg}U\",\n  \"portalStartUrl\": \"http://qp\",\n  \"portalContactEmail\": \"ny|tS@fSI(\",\n  \"portalStatus\": {\n    \"state\": \"DELETING\",\n    \"error\": {\n      \"code\": \"INTERNAL_FAILURE\",\n      \"message\": \"string\"\n    }\n  },\n  \"portalCreationDate\": \"1981-11-21T05:19:38.083Z\",\n  \"portalLastUpdateDate\": \"2002-03-05T16:39:14.206Z\",\n  \"portalDescription\": \"S9LS:i-Sku\",\n  \"portalLogoImageLocation\": {\n    \"id\": \"da6fec12-7037-de2d-9f2b-e5d5e06b9f4e\",\n    \"url\": \"http://3a>EJUdT/?u\"\n  },\n  \"roleArn\": \"<string>\",\n  \"portalAuthMode\": \"IAM\",\n  \"notificationSenderEmail\": \"R@cL\",\n  \"alarms\": {\n    \"alarmRoleArn\": \"<string>\",\n    \"notificationLambdaArn\": \"<string>\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "16686c44-8536-4fa0-b413-6692724a0a88",
+              "name": "InvalidRequestException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portals",
+                    ":portalId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "portalId",
+                      "description": "(Required) The ID of the portal."
+                    },
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "code": 480,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a6b46543-48f3-483b-b549-153f95f8abed",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portals",
+                    ":portalId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "portalId",
+                      "description": "(Required) The ID of the portal."
+                    },
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "code": 481,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fb9408b7-f650-44aa-a94d-39832fd0c173",
+              "name": "InternalFailureException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portals",
+                    ":portalId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "portalId",
+                      "description": "(Required) The ID of the portal."
+                    },
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "code": 482,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "83a6d297-947b-416f-b70a-688255bbb18d",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portals",
+                    ":portalId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "portalId",
+                      "description": "(Required) The ID of the portal."
+                    },
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "code": 483,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1da8312a-dbcc-4830-8b73-04f4ce422fea",
+          "name": "Amazon IoT SiteWise Update Portal",
+          "request": {
+            "name": "Amazon IoT SiteWise Update Portal",
+            "description": {
+              "content": "Updates an IoT SiteWise Monitor portal.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "portals",
+                ":portalId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "portalId",
+                  "description": "(Required) The ID of the portal to update."
+                },
+                {
+                  "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Date",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Algorithm",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Credential",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Security-Token",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Signature",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"portalName\": \"<string>\",\n  \"portalContactEmail\": \"<string>\",\n  \"roleArn\": \"<string>\",\n  \"portalDescription\": \"<string>\",\n  \"portalLogoImage\": {\n    \"id\": \"<string>\",\n    \"file\": {\n      \"data\": \"<string>\",\n      \"type\": \"<string>\"\n    }\n  },\n  \"clientToken\": \"<string>\",\n  \"notificationSenderEmail\": \"<string>\",\n  \"alarms\": {\n    \"alarmRoleArn\": \"<string>\",\n    \"notificationLambdaArn\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "95dabe01-57d7-4234-a789-aafe3844b4b0",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portals",
+                    ":portalId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "portalId",
+                      "description": "(Required) The ID of the portal to update."
+                    },
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"portalName\": \"<string>\",\n  \"portalContactEmail\": \"<string>\",\n  \"roleArn\": \"<string>\",\n  \"portalDescription\": \"<string>\",\n  \"portalLogoImage\": {\n    \"id\": \"<string>\",\n    \"file\": {\n      \"data\": \"<string>\",\n      \"type\": \"<string>\"\n    }\n  },\n  \"clientToken\": \"<string>\",\n  \"notificationSenderEmail\": \"<string>\",\n  \"alarms\": {\n    \"alarmRoleArn\": \"<string>\",\n    \"notificationLambdaArn\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"portalStatus\": {\n    \"state\": \"FAILED\",\n    \"error\": {\n      \"code\": \"INTERNAL_FAILURE\",\n      \"message\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "83affe78-f6d9-445d-80c5-a2cdf334cb8b",
+              "name": "InvalidRequestException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portals",
+                    ":portalId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "portalId",
+                      "description": "(Required) The ID of the portal to update."
+                    },
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"portalName\": \"<string>\",\n  \"portalContactEmail\": \"<string>\",\n  \"roleArn\": \"<string>\",\n  \"portalDescription\": \"<string>\",\n  \"portalLogoImage\": {\n    \"id\": \"<string>\",\n    \"file\": {\n      \"data\": \"<string>\",\n      \"type\": \"<string>\"\n    }\n  },\n  \"clientToken\": \"<string>\",\n  \"notificationSenderEmail\": \"<string>\",\n  \"alarms\": {\n    \"alarmRoleArn\": \"<string>\",\n    \"notificationLambdaArn\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 480,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "33fed2c3-076f-4a51-a346-d9c17328ed75",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portals",
+                    ":portalId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "portalId",
+                      "description": "(Required) The ID of the portal to update."
+                    },
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"portalName\": \"<string>\",\n  \"portalContactEmail\": \"<string>\",\n  \"roleArn\": \"<string>\",\n  \"portalDescription\": \"<string>\",\n  \"portalLogoImage\": {\n    \"id\": \"<string>\",\n    \"file\": {\n      \"data\": \"<string>\",\n      \"type\": \"<string>\"\n    }\n  },\n  \"clientToken\": \"<string>\",\n  \"notificationSenderEmail\": \"<string>\",\n  \"alarms\": {\n    \"alarmRoleArn\": \"<string>\",\n    \"notificationLambdaArn\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 481,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "19f0c61c-80f6-4495-87b2-5f1f0259edb4",
+              "name": "InternalFailureException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portals",
+                    ":portalId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "portalId",
+                      "description": "(Required) The ID of the portal to update."
+                    },
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"portalName\": \"<string>\",\n  \"portalContactEmail\": \"<string>\",\n  \"roleArn\": \"<string>\",\n  \"portalDescription\": \"<string>\",\n  \"portalLogoImage\": {\n    \"id\": \"<string>\",\n    \"file\": {\n      \"data\": \"<string>\",\n      \"type\": \"<string>\"\n    }\n  },\n  \"clientToken\": \"<string>\",\n  \"notificationSenderEmail\": \"<string>\",\n  \"alarms\": {\n    \"alarmRoleArn\": \"<string>\",\n    \"notificationLambdaArn\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 482,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fffbda3b-d994-4a1f-b89b-424f71003e30",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portals",
+                    ":portalId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "portalId",
+                      "description": "(Required) The ID of the portal to update."
+                    },
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"portalName\": \"<string>\",\n  \"portalContactEmail\": \"<string>\",\n  \"roleArn\": \"<string>\",\n  \"portalDescription\": \"<string>\",\n  \"portalLogoImage\": {\n    \"id\": \"<string>\",\n    \"file\": {\n      \"data\": \"<string>\",\n      \"type\": \"<string>\"\n    }\n  },\n  \"clientToken\": \"<string>\",\n  \"notificationSenderEmail\": \"<string>\",\n  \"alarms\": {\n    \"alarmRoleArn\": \"<string>\",\n    \"notificationLambdaArn\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 483,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "60764e5c-667e-4416-924a-978729acefab",
+              "name": "ConflictingOperationException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portals",
+                    ":portalId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "portalId",
+                      "description": "(Required) The ID of the portal to update."
+                    },
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"portalName\": \"<string>\",\n  \"portalContactEmail\": \"<string>\",\n  \"roleArn\": \"<string>\",\n  \"portalDescription\": \"<string>\",\n  \"portalLogoImage\": {\n    \"id\": \"<string>\",\n    \"file\": {\n      \"data\": \"<string>\",\n      \"type\": \"<string>\"\n    }\n  },\n  \"clientToken\": \"<string>\",\n  \"notificationSenderEmail\": \"<string>\",\n  \"alarms\": {\n    \"alarmRoleArn\": \"<string>\",\n    \"notificationLambdaArn\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 484,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "us-east-1",
+      "key": "region"
+    },
+    {
+      "type": "string",
+      "value": "http://iotsitewise.{{region}}.amazonaws.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "01a1f7de-0203-4716-a9d9-33f613a76e0d",
+    "name": "AWS IoT SiteWise Access Policies Portals API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Welcome to the IoT SiteWise API Reference. IoT SiteWise is an Amazon Web Services service that connects <a href=\"https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications\">Industrial Internet of Things (IIoT)</a> devices to the power of the Amazon Web Services Cloud. For more information, see the <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/userguide/\">IoT SiteWise User Guide</a>. For information about IoT SiteWise quotas, see <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html\">Quotas</a> in the <i>IoT SiteWise User Guide</i>.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,2869 @@
+{
+  "item": [
+    {
+      "id": "da588508-ca34-4cef-a259-e44f2710b329",
+      "name": "Configuration",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "80733d2a-7bee-4d03-b879-4fd43058e21c",
+          "name": "Amazon IoT SiteWise Describe Default Encryption Configuration",
+          "request": {
+            "name": "Amazon IoT SiteWise Describe Default Encryption Configuration",
+            "description": {
+              "content": "Retrieves information about the default encryption configuration for the Amazon Web Services account in the default or specified Region. For more information, see <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html\">Key management</a> in the <i>IoT SiteWise User Guide</i>.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "configuration",
+                "account",
+                "encryption"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Date",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Algorithm",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Credential",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Security-Token",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Signature",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b8edf52f-d224-4385-8f39-70fba405a87f",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "configuration",
+                    "account",
+                    "encryption"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"encryptionType\": \"KMS_BASED_ENCRYPTION\",\n  \"configurationStatus\": {\n    \"state\": \"UPDATE_IN_PROGRESS\",\n    \"error\": {\n      \"code\": \"INTERNAL_FAILURE\",\n      \"message\": \"string\"\n    }\n  },\n  \"kmsKeyArn\": \"?0J\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "855184de-c8d0-4adb-8592-8fa815c786c6",
+              "name": "InvalidRequestException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "configuration",
+                    "account",
+                    "encryption"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "code": 480,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b2ac12f5-6819-4378-8a19-9b1e545f15dc",
+              "name": "InternalFailureException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "configuration",
+                    "account",
+                    "encryption"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "code": 481,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2a0e12e0-2d57-4acf-80f1-b6571f74680d",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "configuration",
+                    "account",
+                    "encryption"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "code": 482,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4f7d0eae-464c-4a6a-90fe-7b1706c0a9e7",
+          "name": "Amazon IoT SiteWise Put Default Encryption Configuration",
+          "request": {
+            "name": "Amazon IoT SiteWise Put Default Encryption Configuration",
+            "description": {
+              "content": "Sets the default encryption configuration for the Amazon Web Services account. For more information, see <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html\">Key management</a> in the <i>IoT SiteWise User Guide</i>.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "configuration",
+                "account",
+                "encryption"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Date",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Algorithm",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Credential",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Security-Token",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Signature",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"encryptionType\": \"<string>\",\n  \"kmsKeyId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5fba1931-de51-45ab-b4af-d8174d4df5bf",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "configuration",
+                    "account",
+                    "encryption"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"encryptionType\": \"<string>\",\n  \"kmsKeyId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"encryptionType\": \"KMS_BASED_ENCRYPTION\",\n  \"configurationStatus\": {\n    \"state\": \"ACTIVE\",\n    \"error\": {\n      \"code\": \"VALIDATION_ERROR\",\n      \"message\": \"string\"\n    }\n  },\n  \"kmsKeyArn\": \".2jAAU\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9078f280-635f-412f-9f6b-00dae3584031",
+              "name": "InvalidRequestException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "configuration",
+                    "account",
+                    "encryption"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"encryptionType\": \"<string>\",\n  \"kmsKeyId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 480,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5c71655a-e5c6-4b0f-87dc-cc7160a5dd50",
+              "name": "InternalFailureException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "configuration",
+                    "account",
+                    "encryption"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"encryptionType\": \"<string>\",\n  \"kmsKeyId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 481,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a596721f-e59f-4808-ba93-3abb0f530a45",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "configuration",
+                    "account",
+                    "encryption"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"encryptionType\": \"<string>\",\n  \"kmsKeyId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 482,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3b394909-bf15-4869-b4ce-cdc8c48cce03",
+              "name": "LimitExceededException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "configuration",
+                    "account",
+                    "encryption"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"encryptionType\": \"<string>\",\n  \"kmsKeyId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 483,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4b8220af-2334-403a-9e2f-fd5792353fd8",
+              "name": "ConflictingOperationException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "configuration",
+                    "account",
+                    "encryption"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"encryptionType\": \"<string>\",\n  \"kmsKeyId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 484,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fc7ac0a7-2797-4f79-a533-656d82f3cf25",
+          "name": "Amazon IoT SiteWise Describe Storage Configuration",
+          "request": {
+            "name": "Amazon IoT SiteWise Describe Storage Configuration",
+            "description": {
+              "content": "Retrieves information about the storage configuration for IoT SiteWise.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "configuration",
+                "account",
+                "storage"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Date",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Algorithm",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Credential",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Security-Token",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Signature",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "860dc8f4-06c0-4105-9f20-367eae4df883",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "configuration",
+                    "account",
+                    "storage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"storageType\": \"SITEWISE_DEFAULT_STORAGE\",\n  \"configurationStatus\": {\n    \"state\": \"ACTIVE\",\n    \"error\": {\n      \"code\": \"VALIDATION_ERROR\",\n      \"message\": \"string\"\n    }\n  },\n  \"multiLayerStorage\": {\n    \"customerManagedS3Storage\": {\n      \"s3ResourceArn\": \"Z\\\"\\\"TEv.\",\n      \"roleArn\": \"s5%e&A}F\"\n    }\n  },\n  \"disassociatedDataStorage\": \"ENABLED\",\n  \"retentionPeriod\": {\n    \"numberOfDays\": 3342,\n    \"unlimited\": true\n  },\n  \"lastUpdateDate\": \"2015-11-21T21:49:18.580Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ebd9d1f9-568a-411c-b429-26ffbffca0d9",
+              "name": "InvalidRequestException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "configuration",
+                    "account",
+                    "storage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "code": 480,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1ccc409c-6edb-48d8-8e2b-95551296af6b",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "configuration",
+                    "account",
+                    "storage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "code": 481,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "07ff64a2-5f94-4a9c-8499-439ceed11d58",
+              "name": "InternalFailureException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "configuration",
+                    "account",
+                    "storage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "code": 482,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ea3ab05d-ee6c-4afd-8293-d5826489b2cf",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "configuration",
+                    "account",
+                    "storage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "code": 483,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5bd5be41-f424-48da-acbf-fc5e574ed26c",
+              "name": "LimitExceededException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "configuration",
+                    "account",
+                    "storage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "code": 484,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d01148dd-605b-452d-a04a-56df1113efa7",
+              "name": "ConflictingOperationException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "configuration",
+                    "account",
+                    "storage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "code": 485,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e1f1d9eb-bf64-4155-b1c6-63a2983f988d",
+          "name": "Amazon IoT SiteWise Put Storage Configuration",
+          "request": {
+            "name": "Amazon IoT SiteWise Put Storage Configuration",
+            "description": {
+              "content": "Configures storage settings for IoT SiteWise.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "configuration",
+                "account",
+                "storage"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Date",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Algorithm",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Credential",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Security-Token",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Signature",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"storageType\": \"<string>\",\n  \"multiLayerStorage\": {\n    \"customerManagedS3Storage\": {\n      \"s3ResourceArn\": \"<string>\",\n      \"roleArn\": \"<string>\"\n    }\n  },\n  \"disassociatedDataStorage\": \"<string>\",\n  \"retentionPeriod\": {\n    \"numberOfDays\": \"<integer>\",\n    \"unlimited\": \"<boolean>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a2c0d779-b1ad-4ddc-96cc-82edfd86c5dc",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "configuration",
+                    "account",
+                    "storage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"storageType\": \"<string>\",\n  \"multiLayerStorage\": {\n    \"customerManagedS3Storage\": {\n      \"s3ResourceArn\": \"<string>\",\n      \"roleArn\": \"<string>\"\n    }\n  },\n  \"disassociatedDataStorage\": \"<string>\",\n  \"retentionPeriod\": {\n    \"numberOfDays\": \"<integer>\",\n    \"unlimited\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"storageType\": \"MULTI_LAYER_STORAGE\",\n  \"configurationStatus\": {\n    \"state\": \"ACTIVE\",\n    \"error\": {\n      \"code\": \"INTERNAL_FAILURE\",\n      \"message\": \"string\"\n    }\n  },\n  \"multiLayerStorage\": {\n    \"customerManagedS3Storage\": {\n      \"s3ResourceArn\": \"<string>\",\n      \"roleArn\": \"<string>\"\n    }\n  },\n  \"disassociatedDataStorage\": \"DISABLED\",\n  \"retentionPeriod\": {\n    \"numberOfDays\": \"<integer>\",\n    \"unlimited\": \"<boolean>\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6dc752d6-bdb4-4a19-97a5-92e33cc1906e",
+              "name": "InvalidRequestException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "configuration",
+                    "account",
+                    "storage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"storageType\": \"<string>\",\n  \"multiLayerStorage\": {\n    \"customerManagedS3Storage\": {\n      \"s3ResourceArn\": \"<string>\",\n      \"roleArn\": \"<string>\"\n    }\n  },\n  \"disassociatedDataStorage\": \"<string>\",\n  \"retentionPeriod\": {\n    \"numberOfDays\": \"<integer>\",\n    \"unlimited\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 480,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ea167199-e2e5-4c59-9073-39d67d980b32",
+              "name": "ResourceAlreadyExistsException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "configuration",
+                    "account",
+                    "storage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"storageType\": \"<string>\",\n  \"multiLayerStorage\": {\n    \"customerManagedS3Storage\": {\n      \"s3ResourceArn\": \"<string>\",\n      \"roleArn\": \"<string>\"\n    }\n  },\n  \"disassociatedDataStorage\": \"<string>\",\n  \"retentionPeriod\": {\n    \"numberOfDays\": \"<integer>\",\n    \"unlimited\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 481,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "abb1c25b-27a3-4a79-bddd-8222191b1f13",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "configuration",
+                    "account",
+                    "storage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"storageType\": \"<string>\",\n  \"multiLayerStorage\": {\n    \"customerManagedS3Storage\": {\n      \"s3ResourceArn\": \"<string>\",\n      \"roleArn\": \"<string>\"\n    }\n  },\n  \"disassociatedDataStorage\": \"<string>\",\n  \"retentionPeriod\": {\n    \"numberOfDays\": \"<integer>\",\n    \"unlimited\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 482,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1a13ac66-a778-43ae-b6f7-ce61470d346e",
+              "name": "InternalFailureException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "configuration",
+                    "account",
+                    "storage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"storageType\": \"<string>\",\n  \"multiLayerStorage\": {\n    \"customerManagedS3Storage\": {\n      \"s3ResourceArn\": \"<string>\",\n      \"roleArn\": \"<string>\"\n    }\n  },\n  \"disassociatedDataStorage\": \"<string>\",\n  \"retentionPeriod\": {\n    \"numberOfDays\": \"<integer>\",\n    \"unlimited\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 483,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5fd35dbb-9ef4-45bb-b61c-9c7cfe993d87",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "configuration",
+                    "account",
+                    "storage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"storageType\": \"<string>\",\n  \"multiLayerStorage\": {\n    \"customerManagedS3Storage\": {\n      \"s3ResourceArn\": \"<string>\",\n      \"roleArn\": \"<string>\"\n    }\n  },\n  \"disassociatedDataStorage\": \"<string>\",\n  \"retentionPeriod\": {\n    \"numberOfDays\": \"<integer>\",\n    \"unlimited\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 484,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "25469dbf-2e5c-427f-823e-603c31e1b402",
+              "name": "LimitExceededException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "configuration",
+                    "account",
+                    "storage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"storageType\": \"<string>\",\n  \"multiLayerStorage\": {\n    \"customerManagedS3Storage\": {\n      \"s3ResourceArn\": \"<string>\",\n      \"roleArn\": \"<string>\"\n    }\n  },\n  \"disassociatedDataStorage\": \"<string>\",\n  \"retentionPeriod\": {\n    \"numberOfDays\": \"<integer>\",\n    \"unlimited\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 485,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b7d1a0c6-ce69-4ee7-841d-b77d8f719950",
+              "name": "ConflictingOperationException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "configuration",
+                    "account",
+                    "storage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"storageType\": \"<string>\",\n  \"multiLayerStorage\": {\n    \"customerManagedS3Storage\": {\n      \"s3ResourceArn\": \"<string>\",\n      \"roleArn\": \"<string>\"\n    }\n  },\n  \"disassociatedDataStorage\": \"<string>\",\n  \"retentionPeriod\": {\n    \"numberOfDays\": \"<integer>\",\n    \"unlimited\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 486,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "us-east-1",
+      "key": "region"
+    },
+    {
+      "type": "string",
+      "value": "http://iotsitewise.{{region}}.amazonaws.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "2b92eb70-3db4-4147-82c1-7d5e65d0f558",
+    "name": "AWS IoT SiteWise Access Policies Configuration API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Welcome to the IoT SiteWise API Reference. IoT SiteWise is an Amazon Web Services service that connects <a href=\"https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications\">Industrial Internet of Things (IIoT)</a> devices to the power of the Amazon Web Services Cloud. For more information, see the <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/userguide/\">IoT SiteWise User Guide</a>. For information about IoT SiteWise quotas, see <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html\">Quotas</a> in the <i>IoT SiteWise User Guide</i>.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+      "type": "text/plain"
+    }
+  }
+}

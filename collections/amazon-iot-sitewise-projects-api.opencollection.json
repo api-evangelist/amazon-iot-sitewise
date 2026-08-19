@@ -1,0 +1,395 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AWS IoT SiteWise Access Policies Projects API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Projects",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon IoT SiteWise Batch Associate Project Assets",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://iotsitewise.{region}.amazonaws.com/projects/:projectId/assets/associate",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the project to which to associate the assets."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Associates a group (batch) of assets with an IoT SiteWise Monitor project."
+        },
+        {
+          "info": {
+            "name": "Amazon IoT SiteWise Batch Disassociate Project Assets",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://iotsitewise.{region}.amazonaws.com/projects/:projectId/assets/disassociate",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the project from which to disassociate the assets."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Disassociates a group (batch) of assets from an IoT SiteWise Monitor project."
+        },
+        {
+          "info": {
+            "name": "Amazon IoT SiteWise Create Project",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://iotsitewise.{region}.amazonaws.com/projects",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Creates a project in the specified portal.</p> <note> <p>Make sure that the project name and description don't contain confidential information.</p> </note>"
+        },
+        {
+          "info": {
+            "name": "Amazon IoT SiteWise Describe Project",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://iotsitewise.{region}.amazonaws.com/projects/:projectId",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the project."
+              }
+            ]
+          },
+          "docs": "Retrieves information about a project."
+        },
+        {
+          "info": {
+            "name": "Amazon IoT SiteWise Update Project",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://iotsitewise.{region}.amazonaws.com/projects/:projectId",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the project to update."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an IoT SiteWise Monitor project."
+        },
+        {
+          "info": {
+            "name": "Amazon IoT SiteWise Delete Project",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://iotsitewise.{region}.amazonaws.com/projects/:projectId",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the project."
+              },
+              {
+                "name": "clientToken",
+                "value": "",
+                "type": "query",
+                "description": "A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required."
+              }
+            ]
+          },
+          "docs": "Deletes a project from IoT SiteWise Monitor."
+        },
+        {
+          "info": {
+            "name": "Amazon IoT SiteWise List Project Assets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://iotsitewise.{region}.amazonaws.com/projects/:projectId/assets",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the project."
+              },
+              {
+                "name": "nextToken",
+                "value": "",
+                "type": "query",
+                "description": "The token to be used for the next set of paginated results."
+              },
+              {
+                "name": "maxResults",
+                "value": "",
+                "type": "query",
+                "description": "<p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>"
+              }
+            ]
+          },
+          "docs": "Retrieves a paginated list of assets associated with an IoT SiteWise Monitor project."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

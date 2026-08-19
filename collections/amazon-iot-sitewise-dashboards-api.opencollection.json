@@ -1,0 +1,228 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AWS IoT SiteWise Access Policies Dashboards API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Dashboards",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon IoT SiteWise Create Dashboard",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://iotsitewise.{region}.amazonaws.com/dashboards",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a dashboard in an IoT SiteWise Monitor project."
+        },
+        {
+          "info": {
+            "name": "Amazon IoT SiteWise Describe Dashboard",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://iotsitewise.{region}.amazonaws.com/dashboards/:dashboardId",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "dashboardId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the dashboard."
+              }
+            ]
+          },
+          "docs": "Retrieves information about a dashboard."
+        },
+        {
+          "info": {
+            "name": "Amazon IoT SiteWise Update Dashboard",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://iotsitewise.{region}.amazonaws.com/dashboards/:dashboardId",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "dashboardId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the dashboard to update."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an IoT SiteWise Monitor dashboard."
+        },
+        {
+          "info": {
+            "name": "Amazon IoT SiteWise Delete Dashboard",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://iotsitewise.{region}.amazonaws.com/dashboards/:dashboardId",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "dashboardId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the dashboard to delete."
+              },
+              {
+                "name": "clientToken",
+                "value": "",
+                "type": "query",
+                "description": "A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required."
+              }
+            ]
+          },
+          "docs": "Deletes a dashboard from IoT SiteWise Monitor."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

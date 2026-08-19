@@ -1,0 +1,313 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AWS IoT SiteWise Access Policies API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Access Policies",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon IoT SiteWise List Access Policies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://iotsitewise.{region}.amazonaws.com/access-policies",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "identityType",
+                "value": "",
+                "type": "query",
+                "description": "The type of identity (IAM Identity Center user, IAM Identity Center group, or IAM user). This parameter is required if you specify <code>identityId</code>."
+              },
+              {
+                "name": "identityId",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the identity. This parameter is required if you specify <code>USER</code> or <code>GROUP</code> for <code>identityType</code>."
+              },
+              {
+                "name": "resourceType",
+                "value": "",
+                "type": "query",
+                "description": "The type of resource (portal or project). This parameter is required if you specify <code>resourceId</code>."
+              },
+              {
+                "name": "resourceId",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the resource. This parameter is required if you specify <code>resourceType</code>."
+              },
+              {
+                "name": "iamArn",
+                "value": "",
+                "type": "query",
+                "description": "The ARN of the IAM user. For more information, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html\">IAM ARNs</a> in the <i>IAM User Guide</i>. This parameter is required if you specify <code>IAM</code> for <code>identityType</code>."
+              },
+              {
+                "name": "nextToken",
+                "value": "",
+                "type": "query",
+                "description": "The token to be used for the next set of paginated results."
+              },
+              {
+                "name": "maxResults",
+                "value": "",
+                "type": "query",
+                "description": "<p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>"
+              }
+            ]
+          },
+          "docs": "Retrieves a paginated list of access policies for an identity (an IAM Identity Center user, an IAM Identity Center group, or an IAM user) or an IoT SiteWise Monitor resource (a portal or project)."
+        },
+        {
+          "info": {
+            "name": "Amazon IoT SiteWise Create Access Policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://iotsitewise.{region}.amazonaws.com/access-policies",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates an access policy that grants the specified identity (IAM Identity Center user, IAM Identity Center group, or IAM user) access to the specified IoT SiteWise Monitor portal or project resource."
+        },
+        {
+          "info": {
+            "name": "Amazon IoT SiteWise Describe Access Policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://iotsitewise.{region}.amazonaws.com/access-policies/:accessPolicyId",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "accessPolicyId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the access policy."
+              }
+            ]
+          },
+          "docs": "Describes an access policy, which specifies an identity's access to an IoT SiteWise Monitor portal or project."
+        },
+        {
+          "info": {
+            "name": "Amazon IoT SiteWise Update Access Policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://iotsitewise.{region}.amazonaws.com/access-policies/:accessPolicyId",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "accessPolicyId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the access policy."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an existing access policy that specifies an identity's access to an IoT SiteWise Monitor portal or project resource."
+        },
+        {
+          "info": {
+            "name": "Amazon IoT SiteWise Delete Access Policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://iotsitewise.{region}.amazonaws.com/access-policies/:accessPolicyId",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "accessPolicyId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the access policy to be deleted."
+              },
+              {
+                "name": "clientToken",
+                "value": "",
+                "type": "query",
+                "description": "A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required."
+              }
+            ]
+          },
+          "docs": "Deletes an access policy that grants the specified identity access to the specified IoT SiteWise Monitor resource. You can use this operation to revoke access to an IoT SiteWise Monitor resource."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

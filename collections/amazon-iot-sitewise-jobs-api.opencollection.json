@@ -1,0 +1,181 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AWS IoT SiteWise Access Policies Jobs API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Jobs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon IoT SiteWise List Bulk Import Jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://iotsitewise.{region}.amazonaws.com/jobs",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "nextToken",
+                "value": "",
+                "type": "query",
+                "description": "The token to be used for the next set of paginated results."
+              },
+              {
+                "name": "maxResults",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of results to return for each paginated request."
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "You can use a filter to select the bulk import jobs that you want to retrieve."
+              }
+            ]
+          },
+          "docs": "Retrieves a paginated list of bulk import job requests. For more information, see <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ListBulkImportJobs.html\">List bulk import jobs (CLI)</a> in the <i>IoT SiteWise User Guide</i>."
+        },
+        {
+          "info": {
+            "name": "Amazon IoT SiteWise Create Bulk Import Job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://iotsitewise.{region}.amazonaws.com/jobs",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Defines a job to ingest data to IoT SiteWise from Amazon S3. For more information, see <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/userguide/CreateBulkImportJob.html\">Create a bulk import job (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p> <important> <p>You must enable IoT SiteWise to export data to Amazon S3 before you create a bulk import job. For more information about how to configure storage settings, see <a href=\"https://docs.aws.amazon.com/iot-sitewi"
+        },
+        {
+          "info": {
+            "name": "Amazon IoT SiteWise Describe Bulk Import Job",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://iotsitewise.{region}.amazonaws.com/jobs/:jobId",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "jobId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the job."
+              }
+            ]
+          },
+          "docs": "Retrieves information about a bulk import job request. For more information, see <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/userguide/DescribeBulkImportJob.html\">Describe a bulk import job (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

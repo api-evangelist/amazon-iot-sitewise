@@ -162,6 +162,8 @@ apis:
   humanURL: https://aws.amazon.com/iot-sitewise/
   baseURL: https://iotsitewise.amazonaws.com
   tags:
+  - Job
+  tags_raw:
   - Jobs
   properties:
   - type: OpenAPI
@@ -198,6 +200,8 @@ apis:
   humanURL: https://aws.amazon.com/iot-sitewise/
   baseURL: https://iotsitewise.amazonaws.com
   tags:
+  - Portal
+  tags_raw:
   - Portals
   properties:
   - type: OpenAPI
@@ -216,6 +220,8 @@ apis:
   humanURL: https://aws.amazon.com/iot-sitewise/
   baseURL: https://iotsitewise.amazonaws.com
   tags:
+  - Project
+  tags_raw:
   - Projects
   properties:
   - type: OpenAPI
@@ -308,6 +314,8 @@ apis:
   humanURL: https://aws.amazon.com/iot-sitewise/
   baseURL: https://iotsitewise.amazonaws.com
   tags:
+  - Time Series
+  tags_raw:
   - Timeseries
   properties:
   - type: OpenAPI

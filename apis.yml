@@ -326,7 +326,7 @@ apis:
   humanURL: https://aws.amazon.com/iot-sitewise/
   baseURL: https://iotsitewise.amazonaws.com
   tags:
-  - Time Series
+  - Timeseries
   tags_raw:
   - Timeseries
   properties:

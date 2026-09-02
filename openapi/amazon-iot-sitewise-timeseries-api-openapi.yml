@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
   title: AWS IoT SiteWise Access Policies Timeseries API
   description: Welcome to the IoT SiteWise API Reference. IoT SiteWise is an Amazon Web Services service that connects <a href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">Industrial Internet of Things (IIoT)</a> devices to the power of the Amazon Web Services Cloud. For more information, see the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/">IoT SiteWise User Guide</a>. For information about IoT SiteWise quotas, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.
@@ -557,54 +557,32 @@ paths:
       tags:
       - Timeseries
 components:
-  parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    InternalFailureException: {}
+    NextToken:
+      type: string
+      pattern: '[A-Za-z0-9+/=]+'
+      minLength: 1
+      maxLength: 4096
     Timestamp:
       type: string
       format: date-time
+    TimeSeriesSummaries:
+      type: array
+      items:
+        $ref: '#/components/schemas/TimeSeriesSummary'
+    InternalFailureException: {}
+    TimeSeriesId:
+      type: string
+      minLength: 36
+      maxLength: 73
+    ResourceNotFoundException: {}
+    ID:
+      type: string
+      pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
+      minLength: 36
+      maxLength: 36
+    ConflictingOperationException: {}
+    ThrottlingException: {}
     DescribeTimeSeriesResponse:
       type: object
       required:
@@ -650,6 +628,33 @@ components:
           allOf:
           - $ref: '#/components/schemas/ARN'
           - description: <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the time series, which has the following format.</p> <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code> </p>
+    InvalidRequestException: {}
+    PropertyDataType:
+      type: string
+      enum:
+      - STRING
+      - INTEGER
+      - DOUBLE
+      - BOOLEAN
+      - STRUCT
+    ListTimeSeriesResponse:
+      type: object
+      required:
+      - TimeSeriesSummaries
+      properties:
+        TimeSeriesSummaries:
+          allOf:
+          - $ref: '#/components/schemas/TimeSeriesSummaries'
+          - description: One or more time series summaries to list.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The token for the next set of results, or null if there are no additional results.
+    ARN:
+      type: string
+      pattern: .*
+      minLength: 1
+      maxLength: 1600
     TimeSeriesSummary:
       type: object
       required:
@@ -696,63 +701,58 @@ components:
           - $ref: '#/components/schemas/ARN'
           - description: <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the time series, which has the following format.</p> <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code> </p>
       description: Contains a summary of a time series (data stream).
-    PropertyDataType:
-      type: string
-      enum:
-      - STRING
-      - INTEGER
-      - DOUBLE
-      - BOOLEAN
-      - STRUCT
-    InvalidRequestException: {}
-    ConflictingOperationException: {}
-    PropertyAlias:
-      type: string
-      pattern: '[^\u0000-\u001F\u007F]+'
-      minLength: 1
-    TimeSeriesSummaries:
-      type: array
-      items:
-        $ref: '#/components/schemas/TimeSeriesSummary'
-    TimeSeriesId:
-      type: string
-      minLength: 36
-      maxLength: 73
     Name:
       type: string
       pattern: '[^\u0000-\u001F\u007F]+'
       minLength: 1
       maxLength: 256
-    ListTimeSeriesResponse:
-      type: object
-      required:
-      - TimeSeriesSummaries
-      properties:
-        TimeSeriesSummaries:
-          allOf:
-          - $ref: '#/components/schemas/TimeSeriesSummaries'
-          - description: One or more time series summaries to list.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The token for the next set of results, or null if there are no additional results.
-    ID:
+    PropertyAlias:
       type: string
-      pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
-      minLength: 36
-      maxLength: 36
-    ThrottlingException: {}
-    ResourceNotFoundException: {}
-    NextToken:
-      type: string
-      pattern: '[A-Za-z0-9+/=]+'
+      pattern: '[^\u0000-\u001F\u007F]+'
       minLength: 1
-      maxLength: 4096
-    ARN:
-      type: string
-      pattern: .*
-      minLength: 1
-      maxLength: 1600
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

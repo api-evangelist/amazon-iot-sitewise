@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: AWS IoT SiteWise Access Policies Tags#resourceArn&tagKeys API
+  title: AWS IoT SiteWise Access Policies Tags#resource Arn&tag Keys API
   description: Welcome to the IoT SiteWise API Reference. IoT SiteWise is an Amazon Web Services service that connects <a href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">Industrial Internet of Things (IIoT)</a> devices to the power of the Amazon Web Services Cloud. For more information, see the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/">IoT SiteWise User Guide</a>. For information about IoT SiteWise quotas, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
@@ -208,20 +208,26 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -238,27 +244,21 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    UntagResourceResponse:
-      type: object
-      properties: {}
-    InternalFailureException: {}
+    ResourceNotFoundException: {}
+    ConflictingOperationException: {}
     ThrottlingException: {}
     InvalidRequestException: {}
+    LimitExceededException: {}
+    UnauthorizedException: {}
     TagKey:
       type: string
       minLength: 1
       maxLength: 128
-    ConflictingOperationException: {}
-    LimitExceededException: {}
-    ResourceNotFoundException: {}
-    UnauthorizedException: {}
+    UntagResourceResponse:
+      type: object
+      properties: {}
+    InternalFailureException: {}
   securitySchemes:
     hmac:
       type: apiKey

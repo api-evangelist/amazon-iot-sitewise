@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
   title: AWS IoT SiteWise Access Policies Logging API
   description: Welcome to the IoT SiteWise API Reference. IoT SiteWise is an Amazon Web Services service that connects <a href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">Industrial Internet of Things (IIoT)</a> devices to the power of the Amazon Web Services Cloud. For more information, see the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/">IoT SiteWise User Guide</a>. For information about IoT SiteWise quotas, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.
@@ -236,14 +236,26 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -260,40 +272,19 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    DescribeLoggingOptionsResponse:
+    ResourceNotFoundException: {}
+    ConflictingOperationException: {}
+    PutLoggingOptionsResponse:
       type: object
-      required:
-      - loggingOptions
-      properties:
-        loggingOptions:
-          allOf:
-          - $ref: '#/components/schemas/LoggingOptions'
-          - description: The current logging options.
+      properties: {}
     LoggingLevel:
       type: string
       enum:
       - ERROR
       - INFO
       - 'OFF'
-    InternalFailureException: {}
-    PutLoggingOptionsResponse:
-      type: object
-      properties: {}
     ThrottlingException: {}
-    ConflictingOperationException: {}
     LoggingOptions:
       type: object
       required:
@@ -304,8 +295,17 @@ components:
           - $ref: '#/components/schemas/LoggingLevel'
           - description: The IoT SiteWise logging verbosity level.
       description: Contains logging options.
-    ResourceNotFoundException: {}
     InvalidRequestException: {}
+    DescribeLoggingOptionsResponse:
+      type: object
+      required:
+      - loggingOptions
+      properties:
+        loggingOptions:
+          allOf:
+          - $ref: '#/components/schemas/LoggingOptions'
+          - description: The current logging options.
+    InternalFailureException: {}
   securitySchemes:
     hmac:
       type: apiKey

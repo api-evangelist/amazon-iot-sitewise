@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
   title: AWS IoT SiteWise Access Policies Jobs API
   description: Welcome to the IoT SiteWise API Reference. IoT SiteWise is an Amazon Web Services service that connects <a href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">Industrial Internet of Things (IIoT)</a> devices to the power of the Amazon Web Services Cloud. For more information, see the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/">IoT SiteWise User Guide</a>. For information about IoT SiteWise quotas, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.
@@ -365,45 +365,30 @@ paths:
       - Jobs
 components:
   schemas:
-    JobSummary:
+    NextToken:
+      type: string
+      pattern: '[A-Za-z0-9+/=]+'
+      minLength: 1
+      maxLength: 4096
+    Csv:
       type: object
-      required:
-      - id
-      - name
-      - status
       properties:
-        id:
+        columnNames:
           allOf:
-          - $ref: '#/components/schemas/ID'
-          - description: The ID of the job.
-        name:
-          allOf:
-          - $ref: '#/components/schemas/Name'
-          - description: The unique name that helps identify the job request.
-        status:
-          allOf:
-          - $ref: '#/components/schemas/JobStatus'
-          - description: <p>The status of the bulk import job can be one of following values.</p> <ul> <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li> <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li> <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li> <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li> <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> </ul>
-      description: Contains a job summary information.
-    CreateBulkImportJobResponse:
+          - $ref: '#/components/schemas/ColumnNames'
+          - description: The column names specified in the .csv file.
+      description: A .csv file.
+    FileFormat:
       type: object
-      required:
-      - jobId
-      - jobName
-      - jobStatus
       properties:
-        jobId:
+        csv:
           allOf:
-          - $ref: '#/components/schemas/ID'
-          - description: The ID of the job.
-        jobName:
-          allOf:
-          - $ref: '#/components/schemas/Name'
-          - description: The unique name that helps identify the job request.
-        jobStatus:
-          allOf:
-          - $ref: '#/components/schemas/JobStatus'
-          - description: <p>The status of the bulk import job can be one of following values.</p> <ul> <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li> <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li> <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li> <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li> <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> </ul>
+          - $ref: '#/components/schemas/Csv'
+          - description: The .csv file format.
+      description: The file format of the data.
+    Timestamp:
+      type: string
+      format: date-time
     File:
       type: object
       required:
@@ -423,7 +408,43 @@ components:
           - $ref: '#/components/schemas/String'
           - description: The version ID to identify a specific version of the Amazon S3 object that contains your data.
       description: 'The file in Amazon S3 where your data is saved. '
+    String:
+      type: string
+    JobSummaries:
+      type: array
+      items:
+        $ref: '#/components/schemas/JobSummary'
+    JobConfiguration:
+      type: object
+      required:
+      - fileFormat
+      properties:
+        fileFormat:
+          allOf:
+          - $ref: '#/components/schemas/FileFormat'
+          - description: The file format of the data in Amazon S3.
+      description: Contains the configuration information of a job, such as the file format used to save data in Amazon S3.
+    Files:
+      type: array
+      items:
+        $ref: '#/components/schemas/File'
     InternalFailureException: {}
+    ResourceNotFoundException: {}
+    JobStatus:
+      type: string
+      enum:
+      - PENDING
+      - CANCELLED
+      - RUNNING
+      - COMPLETED
+      - FAILED
+      - COMPLETED_WITH_FAILURES
+    ID:
+      type: string
+      pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
+      minLength: 36
+      maxLength: 36
+    ConflictingOperationException: {}
     DescribeBulkImportJobResponse:
       type: object
       required:
@@ -473,30 +494,7 @@ components:
           allOf:
           - $ref: '#/components/schemas/Timestamp'
           - description: The date the job was last updated, in Unix epoch time.
-    Timestamp:
-      type: string
-      format: date-time
-    Files:
-      type: array
-      items:
-        $ref: '#/components/schemas/File'
-    ColumnNames:
-      type: array
-      items:
-        $ref: '#/components/schemas/ColumnName'
-    JobStatus:
-      type: string
-      enum:
-      - PENDING
-      - CANCELLED
-      - RUNNING
-      - COMPLETED
-      - FAILED
-      - COMPLETED_WITH_FAILURES
-    Bucket:
-      type: string
-      minLength: 3
-      maxLength: 63
+    ThrottlingException: {}
     ColumnName:
       type: string
       enum:
@@ -508,6 +506,55 @@ components:
       - TIMESTAMP_NANO_OFFSET
       - QUALITY
       - VALUE
+    InvalidRequestException: {}
+    ARN:
+      type: string
+      pattern: .*
+      minLength: 1
+      maxLength: 1600
+    CreateBulkImportJobResponse:
+      type: object
+      required:
+      - jobId
+      - jobName
+      - jobStatus
+      properties:
+        jobId:
+          allOf:
+          - $ref: '#/components/schemas/ID'
+          - description: The ID of the job.
+        jobName:
+          allOf:
+          - $ref: '#/components/schemas/Name'
+          - description: The unique name that helps identify the job request.
+        jobStatus:
+          allOf:
+          - $ref: '#/components/schemas/JobStatus'
+          - description: <p>The status of the bulk import job can be one of following values.</p> <ul> <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li> <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li> <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li> <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li> <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> </ul>
+    ColumnNames:
+      type: array
+      items:
+        $ref: '#/components/schemas/ColumnName'
+    JobSummary:
+      type: object
+      required:
+      - id
+      - name
+      - status
+      properties:
+        id:
+          allOf:
+          - $ref: '#/components/schemas/ID'
+          - description: The ID of the job.
+        name:
+          allOf:
+          - $ref: '#/components/schemas/Name'
+          - description: The unique name that helps identify the job request.
+        status:
+          allOf:
+          - $ref: '#/components/schemas/JobStatus'
+          - description: <p>The status of the bulk import job can be one of following values.</p> <ul> <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li> <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li> <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li> <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li> <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> </ul>
+      description: Contains a job summary information.
     ListBulkImportJobsResponse:
       type: object
       required:
@@ -521,31 +568,17 @@ components:
           allOf:
           - $ref: '#/components/schemas/NextToken'
           - description: The token for the next set of results, or null if there are no additional results.
-    InvalidRequestException: {}
-    ConflictingOperationException: {}
+    Bucket:
+      type: string
+      minLength: 3
+      maxLength: 63
     LimitExceededException: {}
-    Csv:
-      type: object
-      properties:
-        columnNames:
-          allOf:
-          - $ref: '#/components/schemas/ColumnNames'
-          - description: The column names specified in the .csv file.
-      description: A .csv file.
-    ResourceAlreadyExistsException: {}
-    FileFormat:
-      type: object
-      properties:
-        csv:
-          allOf:
-          - $ref: '#/components/schemas/Csv'
-          - description: The .csv file format.
-      description: The file format of the data.
     Name:
       type: string
       pattern: '[^\u0000-\u001F\u007F]+'
       minLength: 1
       maxLength: 256
+    ResourceAlreadyExistsException: {}
     ErrorReportLocation:
       type: object
       required:
@@ -561,42 +594,15 @@ components:
           - $ref: '#/components/schemas/String'
           - description: Amazon S3 uses the prefix as a folder name to organize data in the bucket. Each Amazon S3 object has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing objects using prefixes</a> in the <i>Amazon Simple Storage Service User Guide</i>.
       description: The Amazon S3 destination where errors associated with the job creation request are saved.
-    String:
-      type: string
-    JobSummaries:
-      type: array
-      items:
-        $ref: '#/components/schemas/JobSummary'
-    ID:
-      type: string
-      pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
-      minLength: 36
-      maxLength: 36
-    JobConfiguration:
-      type: object
-      required:
-      - fileFormat
-      properties:
-        fileFormat:
-          allOf:
-          - $ref: '#/components/schemas/FileFormat'
-          - description: The file format of the data in Amazon S3.
-      description: Contains the configuration information of a job, such as the file format used to save data in Amazon S3.
-    ThrottlingException: {}
-    ResourceNotFoundException: {}
-    NextToken:
-      type: string
-      pattern: '[A-Za-z0-9+/=]+'
-      minLength: 1
-      maxLength: 4096
-    ARN:
-      type: string
-      pattern: .*
-      minLength: 1
-      maxLength: 1600
   parameters:
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -613,8 +619,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -625,14 +631,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string

@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2019-12-02'
   x-release: v4
-  title: AWS IoT SiteWise Access Policies Projects API
-  description: Welcome to the IoT SiteWise API Reference. IoT SiteWise is an Amazon Web Services service that connects <a href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">Industrial Internet of Things (IIoT)</a> devices to the power of the Amazon Web Services Cloud. For more information, see the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/">IoT SiteWise User Guide</a>. For information about IoT SiteWise quotas, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.
+  title: AWS IoT SiteWise Projects API
+  description: Welcome to the IoT SiteWise API Reference. IoT SiteWise is an Amazon Web Services service that connects Industrial Internet of Things (IIoT) devices to the power of the Amazon Web Services Cloud. For more information, see the IoT SiteWise User Guide. For information about IoT SiteWise quotas, see Quotas in the IoT SiteWise User Guide.
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
     backgroundColor: '#FFFFFF'
@@ -24,6 +24,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/iotsitewise-2019-12-02.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -293,7 +294,10 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: CreateProject
-      description: <p>Creates a project in the specified portal.</p> <note> <p>Make sure that the project name and description don't contain confidential information.</p> </note>
+      description: 'Creates a project in the specified portal.
+
+
+        Make sure that the project name and description don''t contain confidential information.'
       responses:
         '201':
           description: Success
@@ -646,18 +650,22 @@ paths:
       - Projects
 components:
   schemas:
-    NextToken:
+    AssetErrorMessage:
       type: string
-      pattern: '[A-Za-z0-9+/=]+'
+    Description:
+      type: string
+      pattern: '[^\u0000-\u001F\u007F]+'
       minLength: 1
-      maxLength: 4096
-    Timestamp:
+      maxLength: 2048
+    ID:
       type: string
-      format: date-time
-    AssetErrorCode:
-      type: string
-      enum:
-      - INTERNAL_FAILURE
+      pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
+      minLength: 36
+      maxLength: 36
+    DeleteProjectResponse:
+      type: object
+      properties: {}
+    InvalidRequestException: {}
     AssetErrorDetails:
       type: object
       required:
@@ -678,20 +686,6 @@ components:
           - $ref: '#/components/schemas/AssetErrorMessage'
           - description: The error message.
       description: Contains error details for the requested associate project asset action.
-    AssetErrorMessage:
-      type: string
-    Description:
-      type: string
-      pattern: '[^\u0000-\u001F\u007F]+'
-      minLength: 1
-      maxLength: 2048
-    BatchAssociateProjectAssetsResponse:
-      type: object
-      properties:
-        errors:
-          allOf:
-          - $ref: '#/components/schemas/BatchAssociateProjectAssetsErrors'
-          - description: A list of associated error information, if any.
     InternalFailureException: {}
     AssetIDs:
       type: array
@@ -724,12 +718,26 @@ components:
           allOf:
           - $ref: '#/components/schemas/NextToken'
           - description: The token for the next set of results, or null if there are no additional results.
-    ResourceNotFoundException: {}
-    ID:
+    BatchAssociateProjectAssetsResponse:
+      type: object
+      properties:
+        errors:
+          allOf:
+          - $ref: '#/components/schemas/BatchAssociateProjectAssetsErrors'
+          - description: A list of associated error information, if any.
+    LimitExceededException: {}
+    Name:
       type: string
-      pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
-      minLength: 36
-      maxLength: 36
+      pattern: '[^\u0000-\u001F\u007F]+'
+      minLength: 1
+      maxLength: 256
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    Timestamp:
+      type: string
+      format: date-time
     BatchDisassociateProjectAssetsResponse:
       type: object
       properties:
@@ -738,24 +746,18 @@ components:
           - $ref: '#/components/schemas/BatchDisassociateProjectAssetsErrors'
           - description: A list of associated error information, if any.
     ThrottlingException: {}
-    InvalidRequestException: {}
-    ARN:
+    ResourceNotFoundException: {}
+    AssetErrorCode:
       type: string
-      pattern: .*
-      minLength: 1
-      maxLength: 1600
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
-    BatchAssociateProjectAssetsErrors:
-      type: array
-      items:
-        $ref: '#/components/schemas/AssetErrorDetails'
+      enum:
+      - INTERNAL_FAILURE
     BatchDisassociateProjectAssetsErrors:
       type: array
       items:
         $ref: '#/components/schemas/AssetErrorDetails'
+    UpdateProjectResponse:
+      type: object
+      properties: {}
     DescribeProjectResponse:
       type: object
       required:
@@ -794,27 +796,29 @@ components:
           allOf:
           - $ref: '#/components/schemas/Timestamp'
           - description: The date the project was last updated, in Unix epoch time.
-    UpdateProjectResponse:
-      type: object
-      properties: {}
-    LimitExceededException: {}
-    Name:
+    BatchAssociateProjectAssetsErrors:
+      type: array
+      items:
+        $ref: '#/components/schemas/AssetErrorDetails'
+    NextToken:
       type: string
-      pattern: '[^\u0000-\u001F\u007F]+'
+      pattern: '[A-Za-z0-9+/=]+'
       minLength: 1
-      maxLength: 256
-    DeleteProjectResponse:
-      type: object
-      properties: {}
+      maxLength: 4096
+    ARN:
+      type: string
+      pattern: .*
+      minLength: 1
+      maxLength: 1600
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -825,8 +829,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -837,14 +847,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string

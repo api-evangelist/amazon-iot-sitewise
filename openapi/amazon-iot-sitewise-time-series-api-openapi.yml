@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2019-12-02'
   x-release: v4
-  title: AWS IoT SiteWise Access Policies Timeseries API
-  description: Welcome to the IoT SiteWise API Reference. IoT SiteWise is an Amazon Web Services service that connects <a href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">Industrial Internet of Things (IIoT)</a> devices to the power of the Amazon Web Services Cloud. For more information, see the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/">IoT SiteWise User Guide</a>. For information about IoT SiteWise quotas, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.
+  title: AWS IoT SiteWise Timeseries API
+  description: Welcome to the IoT SiteWise API Reference. IoT SiteWise is an Amazon Web Services service that connects Industrial Internet of Things (IIoT) devices to the power of the Amazon Web Services Cloud. For more information, see the IoT SiteWise User Guide. For information about IoT SiteWise quotas, see Quotas in the IoT SiteWise User Guide.
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
     backgroundColor: '#FFFFFF'
@@ -24,6 +24,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/iotsitewise-2019-12-02.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -112,7 +113,7 @@ servers:
 security:
 - hmac: []
 tags:
-- name: Timeseries
+- name: Time Series
 paths:
   /timeseries/associate/#alias&assetId&propertyId:
     parameters:
@@ -204,7 +205,7 @@ paths:
         delay: 0
         dispatcher: FALLBACK
       tags:
-      - Timeseries
+      - Time Series
   /timeseries/delete/:
     parameters:
     - $ref: '#/components/parameters/X-Amz-Content-Sha256'
@@ -216,7 +217,22 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: DeleteTimeSeries
-      description: '<p>Deletes a time series (data stream). If you delete a time series that''s associated with an asset property, the asset property still exists, but the time series will no longer be associated with this asset property.</p> <p>To identify a time series, do one of the following:</p> <ul> <li> <p>If the time series isn''t associated with an asset property, specify the <code>alias</code> of the time series.</p> </li> <li> <p>If the time series is associated with an asset property, specify one of the following: </p> <ul> <li> <p>The <code>alias</code> of the time series.</p> </li> <li> <p>The <code>assetId</code> and <code>propertyId</code> that identifies the asset property.</p> </li> </ul> </li> </ul>'
+      description: 'Deletes a time series (data stream). If you delete a time series that''s associated with an asset property, the asset property still exists, but the time series will no longer be associated with this asset property.
+
+
+        To identify a time series, do one of the following:
+
+
+        If the time series isn''t associated with an asset property, specify the alias of the time series.
+
+
+        If the time series is associated with an asset property, specify one of the following:
+
+
+        The alias of the time series.
+
+
+        The assetId and propertyId that identifies the asset property.'
       responses:
         '200':
           description: Success
@@ -295,7 +311,7 @@ paths:
         delay: 0
         dispatcher: FALLBACK
       tags:
-      - Timeseries
+      - Time Series
   /timeseries/describe/:
     parameters:
     - $ref: '#/components/parameters/X-Amz-Content-Sha256'
@@ -307,7 +323,22 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     get:
       operationId: DescribeTimeSeries
-      description: '<p>Retrieves information about a time series (data stream).</p> <p>To identify a time series, do one of the following:</p> <ul> <li> <p>If the time series isn''t associated with an asset property, specify the <code>alias</code> of the time series.</p> </li> <li> <p>If the time series is associated with an asset property, specify one of the following: </p> <ul> <li> <p>The <code>alias</code> of the time series.</p> </li> <li> <p>The <code>assetId</code> and <code>propertyId</code> that identifies the asset property.</p> </li> </ul> </li> </ul>'
+      description: 'Retrieves information about a time series (data stream).
+
+
+        To identify a time series, do one of the following:
+
+
+        If the time series isn''t associated with an asset property, specify the alias of the time series.
+
+
+        If the time series is associated with an asset property, specify one of the following:
+
+
+        The alias of the time series.
+
+
+        The assetId and propertyId that identifies the asset property.'
       responses:
         '200':
           description: Success
@@ -371,7 +402,7 @@ paths:
         delay: 0
         dispatcher: FALLBACK
       tags:
-      - Timeseries
+      - Time Series
   /timeseries/disassociate/#alias&assetId&propertyId:
     parameters:
     - $ref: '#/components/parameters/X-Amz-Content-Sha256'
@@ -462,7 +493,7 @@ paths:
         delay: 0
         dispatcher: FALLBACK
       tags:
-      - Timeseries
+      - Time Series
   /timeseries/:
     parameters:
     - $ref: '#/components/parameters/X-Amz-Content-Sha256'
@@ -555,34 +586,57 @@ paths:
         delay: 0
         dispatcher: FALLBACK
       tags:
-      - Timeseries
+      - Time Series
 components:
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    NextToken:
-      type: string
-      pattern: '[A-Za-z0-9+/=]+'
-      minLength: 1
-      maxLength: 4096
-    Timestamp:
-      type: string
-      format: date-time
-    TimeSeriesSummaries:
-      type: array
-      items:
-        $ref: '#/components/schemas/TimeSeriesSummary'
-    InternalFailureException: {}
-    TimeSeriesId:
-      type: string
-      minLength: 36
-      maxLength: 73
-    ResourceNotFoundException: {}
     ID:
       type: string
       pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
       minLength: 36
       maxLength: 36
-    ConflictingOperationException: {}
-    ThrottlingException: {}
     DescribeTimeSeriesResponse:
       type: object
       required:
@@ -629,32 +683,14 @@ components:
           - $ref: '#/components/schemas/ARN'
           - description: <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the time series, which has the following format.</p> <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code> </p>
     InvalidRequestException: {}
-    PropertyDataType:
+    TimeSeriesId:
       type: string
-      enum:
-      - STRING
-      - INTEGER
-      - DOUBLE
-      - BOOLEAN
-      - STRUCT
-    ListTimeSeriesResponse:
-      type: object
-      required:
-      - TimeSeriesSummaries
-      properties:
-        TimeSeriesSummaries:
-          allOf:
-          - $ref: '#/components/schemas/TimeSeriesSummaries'
-          - description: One or more time series summaries to list.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The token for the next set of results, or null if there are no additional results.
-    ARN:
+      minLength: 36
+      maxLength: 73
+    PropertyAlias:
       type: string
-      pattern: .*
+      pattern: '[^\u0000-\u001F\u007F]+'
       minLength: 1
-      maxLength: 1600
     TimeSeriesSummary:
       type: object
       required:
@@ -701,58 +737,53 @@ components:
           - $ref: '#/components/schemas/ARN'
           - description: <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the time series, which has the following format.</p> <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code> </p>
       description: Contains a summary of a time series (data stream).
+    InternalFailureException: {}
     Name:
       type: string
       pattern: '[^\u0000-\u001F\u007F]+'
       minLength: 1
       maxLength: 256
-    PropertyAlias:
+    Timestamp:
       type: string
-      pattern: '[^\u0000-\u001F\u007F]+'
+      format: date-time
+    ConflictingOperationException: {}
+    TimeSeriesSummaries:
+      type: array
+      items:
+        $ref: '#/components/schemas/TimeSeriesSummary'
+    ThrottlingException: {}
+    ResourceNotFoundException: {}
+    PropertyDataType:
+      type: string
+      enum:
+      - STRING
+      - INTEGER
+      - DOUBLE
+      - BOOLEAN
+      - STRUCT
+    ListTimeSeriesResponse:
+      type: object
+      required:
+      - TimeSeriesSummaries
+      properties:
+        TimeSeriesSummaries:
+          allOf:
+          - $ref: '#/components/schemas/TimeSeriesSummaries'
+          - description: One or more time series summaries to list.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The token for the next set of results, or null if there are no additional results.
+    NextToken:
+      type: string
+      pattern: '[A-Za-z0-9+/=]+'
       minLength: 1
-  parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
+      maxLength: 4096
+    ARN:
+      type: string
+      pattern: .*
+      minLength: 1
+      maxLength: 1600
   securitySchemes:
     hmac:
       type: apiKey

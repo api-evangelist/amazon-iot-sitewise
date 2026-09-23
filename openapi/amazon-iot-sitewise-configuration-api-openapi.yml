@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2019-12-02'
   x-release: v4
-  title: AWS IoT SiteWise Access Policies Configuration API
-  description: Welcome to the IoT SiteWise API Reference. IoT SiteWise is an Amazon Web Services service that connects <a href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">Industrial Internet of Things (IIoT)</a> devices to the power of the Amazon Web Services Cloud. For more information, see the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/">IoT SiteWise User Guide</a>. For information about IoT SiteWise quotas, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.
+  title: AWS IoT SiteWise Configuration API
+  description: Welcome to the IoT SiteWise API Reference. IoT SiteWise is an Amazon Web Services service that connects Industrial Internet of Things (IIoT) devices to the power of the Amazon Web Services Cloud. For more information, see the IoT SiteWise User Guide. For information about IoT SiteWise quotas, see Quotas in the IoT SiteWise User Guide.
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
     backgroundColor: '#FFFFFF'
@@ -24,6 +24,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/iotsitewise-2019-12-02.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -125,7 +126,7 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     get:
       operationId: DescribeDefaultEncryptionConfiguration
-      description: Retrieves information about the default encryption configuration for the Amazon Web Services account in the default or specified Region. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key management</a> in the <i>IoT SiteWise User Guide</i>.
+      description: Retrieves information about the default encryption configuration for the Amazon Web Services account in the default or specified Region. For more information, see Key management in the IoT SiteWise User Guide.
       responses:
         '200':
           description: Success
@@ -160,7 +161,7 @@ paths:
       - Configuration
     post:
       operationId: PutDefaultEncryptionConfiguration
-      description: Sets the default encryption configuration for the Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key management</a> in the <i>IoT SiteWise User Guide</i>.
+      description: Sets the default encryption configuration for the Amazon Web Services account. For more information, see Key management in the IoT SiteWise User Guide.
       responses:
         '200':
           description: Success
@@ -388,47 +389,65 @@ paths:
       tags:
       - Configuration
 components:
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    RetentionPeriod:
-      type: object
-      properties:
-        numberOfDays:
-          allOf:
-          - $ref: '#/components/schemas/NumberOfDays'
-          - description: <p>The number of days that your data is kept.</p> <note> <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must be <code>false</code>.</p> </note>
-        unlimited:
-          allOf:
-          - $ref: '#/components/schemas/Unlimited'
-          - description: <p>If true, your data is kept indefinitely.</p> <note> <p>If configured to <code>true</code>, you must not specify a value for the <code>numberOfDays</code> parameter.</p> </note>
-      description: How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.
-    Timestamp:
-      type: string
-      format: date-time
-    Unlimited:
-      type: boolean
-    DisassociatedDataStorageState:
-      type: string
-      enum:
-      - ENABLED
-      - DISABLED
-    DescribeDefaultEncryptionConfigurationResponse:
+    MultiLayerStorage:
       type: object
       required:
-      - encryptionType
-      - configurationStatus
+      - customerManagedS3Storage
       properties:
-        encryptionType:
+        customerManagedS3Storage:
           allOf:
-          - $ref: '#/components/schemas/EncryptionType'
-          - description: The type of encryption used for the encryption configuration.
-        kmsKeyArn:
-          allOf:
-          - $ref: '#/components/schemas/ARN'
-          - description: The key ARN of the customer managed key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.
-        configurationStatus:
-          allOf:
-          - $ref: '#/components/schemas/ConfigurationStatus'
-          - description: The status of the account configuration. This contains the <code>ConfigurationState</code>. If there's an error, it also contains the <code>ErrorDetails</code>.
+          - $ref: '#/components/schemas/CustomerManagedS3Storage'
+          - description: Contains information about a customer managed Amazon S3 bucket.
+      description: Contains information about the storage destination.
+    ResourceAlreadyExistsException: {}
+    InvalidRequestException: {}
+    NumberOfDays:
+      type: integer
+      minimum: 30
     ConfigurationState:
       type: string
       enum:
@@ -463,56 +482,41 @@ components:
           allOf:
           - $ref: '#/components/schemas/Timestamp'
           - description: The date the storage configuration was last updated, in Unix epoch time.
-    MultiLayerStorage:
-      type: object
-      required:
-      - customerManagedS3Storage
-      properties:
-        customerManagedS3Storage:
-          allOf:
-          - $ref: '#/components/schemas/CustomerManagedS3Storage'
-          - description: Contains information about a customer managed Amazon S3 bucket.
-      description: Contains information about the storage destination.
-    NumberOfDays:
-      type: integer
-      minimum: 30
     InternalFailureException: {}
-    CustomerManagedS3Storage:
+    ErrorMessage:
+      type: string
+    RetentionPeriod:
+      type: object
+      properties:
+        numberOfDays:
+          allOf:
+          - $ref: '#/components/schemas/NumberOfDays'
+          - description: <p>The number of days that your data is kept.</p> <note> <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must be <code>false</code>.</p> </note>
+        unlimited:
+          allOf:
+          - $ref: '#/components/schemas/Unlimited'
+          - description: <p>If true, your data is kept indefinitely.</p> <note> <p>If configured to <code>true</code>, you must not specify a value for the <code>numberOfDays</code> parameter.</p> </note>
+      description: How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.
+    LimitExceededException: {}
+    ConfigurationStatus:
       type: object
       required:
-      - s3ResourceArn
-      - roleArn
+      - state
       properties:
-        s3ResourceArn:
+        state:
           allOf:
-          - $ref: '#/components/schemas/ARN'
-          - description: The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Amazon S3 object. For more information about how to find the ARN for an Amazon S3 object, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-arn-format.html">Amazon S3 resources</a> in the <i>Amazon Simple Storage Service User Guide</i>.
-        roleArn:
+          - $ref: '#/components/schemas/ConfigurationState'
+          - description: The current state of the configuration.
+        error:
           allOf:
-          - $ref: '#/components/schemas/ARN'
-          - description: The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Identity and Access Management role that allows IoT SiteWise to send data to Amazon S3.
-      description: Contains information about a customer managed Amazon S3 bucket.
-    ResourceNotFoundException: {}
-    ConflictingOperationException: {}
+          - $ref: '#/components/schemas/ConfigurationErrorDetails'
+          - description: Contains associated error information, if any.
+      description: Contains current status information for the configuration.
     ErrorCode:
       type: string
       enum:
       - VALIDATION_ERROR
       - INTERNAL_FAILURE
-    ThrottlingException: {}
-    InvalidRequestException: {}
-    ARN:
-      type: string
-      pattern: .*
-      minLength: 1
-      maxLength: 1600
-    ErrorMessage:
-      type: string
-    StorageType:
-      type: string
-      enum:
-      - SITEWISE_DEFAULT_STORAGE
-      - MULTI_LAYER_STORAGE
     PutDefaultEncryptionConfigurationResponse:
       type: object
       required:
@@ -531,21 +535,43 @@ components:
           allOf:
           - $ref: '#/components/schemas/ConfigurationStatus'
           - description: The status of the account configuration. This contains the <code>ConfigurationState</code>. If there is an error, it also contains the <code>ErrorDetails</code>.
-    ConfigurationStatus:
+    DescribeDefaultEncryptionConfigurationResponse:
       type: object
       required:
-      - state
+      - encryptionType
+      - configurationStatus
       properties:
-        state:
+        encryptionType:
           allOf:
-          - $ref: '#/components/schemas/ConfigurationState'
-          - description: The current state of the configuration.
-        error:
+          - $ref: '#/components/schemas/EncryptionType'
+          - description: The type of encryption used for the encryption configuration.
+        kmsKeyArn:
           allOf:
-          - $ref: '#/components/schemas/ConfigurationErrorDetails'
-          - description: Contains associated error information, if any.
-      description: Contains current status information for the configuration.
-    LimitExceededException: {}
+          - $ref: '#/components/schemas/ARN'
+          - description: The key ARN of the customer managed key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.
+        configurationStatus:
+          allOf:
+          - $ref: '#/components/schemas/ConfigurationStatus'
+          - description: The status of the account configuration. This contains the <code>ConfigurationState</code>. If there's an error, it also contains the <code>ErrorDetails</code>.
+    Timestamp:
+      type: string
+      format: date-time
+    ConfigurationErrorDetails:
+      type: object
+      required:
+      - code
+      - message
+      properties:
+        code:
+          allOf:
+          - $ref: '#/components/schemas/ErrorCode'
+          - description: The error code.
+        message:
+          allOf:
+          - $ref: '#/components/schemas/ErrorMessage'
+          - description: The error message.
+      description: Contains the details of an IoT SiteWise configuration error.
+    ConflictingOperationException: {}
     PutStorageConfigurationResponse:
       type: object
       required:
@@ -568,70 +594,45 @@ components:
           $ref: '#/components/schemas/RetentionPeriod'
         configurationStatus:
           $ref: '#/components/schemas/ConfigurationStatus'
-    ResourceAlreadyExistsException: {}
-    ConfigurationErrorDetails:
+    ThrottlingException: {}
+    ResourceNotFoundException: {}
+    CustomerManagedS3Storage:
       type: object
       required:
-      - code
-      - message
+      - s3ResourceArn
+      - roleArn
       properties:
-        code:
+        s3ResourceArn:
           allOf:
-          - $ref: '#/components/schemas/ErrorCode'
-          - description: The error code.
-        message:
+          - $ref: '#/components/schemas/ARN'
+          - description: The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Amazon S3 object. For more information about how to find the ARN for an Amazon S3 object, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-arn-format.html">Amazon S3 resources</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+        roleArn:
           allOf:
-          - $ref: '#/components/schemas/ErrorMessage'
-          - description: The error message.
-      description: Contains the details of an IoT SiteWise configuration error.
+          - $ref: '#/components/schemas/ARN'
+          - description: The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Identity and Access Management role that allows IoT SiteWise to send data to Amazon S3.
+      description: Contains information about a customer managed Amazon S3 bucket.
+    Unlimited:
+      type: boolean
+    DisassociatedDataStorageState:
+      type: string
+      enum:
+      - ENABLED
+      - DISABLED
+    StorageType:
+      type: string
+      enum:
+      - SITEWISE_DEFAULT_STORAGE
+      - MULTI_LAYER_STORAGE
+    ARN:
+      type: string
+      pattern: .*
+      minLength: 1
+      maxLength: 1600
     EncryptionType:
       type: string
       enum:
       - SITEWISE_DEFAULT_ENCRYPTION
       - KMS_BASED_ENCRYPTION
-  parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
   securitySchemes:
     hmac:
       type: apiKey

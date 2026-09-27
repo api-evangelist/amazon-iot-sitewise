@@ -1165,50 +1165,20 @@ paths:
       tags:
       - Assets
 components:
-  parameters:
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
+    Expression:
+      type: string
+      minLength: 1
+      maxLength: 1024
+    UpdateAssetResponse:
+      type: object
+      required:
+      - assetStatus
+      properties:
+        assetStatus:
+          allOf:
+          - $ref: '#/components/schemas/AssetStatus'
+          - description: The status of the asset, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.
     ExpressionVariable:
       type: object
       required:
@@ -1224,26 +1194,6 @@ components:
           - $ref: '#/components/schemas/VariableValue'
           - description: The variable that identifies an asset property from which to use values.
       description: Contains expression variable information.
-    DetailedErrors:
-      type: array
-      items:
-        $ref: '#/components/schemas/DetailedError'
-    Timestamp:
-      type: string
-      format: date-time
-    UpdateAssetResponse:
-      type: object
-      required:
-      - assetStatus
-      properties:
-        assetStatus:
-          allOf:
-          - $ref: '#/components/schemas/AssetStatus'
-          - description: The status of the asset, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.
-    Interval:
-      type: string
-      minLength: 2
-      maxLength: 23
     TransformProcessingConfig:
       type: object
       required:
@@ -1256,26 +1206,90 @@ components:
         forwardingConfig:
           $ref: '#/components/schemas/ForwardingConfig'
       description: The processing configuration for the given transform property. You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge or in the cloud.
-    AssociatedAssetsSummaries:
-      type: array
-      items:
-        $ref: '#/components/schemas/AssociatedAssetsSummary'
-    ListAssetPropertiesResponse:
+    Metric:
       type: object
       required:
-      - assetPropertySummaries
+      - expression
+      - variables
+      - window
       properties:
-        assetPropertySummaries:
+        expression:
           allOf:
-          - $ref: '#/components/schemas/AssetPropertySummaries'
-          - description: A list that summarizes the properties associated with the specified asset.
+          - $ref: '#/components/schemas/Expression'
+          - description: <p>The mathematical expression that defines the metric aggregation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p> <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        variables:
+          allOf:
+          - $ref: '#/components/schemas/ExpressionVariables'
+          - description: The list of variables used in the expression.
+        window:
+          allOf:
+          - $ref: '#/components/schemas/MetricWindow'
+          - description: The window (time interval) over which IoT SiteWise computes the metric's aggregation expression. IoT SiteWise computes one data point per <code>window</code>.
+        processingConfig:
+          allOf:
+          - $ref: '#/components/schemas/MetricProcessingConfig'
+          - description: The processing configuration for the given metric property. You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud. By default, metrics are forwarded to the cloud.
+      description: <p>Contains an asset metric property. With metrics, you can calculate aggregate functions, such as an average, maximum, or minimum, as specified through an expression. A metric maps several values to a single value (such as a sum).</p> <p>The maximum number of dependent/cascading variables used in any one metric calculation is 10. Therefore, a <i>root</i> metric can have up to 10 cascading metrics in its computational dependency tree. Additionally, a metric can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#metrics">Metrics</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    ListAssetRelationshipsResponse:
+      type: object
+      required:
+      - assetRelationshipSummaries
+      properties:
+        assetRelationshipSummaries:
+          allOf:
+          - $ref: '#/components/schemas/AssetRelationshipSummaries'
+          - description: A list that summarizes each asset relationship.
         nextToken:
           allOf:
           - $ref: '#/components/schemas/NextToken'
           - description: The token for the next set of results, or null if there are no additional results.
-    ResourceAlreadyExistsException: {}
-    InvalidRequestException: {}
-    AssetSummary:
+    InternalFailureException: {}
+    AssetCompositeModels:
+      type: array
+      items:
+        $ref: '#/components/schemas/AssetCompositeModel'
+    Property:
+      type: object
+      required:
+      - id
+      - name
+      - dataType
+      properties:
+        id:
+          allOf:
+          - $ref: '#/components/schemas/ID'
+          - description: The ID of the asset property.
+        name:
+          allOf:
+          - $ref: '#/components/schemas/Name'
+          - description: The name of the property.
+        alias:
+          allOf:
+          - $ref: '#/components/schemas/PropertyAlias'
+          - description: The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.
+        notification:
+          allOf:
+          - $ref: '#/components/schemas/PropertyNotification'
+          - description: The asset property's notification topic and state. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.
+        dataType:
+          allOf:
+          - $ref: '#/components/schemas/PropertyDataType'
+          - description: The property data type.
+        unit:
+          allOf:
+          - $ref: '#/components/schemas/PropertyUnit'
+          - description: The unit (such as <code>Newtons</code> or <code>RPM</code>) of the asset property.
+        type:
+          allOf:
+          - $ref: '#/components/schemas/PropertyType'
+          - description: The property type (see <code>PropertyType</code>). A property contains one type.
+      description: Contains asset property information.
+    ConflictingOperationException: {}
+    AssociatedAssetsSummaries:
+      type: array
+      items:
+        $ref: '#/components/schemas/AssociatedAssetsSummary'
+    AssociatedAssetsSummary:
       type: object
       required:
       - id
@@ -1302,7 +1316,7 @@ components:
         assetModelId:
           allOf:
           - $ref: '#/components/schemas/ID'
-          - description: The ID of the asset model used to create this asset.
+          - description: The ID of the asset model used to create the asset.
         creationDate:
           allOf:
           - $ref: '#/components/schemas/Timestamp'
@@ -1323,90 +1337,28 @@ components:
           allOf:
           - $ref: '#/components/schemas/Description'
           - description: A description for the asset.
-      description: Contains a summary of an asset.
-    DetailedError:
+      description: Contains a summary of an associated asset.
+    ListAssetsResponse:
       type: object
       required:
-      - code
-      - message
+      - assetSummaries
       properties:
-        code:
+        assetSummaries:
           allOf:
-          - $ref: '#/components/schemas/DetailedErrorCode'
-          - description: 'The error code. '
-        message:
+          - $ref: '#/components/schemas/AssetSummaries'
+          - description: A list that summarizes each asset.
+        nextToken:
           allOf:
-          - $ref: '#/components/schemas/DetailedErrorMessage'
-          - description: 'The error message. '
-      description: 'Contains detailed error information. '
-    PropertyNotificationTopic:
-      type: string
-    AssetRelationshipType:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The token for the next set of results, or null if there are no additional results.
+    PropertyDataType:
       type: string
       enum:
-      - HIERARCHY
-    DescribeAssetPropertyResponse:
-      type: object
-      required:
-      - assetId
-      - assetName
-      - assetModelId
-      properties:
-        assetId:
-          allOf:
-          - $ref: '#/components/schemas/ID'
-          - description: The ID of the asset.
-        assetName:
-          allOf:
-          - $ref: '#/components/schemas/Name'
-          - description: The name of the asset.
-        assetModelId:
-          allOf:
-          - $ref: '#/components/schemas/ID'
-          - description: The ID of the asset model.
-        assetProperty:
-          allOf:
-          - $ref: '#/components/schemas/Property'
-          - description: <p>The asset property's definition, alias, and notification state.</p> <p>This response includes this object for normal asset properties. If you describe an asset property in a composite model, this response includes the asset property information in <code>compositeModel</code>.</p>
-        compositeModel:
-          allOf:
-          - $ref: '#/components/schemas/CompositeModelProperty'
-          - description: The composite asset model that declares this asset property, if this asset property exists in a composite model.
-    TumblingWindow:
-      type: object
-      required:
-      - interval
-      properties:
-        interval:
-          allOf:
-          - $ref: '#/components/schemas/Interval'
-          - description: <p>The time interval for the tumbling window. The interval time must be between 1 minute and 1 week.</p> <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight each week (UTC), the <code>1d</code> interval at the end of each day at midnight (UTC), the <code>1h</code> interval at the end of each hour, and so on. </p> <p>When IoT SiteWise aggregates data points for metric computations, the start of each interval is exclusive and the end of each interval is inclusive. IoT SiteWise places the computed data point at the end of the interval.</p>
-        offset:
-          allOf:
-          - $ref: '#/components/schemas/Offset'
-          - description: <p>The offset for the tumbling window. The <code>offset</code> parameter accepts the following:</p> <ul> <li> <p>The offset time.</p> <p>For example, if you specify <code>18h</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p> <ul> <li> <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p> </li> <li> <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) the next day.</p> </li> </ul> </li> <li> <p>The ISO 8601 format.</p> <p>For example, if you specify <code>PT18H</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p> <ul> <li> <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p> </li> <li> <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) the next day.</p> </li> </ul> </li> <li> <p>The 24-hour clock.</p> <p>For example, if you specify <code>00:03:00</code> for <code>offset</code>, <code>5m</code> for <code>interval</code>, and you create the metric at 2 PM (UTC), you get the first aggregation result at 2:03 PM (UTC). You get the second aggregation result at 2:08 PM (UTC). </p> </li> <li> <p>The offset time zone.</p> <p>For example, if you specify <code>2021-07-23T18:00-08</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p> <ul> <li> <p>If you create the metric before or at 6 PM (PST), you get the first aggregation result at 6 PM (PST) on the day when you create the metric.</p> </li> <li> <p>If you create the metric after 6 PM (PST), you get the first aggregation result at 6 PM (PST) the next day.</p> </li> </ul> </li> </ul>
-      description: <p>Contains a tumbling window, which is a repeating fixed-sized, non-overlapping, and contiguous time window. You can use this window in metrics to aggregate data from properties and other assets.</p> <p>You can use <code>m</code>, <code>h</code>, <code>d</code>, and <code>w</code> when you specify an interval or offset. Note that <code>m</code> represents minutes, <code>h</code> represents hours, <code>d</code> represents days, and <code>w</code> represents weeks. You can also use <code>s</code> to represent seconds in <code>offset</code>.</p> <p>The <code>interval</code> and <code>offset</code> parameters support the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a>. For example, <code>PT5S</code> represents 5 seconds, <code>PT5M</code> represents 5 minutes, and <code>PT5H</code> represents 5 hours.</p>
-    ThrottlingException: {}
-    AssetState:
-      type: string
-      enum:
-      - CREATING
-      - ACTIVE
-      - UPDATING
-      - DELETING
-      - FAILED
-    Offset:
-      type: string
-      minLength: 2
-      maxLength: 25
-    AssetPropertySummaries:
-      type: array
-      items:
-        $ref: '#/components/schemas/AssetPropertySummary'
-    AssetSummaries:
-      type: array
-      items:
-        $ref: '#/components/schemas/AssetSummary'
+      - STRING
+      - INTEGER
+      - DOUBLE
+      - BOOLEAN
+      - STRUCT
     AssetProperty:
       type: object
       required:
@@ -1443,47 +1395,191 @@ components:
           - $ref: '#/components/schemas/PropertyUnit'
           - description: The unit (such as <code>Newtons</code> or <code>RPM</code>) of the asset property.
       description: Contains asset property information.
-    ID:
+    AssetRelationshipType:
       type: string
-      pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
-      minLength: 36
-      maxLength: 36
-    Expression:
+      enum:
+      - HIERARCHY
+    ResourceNotFoundException: {}
+    ARN:
       type: string
+      pattern: .*
       minLength: 1
-      maxLength: 1024
-    ListAssetsResponse:
+      maxLength: 1600
+    CompositeModelProperty:
       type: object
       required:
-      - assetSummaries
+      - name
+      - type
+      - assetProperty
       properties:
-        assetSummaries:
+        name:
           allOf:
-          - $ref: '#/components/schemas/AssetSummaries'
-          - description: A list that summarizes each asset.
+          - $ref: '#/components/schemas/Name'
+          - description: The name of the property.
+        type:
+          allOf:
+          - $ref: '#/components/schemas/Name'
+          - description: The type of the composite model that defines this property.
+        assetProperty:
+          $ref: '#/components/schemas/Property'
+        id:
+          allOf:
+          - $ref: '#/components/schemas/ID'
+          - description: ' The ID of the composite model that contains the property. '
+      description: Contains information about a composite model property on an asset.
+    AssetPropertySummary:
+      type: object
+      properties:
+        id:
+          allOf:
+          - $ref: '#/components/schemas/ID'
+          - description: The ID of the property.
+        alias:
+          allOf:
+          - $ref: '#/components/schemas/PropertyAlias'
+          - description: The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.
+        unit:
+          allOf:
+          - $ref: '#/components/schemas/PropertyUnit'
+          - description: ' The unit of measure (such as Newtons or RPM) of the asset property. '
+        notification:
+          $ref: '#/components/schemas/PropertyNotification'
+        assetCompositeModelId:
+          allOf:
+          - $ref: '#/components/schemas/ID'
+          - description: ' The ID of the composite model that contains the asset property. '
+      description: Contains a summary of a property associated with an asset.
+    DetailedErrorMessage:
+      type: string
+    TumblingWindow:
+      type: object
+      required:
+      - interval
+      properties:
+        interval:
+          allOf:
+          - $ref: '#/components/schemas/Interval'
+          - description: <p>The time interval for the tumbling window. The interval time must be between 1 minute and 1 week.</p> <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight each week (UTC), the <code>1d</code> interval at the end of each day at midnight (UTC), the <code>1h</code> interval at the end of each hour, and so on. </p> <p>When IoT SiteWise aggregates data points for metric computations, the start of each interval is exclusive and the end of each interval is inclusive. IoT SiteWise places the computed data point at the end of the interval.</p>
+        offset:
+          allOf:
+          - $ref: '#/components/schemas/Offset'
+          - description: <p>The offset for the tumbling window. The <code>offset</code> parameter accepts the following:</p> <ul> <li> <p>The offset time.</p> <p>For example, if you specify <code>18h</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p> <ul> <li> <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p> </li> <li> <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) the next day.</p> </li> </ul> </li> <li> <p>The ISO 8601 format.</p> <p>For example, if you specify <code>PT18H</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p> <ul> <li> <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p> </li> <li> <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) the next day.</p> </li> </ul> </li> <li> <p>The 24-hour clock.</p> <p>For example, if you specify <code>00:03:00</code> for <code>offset</code>, <code>5m</code> for <code>interval</code>, and you create the metric at 2 PM (UTC), you get the first aggregation result at 2:03 PM (UTC). You get the second aggregation result at 2:08 PM (UTC). </p> </li> <li> <p>The offset time zone.</p> <p>For example, if you specify <code>2021-07-23T18:00-08</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p> <ul> <li> <p>If you create the metric before or at 6 PM (PST), you get the first aggregation result at 6 PM (PST) on the day when you create the metric.</p> </li> <li> <p>If you create the metric after 6 PM (PST), you get the first aggregation result at 6 PM (PST) the next day.</p> </li> </ul> </li> </ul>
+      description: <p>Contains a tumbling window, which is a repeating fixed-sized, non-overlapping, and contiguous time window. You can use this window in metrics to aggregate data from properties and other assets.</p> <p>You can use <code>m</code>, <code>h</code>, <code>d</code>, and <code>w</code> when you specify an interval or offset. Note that <code>m</code> represents minutes, <code>h</code> represents hours, <code>d</code> represents days, and <code>w</code> represents weeks. You can also use <code>s</code> to represent seconds in <code>offset</code>.</p> <p>The <code>interval</code> and <code>offset</code> parameters support the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a>. For example, <code>PT5S</code> represents 5 seconds, <code>PT5M</code> represents 5 minutes, and <code>PT5H</code> represents 5 hours.</p>
+    MeasurementProcessingConfig:
+      type: object
+      required:
+      - forwardingConfig
+      properties:
+        forwardingConfig:
+          allOf:
+          - $ref: '#/components/schemas/ForwardingConfig'
+          - description: 'The forwarding configuration for the given measurement property. '
+      description: The processing configuration for the given measurement property. You can configure measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud. By default, measurements are forwarded to the cloud.
+    ListAssetPropertiesResponse:
+      type: object
+      required:
+      - assetPropertySummaries
+      properties:
+        assetPropertySummaries:
+          allOf:
+          - $ref: '#/components/schemas/AssetPropertySummaries'
+          - description: A list that summarizes the properties associated with the specified asset.
         nextToken:
           allOf:
           - $ref: '#/components/schemas/NextToken'
           - description: The token for the next set of results, or null if there are no additional results.
-    ErrorDetails:
+    InvalidRequestException: {}
+    AssetProperties:
+      type: array
+      items:
+        $ref: '#/components/schemas/AssetProperty'
+    PropertyNotification:
       type: object
       required:
-      - code
-      - message
+      - topic
+      - state
       properties:
-        code:
+        topic:
           allOf:
-          - $ref: '#/components/schemas/ErrorCode'
-          - description: The error code.
-        message:
+          - $ref: '#/components/schemas/PropertyNotificationTopic'
+          - description: The MQTT topic to which IoT SiteWise publishes property value update notifications.
+        state:
           allOf:
-          - $ref: '#/components/schemas/ErrorMessage'
-          - description: The error message.
-        details:
+          - $ref: '#/components/schemas/PropertyNotificationState'
+          - description: The current notification state.
+      description: Contains asset property value notification information. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.
+    Transform:
+      type: object
+      required:
+      - expression
+      - variables
+      properties:
+        expression:
           allOf:
-          - $ref: '#/components/schemas/DetailedErrors'
-          - description: ' A list of detailed errors. '
-      description: Contains the details of an IoT SiteWise error.
+          - $ref: '#/components/schemas/Expression'
+          - description: <p>The mathematical expression that defines the transformation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p> <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        variables:
+          allOf:
+          - $ref: '#/components/schemas/ExpressionVariables'
+          - description: The list of variables used in the expression.
+        processingConfig:
+          allOf:
+          - $ref: '#/components/schemas/TransformProcessingConfig'
+          - description: The processing configuration for the given transform property. You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge or in the cloud.
+      description: <p>Contains an asset transform property. A transform is a one-to-one mapping of a property's data points from one form to another. For example, you can use a transform to convert a Celsius data stream to Fahrenheit by applying the transformation expression to each data point of the Celsius stream. A transform can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#transforms">Transforms</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    VariableName:
+      type: string
+      pattern: ^[a-z][a-z0-9_]*$
+      minLength: 1
+      maxLength: 64
+    Timestamp:
+      type: string
+      format: date-time
+    ExpressionVariables:
+      type: array
+      items:
+        $ref: '#/components/schemas/ExpressionVariable'
+    AssetStatus:
+      type: object
+      required:
+      - state
+      properties:
+        state:
+          allOf:
+          - $ref: '#/components/schemas/AssetState'
+          - description: The current status of the asset.
+        error:
+          allOf:
+          - $ref: '#/components/schemas/ErrorDetails'
+          - description: Contains associated error information, if any.
+      description: Contains information about the current status of an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and model states</a> in the <i>IoT SiteWise User Guide</i>.
+    MetricWindow:
+      type: object
+      properties:
+        tumbling:
+          allOf:
+          - $ref: '#/components/schemas/TumblingWindow'
+          - description: The tumbling time interval window.
+      description: Contains a time interval window used for data aggregate computations (for example, average, sum, count, and so on).
+    PropertyUnit:
+      type: string
+      pattern: '[^\u0000-\u001F\u007F]+'
+      minLength: 1
+      maxLength: 256
+    AssetRelationshipSummary:
+      type: object
+      required:
+      - relationshipType
+      properties:
+        hierarchyInfo:
+          allOf:
+          - $ref: '#/components/schemas/AssetHierarchyInfo'
+          - description: <p>The assets that are related through an asset hierarchy.</p> <p>This object is present if the <code>relationshipType</code> is <code>HIERARCHY</code>.</p>
+        relationshipType:
+          allOf:
+          - $ref: '#/components/schemas/AssetRelationshipType'
+          - description: <p>The relationship type of the assets in this relationship. This value is one of the following:</p> <ul> <li> <p> <code>HIERARCHY</code> – The assets are related through an asset hierarchy. If you specify this relationship type, this asset relationship includes the <code>hierarchyInfo</code> object.</p> </li> </ul>
+      description: Contains information about assets that are related to one another.
     DeleteAssetResponse:
       type: object
       required:
@@ -1493,10 +1589,81 @@ components:
           allOf:
           - $ref: '#/components/schemas/AssetStatus'
           - description: The status of the asset, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.
-    PropertyAlias:
+    Interval:
+      type: string
+      minLength: 2
+      maxLength: 23
+    AssetRelationshipSummaries:
+      type: array
+      items:
+        $ref: '#/components/schemas/AssetRelationshipSummary'
+    ForwardingConfig:
+      type: object
+      required:
+      - state
+      properties:
+        state:
+          allOf:
+          - $ref: '#/components/schemas/ForwardingConfigState'
+          - description: 'The forwarding state for the given property. '
+      description: The forwarding configuration for a given property.
+    AssetSummaries:
+      type: array
+      items:
+        $ref: '#/components/schemas/AssetSummary'
+    Description:
       type: string
       pattern: '[^\u0000-\u001F\u007F]+'
       minLength: 1
+      maxLength: 2048
+    PropertyNotificationState:
+      type: string
+      enum:
+      - ENABLED
+      - DISABLED
+    AssetHierarchies:
+      type: array
+      items:
+        $ref: '#/components/schemas/AssetHierarchy'
+    ResourceAlreadyExistsException: {}
+    ErrorMessage:
+      type: string
+    ThrottlingException: {}
+    DetailedError:
+      type: object
+      required:
+      - code
+      - message
+      properties:
+        code:
+          allOf:
+          - $ref: '#/components/schemas/DetailedErrorCode'
+          - description: 'The error code. '
+        message:
+          allOf:
+          - $ref: '#/components/schemas/DetailedErrorMessage'
+          - description: 'The error message. '
+      description: 'Contains detailed error information. '
+    ComputeLocation:
+      type: string
+      enum:
+      - EDGE
+      - CLOUD
+    LimitExceededException: {}
+    AssetHierarchy:
+      type: object
+      required:
+      - name
+      properties:
+        id:
+          allOf:
+          - $ref: '#/components/schemas/ID'
+          - description: The ID of the hierarchy. This ID is a <code>hierarchyId</code>.
+        name:
+          allOf:
+          - $ref: '#/components/schemas/Name'
+          - description: The hierarchy name provided in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation.
+      description: Describes an asset hierarchy that contains a hierarchy's name and ID.
     DescribeAssetResponse:
       type: object
       required:
@@ -1554,62 +1721,41 @@ components:
           allOf:
           - $ref: '#/components/schemas/Description'
           - description: A description for the asset.
-    CompositeModelProperty:
-      type: object
-      required:
-      - name
-      - type
-      - assetProperty
-      properties:
-        name:
-          allOf:
-          - $ref: '#/components/schemas/Name'
-          - description: The name of the property.
-        type:
-          allOf:
-          - $ref: '#/components/schemas/Name'
-          - description: The type of the composite model that defines this property.
-        assetProperty:
-          $ref: '#/components/schemas/Property'
-        id:
-          allOf:
-          - $ref: '#/components/schemas/ID'
-          - description: ' The ID of the composite model that contains the property. '
-      description: Contains information about a composite model property on an asset.
-    AssetPropertySummary:
-      type: object
-      properties:
-        id:
-          allOf:
-          - $ref: '#/components/schemas/ID'
-          - description: The ID of the property.
-        alias:
-          allOf:
-          - $ref: '#/components/schemas/PropertyAlias'
-          - description: The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.
-        unit:
-          allOf:
-          - $ref: '#/components/schemas/PropertyUnit'
-          - description: ' The unit of measure (such as Newtons or RPM) of the asset property. '
-        notification:
-          $ref: '#/components/schemas/PropertyNotification'
-        assetCompositeModelId:
-          allOf:
-          - $ref: '#/components/schemas/ID'
-          - description: ' The ID of the composite model that contains the asset property. '
-      description: Contains a summary of a property associated with an asset.
-    MetricWindow:
-      type: object
-      properties:
-        tumbling:
-          allOf:
-          - $ref: '#/components/schemas/TumblingWindow'
-          - description: The tumbling time interval window.
-      description: Contains a time interval window used for data aggregate computations (for example, average, sum, count, and so on).
-    DetailedErrorMessage:
+    TagValue:
       type: string
-    ErrorMessage:
+      minLength: 0
+      maxLength: 256
+    AssetPropertySummaries:
+      type: array
+      items:
+        $ref: '#/components/schemas/AssetPropertySummary'
+    DefaultValue:
       type: string
+      pattern: '[^\u0000-\u001F\u007F]+'
+      minLength: 1
+      maxLength: 1024
+    ErrorCode:
+      type: string
+      enum:
+      - VALIDATION_ERROR
+      - INTERNAL_FAILURE
+    AssetState:
+      type: string
+      enum:
+      - CREATING
+      - ACTIVE
+      - UPDATING
+      - DELETING
+      - FAILED
+    ID:
+      type: string
+      pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
+      minLength: 36
+      maxLength: 36
+    Offset:
+      type: string
+      minLength: 2
+      maxLength: 25
     AssetCompositeModel:
       type: object
       required:
@@ -1636,70 +1782,20 @@ components:
           - $ref: '#/components/schemas/ID'
           - description: ' The ID of the asset composite model. '
       description: Contains information about a composite model in an asset. This object contains the asset's properties that you define in the composite model.
-    ForwardingConfig:
-      type: object
-      required:
-      - state
-      properties:
-        state:
-          allOf:
-          - $ref: '#/components/schemas/ForwardingConfigState'
-          - description: 'The forwarding state for the given property. '
-      description: The forwarding configuration for a given property.
-    LimitExceededException: {}
-    Transform:
-      type: object
-      required:
-      - expression
-      - variables
-      properties:
-        expression:
-          allOf:
-          - $ref: '#/components/schemas/Expression'
-          - description: <p>The mathematical expression that defines the transformation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p> <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        variables:
-          allOf:
-          - $ref: '#/components/schemas/ExpressionVariables'
-          - description: The list of variables used in the expression.
-        processingConfig:
-          allOf:
-          - $ref: '#/components/schemas/TransformProcessingConfig'
-          - description: The processing configuration for the given transform property. You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge or in the cloud.
-      description: <p>Contains an asset transform property. A transform is a one-to-one mapping of a property's data points from one form to another. For example, you can use a transform to convert a Celsius data stream to Fahrenheit by applying the transformation expression to each data point of the Celsius stream. A transform can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#transforms">Transforms</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    CreateAssetResponse:
-      type: object
-      required:
-      - assetId
-      - assetArn
-      - assetStatus
-      properties:
-        assetId:
-          allOf:
-          - $ref: '#/components/schemas/ID'
-          - description: The ID of the asset. This ID uniquely identifies the asset within IoT SiteWise and can be used with other IoT SiteWise APIs.
-        assetArn:
-          allOf:
-          - $ref: '#/components/schemas/ARN'
-          - description: <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p> <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
-        assetStatus:
-          allOf:
-          - $ref: '#/components/schemas/AssetStatus'
-          - description: The status of the asset, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.
-    Name:
+    DetailedErrors:
+      type: array
+      items:
+        $ref: '#/components/schemas/DetailedError'
+    Macro:
       type: string
       pattern: '[^\u0000-\u001F\u007F]+'
       minLength: 1
       maxLength: 256
-    AssetRelationshipSummaries:
-      type: array
-      items:
-        $ref: '#/components/schemas/AssetRelationshipSummary'
-    DetailedErrorCode:
+    ForwardingConfigState:
       type: string
       enum:
-      - INCOMPATIBLE_COMPUTE_LOCATION
-      - INCOMPATIBLE_FORWARDING_CONFIGURATION
-    ResourceNotFoundException: {}
+      - DISABLED
+      - ENABLED
     VariableValue:
       type: object
       required:
@@ -1714,38 +1810,25 @@ components:
           - $ref: '#/components/schemas/Macro'
           - description: <p>The ID of the hierarchy to query for the property ID. You can use the hierarchy's name instead of the hierarchy's ID.</p> <p>You use a hierarchy ID instead of a model ID because you can have several hierarchies using the same model and therefore the same <code>propertyId</code>. For example, you might have separately grouped assets that come from the same asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
       description: Identifies a property value used in an expression.
-    PropertyDataType:
-      type: string
-      enum:
-      - STRING
-      - INTEGER
-      - DOUBLE
-      - BOOLEAN
-      - STRUCT
-    Metric:
+    ErrorDetails:
       type: object
       required:
-      - expression
-      - variables
-      - window
+      - code
+      - message
       properties:
-        expression:
+        code:
           allOf:
-          - $ref: '#/components/schemas/Expression'
-          - description: <p>The mathematical expression that defines the metric aggregation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p> <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        variables:
+          - $ref: '#/components/schemas/ErrorCode'
+          - description: The error code.
+        message:
           allOf:
-          - $ref: '#/components/schemas/ExpressionVariables'
-          - description: The list of variables used in the expression.
-        window:
+          - $ref: '#/components/schemas/ErrorMessage'
+          - description: The error message.
+        details:
           allOf:
-          - $ref: '#/components/schemas/MetricWindow'
-          - description: The window (time interval) over which IoT SiteWise computes the metric's aggregation expression. IoT SiteWise computes one data point per <code>window</code>.
-        processingConfig:
-          allOf:
-          - $ref: '#/components/schemas/MetricProcessingConfig'
-          - description: The processing configuration for the given metric property. You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud. By default, metrics are forwarded to the cloud.
-      description: <p>Contains an asset metric property. With metrics, you can calculate aggregate functions, such as an average, maximum, or minimum, as specified through an expression. A metric maps several values to a single value (such as a sum).</p> <p>The maximum number of dependent/cascading variables used in any one metric calculation is 10. Therefore, a <i>root</i> metric can have up to 10 cascading metrics in its computational dependency tree. Additionally, a metric can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#metrics">Metrics</a> in the <i>IoT SiteWise User Guide</i>.</p>
+          - $ref: '#/components/schemas/DetailedErrors'
+          - description: ' A list of detailed errors. '
+      description: Contains the details of an IoT SiteWise error.
     AssetHierarchyInfo:
       type: object
       properties:
@@ -1758,29 +1841,61 @@ components:
           - $ref: '#/components/schemas/ID'
           - description: The ID of the child asset in this asset relationship.
       description: Contains information about a parent asset and a child asset that are related through an asset hierarchy.
-    ExpressionVariables:
-      type: array
-      items:
-        $ref: '#/components/schemas/ExpressionVariable'
-    Description:
+    DetailedErrorCode:
       type: string
-      pattern: '[^\u0000-\u001F\u007F]+'
-      minLength: 1
-      maxLength: 2048
-    AssetCompositeModels:
-      type: array
-      items:
-        $ref: '#/components/schemas/AssetCompositeModel'
-    MetricProcessingConfig:
+      enum:
+      - INCOMPATIBLE_COMPUTE_LOCATION
+      - INCOMPATIBLE_FORWARDING_CONFIGURATION
+    PropertyNotificationTopic:
+      type: string
+    Attribute:
+      type: object
+      properties:
+        defaultValue:
+          allOf:
+          - $ref: '#/components/schemas/DefaultValue'
+          - description: The default value of the asset model property attribute. All assets that you create from the asset model contain this attribute value. You can update an attribute's value after you create an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-attribute-values.html">Updating attribute values</a> in the <i>IoT SiteWise User Guide</i>.
+      description: Contains an asset attribute property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#attributes">Attributes</a> in the <i>IoT SiteWise User Guide</i>.
+    ListAssociatedAssetsResponse:
       type: object
       required:
-      - computeLocation
+      - assetSummaries
       properties:
-        computeLocation:
+        assetSummaries:
           allOf:
-          - $ref: '#/components/schemas/ComputeLocation'
-          - description: 'The compute location for the given metric property. '
-      description: The processing configuration for the given metric property. You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud. By default, metrics are forwarded to the cloud.
+          - $ref: '#/components/schemas/AssociatedAssetsSummaries'
+          - description: A list that summarizes the associated assets.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The token for the next set of results, or null if there are no additional results.
+    DescribeAssetPropertyResponse:
+      type: object
+      required:
+      - assetId
+      - assetName
+      - assetModelId
+      properties:
+        assetId:
+          allOf:
+          - $ref: '#/components/schemas/ID'
+          - description: The ID of the asset.
+        assetName:
+          allOf:
+          - $ref: '#/components/schemas/Name'
+          - description: The name of the asset.
+        assetModelId:
+          allOf:
+          - $ref: '#/components/schemas/ID'
+          - description: The ID of the asset model.
+        assetProperty:
+          allOf:
+          - $ref: '#/components/schemas/Property'
+          - description: <p>The asset property's definition, alias, and notification state.</p> <p>This response includes this object for normal asset properties. If you describe an asset property in a composite model, this response includes the asset property information in <code>compositeModel</code>.</p>
+        compositeModel:
+          allOf:
+          - $ref: '#/components/schemas/CompositeModelProperty'
+          - description: The composite asset model that declares this asset property, if this asset property exists in a composite model.
     Measurement:
       type: object
       properties:
@@ -1789,48 +1904,17 @@ components:
           - $ref: '#/components/schemas/MeasurementProcessingConfig'
           - description: The processing configuration for the given measurement property. You can configure measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud. By default, measurements are forwarded to the cloud.
       description: Contains an asset measurement property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#measurements">Measurements</a> in the <i>IoT SiteWise User Guide</i>.
-    Property:
-      type: object
-      required:
-      - id
-      - name
-      - dataType
-      properties:
-        id:
-          allOf:
-          - $ref: '#/components/schemas/ID'
-          - description: The ID of the asset property.
-        name:
-          allOf:
-          - $ref: '#/components/schemas/Name'
-          - description: The name of the property.
-        alias:
-          allOf:
-          - $ref: '#/components/schemas/PropertyAlias'
-          - description: The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.
-        notification:
-          allOf:
-          - $ref: '#/components/schemas/PropertyNotification'
-          - description: The asset property's notification topic and state. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.
-        dataType:
-          allOf:
-          - $ref: '#/components/schemas/PropertyDataType'
-          - description: The property data type.
-        unit:
-          allOf:
-          - $ref: '#/components/schemas/PropertyUnit'
-          - description: The unit (such as <code>Newtons</code> or <code>RPM</code>) of the asset property.
-        type:
-          allOf:
-          - $ref: '#/components/schemas/PropertyType'
-          - description: The property type (see <code>PropertyType</code>). A property contains one type.
-      description: Contains asset property information.
-    Macro:
+    NextToken:
+      type: string
+      pattern: '[A-Za-z0-9+/=]+'
+      minLength: 1
+      maxLength: 4096
+    Name:
       type: string
       pattern: '[^\u0000-\u001F\u007F]+'
       minLength: 1
       maxLength: 256
-    AssociatedAssetsSummary:
+    AssetSummary:
       type: object
       required:
       - id
@@ -1857,7 +1941,7 @@ components:
         assetModelId:
           allOf:
           - $ref: '#/components/schemas/ID'
-          - description: The ID of the asset model used to create the asset.
+          - description: The ID of the asset model used to create this asset.
         creationDate:
           allOf:
           - $ref: '#/components/schemas/Timestamp'
@@ -1878,153 +1962,30 @@ components:
           allOf:
           - $ref: '#/components/schemas/Description'
           - description: A description for the asset.
-      description: Contains a summary of an associated asset.
-    PropertyUnit:
+      description: Contains a summary of an asset.
+    PropertyAlias:
       type: string
       pattern: '[^\u0000-\u001F\u007F]+'
       minLength: 1
-      maxLength: 256
-    ListAssetRelationshipsResponse:
+    CreateAssetResponse:
       type: object
       required:
-      - assetRelationshipSummaries
+      - assetId
+      - assetArn
+      - assetStatus
       properties:
-        assetRelationshipSummaries:
-          allOf:
-          - $ref: '#/components/schemas/AssetRelationshipSummaries'
-          - description: A list that summarizes each asset relationship.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The token for the next set of results, or null if there are no additional results.
-    Attribute:
-      type: object
-      properties:
-        defaultValue:
-          allOf:
-          - $ref: '#/components/schemas/DefaultValue'
-          - description: The default value of the asset model property attribute. All assets that you create from the asset model contain this attribute value. You can update an attribute's value after you create an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-attribute-values.html">Updating attribute values</a> in the <i>IoT SiteWise User Guide</i>.
-      description: Contains an asset attribute property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#attributes">Attributes</a> in the <i>IoT SiteWise User Guide</i>.
-    MeasurementProcessingConfig:
-      type: object
-      required:
-      - forwardingConfig
-      properties:
-        forwardingConfig:
-          allOf:
-          - $ref: '#/components/schemas/ForwardingConfig'
-          - description: 'The forwarding configuration for the given measurement property. '
-      description: The processing configuration for the given measurement property. You can configure measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud. By default, measurements are forwarded to the cloud.
-    InternalFailureException: {}
-    AssetHierarchies:
-      type: array
-      items:
-        $ref: '#/components/schemas/AssetHierarchy'
-    PropertyNotificationState:
-      type: string
-      enum:
-      - ENABLED
-      - DISABLED
-    PropertyNotification:
-      type: object
-      required:
-      - topic
-      - state
-      properties:
-        topic:
-          allOf:
-          - $ref: '#/components/schemas/PropertyNotificationTopic'
-          - description: The MQTT topic to which IoT SiteWise publishes property value update notifications.
-        state:
-          allOf:
-          - $ref: '#/components/schemas/PropertyNotificationState'
-          - description: The current notification state.
-      description: Contains asset property value notification information. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.
-    VariableName:
-      type: string
-      pattern: ^[a-z][a-z0-9_]*$
-      minLength: 1
-      maxLength: 64
-    AssetHierarchy:
-      type: object
-      required:
-      - name
-      properties:
-        id:
+        assetId:
           allOf:
           - $ref: '#/components/schemas/ID'
-          - description: The ID of the hierarchy. This ID is a <code>hierarchyId</code>.
-        name:
+          - description: The ID of the asset. This ID uniquely identifies the asset within IoT SiteWise and can be used with other IoT SiteWise APIs.
+        assetArn:
           allOf:
-          - $ref: '#/components/schemas/Name'
-          - description: The hierarchy name provided in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation.
-      description: Describes an asset hierarchy that contains a hierarchy's name and ID.
-    ErrorCode:
-      type: string
-      enum:
-      - VALIDATION_ERROR
-      - INTERNAL_FAILURE
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
-    ComputeLocation:
-      type: string
-      enum:
-      - EDGE
-      - CLOUD
-    ListAssociatedAssetsResponse:
-      type: object
-      required:
-      - assetSummaries
-      properties:
-        assetSummaries:
+          - $ref: '#/components/schemas/ARN'
+          - description: <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p> <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
+        assetStatus:
           allOf:
-          - $ref: '#/components/schemas/AssociatedAssetsSummaries'
-          - description: A list that summarizes the associated assets.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The token for the next set of results, or null if there are no additional results.
-    ConflictingOperationException: {}
-    ForwardingConfigState:
-      type: string
-      enum:
-      - DISABLED
-      - ENABLED
-    AssetStatus:
-      type: object
-      required:
-      - state
-      properties:
-        state:
-          allOf:
-          - $ref: '#/components/schemas/AssetState'
-          - description: The current status of the asset.
-        error:
-          allOf:
-          - $ref: '#/components/schemas/ErrorDetails'
-          - description: Contains associated error information, if any.
-      description: Contains information about the current status of an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and model states</a> in the <i>IoT SiteWise User Guide</i>.
-    AssetRelationshipSummary:
-      type: object
-      required:
-      - relationshipType
-      properties:
-        hierarchyInfo:
-          allOf:
-          - $ref: '#/components/schemas/AssetHierarchyInfo'
-          - description: <p>The assets that are related through an asset hierarchy.</p> <p>This object is present if the <code>relationshipType</code> is <code>HIERARCHY</code>.</p>
-        relationshipType:
-          allOf:
-          - $ref: '#/components/schemas/AssetRelationshipType'
-          - description: <p>The relationship type of the assets in this relationship. This value is one of the following:</p> <ul> <li> <p> <code>HIERARCHY</code> – The assets are related through an asset hierarchy. If you specify this relationship type, this asset relationship includes the <code>hierarchyInfo</code> object.</p> </li> </ul>
-      description: Contains information about assets that are related to one another.
-    DefaultValue:
-      type: string
-      pattern: '[^\u0000-\u001F\u007F]+'
-      minLength: 1
-      maxLength: 1024
+          - $ref: '#/components/schemas/AssetStatus'
+          - description: The status of the asset, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.
     PropertyType:
       type: object
       properties:
@@ -2045,20 +2006,59 @@ components:
           - $ref: '#/components/schemas/Metric'
           - description: Specifies an asset metric property. A metric contains a mathematical expression that uses aggregate functions to process all input data points over a time interval and output a single data point, such as to calculate the average hourly temperature.
       description: Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>.
-    NextToken:
-      type: string
-      pattern: '[A-Za-z0-9+/=]+'
-      minLength: 1
-      maxLength: 4096
-    ARN:
-      type: string
-      pattern: .*
-      minLength: 1
-      maxLength: 1600
-    AssetProperties:
-      type: array
-      items:
-        $ref: '#/components/schemas/AssetProperty'
+    MetricProcessingConfig:
+      type: object
+      required:
+      - computeLocation
+      properties:
+        computeLocation:
+          allOf:
+          - $ref: '#/components/schemas/ComputeLocation'
+          - description: 'The compute location for the given metric property. '
+      description: The processing configuration for the given metric property. You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud. By default, metrics are forwarded to the cloud.
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

@@ -2,7 +2,7 @@ openapi: 3.2.0
 info:
   version: '2019-12-02'
   x-release: v4
-  title: AWS IoT SiteWise Tags#resource Arn API
+  title: AWS IoT SiteWise Tags API
   description: Welcome to the IoT SiteWise API Reference. IoT SiteWise is an Amazon Web Services service that connects Industrial Internet of Things (IIoT) devices to the power of the Amazon Web Services Cloud. For more information, see the IoT SiteWise User Guide. For information about IoT SiteWise quotas, see Quotas in the IoT SiteWise User Guide.
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
@@ -113,7 +113,7 @@ servers:
 security:
 - hmac: []
 tags:
-- name: Tags#resourceArn
+- name: Tags
 paths:
   /tags#resourceArn:
     parameters:
@@ -190,7 +190,7 @@ paths:
         delay: 0
         dispatcher: FALLBACK
       tags:
-      - Tags#resourceArn
+      - Tags
     post:
       operationId: TagResource
       description: Adds tags to an IoT SiteWise resource. If a tag already exists for the resource, this operation updates the tag's value.
@@ -279,17 +279,133 @@ paths:
         delay: 0
         dispatcher: FALLBACK
       tags:
-      - Tags#resourceArn
+      - Tags
+  /tags#resourceArn&tagKeys:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    delete:
+      operationId: UntagResource
+      description: Removes a tag from an IoT SiteWise resource.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UntagResourceResponse'
+        '480':
+          description: InvalidRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidRequestException'
+        '481':
+          description: InternalFailureException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalFailureException'
+        '482':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+        '483':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '484':
+          description: ConflictingOperationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictingOperationException'
+        '485':
+          description: LimitExceededException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LimitExceededException'
+        '486':
+          description: UnauthorizedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedException'
+      parameters:
+      - name: resourceArn
+        in: query
+        required: true
+        description: The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to untag.
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 1011
+      - name: tagKeys
+        in: query
+        required: true
+        description: A list of keys for tags to remove from the resource.
+        schema:
+          type: array
+          items:
+            $ref: '#/components/schemas/TagKey'
+          minItems: 0
+          maxItems: 200
+      summary: Amazon IoT SiteWise Untag Resource
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Tags
 components:
+  schemas:
+    InvalidRequestException: {}
+    LimitExceededException: {}
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    UnauthorizedException: {}
+    InternalFailureException: {}
+    ListTagsForResourceResponse:
+      type: object
+      properties:
+        tags:
+          allOf:
+          - $ref: '#/components/schemas/TagMap'
+          - description: The list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.
+    TooManyTagsException: {}
+    ConflictingOperationException: {}
+    TagResourceResponse:
+      type: object
+      properties: {}
+    UntagResourceResponse:
+      type: object
+      properties: {}
+    ResourceNotFoundException: {}
+    TagMap:
+      type: object
+      minProperties: 1
+      maxProperties: 50
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    TagKey:
+      type: string
+      minLength: 1
+      maxLength: 128
+    ThrottlingException: {}
   parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -300,14 +416,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -318,41 +428,24 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Credential:
       name: X-Amz-Credential
       in: header
       schema:
         type: string
       required: false
-  schemas:
-    InvalidRequestException: {}
-    InternalFailureException: {}
-    LimitExceededException: {}
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
-    UnauthorizedException: {}
-    TooManyTagsException: {}
-    ConflictingOperationException: {}
-    ListTagsForResourceResponse:
-      type: object
-      properties:
-        tags:
-          allOf:
-          - $ref: '#/components/schemas/TagMap'
-          - description: The list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.
-    ThrottlingException: {}
-    ResourceNotFoundException: {}
-    TagResourceResponse:
-      type: object
-      properties: {}
-    TagMap:
-      type: object
-      minProperties: 1
-      maxProperties: 50
-      additionalProperties:
-        $ref: '#/components/schemas/TagValue'
   securitySchemes:
     hmac:
       type: apiKey

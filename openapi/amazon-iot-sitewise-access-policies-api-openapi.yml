@@ -556,6 +556,142 @@ paths:
       - Access Policies
 components:
   schemas:
+    InvalidRequestException: {}
+    LimitExceededException: {}
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    Identity:
+      type: object
+      properties:
+        user:
+          allOf:
+          - $ref: '#/components/schemas/UserIdentity'
+          - description: An IAM Identity Center user identity.
+        group:
+          allOf:
+          - $ref: '#/components/schemas/GroupIdentity'
+          - description: An IAM Identity Center group identity.
+        iamUser:
+          allOf:
+          - $ref: '#/components/schemas/IAMUserIdentity'
+          - description: An IAM user identity.
+        iamRole:
+          allOf:
+          - $ref: '#/components/schemas/IAMRoleIdentity'
+          - description: An IAM role identity.
+      description: <p>Contains an identity that can access an IoT SiteWise Monitor resource.</p> <note> <p>Currently, you can't use Amazon Web Services APIs to retrieve IAM Identity Center identity IDs. You can find the IAM Identity Center identity IDs in the URL of user and group pages in the <a href="https://console.aws.amazon.com/singlesignon">IAM Identity Center console</a>.</p> </note>
+    InternalFailureException: {}
+    ListAccessPoliciesResponse:
+      type: object
+      required:
+      - accessPolicySummaries
+      properties:
+        accessPolicySummaries:
+          allOf:
+          - $ref: '#/components/schemas/AccessPolicySummaries'
+          - description: A list that summarizes each access policy.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The token for the next set of results, or null if there are no additional results.
+    UpdateAccessPolicyResponse:
+      type: object
+      properties: {}
+    IdentityId:
+      type: string
+      pattern: \S+
+      minLength: 1
+      maxLength: 256
+    Timestamp:
+      type: string
+      format: date-time
+    ProjectResource:
+      type: object
+      required:
+      - id
+      properties:
+        id:
+          allOf:
+          - $ref: '#/components/schemas/ID'
+          - description: The ID of the project.
+      description: Identifies a specific IoT SiteWise Monitor project.
+    ID:
+      type: string
+      pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
+      minLength: 36
+      maxLength: 36
+    IAMRoleIdentity:
+      type: object
+      required:
+      - arn
+      properties:
+        arn:
+          allOf:
+          - $ref: '#/components/schemas/ARN'
+          - description: The ARN of the IAM role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.
+      description: Contains information about an Identity and Access Management role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM roles</a> in the <i>IAM User Guide</i>.
+    PortalResource:
+      type: object
+      required:
+      - id
+      properties:
+        id:
+          allOf:
+          - $ref: '#/components/schemas/ID'
+          - description: The ID of the portal.
+      description: Identifies an IoT SiteWise Monitor portal.
+    NextToken:
+      type: string
+      pattern: '[A-Za-z0-9+/=]+'
+      minLength: 1
+      maxLength: 4096
+    Resource:
+      type: object
+      properties:
+        portal:
+          allOf:
+          - $ref: '#/components/schemas/PortalResource'
+          - description: A portal resource.
+        project:
+          allOf:
+          - $ref: '#/components/schemas/ProjectResource'
+          - description: A project resource.
+      description: Contains an IoT SiteWise Monitor resource ID for a portal or project.
+    AccessPolicySummary:
+      type: object
+      required:
+      - id
+      - identity
+      - resource
+      - permission
+      properties:
+        id:
+          allOf:
+          - $ref: '#/components/schemas/ID'
+          - description: The ID of the access policy.
+        identity:
+          allOf:
+          - $ref: '#/components/schemas/Identity'
+          - description: The identity (an IAM Identity Center user, an IAM Identity Center group, or an IAM user).
+        resource:
+          allOf:
+          - $ref: '#/components/schemas/Resource'
+          - description: The IoT SiteWise Monitor resource (a portal or project).
+        permission:
+          allOf:
+          - $ref: '#/components/schemas/Permission'
+          - description: The permissions for the access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.
+        creationDate:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The date the access policy was created, in Unix epoch time.
+        lastUpdateDate:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The date the access policy was last updated, in Unix epoch time.
+      description: Contains an access policy that defines an identity's access to an IoT SiteWise Monitor resource.
     DescribeAccessPolicyResponse:
       type: object
       required:
@@ -595,11 +731,11 @@ components:
           allOf:
           - $ref: '#/components/schemas/Timestamp'
           - description: The date the access policy was last updated, in Unix epoch time.
-    ID:
+    Permission:
       type: string
-      pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
-      minLength: 36
-      maxLength: 36
+      enum:
+      - ADMINISTRATOR
+      - VIEWER
     GroupIdentity:
       type: object
       required:
@@ -610,94 +746,14 @@ components:
           - $ref: '#/components/schemas/IdentityId'
           - description: The IAM Identity Center ID of the group.
       description: Contains information for a group identity in an access policy.
-    InvalidRequestException: {}
-    IAMUserIdentity:
-      type: object
-      required:
-      - arn
-      properties:
-        arn:
-          allOf:
-          - $ref: '#/components/schemas/ARN'
-          - description: <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p> <note> <p>If you delete the IAM user, access policies that contain this identity include an empty <code>arn</code>. You can delete the access policy for the IAM user that no longer exists.</p> </note>
-      description: Contains information about an Identity and Access Management user.
-    IdentityId:
-      type: string
-      pattern: \S+
-      minLength: 1
-      maxLength: 256
-    ProjectResource:
-      type: object
-      required:
-      - id
-      properties:
-        id:
-          allOf:
-          - $ref: '#/components/schemas/ID'
-          - description: The ID of the project.
-      description: Identifies a specific IoT SiteWise Monitor project.
-    Identity:
-      type: object
-      properties:
-        user:
-          allOf:
-          - $ref: '#/components/schemas/UserIdentity'
-          - description: An IAM Identity Center user identity.
-        group:
-          allOf:
-          - $ref: '#/components/schemas/GroupIdentity'
-          - description: An IAM Identity Center group identity.
-        iamUser:
-          allOf:
-          - $ref: '#/components/schemas/IAMUserIdentity'
-          - description: An IAM user identity.
-        iamRole:
-          allOf:
-          - $ref: '#/components/schemas/IAMRoleIdentity'
-          - description: An IAM role identity.
-      description: <p>Contains an identity that can access an IoT SiteWise Monitor resource.</p> <note> <p>Currently, you can't use Amazon Web Services APIs to retrieve IAM Identity Center identity IDs. You can find the IAM Identity Center identity IDs in the URL of user and group pages in the <a href="https://console.aws.amazon.com/singlesignon">IAM Identity Center console</a>.</p> </note>
+    AccessPolicySummaries:
+      type: array
+      items:
+        $ref: '#/components/schemas/AccessPolicySummary'
+    ResourceNotFoundException: {}
     DeleteAccessPolicyResponse:
       type: object
       properties: {}
-    Permission:
-      type: string
-      enum:
-      - ADMINISTRATOR
-      - VIEWER
-    AccessPolicySummary:
-      type: object
-      required:
-      - id
-      - identity
-      - resource
-      - permission
-      properties:
-        id:
-          allOf:
-          - $ref: '#/components/schemas/ID'
-          - description: The ID of the access policy.
-        identity:
-          allOf:
-          - $ref: '#/components/schemas/Identity'
-          - description: The identity (an IAM Identity Center user, an IAM Identity Center group, or an IAM user).
-        resource:
-          allOf:
-          - $ref: '#/components/schemas/Resource'
-          - description: The IoT SiteWise Monitor resource (a portal or project).
-        permission:
-          allOf:
-          - $ref: '#/components/schemas/Permission'
-          - description: The permissions for the access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.
-        creationDate:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The date the access policy was created, in Unix epoch time.
-        lastUpdateDate:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The date the access policy was last updated, in Unix epoch time.
-      description: Contains an access policy that defines an identity's access to an IoT SiteWise Monitor resource.
-    InternalFailureException: {}
     CreateAccessPolicyResponse:
       type: object
       required:
@@ -712,6 +768,12 @@ components:
           allOf:
           - $ref: '#/components/schemas/ARN'
           - description: <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p> <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
+    ARN:
+      type: string
+      pattern: .*
+      minLength: 1
+      maxLength: 1600
+    ThrottlingException: {}
     UserIdentity:
       type: object
       required:
@@ -722,36 +784,7 @@ components:
           - $ref: '#/components/schemas/IdentityId'
           - description: The IAM Identity Center ID of the user.
       description: Contains information for a user identity in an access policy.
-    LimitExceededException: {}
-    UpdateAccessPolicyResponse:
-      type: object
-      properties: {}
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
-    Timestamp:
-      type: string
-      format: date-time
-    Resource:
-      type: object
-      properties:
-        portal:
-          allOf:
-          - $ref: '#/components/schemas/PortalResource'
-          - description: A portal resource.
-        project:
-          allOf:
-          - $ref: '#/components/schemas/ProjectResource'
-          - description: A project resource.
-      description: Contains an IoT SiteWise Monitor resource ID for a portal or project.
-    AccessPolicySummaries:
-      type: array
-      items:
-        $ref: '#/components/schemas/AccessPolicySummary'
-    ThrottlingException: {}
-    ResourceNotFoundException: {}
-    IAMRoleIdentity:
+    IAMUserIdentity:
       type: object
       required:
       - arn
@@ -759,50 +792,11 @@ components:
         arn:
           allOf:
           - $ref: '#/components/schemas/ARN'
-          - description: The ARN of the IAM role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.
-      description: Contains information about an Identity and Access Management role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM roles</a> in the <i>IAM User Guide</i>.
-    PortalResource:
-      type: object
-      required:
-      - id
-      properties:
-        id:
-          allOf:
-          - $ref: '#/components/schemas/ID'
-          - description: The ID of the portal.
-      description: Identifies an IoT SiteWise Monitor portal.
-    ListAccessPoliciesResponse:
-      type: object
-      required:
-      - accessPolicySummaries
-      properties:
-        accessPolicySummaries:
-          allOf:
-          - $ref: '#/components/schemas/AccessPolicySummaries'
-          - description: A list that summarizes each access policy.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The token for the next set of results, or null if there are no additional results.
-    NextToken:
-      type: string
-      pattern: '[A-Za-z0-9+/=]+'
-      minLength: 1
-      maxLength: 4096
-    ARN:
-      type: string
-      pattern: .*
-      minLength: 1
-      maxLength: 1600
+          - description: <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p> <note> <p>If you delete the IAM user, access policies that contain this identity include an empty <code>arn</code>. You can delete the access policy for the IAM user that no longer exists.</p> </note>
+      description: Contains information about an Identity and Access Management user.
   parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -813,20 +807,26 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
       required: false
     X-Amz-Date:
       name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string

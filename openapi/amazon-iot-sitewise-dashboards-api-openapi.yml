@@ -493,6 +493,69 @@ paths:
       - Dashboards
 components:
   schemas:
+    DashboardDefinition:
+      type: string
+      pattern: .+
+      minLength: 0
+      maxLength: 204800
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    ThrottlingException: {}
+    NextToken:
+      type: string
+      pattern: '[A-Za-z0-9+/=]+'
+      minLength: 1
+      maxLength: 4096
+    Name:
+      type: string
+      pattern: '[^\u0000-\u001F\u007F]+'
+      minLength: 1
+      maxLength: 256
+    DeleteDashboardResponse:
+      type: object
+      properties: {}
+    ListDashboardsResponse:
+      type: object
+      required:
+      - dashboardSummaries
+      properties:
+        dashboardSummaries:
+          allOf:
+          - $ref: '#/components/schemas/DashboardSummaries'
+          - description: A list that summarizes each dashboard in the project.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The token for the next set of results, or null if there are no additional results.
+    DashboardSummary:
+      type: object
+      required:
+      - id
+      - name
+      properties:
+        id:
+          allOf:
+          - $ref: '#/components/schemas/ID'
+          - description: The ID of the dashboard.
+        name:
+          allOf:
+          - $ref: '#/components/schemas/Name'
+          - description: The name of the dashboard
+        description:
+          allOf:
+          - $ref: '#/components/schemas/Description'
+          - description: The dashboard's description.
+        creationDate:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The date the dashboard was created, in Unix epoch time.
+        lastUpdateDate:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The date the dashboard was last updated, in Unix epoch time.
+      description: Contains a dashboard summary.
     CreateDashboardResponse:
       type: object
       required:
@@ -511,6 +574,30 @@ components:
       type: array
       items:
         $ref: '#/components/schemas/DashboardSummary'
+    InternalFailureException: {}
+    ARN:
+      type: string
+      pattern: .*
+      minLength: 1
+      maxLength: 1600
+    UpdateDashboardResponse:
+      type: object
+      properties: {}
+    Description:
+      type: string
+      pattern: '[^\u0000-\u001F\u007F]+'
+      minLength: 1
+      maxLength: 2048
+    LimitExceededException: {}
+    ID:
+      type: string
+      pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
+      minLength: 36
+      maxLength: 36
+    Timestamp:
+      type: string
+      format: date-time
+    InvalidRequestException: {}
     DescribeDashboardResponse:
       type: object
       required:
@@ -554,103 +641,34 @@ components:
           allOf:
           - $ref: '#/components/schemas/Timestamp'
           - description: The date the dashboard was last updated, in Unix epoch time.
-    InvalidRequestException: {}
-    LimitExceededException: {}
-    ListDashboardsResponse:
-      type: object
-      required:
-      - dashboardSummaries
-      properties:
-        dashboardSummaries:
-          allOf:
-          - $ref: '#/components/schemas/DashboardSummaries'
-          - description: A list that summarizes each dashboard in the project.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The token for the next set of results, or null if there are no additional results.
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
-    UpdateDashboardResponse:
-      type: object
-      properties: {}
-    InternalFailureException: {}
-    DeleteDashboardResponse:
-      type: object
-      properties: {}
-    Timestamp:
-      type: string
-      format: date-time
-    DashboardDefinition:
-      type: string
-      pattern: .+
-      minLength: 0
-      maxLength: 204800
-    ID:
-      type: string
-      pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
-      minLength: 36
-      maxLength: 36
-    DashboardSummary:
-      type: object
-      required:
-      - id
-      - name
-      properties:
-        id:
-          allOf:
-          - $ref: '#/components/schemas/ID'
-          - description: The ID of the dashboard.
-        name:
-          allOf:
-          - $ref: '#/components/schemas/Name'
-          - description: The name of the dashboard
-        description:
-          allOf:
-          - $ref: '#/components/schemas/Description'
-          - description: The dashboard's description.
-        creationDate:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The date the dashboard was created, in Unix epoch time.
-        lastUpdateDate:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The date the dashboard was last updated, in Unix epoch time.
-      description: Contains a dashboard summary.
-    NextToken:
-      type: string
-      pattern: '[A-Za-z0-9+/=]+'
-      minLength: 1
-      maxLength: 4096
-    Name:
-      type: string
-      pattern: '[^\u0000-\u001F\u007F]+'
-      minLength: 1
-      maxLength: 256
-    Description:
-      type: string
-      pattern: '[^\u0000-\u001F\u007F]+'
-      minLength: 1
-      maxLength: 2048
     ResourceNotFoundException: {}
-    ARN:
-      type: string
-      pattern: .*
-      minLength: 1
-      maxLength: 1600
-    ThrottlingException: {}
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
       required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -663,24 +681,6 @@ components:
       required: false
     X-Amz-Date:
       name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
       in: header
       schema:
         type: string

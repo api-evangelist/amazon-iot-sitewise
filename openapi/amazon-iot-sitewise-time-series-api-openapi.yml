@@ -588,22 +588,97 @@ paths:
       tags:
       - Time Series
 components:
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    InvalidRequestException: {}
-    TimeSeriesSummaries:
-      type: array
-      items:
-        $ref: '#/components/schemas/TimeSeriesSummary'
-    InternalFailureException: {}
-    Timestamp:
-      type: string
-      format: date-time
     ConflictingOperationException: {}
-    ID:
-      type: string
-      pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
-      minLength: 36
-      maxLength: 36
+    ThrottlingException: {}
+    DescribeTimeSeriesResponse:
+      type: object
+      required:
+      - timeSeriesId
+      - dataType
+      - timeSeriesCreationDate
+      - timeSeriesLastUpdateDate
+      - timeSeriesArn
+      properties:
+        assetId:
+          allOf:
+          - $ref: '#/components/schemas/ID'
+          - description: The ID of the asset in which the asset property was created.
+        propertyId:
+          allOf:
+          - $ref: '#/components/schemas/ID'
+          - description: The ID of the asset property.
+        alias:
+          allOf:
+          - $ref: '#/components/schemas/PropertyAlias'
+          - description: The alias that identifies the time series.
+        timeSeriesId:
+          allOf:
+          - $ref: '#/components/schemas/TimeSeriesId'
+          - description: The ID of the time series.
+        dataType:
+          allOf:
+          - $ref: '#/components/schemas/PropertyDataType'
+          - description: <p>The data type of the time series.</p> <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this time series.</p>
+        dataTypeSpec:
+          allOf:
+          - $ref: '#/components/schemas/Name'
+          - description: <p>The data type of the structure for this time series. This parameter is required for time series that have the <code>STRUCT</code> data type.</p> <p>The options for this parameter depend on the type of the composite model in which you created the asset property that is associated with your time series. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
+        timeSeriesCreationDate:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The date that the time series was created, in Unix epoch time.
+        timeSeriesLastUpdateDate:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The date that the time series was last updated, in Unix epoch time.
+        timeSeriesArn:
+          allOf:
+          - $ref: '#/components/schemas/ARN'
+          - description: <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the time series, which has the following format.</p> <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code> </p>
     TimeSeriesSummary:
       type: object
       required:
@@ -655,11 +730,19 @@ components:
       pattern: '[A-Za-z0-9+/=]+'
       minLength: 1
       maxLength: 4096
+    TimeSeriesId:
+      type: string
+      minLength: 36
+      maxLength: 73
     Name:
       type: string
       pattern: '[^\u0000-\u001F\u007F]+'
       minLength: 1
       maxLength: 256
+    TimeSeriesSummaries:
+      type: array
+      items:
+        $ref: '#/components/schemas/TimeSeriesSummary'
     PropertyDataType:
       type: string
       enum:
@@ -668,10 +751,13 @@ components:
       - DOUBLE
       - BOOLEAN
       - STRUCT
-    PropertyAlias:
+    InvalidRequestException: {}
+    InternalFailureException: {}
+    ARN:
       type: string
-      pattern: '[^\u0000-\u001F\u007F]+'
+      pattern: .*
       minLength: 1
+      maxLength: 1600
     ListTimeSeriesResponse:
       type: object
       required:
@@ -685,105 +771,19 @@ components:
           allOf:
           - $ref: '#/components/schemas/NextToken'
           - description: The token for the next set of results, or null if there are no additional results.
-    ResourceNotFoundException: {}
-    ARN:
+    ID:
       type: string
-      pattern: .*
-      minLength: 1
-      maxLength: 1600
-    DescribeTimeSeriesResponse:
-      type: object
-      required:
-      - timeSeriesId
-      - dataType
-      - timeSeriesCreationDate
-      - timeSeriesLastUpdateDate
-      - timeSeriesArn
-      properties:
-        assetId:
-          allOf:
-          - $ref: '#/components/schemas/ID'
-          - description: The ID of the asset in which the asset property was created.
-        propertyId:
-          allOf:
-          - $ref: '#/components/schemas/ID'
-          - description: The ID of the asset property.
-        alias:
-          allOf:
-          - $ref: '#/components/schemas/PropertyAlias'
-          - description: The alias that identifies the time series.
-        timeSeriesId:
-          allOf:
-          - $ref: '#/components/schemas/TimeSeriesId'
-          - description: The ID of the time series.
-        dataType:
-          allOf:
-          - $ref: '#/components/schemas/PropertyDataType'
-          - description: <p>The data type of the time series.</p> <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this time series.</p>
-        dataTypeSpec:
-          allOf:
-          - $ref: '#/components/schemas/Name'
-          - description: <p>The data type of the structure for this time series. This parameter is required for time series that have the <code>STRUCT</code> data type.</p> <p>The options for this parameter depend on the type of the composite model in which you created the asset property that is associated with your time series. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
-        timeSeriesCreationDate:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The date that the time series was created, in Unix epoch time.
-        timeSeriesLastUpdateDate:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The date that the time series was last updated, in Unix epoch time.
-        timeSeriesArn:
-          allOf:
-          - $ref: '#/components/schemas/ARN'
-          - description: <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the time series, which has the following format.</p> <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code> </p>
-    TimeSeriesId:
-      type: string
+      pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
       minLength: 36
-      maxLength: 73
-    ThrottlingException: {}
-  parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
+      maxLength: 36
+    Timestamp:
+      type: string
+      format: date-time
+    PropertyAlias:
+      type: string
+      pattern: '[^\u0000-\u001F\u007F]+'
+      minLength: 1
+    ResourceNotFoundException: {}
   securitySchemes:
     hmac:
       type: apiKey

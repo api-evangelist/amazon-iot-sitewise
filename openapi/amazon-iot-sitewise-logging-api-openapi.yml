@@ -231,10 +231,28 @@ paths:
       - Logging
 components:
   schemas:
+    ResourceNotFoundException: {}
+    ConflictingOperationException: {}
+    ThrottlingException: {}
+    InternalFailureException: {}
+    LoggingLevel:
+      type: string
+      enum:
+      - ERROR
+      - INFO
+      - 'OFF'
+    DescribeLoggingOptionsResponse:
+      type: object
+      required:
+      - loggingOptions
+      properties:
+        loggingOptions:
+          allOf:
+          - $ref: '#/components/schemas/LoggingOptions'
+          - description: The current logging options.
     PutLoggingOptionsResponse:
       type: object
       properties: {}
-    InvalidRequestException: {}
     LoggingOptions:
       type: object
       required:
@@ -245,46 +263,10 @@ components:
           - $ref: '#/components/schemas/LoggingLevel'
           - description: The IoT SiteWise logging verbosity level.
       description: Contains logging options.
-    LoggingLevel:
-      type: string
-      enum:
-      - ERROR
-      - INFO
-      - 'OFF'
-    ThrottlingException: {}
-    DescribeLoggingOptionsResponse:
-      type: object
-      required:
-      - loggingOptions
-      properties:
-        loggingOptions:
-          allOf:
-          - $ref: '#/components/schemas/LoggingOptions'
-          - description: The current logging options.
-    ConflictingOperationException: {}
-    ResourceNotFoundException: {}
-    InternalFailureException: {}
+    InvalidRequestException: {}
   parameters:
     X-Amz-Credential:
       name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -301,8 +283,26 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string

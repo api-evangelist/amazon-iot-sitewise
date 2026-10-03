@@ -19,7 +19,7 @@
     "amazon-iot-sitewise-timeseries-api-openapi.yml"
   ],
   "archived": [
-    "deleted 5 superseded output(s) from the previous generation"
+    "deleted 1 superseded output(s) from the previous generation"
   ],
   "errors": [],
   "warnings": [],
@@ -112,8 +112,8 @@
     "amazon-iot-sitewise-openapi-original.yml: declared missing tag: Properties",
     "amazon-iot-sitewise-openapi-original.yml: declared missing tag: Tags",
     "amazon-iot-sitewise-openapi-original.yml: declared missing tag: Timeseries",
-    "superseded outputs removed: amazon-iot-sitewise-dashboards-projectid-api-openapi.yml, amazon-iot-sitewise-projects-portalid-api-openapi.yml, amazon-iot-sitewise-tags-resource-arn-tag-keys-api-openapi.yml, amazon-iot-sitewise-tags-resourcearn-api-openapi.yml, amazon-iot-sitewise-time-series-api-openapi.yml",
-    "apis.yml register: written (+2 apis, 13 total)"
+    "superseded outputs removed: amazon-iot-sitewise-time-series-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 13 total)"
   ],
   "skipped": [
     "amazon-iot-sitewise-access-policies-api-openapi.yml: previously refined output, superseded by openapi/_original/",
@@ -121,16 +121,13 @@
     "amazon-iot-sitewise-assets-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-iot-sitewise-configuration-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-iot-sitewise-dashboards-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-iot-sitewise-dashboards-projectid-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-iot-sitewise-gateways-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-iot-sitewise-jobs-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-iot-sitewise-logging-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-iot-sitewise-portals-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-iot-sitewise-projects-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-iot-sitewise-projects-portalid-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-iot-sitewise-properties-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-iot-sitewise-tags-resource-arn-tag-keys-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-iot-sitewise-tags-resourcearn-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-iot-sitewise-tags-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-iot-sitewise-time-series-api-openapi.yml: previously refined output, superseded by openapi/_original/"
   ]
 }

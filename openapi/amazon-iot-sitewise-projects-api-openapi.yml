@@ -720,10 +720,101 @@ paths:
       - Projects
 components:
   schemas:
+    ListProjectsResponse:
+      type: object
+      required:
+      - projectSummaries
+      properties:
+        projectSummaries:
+          allOf:
+          - $ref: '#/components/schemas/ProjectSummaries'
+          - description: A list that summarizes each project in the portal.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The token for the next set of results, or null if there are no additional results.
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    ThrottlingException: {}
+    BatchAssociateProjectAssetsResponse:
+      type: object
+      properties:
+        errors:
+          allOf:
+          - $ref: '#/components/schemas/BatchAssociateProjectAssetsErrors'
+          - description: A list of associated error information, if any.
     DeleteProjectResponse:
       type: object
       properties: {}
+    AssetErrorCode:
+      type: string
+      enum:
+      - INTERNAL_FAILURE
+    AssetErrorMessage:
+      type: string
+    NextToken:
+      type: string
+      pattern: '[A-Za-z0-9+/=]+'
+      minLength: 1
+      maxLength: 4096
+    BatchDisassociateProjectAssetsResponse:
+      type: object
+      properties:
+        errors:
+          allOf:
+          - $ref: '#/components/schemas/BatchDisassociateProjectAssetsErrors'
+          - description: A list of associated error information, if any.
+    AssetIDs:
+      type: array
+      items:
+        $ref: '#/components/schemas/ID'
+    Name:
+      type: string
+      pattern: '[^\u0000-\u001F\u007F]+'
+      minLength: 1
+      maxLength: 256
+    BatchAssociateProjectAssetsErrors:
+      type: array
+      items:
+        $ref: '#/components/schemas/AssetErrorDetails'
+    CreateProjectResponse:
+      type: object
+      required:
+      - projectId
+      - projectArn
+      properties:
+        projectId:
+          allOf:
+          - $ref: '#/components/schemas/ID'
+          - description: The ID of the project.
+        projectArn:
+          allOf:
+          - $ref: '#/components/schemas/ARN'
+          - description: <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p> <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
     InvalidRequestException: {}
+    AssetErrorDetails:
+      type: object
+      required:
+      - assetId
+      - code
+      - message
+      properties:
+        assetId:
+          allOf:
+          - $ref: '#/components/schemas/ID'
+          - description: The ID of the asset.
+        code:
+          allOf:
+          - $ref: '#/components/schemas/AssetErrorCode'
+          - description: The error code.
+        message:
+          allOf:
+          - $ref: '#/components/schemas/AssetErrorMessage'
+          - description: The error message.
+      description: Contains error details for the requested associate project asset action.
+    InternalFailureException: {}
     ProjectSummary:
       type: object
       required:
@@ -751,51 +842,15 @@ components:
           - $ref: '#/components/schemas/Timestamp'
           - description: The date the project was last updated, in Unix epoch time.
       description: Contains project summary information.
-    LimitExceededException: {}
-    AssetIDs:
-      type: array
-      items:
-        $ref: '#/components/schemas/ID'
-    TagValue:
+    ARN:
       type: string
-      minLength: 0
-      maxLength: 256
-    InternalFailureException: {}
-    CreateProjectResponse:
-      type: object
-      required:
-      - projectId
-      - projectArn
-      properties:
-        projectId:
-          allOf:
-          - $ref: '#/components/schemas/ID'
-          - description: The ID of the project.
-        projectArn:
-          allOf:
-          - $ref: '#/components/schemas/ARN'
-          - description: <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p> <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
-    Timestamp:
-      type: string
-      format: date-time
-    BatchAssociateProjectAssetsErrors:
+      pattern: .*
+      minLength: 1
+      maxLength: 1600
+    BatchDisassociateProjectAssetsErrors:
       type: array
       items:
         $ref: '#/components/schemas/AssetErrorDetails'
-    AssetErrorMessage:
-      type: string
-    BatchAssociateProjectAssetsResponse:
-      type: object
-      properties:
-        errors:
-          allOf:
-          - $ref: '#/components/schemas/BatchAssociateProjectAssetsErrors'
-          - description: A list of associated error information, if any.
-    ID:
-      type: string
-      pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
-      minLength: 36
-      maxLength: 36
     ListProjectAssetsResponse:
       type: object
       required:
@@ -809,6 +864,27 @@ components:
           allOf:
           - $ref: '#/components/schemas/NextToken'
           - description: The token for the next set of results, or null if there are no additional results.
+    Description:
+      type: string
+      pattern: '[^\u0000-\u001F\u007F]+'
+      minLength: 1
+      maxLength: 2048
+    UpdateProjectResponse:
+      type: object
+      properties: {}
+    ID:
+      type: string
+      pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
+      minLength: 36
+      maxLength: 36
+    LimitExceededException: {}
+    ProjectSummaries:
+      type: array
+      items:
+        $ref: '#/components/schemas/ProjectSummary'
+    Timestamp:
+      type: string
+      format: date-time
     DescribeProjectResponse:
       type: object
       required:
@@ -847,92 +923,34 @@ components:
           allOf:
           - $ref: '#/components/schemas/Timestamp'
           - description: The date the project was last updated, in Unix epoch time.
-    BatchDisassociateProjectAssetsErrors:
-      type: array
-      items:
-        $ref: '#/components/schemas/AssetErrorDetails'
-    NextToken:
-      type: string
-      pattern: '[A-Za-z0-9+/=]+'
-      minLength: 1
-      maxLength: 4096
-    Name:
-      type: string
-      pattern: '[^\u0000-\u001F\u007F]+'
-      minLength: 1
-      maxLength: 256
-    Description:
-      type: string
-      pattern: '[^\u0000-\u001F\u007F]+'
-      minLength: 1
-      maxLength: 2048
-    ProjectSummaries:
-      type: array
-      items:
-        $ref: '#/components/schemas/ProjectSummary'
     ResourceNotFoundException: {}
-    ARN:
-      type: string
-      pattern: .*
-      minLength: 1
-      maxLength: 1600
-    BatchDisassociateProjectAssetsResponse:
-      type: object
-      properties:
-        errors:
-          allOf:
-          - $ref: '#/components/schemas/BatchDisassociateProjectAssetsErrors'
-          - description: A list of associated error information, if any.
-    AssetErrorDetails:
-      type: object
-      required:
-      - assetId
-      - code
-      - message
-      properties:
-        assetId:
-          allOf:
-          - $ref: '#/components/schemas/ID'
-          - description: The ID of the asset.
-        code:
-          allOf:
-          - $ref: '#/components/schemas/AssetErrorCode'
-          - description: The error code.
-        message:
-          allOf:
-          - $ref: '#/components/schemas/AssetErrorMessage'
-          - description: The error message.
-      description: Contains error details for the requested associate project asset action.
-    ThrottlingException: {}
-    UpdateProjectResponse:
-      type: object
-      properties: {}
-    ListProjectsResponse:
-      type: object
-      required:
-      - projectSummaries
-      properties:
-        projectSummaries:
-          allOf:
-          - $ref: '#/components/schemas/ProjectSummaries'
-          - description: A list that summarizes each project in the portal.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The token for the next set of results, or null if there are no additional results.
-    AssetErrorCode:
-      type: string
-      enum:
-      - INTERNAL_FAILURE
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
       required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -945,24 +963,6 @@ components:
       required: false
     X-Amz-Date:
       name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
       in: header
       schema:
         type: string

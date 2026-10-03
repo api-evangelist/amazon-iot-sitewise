@@ -591,23 +591,112 @@ paths:
       tags:
       - Gateways
 components:
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    InvalidRequestException: {}
-    LimitExceededException: {}
     TagValue:
       type: string
       minLength: 0
       maxLength: 256
-    Greengrass:
+    ConflictingOperationException: {}
+    ThrottlingException: {}
+    CapabilityConfiguration:
+      type: string
+      minLength: 1
+      maxLength: 104857600
+    GatewayCapabilitySummary:
       type: object
       required:
-      - groupArn
+      - capabilityNamespace
+      - capabilitySyncStatus
       properties:
-        groupArn:
+        capabilityNamespace:
+          allOf:
+          - $ref: '#/components/schemas/CapabilityNamespace'
+          - description: The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.
+        capabilitySyncStatus:
+          allOf:
+          - $ref: '#/components/schemas/CapabilitySyncStatus'
+          - description: <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p> <ul> <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li> <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li> <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li> </ul>
+      description: Contains a summary of a gateway capability configuration.
+    NextToken:
+      type: string
+      pattern: '[A-Za-z0-9+/=]+'
+      minLength: 1
+      maxLength: 4096
+    CreateGatewayResponse:
+      type: object
+      required:
+      - gatewayId
+      - gatewayArn
+      properties:
+        gatewayId:
+          allOf:
+          - $ref: '#/components/schemas/ID'
+          - description: The ID of the gateway device. You can use this ID when you call other IoT SiteWise APIs.
+        gatewayArn:
           allOf:
           - $ref: '#/components/schemas/ARN'
-          - description: The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Greengrass group. For more information about how to find a group's ARN, see <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a> and <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a> in the <i>IoT Greengrass API Reference</i>.
-      description: Contains details for a gateway that runs on IoT Greengrass. To create a gateway that runs on IoT Greengrass, you must add the IoT SiteWise connector to a Greengrass group and deploy it. Your Greengrass group must also have permissions to upload data to IoT SiteWise. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html">Ingesting data using a gateway</a> in the <i>IoT SiteWise User Guide</i>.
+          - description: <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p> <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code> </p>
+    Name:
+      type: string
+      pattern: '[^\u0000-\u001F\u007F]+'
+      minLength: 1
+      maxLength: 256
+    ListGatewaysResponse:
+      type: object
+      required:
+      - gatewaySummaries
+      properties:
+        gatewaySummaries:
+          allOf:
+          - $ref: '#/components/schemas/GatewaySummaries'
+          - description: A list that summarizes each gateway.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The token for the next set of results, or null if there are no additional results.
     DescribeGatewayResponse:
       type: object
       required:
@@ -646,19 +735,70 @@ components:
           allOf:
           - $ref: '#/components/schemas/Timestamp'
           - description: The date the gateway was last updated, in Unix epoch time.
-    InternalFailureException: {}
-    GatewayPlatform:
+    Greengrass:
       type: object
+      required:
+      - groupArn
       properties:
-        greengrass:
+        groupArn:
           allOf:
-          - $ref: '#/components/schemas/Greengrass'
-          - description: A gateway that runs on IoT Greengrass.
-        greengrassV2:
+          - $ref: '#/components/schemas/ARN'
+          - description: The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Greengrass group. For more information about how to find a group's ARN, see <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a> and <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a> in the <i>IoT Greengrass API Reference</i>.
+      description: Contains details for a gateway that runs on IoT Greengrass. To create a gateway that runs on IoT Greengrass, you must add the IoT SiteWise connector to a Greengrass group and deploy it. Your Greengrass group must also have permissions to upload data to IoT SiteWise. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html">Ingesting data using a gateway</a> in the <i>IoT SiteWise User Guide</i>.
+    UpdateGatewayCapabilityConfigurationResponse:
+      type: object
+      required:
+      - capabilityNamespace
+      - capabilitySyncStatus
+      properties:
+        capabilityNamespace:
           allOf:
-          - $ref: '#/components/schemas/GreengrassV2'
-          - description: A gateway that runs on IoT Greengrass V2.
-      description: Contains a gateway's platform information.
+          - $ref: '#/components/schemas/CapabilityNamespace'
+          - description: The namespace of the gateway capability.
+        capabilitySyncStatus:
+          allOf:
+          - $ref: '#/components/schemas/CapabilitySyncStatus'
+          - description: <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p> <ul> <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li> <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li> <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li> </ul> <p>After you update a capability configuration, its sync status is <code>OUT_OF_SYNC</code> until the gateway receives and applies or rejects the updated configuration.</p>
+    CapabilityNamespace:
+      type: string
+      pattern: ^[a-zA-Z]+:[a-zA-Z]+:[0-9]+$
+      minLength: 1
+      maxLength: 512
+    DescribeGatewayCapabilityConfigurationResponse:
+      type: object
+      required:
+      - gatewayId
+      - capabilityNamespace
+      - capabilityConfiguration
+      - capabilitySyncStatus
+      properties:
+        gatewayId:
+          allOf:
+          - $ref: '#/components/schemas/ID'
+          - description: The ID of the gateway that defines the capability configuration.
+        capabilityNamespace:
+          allOf:
+          - $ref: '#/components/schemas/CapabilityNamespace'
+          - description: The namespace of the gateway capability.
+        capabilityConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/CapabilityConfiguration'
+          - description: The JSON document that defines the gateway capability's configuration. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
+        capabilitySyncStatus:
+          allOf:
+          - $ref: '#/components/schemas/CapabilitySyncStatus'
+          - description: <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p> <ul> <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li> <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li> <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li> </ul>
+    CapabilitySyncStatus:
+      type: string
+      enum:
+      - IN_SYNC
+      - OUT_OF_SYNC
+      - SYNC_FAILED
+      - UNKNOWN
+    CoreDeviceThingName:
+      type: string
+      minLength: 1
+      maxLength: 128
     GatewaySummary:
       type: object
       required:
@@ -690,14 +830,12 @@ components:
           - $ref: '#/components/schemas/Timestamp'
           - description: The date the gateway was last updated, in Unix epoch time.
       description: Contains a summary of a gateway.
-    CoreDeviceThingName:
+    InternalFailureException: {}
+    ARN:
       type: string
+      pattern: .*
       minLength: 1
-      maxLength: 128
-    Timestamp:
-      type: string
-      format: date-time
-    ConflictingOperationException: {}
+      maxLength: 1600
     GreengrassV2:
       type: object
       required:
@@ -708,176 +846,38 @@ components:
           - $ref: '#/components/schemas/CoreDeviceThingName'
           - description: The name of the IoT thing for your IoT Greengrass V2 core device.
       description: Contains details for a gateway that runs on IoT Greengrass V2. To create a gateway that runs on IoT Greengrass V2, you must deploy the IoT SiteWise Edge component to your gateway device. Your <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/device-service-role.html">Greengrass device role</a> must use the <code>AWSIoTSiteWiseEdgeAccess</code> policy. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/sw-gateways.html">Using IoT SiteWise at the edge</a> in the <i>IoT SiteWise User Guide</i>.
+    GatewayCapabilitySummaries:
+      type: array
+      items:
+        $ref: '#/components/schemas/GatewayCapabilitySummary'
+    ResourceAlreadyExistsException: {}
+    LimitExceededException: {}
     ID:
       type: string
       pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
       minLength: 36
       maxLength: 36
-    GatewayCapabilitySummaries:
-      type: array
-      items:
-        $ref: '#/components/schemas/GatewayCapabilitySummary'
+    Timestamp:
+      type: string
+      format: date-time
+    InvalidRequestException: {}
     GatewaySummaries:
       type: array
       items:
         $ref: '#/components/schemas/GatewaySummary'
-    NextToken:
-      type: string
-      pattern: '[A-Za-z0-9+/=]+'
-      minLength: 1
-      maxLength: 4096
-    Name:
-      type: string
-      pattern: '[^\u0000-\u001F\u007F]+'
-      minLength: 1
-      maxLength: 256
-    CapabilitySyncStatus:
-      type: string
-      enum:
-      - IN_SYNC
-      - OUT_OF_SYNC
-      - SYNC_FAILED
-      - UNKNOWN
-    CapabilityNamespace:
-      type: string
-      pattern: ^[a-zA-Z]+:[a-zA-Z]+:[0-9]+$
-      minLength: 1
-      maxLength: 512
+    GatewayPlatform:
+      type: object
+      properties:
+        greengrass:
+          allOf:
+          - $ref: '#/components/schemas/Greengrass'
+          - description: A gateway that runs on IoT Greengrass.
+        greengrassV2:
+          allOf:
+          - $ref: '#/components/schemas/GreengrassV2'
+          - description: A gateway that runs on IoT Greengrass V2.
+      description: Contains a gateway's platform information.
     ResourceNotFoundException: {}
-    ARN:
-      type: string
-      pattern: .*
-      minLength: 1
-      maxLength: 1600
-    CreateGatewayResponse:
-      type: object
-      required:
-      - gatewayId
-      - gatewayArn
-      properties:
-        gatewayId:
-          allOf:
-          - $ref: '#/components/schemas/ID'
-          - description: The ID of the gateway device. You can use this ID when you call other IoT SiteWise APIs.
-        gatewayArn:
-          allOf:
-          - $ref: '#/components/schemas/ARN'
-          - description: <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p> <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code> </p>
-    CapabilityConfiguration:
-      type: string
-      minLength: 1
-      maxLength: 104857600
-    GatewayCapabilitySummary:
-      type: object
-      required:
-      - capabilityNamespace
-      - capabilitySyncStatus
-      properties:
-        capabilityNamespace:
-          allOf:
-          - $ref: '#/components/schemas/CapabilityNamespace'
-          - description: The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.
-        capabilitySyncStatus:
-          allOf:
-          - $ref: '#/components/schemas/CapabilitySyncStatus'
-          - description: <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p> <ul> <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li> <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li> <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li> </ul>
-      description: Contains a summary of a gateway capability configuration.
-    ResourceAlreadyExistsException: {}
-    DescribeGatewayCapabilityConfigurationResponse:
-      type: object
-      required:
-      - gatewayId
-      - capabilityNamespace
-      - capabilityConfiguration
-      - capabilitySyncStatus
-      properties:
-        gatewayId:
-          allOf:
-          - $ref: '#/components/schemas/ID'
-          - description: The ID of the gateway that defines the capability configuration.
-        capabilityNamespace:
-          allOf:
-          - $ref: '#/components/schemas/CapabilityNamespace'
-          - description: The namespace of the gateway capability.
-        capabilityConfiguration:
-          allOf:
-          - $ref: '#/components/schemas/CapabilityConfiguration'
-          - description: The JSON document that defines the gateway capability's configuration. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
-        capabilitySyncStatus:
-          allOf:
-          - $ref: '#/components/schemas/CapabilitySyncStatus'
-          - description: <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p> <ul> <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li> <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li> <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li> </ul>
-    UpdateGatewayCapabilityConfigurationResponse:
-      type: object
-      required:
-      - capabilityNamespace
-      - capabilitySyncStatus
-      properties:
-        capabilityNamespace:
-          allOf:
-          - $ref: '#/components/schemas/CapabilityNamespace'
-          - description: The namespace of the gateway capability.
-        capabilitySyncStatus:
-          allOf:
-          - $ref: '#/components/schemas/CapabilitySyncStatus'
-          - description: <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p> <ul> <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li> <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li> <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li> </ul> <p>After you update a capability configuration, its sync status is <code>OUT_OF_SYNC</code> until the gateway receives and applies or rejects the updated configuration.</p>
-    ThrottlingException: {}
-    ListGatewaysResponse:
-      type: object
-      required:
-      - gatewaySummaries
-      properties:
-        gatewaySummaries:
-          allOf:
-          - $ref: '#/components/schemas/GatewaySummaries'
-          - description: A list that summarizes each gateway.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The token for the next set of results, or null if there are no additional results.
-  parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
   securitySchemes:
     hmac:
       type: apiKey

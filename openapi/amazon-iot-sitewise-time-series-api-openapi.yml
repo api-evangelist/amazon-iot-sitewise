@@ -589,38 +589,8 @@ paths:
       - Time Series
 components:
   parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -631,9 +601,70 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
+    ResourceNotFoundException: {}
+    PropertyDataType:
+      type: string
+      enum:
+      - STRING
+      - INTEGER
+      - DOUBLE
+      - BOOLEAN
+      - STRUCT
     ConflictingOperationException: {}
-    ThrottlingException: {}
+    InvalidRequestException: {}
+    ID:
+      type: string
+      pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
+      minLength: 36
+      maxLength: 36
+    NextToken:
+      type: string
+      pattern: '[A-Za-z0-9+/=]+'
+      minLength: 1
+      maxLength: 4096
+    TimeSeriesSummaries:
+      type: array
+      items:
+        $ref: '#/components/schemas/TimeSeriesSummary'
+    ARN:
+      type: string
+      pattern: .*
+      minLength: 1
+      maxLength: 1600
+    Timestamp:
+      type: string
+      format: date-time
     DescribeTimeSeriesResponse:
       type: object
       required:
@@ -679,6 +710,11 @@ components:
           allOf:
           - $ref: '#/components/schemas/ARN'
           - description: <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the time series, which has the following format.</p> <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code> </p>
+    TimeSeriesId:
+      type: string
+      minLength: 36
+      maxLength: 73
+    InternalFailureException: {}
     TimeSeriesSummary:
       type: object
       required:
@@ -725,39 +761,11 @@ components:
           - $ref: '#/components/schemas/ARN'
           - description: <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the time series, which has the following format.</p> <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code> </p>
       description: Contains a summary of a time series (data stream).
-    NextToken:
-      type: string
-      pattern: '[A-Za-z0-9+/=]+'
-      minLength: 1
-      maxLength: 4096
-    TimeSeriesId:
-      type: string
-      minLength: 36
-      maxLength: 73
-    Name:
+    ThrottlingException: {}
+    PropertyAlias:
       type: string
       pattern: '[^\u0000-\u001F\u007F]+'
       minLength: 1
-      maxLength: 256
-    TimeSeriesSummaries:
-      type: array
-      items:
-        $ref: '#/components/schemas/TimeSeriesSummary'
-    PropertyDataType:
-      type: string
-      enum:
-      - STRING
-      - INTEGER
-      - DOUBLE
-      - BOOLEAN
-      - STRUCT
-    InvalidRequestException: {}
-    InternalFailureException: {}
-    ARN:
-      type: string
-      pattern: .*
-      minLength: 1
-      maxLength: 1600
     ListTimeSeriesResponse:
       type: object
       required:
@@ -771,19 +779,11 @@ components:
           allOf:
           - $ref: '#/components/schemas/NextToken'
           - description: The token for the next set of results, or null if there are no additional results.
-    ID:
-      type: string
-      pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
-      minLength: 36
-      maxLength: 36
-    Timestamp:
-      type: string
-      format: date-time
-    PropertyAlias:
+    Name:
       type: string
       pattern: '[^\u0000-\u001F\u007F]+'
       minLength: 1
-    ResourceNotFoundException: {}
+      maxLength: 256
   securitySchemes:
     hmac:
       type: apiKey

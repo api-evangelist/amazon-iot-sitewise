@@ -493,111 +493,6 @@ paths:
       - Dashboards
 components:
   schemas:
-    DashboardDefinition:
-      type: string
-      pattern: .+
-      minLength: 0
-      maxLength: 204800
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
-    ThrottlingException: {}
-    NextToken:
-      type: string
-      pattern: '[A-Za-z0-9+/=]+'
-      minLength: 1
-      maxLength: 4096
-    Name:
-      type: string
-      pattern: '[^\u0000-\u001F\u007F]+'
-      minLength: 1
-      maxLength: 256
-    DeleteDashboardResponse:
-      type: object
-      properties: {}
-    ListDashboardsResponse:
-      type: object
-      required:
-      - dashboardSummaries
-      properties:
-        dashboardSummaries:
-          allOf:
-          - $ref: '#/components/schemas/DashboardSummaries'
-          - description: A list that summarizes each dashboard in the project.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The token for the next set of results, or null if there are no additional results.
-    DashboardSummary:
-      type: object
-      required:
-      - id
-      - name
-      properties:
-        id:
-          allOf:
-          - $ref: '#/components/schemas/ID'
-          - description: The ID of the dashboard.
-        name:
-          allOf:
-          - $ref: '#/components/schemas/Name'
-          - description: The name of the dashboard
-        description:
-          allOf:
-          - $ref: '#/components/schemas/Description'
-          - description: The dashboard's description.
-        creationDate:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The date the dashboard was created, in Unix epoch time.
-        lastUpdateDate:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The date the dashboard was last updated, in Unix epoch time.
-      description: Contains a dashboard summary.
-    CreateDashboardResponse:
-      type: object
-      required:
-      - dashboardId
-      - dashboardArn
-      properties:
-        dashboardId:
-          allOf:
-          - $ref: '#/components/schemas/ID'
-          - description: The ID of the dashboard.
-        dashboardArn:
-          allOf:
-          - $ref: '#/components/schemas/ARN'
-          - description: <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p> <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code> </p>
-    DashboardSummaries:
-      type: array
-      items:
-        $ref: '#/components/schemas/DashboardSummary'
-    InternalFailureException: {}
-    ARN:
-      type: string
-      pattern: .*
-      minLength: 1
-      maxLength: 1600
-    UpdateDashboardResponse:
-      type: object
-      properties: {}
-    Description:
-      type: string
-      pattern: '[^\u0000-\u001F\u007F]+'
-      minLength: 1
-      maxLength: 2048
-    LimitExceededException: {}
-    ID:
-      type: string
-      pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
-      minLength: 36
-      maxLength: 36
-    Timestamp:
-      type: string
-      format: date-time
-    InvalidRequestException: {}
     DescribeDashboardResponse:
       type: object
       required:
@@ -642,15 +537,126 @@ components:
           - $ref: '#/components/schemas/Timestamp'
           - description: The date the dashboard was last updated, in Unix epoch time.
     ResourceNotFoundException: {}
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    LimitExceededException: {}
+    ListDashboardsResponse:
+      type: object
+      required:
+      - dashboardSummaries
+      properties:
+        dashboardSummaries:
+          allOf:
+          - $ref: '#/components/schemas/DashboardSummaries'
+          - description: A list that summarizes each dashboard in the project.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The token for the next set of results, or null if there are no additional results.
+    DashboardSummary:
+      type: object
+      required:
+      - id
+      - name
+      properties:
+        id:
+          allOf:
+          - $ref: '#/components/schemas/ID'
+          - description: The ID of the dashboard.
+        name:
+          allOf:
+          - $ref: '#/components/schemas/Name'
+          - description: The name of the dashboard
+        description:
+          allOf:
+          - $ref: '#/components/schemas/Description'
+          - description: The dashboard's description.
+        creationDate:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The date the dashboard was created, in Unix epoch time.
+        lastUpdateDate:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The date the dashboard was last updated, in Unix epoch time.
+      description: Contains a dashboard summary.
+    InvalidRequestException: {}
+    ID:
+      type: string
+      pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
+      minLength: 36
+      maxLength: 36
+    DashboardSummaries:
+      type: array
+      items:
+        $ref: '#/components/schemas/DashboardSummary'
+    NextToken:
+      type: string
+      pattern: '[A-Za-z0-9+/=]+'
+      minLength: 1
+      maxLength: 4096
+    ARN:
+      type: string
+      pattern: .*
+      minLength: 1
+      maxLength: 1600
+    Description:
+      type: string
+      pattern: '[^\u0000-\u001F\u007F]+'
+      minLength: 1
+      maxLength: 2048
+    Timestamp:
+      type: string
+      format: date-time
+    InternalFailureException: {}
+    CreateDashboardResponse:
+      type: object
+      required:
+      - dashboardId
+      - dashboardArn
+      properties:
+        dashboardId:
+          allOf:
+          - $ref: '#/components/schemas/ID'
+          - description: The ID of the dashboard.
+        dashboardArn:
+          allOf:
+          - $ref: '#/components/schemas/ARN'
+          - description: <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p> <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code> </p>
+    UpdateDashboardResponse:
+      type: object
+      properties: {}
+    DeleteDashboardResponse:
+      type: object
+      properties: {}
+    ThrottlingException: {}
+    DashboardDefinition:
+      type: string
+      pattern: .+
+      minLength: 0
+      maxLength: 204800
+    Name:
+      type: string
+      pattern: '[^\u0000-\u001F\u007F]+'
+      minLength: 1
+      maxLength: 256
   parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -661,26 +667,20 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string

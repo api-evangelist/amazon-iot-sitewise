@@ -230,49 +230,33 @@ paths:
       tags:
       - Logging
 components:
-  schemas:
-    ResourceNotFoundException: {}
-    ConflictingOperationException: {}
-    ThrottlingException: {}
-    InternalFailureException: {}
-    LoggingLevel:
-      type: string
-      enum:
-      - ERROR
-      - INFO
-      - 'OFF'
-    DescribeLoggingOptionsResponse:
-      type: object
-      required:
-      - loggingOptions
-      properties:
-        loggingOptions:
-          allOf:
-          - $ref: '#/components/schemas/LoggingOptions'
-          - description: The current logging options.
-    PutLoggingOptionsResponse:
-      type: object
-      properties: {}
-    LoggingOptions:
-      type: object
-      required:
-      - level
-      properties:
-        level:
-          allOf:
-          - $ref: '#/components/schemas/LoggingLevel'
-          - description: The IoT SiteWise logging verbosity level.
-      description: Contains logging options.
-    InvalidRequestException: {}
   parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
     X-Amz-Date:
       name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -289,24 +273,40 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
+  schemas:
+    PutLoggingOptionsResponse:
+      type: object
+      properties: {}
+    LoggingLevel:
+      type: string
+      enum:
+      - ERROR
+      - INFO
+      - 'OFF'
+    ResourceNotFoundException: {}
+    LoggingOptions:
+      type: object
+      required:
+      - level
+      properties:
+        level:
+          allOf:
+          - $ref: '#/components/schemas/LoggingLevel'
+          - description: The IoT SiteWise logging verbosity level.
+      description: Contains logging options.
+    ThrottlingException: {}
+    ConflictingOperationException: {}
+    InternalFailureException: {}
+    DescribeLoggingOptionsResponse:
+      type: object
+      required:
+      - loggingOptions
+      properties:
+        loggingOptions:
+          allOf:
+          - $ref: '#/components/schemas/LoggingOptions'
+          - description: The current logging options.
+    InvalidRequestException: {}
   securitySchemes:
     hmac:
       type: apiKey

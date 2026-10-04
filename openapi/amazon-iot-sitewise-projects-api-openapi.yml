@@ -719,7 +719,51 @@ paths:
       tags:
       - Projects
 components:
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
+    ResourceNotFoundException: {}
     ListProjectsResponse:
       type: object
       required:
@@ -737,63 +781,11 @@ components:
       type: string
       minLength: 0
       maxLength: 256
-    ThrottlingException: {}
-    BatchAssociateProjectAssetsResponse:
-      type: object
-      properties:
-        errors:
-          allOf:
-          - $ref: '#/components/schemas/BatchAssociateProjectAssetsErrors'
-          - description: A list of associated error information, if any.
-    DeleteProjectResponse:
-      type: object
-      properties: {}
-    AssetErrorCode:
-      type: string
-      enum:
-      - INTERNAL_FAILURE
-    AssetErrorMessage:
-      type: string
-    NextToken:
-      type: string
-      pattern: '[A-Za-z0-9+/=]+'
-      minLength: 1
-      maxLength: 4096
-    BatchDisassociateProjectAssetsResponse:
-      type: object
-      properties:
-        errors:
-          allOf:
-          - $ref: '#/components/schemas/BatchDisassociateProjectAssetsErrors'
-          - description: A list of associated error information, if any.
+    LimitExceededException: {}
     AssetIDs:
       type: array
       items:
         $ref: '#/components/schemas/ID'
-    Name:
-      type: string
-      pattern: '[^\u0000-\u001F\u007F]+'
-      minLength: 1
-      maxLength: 256
-    BatchAssociateProjectAssetsErrors:
-      type: array
-      items:
-        $ref: '#/components/schemas/AssetErrorDetails'
-    CreateProjectResponse:
-      type: object
-      required:
-      - projectId
-      - projectArn
-      properties:
-        projectId:
-          allOf:
-          - $ref: '#/components/schemas/ID'
-          - description: The ID of the project.
-        projectArn:
-          allOf:
-          - $ref: '#/components/schemas/ARN'
-          - description: <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p> <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
-    InvalidRequestException: {}
     AssetErrorDetails:
       type: object
       required:
@@ -814,6 +806,70 @@ components:
           - $ref: '#/components/schemas/AssetErrorMessage'
           - description: The error message.
       description: Contains error details for the requested associate project asset action.
+    InvalidRequestException: {}
+    DeleteProjectResponse:
+      type: object
+      properties: {}
+    ID:
+      type: string
+      pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
+      minLength: 36
+      maxLength: 36
+    NextToken:
+      type: string
+      pattern: '[A-Za-z0-9+/=]+'
+      minLength: 1
+      maxLength: 4096
+    ListProjectAssetsResponse:
+      type: object
+      required:
+      - assetIds
+      properties:
+        assetIds:
+          allOf:
+          - $ref: '#/components/schemas/AssetIDs'
+          - description: A list that contains the IDs of each asset associated with the project.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The token for the next set of results, or null if there are no additional results.
+    AssetErrorMessage:
+      type: string
+    BatchDisassociateProjectAssetsResponse:
+      type: object
+      properties:
+        errors:
+          allOf:
+          - $ref: '#/components/schemas/BatchDisassociateProjectAssetsErrors'
+          - description: A list of associated error information, if any.
+    ARN:
+      type: string
+      pattern: .*
+      minLength: 1
+      maxLength: 1600
+    BatchDisassociateProjectAssetsErrors:
+      type: array
+      items:
+        $ref: '#/components/schemas/AssetErrorDetails'
+    Description:
+      type: string
+      pattern: '[^\u0000-\u001F\u007F]+'
+      minLength: 1
+      maxLength: 2048
+    BatchAssociateProjectAssetsErrors:
+      type: array
+      items:
+        $ref: '#/components/schemas/AssetErrorDetails'
+    Timestamp:
+      type: string
+      format: date-time
+    BatchAssociateProjectAssetsResponse:
+      type: object
+      properties:
+        errors:
+          allOf:
+          - $ref: '#/components/schemas/BatchAssociateProjectAssetsErrors'
+          - description: A list of associated error information, if any.
     InternalFailureException: {}
     ProjectSummary:
       type: object
@@ -842,49 +898,32 @@ components:
           - $ref: '#/components/schemas/Timestamp'
           - description: The date the project was last updated, in Unix epoch time.
       description: Contains project summary information.
-    ARN:
+    AssetErrorCode:
       type: string
-      pattern: .*
-      minLength: 1
-      maxLength: 1600
-    BatchDisassociateProjectAssetsErrors:
-      type: array
-      items:
-        $ref: '#/components/schemas/AssetErrorDetails'
-    ListProjectAssetsResponse:
-      type: object
-      required:
-      - assetIds
-      properties:
-        assetIds:
-          allOf:
-          - $ref: '#/components/schemas/AssetIDs'
-          - description: A list that contains the IDs of each asset associated with the project.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The token for the next set of results, or null if there are no additional results.
-    Description:
-      type: string
-      pattern: '[^\u0000-\u001F\u007F]+'
-      minLength: 1
-      maxLength: 2048
+      enum:
+      - INTERNAL_FAILURE
     UpdateProjectResponse:
       type: object
       properties: {}
-    ID:
-      type: string
-      pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
-      minLength: 36
-      maxLength: 36
-    LimitExceededException: {}
+    CreateProjectResponse:
+      type: object
+      required:
+      - projectId
+      - projectArn
+      properties:
+        projectId:
+          allOf:
+          - $ref: '#/components/schemas/ID'
+          - description: The ID of the project.
+        projectArn:
+          allOf:
+          - $ref: '#/components/schemas/ARN'
+          - description: <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p> <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
+    ThrottlingException: {}
     ProjectSummaries:
       type: array
       items:
         $ref: '#/components/schemas/ProjectSummary'
-    Timestamp:
-      type: string
-      format: date-time
     DescribeProjectResponse:
       type: object
       required:
@@ -923,50 +962,11 @@ components:
           allOf:
           - $ref: '#/components/schemas/Timestamp'
           - description: The date the project was last updated, in Unix epoch time.
-    ResourceNotFoundException: {}
-  parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
+    Name:
+      type: string
+      pattern: '[^\u0000-\u001F\u007F]+'
+      minLength: 1
+      maxLength: 256
   securitySchemes:
     hmac:
       type: apiKey

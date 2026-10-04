@@ -1034,232 +1034,6 @@ paths:
       - Properties
 components:
   schemas:
-    Resolution:
-      type: string
-      pattern: 1m|15m|1h|1d
-      minLength: 2
-      maxLength: 3
-    Quality:
-      type: string
-      enum:
-      - GOOD
-      - BAD
-      - UNCERTAIN
-    BatchGetAssetPropertyValueHistoryErrorEntry:
-      type: object
-      required:
-      - errorCode
-      - errorMessage
-      - entryId
-      properties:
-        errorCode:
-          allOf:
-          - $ref: '#/components/schemas/BatchGetAssetPropertyValueHistoryErrorCode'
-          - description: The error code.
-        errorMessage:
-          allOf:
-          - $ref: '#/components/schemas/ErrorMessage'
-          - description: The associated error message.
-        entryId:
-          allOf:
-          - $ref: '#/components/schemas/EntryId'
-          - description: The ID of the entry.
-      description: A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.
-    OffsetInNanos:
-      type: integer
-      minimum: 0
-      maximum: 999999999
-    BatchPutAssetPropertyValueResponse:
-      type: object
-      required:
-      - errorEntries
-      properties:
-        errorEntries:
-          allOf:
-          - $ref: '#/components/schemas/BatchPutAssetPropertyErrorEntries'
-          - description: A list of the errors (if any) associated with the batch put request. Each error entry contains the <code>entryId</code> of the entry that failed.
-    AggregatedValue:
-      type: object
-      required:
-      - timestamp
-      - value
-      properties:
-        timestamp:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The date the aggregating computations occurred, in Unix epoch time.
-        quality:
-          allOf:
-          - $ref: '#/components/schemas/Quality'
-          - description: The quality of the aggregated data.
-        value:
-          allOf:
-          - $ref: '#/components/schemas/Aggregates'
-          - description: The value of the aggregates.
-      description: Contains aggregated asset property values (for example, average, minimum, and maximum).
-    PropertyValueBooleanValue:
-      type: boolean
-    AggregateTypes:
-      type: array
-      items:
-        $ref: '#/components/schemas/AggregateType'
-      minItems: 1
-    Variant:
-      type: object
-      properties:
-        stringValue:
-          allOf:
-          - $ref: '#/components/schemas/PropertyValueStringValue'
-          - description: Asset property data of type string (sequence of characters).
-        integerValue:
-          allOf:
-          - $ref: '#/components/schemas/PropertyValueIntegerValue'
-          - description: Asset property data of type integer (whole number).
-        doubleValue:
-          allOf:
-          - $ref: '#/components/schemas/PropertyValueDoubleValue'
-          - description: Asset property data of type double (floating point number).
-        booleanValue:
-          allOf:
-          - $ref: '#/components/schemas/PropertyValueBooleanValue'
-          - description: Asset property data of type Boolean (true or false).
-      description: Contains an asset property value (of a single type only).
-    AssetPropertyValues:
-      type: array
-      items:
-        $ref: '#/components/schemas/AssetPropertyValue'
-    BatchPutAssetPropertyErrorEntries:
-      type: array
-      items:
-        $ref: '#/components/schemas/BatchPutAssetPropertyErrorEntry'
-    BatchPutAssetPropertyValueErrorCode:
-      type: string
-      enum:
-      - ResourceNotFoundException
-      - InvalidRequestException
-      - InternalFailureException
-      - ServiceUnavailableException
-      - ThrottlingException
-      - LimitExceededException
-      - ConflictingOperationException
-      - TimestampOutOfRangeException
-      - AccessDeniedException
-    BatchGetAssetPropertyValueHistoryErrorCode:
-      type: string
-      enum:
-      - ResourceNotFoundException
-      - InvalidRequestException
-      - AccessDeniedException
-    BatchGetAssetPropertyValueHistoryEntry:
-      type: object
-      required:
-      - entryId
-      properties:
-        entryId:
-          allOf:
-          - $ref: '#/components/schemas/EntryId'
-          - description: The ID of the entry.
-        assetId:
-          allOf:
-          - $ref: '#/components/schemas/ID'
-          - description: The ID of the asset in which the asset property was created.
-        propertyId:
-          allOf:
-          - $ref: '#/components/schemas/ID'
-          - description: The ID of the asset property.
-        propertyAlias:
-          allOf:
-          - $ref: '#/components/schemas/AssetPropertyAlias'
-          - description: The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.
-        startDate:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.
-        endDate:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.
-        qualities:
-          allOf:
-          - $ref: '#/components/schemas/Qualities'
-          - description: The quality by which to filter asset data.
-        timeOrdering:
-          allOf:
-          - $ref: '#/components/schemas/TimeOrdering'
-          - description: '<p>The chronological sorting order of the requested information.</p> <p>Default: <code>ASCENDING</code> </p>'
-      description: <p>Contains information for an asset property historical value entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValueHistory</a> API.</p> <p>To identify an asset property, you must specify one of the following:</p> <ul> <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li> <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li> </ul>
-    BatchGetAssetPropertyAggregatesSuccessEntries:
-      type: array
-      items:
-        $ref: '#/components/schemas/BatchGetAssetPropertyAggregatesSuccessEntry'
-    BatchGetAssetPropertyAggregatesErrorEntries:
-      type: array
-      items:
-        $ref: '#/components/schemas/BatchGetAssetPropertyAggregatesErrorEntry'
-    PropertyValueStringValue:
-      type: string
-    ID:
-      type: string
-      pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
-      minLength: 36
-      maxLength: 36
-    BatchGetAssetPropertyAggregatesErrorCode:
-      type: string
-      enum:
-      - ResourceNotFoundException
-      - InvalidRequestException
-      - AccessDeniedException
-    BatchGetAssetPropertyValueHistorySuccessEntry:
-      type: object
-      required:
-      - entryId
-      - assetPropertyValueHistory
-      properties:
-        entryId:
-          allOf:
-          - $ref: '#/components/schemas/EntryId'
-          - description: The ID of the entry.
-        assetPropertyValueHistory:
-          allOf:
-          - $ref: '#/components/schemas/AssetPropertyValueHistory'
-          - description: The requested historical values for the specified asset property.
-      description: Contains success information for an entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValueHistory</a> API.
-    BatchGetAssetPropertyValueHistoryResponse:
-      type: object
-      required:
-      - errorEntries
-      - successEntries
-      - skippedEntries
-      properties:
-        errorEntries:
-          allOf:
-          - $ref: '#/components/schemas/BatchGetAssetPropertyValueHistoryErrorEntries'
-          - description: A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.
-        successEntries:
-          allOf:
-          - $ref: '#/components/schemas/BatchGetAssetPropertyValueHistorySuccessEntries'
-          - description: A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.
-        skippedEntries:
-          allOf:
-          - $ref: '#/components/schemas/BatchGetAssetPropertyValueHistorySkippedEntries'
-          - description: A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The token for the next set of results, or null if there are no additional results.
-    InterpolatedAssetPropertyValue:
-      type: object
-      required:
-      - timestamp
-      - value
-      properties:
-        timestamp:
-          $ref: '#/components/schemas/TimeInNanos'
-        value:
-          $ref: '#/components/schemas/Variant'
-      description: Contains information about an interpolated asset property value.
-    PropertyValueIntegerValue:
-      type: integer
     GetAssetPropertyValueResponse:
       type: object
       properties:
@@ -1267,449 +1041,15 @@ components:
           allOf:
           - $ref: '#/components/schemas/AssetPropertyValue'
           - description: The current asset property value.
-    BatchPutAssetPropertyError:
-      type: object
-      required:
-      - errorCode
-      - errorMessage
-      - timestamps
-      properties:
-        errorCode:
-          allOf:
-          - $ref: '#/components/schemas/BatchPutAssetPropertyValueErrorCode'
-          - description: The error code.
-        errorMessage:
-          allOf:
-          - $ref: '#/components/schemas/ErrorMessage'
-          - description: The associated error message.
-        timestamps:
-          allOf:
-          - $ref: '#/components/schemas/Timestamps'
-          - description: A list of timestamps for each error, if any.
-      description: Contains error information from updating a batch of asset property values.
-    TimeInSeconds:
-      type: integer
-      minimum: 1
-      maximum: 9223372036854774
-    EntryId:
-      type: string
-      pattern: ^[a-zA-Z0-9_-]+$
-      minLength: 1
-      maxLength: 64
-    BatchGetAssetPropertyAggregatesSkippedEntries:
-      type: array
-      items:
-        $ref: '#/components/schemas/BatchGetAssetPropertyAggregatesSkippedEntry'
-    GetAssetPropertyValueHistoryResponse:
-      type: object
-      required:
-      - assetPropertyValueHistory
-      properties:
-        assetPropertyValueHistory:
-          allOf:
-          - $ref: '#/components/schemas/AssetPropertyValueHistory'
-          - description: The asset property's value history.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The token for the next set of results, or null if there are no additional results.
-    InternalFailureException: {}
-    AggregateType:
-      type: string
-      enum:
-      - AVERAGE
-      - COUNT
-      - MAXIMUM
-      - MINIMUM
-      - SUM
-      - STANDARD_DEVIATION
-    LimitExceededException: {}
-    TimeInNanos:
-      type: object
-      required:
-      - timeInSeconds
-      properties:
-        timeInSeconds:
-          allOf:
-          - $ref: '#/components/schemas/TimeInSeconds'
-          - description: The timestamp date, in seconds, in the Unix epoch format. Fractional nanosecond data is provided by <code>offsetInNanos</code>.
-        offsetInNanos:
-          allOf:
-          - $ref: '#/components/schemas/OffsetInNanos'
-          - description: The nanosecond offset from <code>timeInSeconds</code>.
-      description: Contains a timestamp with optional nanosecond granularity.
-    BatchGetAssetPropertyValueHistorySkippedEntries:
-      type: array
-      items:
-        $ref: '#/components/schemas/BatchGetAssetPropertyValueHistorySkippedEntry'
-    GetInterpolatedAssetPropertyValuesResponse:
-      type: object
-      required:
-      - interpolatedAssetPropertyValues
-      properties:
-        interpolatedAssetPropertyValues:
-          allOf:
-          - $ref: '#/components/schemas/InterpolatedAssetPropertyValues'
-          - description: The requested interpolated values.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The token for the next set of results, or null if there are no additional results.
-    BatchGetAssetPropertyValueHistorySkippedEntry:
-      type: object
-      required:
-      - entryId
-      - completionStatus
-      properties:
-        entryId:
-          allOf:
-          - $ref: '#/components/schemas/EntryId'
-          - description: The ID of the entry.
-        completionStatus:
-          allOf:
-          - $ref: '#/components/schemas/BatchEntryCompletionStatus'
-          - description: The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValueHistory.html">BatchGetAssetPropertyValueHistory</a> API.
-        errorInfo:
-          allOf:
-          - $ref: '#/components/schemas/BatchGetAssetPropertyValueHistoryErrorInfo'
-          - description: The error information, such as the error code and the timestamp.
-      description: Contains information for an entry that has been processed by the previous <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValueHistory</a> request.
-    AggregatedValues:
-      type: array
-      items:
-        $ref: '#/components/schemas/AggregatedValue'
-    ResourceNotFoundException: {}
-    BatchGetAssetPropertyValueEntry:
-      type: object
-      required:
-      - entryId
-      properties:
-        entryId:
-          allOf:
-          - $ref: '#/components/schemas/EntryId'
-          - description: The ID of the entry.
-        assetId:
-          allOf:
-          - $ref: '#/components/schemas/ID'
-          - description: The ID of the asset in which the asset property was created.
-        propertyId:
-          allOf:
-          - $ref: '#/components/schemas/ID'
-          - description: The ID of the asset property.
-        propertyAlias:
-          allOf:
-          - $ref: '#/components/schemas/AssetPropertyAlias'
-          - description: The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.
-      description: <p>Contains information for an asset property value entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> API.</p> <p>To identify an asset property, you must specify one of the following:</p> <ul> <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li> <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li> </ul>
     AggregatedDoubleValue:
       type: number
       format: double
+    AggregateTypes:
+      type: array
+      items:
+        $ref: '#/components/schemas/AggregateType'
+      minItems: 1
     ConflictingOperationException: {}
-    BatchGetAssetPropertyAggregatesErrorEntry:
-      type: object
-      required:
-      - errorCode
-      - errorMessage
-      - entryId
-      properties:
-        errorCode:
-          allOf:
-          - $ref: '#/components/schemas/BatchGetAssetPropertyAggregatesErrorCode'
-          - description: The error code.
-        errorMessage:
-          allOf:
-          - $ref: '#/components/schemas/ErrorMessage'
-          - description: The associated error message.
-        entryId:
-          allOf:
-          - $ref: '#/components/schemas/EntryId'
-          - description: The ID of the entry.
-      description: Contains error information for an asset property aggregate entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.
-    BatchPutAssetPropertyErrorEntry:
-      type: object
-      required:
-      - entryId
-      - errors
-      properties:
-        entryId:
-          allOf:
-          - $ref: '#/components/schemas/EntryId'
-          - description: The ID of the failed entry.
-        errors:
-          allOf:
-          - $ref: '#/components/schemas/BatchPutAssetPropertyErrors'
-          - description: The list of update property value errors.
-      description: Contains error information for asset property value entries that are associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchPutAssetPropertyValue.html">BatchPutAssetPropertyValue</a> API.
-    BatchGetAssetPropertyValueSuccessEntries:
-      type: array
-      items:
-        $ref: '#/components/schemas/BatchGetAssetPropertyValueSuccessEntry'
-    BatchGetAssetPropertyAggregatesErrorInfo:
-      type: object
-      required:
-      - errorCode
-      - errorTimestamp
-      properties:
-        errorCode:
-          allOf:
-          - $ref: '#/components/schemas/BatchGetAssetPropertyAggregatesErrorCode'
-          - description: The error code.
-        errorTimestamp:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The date the error occurred, in Unix epoch time.
-      description: Contains the error code and the timestamp for an asset property aggregate entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.
-    BatchGetAssetPropertyValueHistoryErrorInfo:
-      type: object
-      required:
-      - errorCode
-      - errorTimestamp
-      properties:
-        errorCode:
-          allOf:
-          - $ref: '#/components/schemas/BatchGetAssetPropertyValueHistoryErrorCode'
-          - description: The error code.
-        errorTimestamp:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The date the error occurred, in Unix epoch time.
-      description: The error information, such as the error code and the timestamp.
-    BatchGetAssetPropertyValueErrorInfo:
-      type: object
-      required:
-      - errorCode
-      - errorTimestamp
-      properties:
-        errorCode:
-          allOf:
-          - $ref: '#/components/schemas/BatchGetAssetPropertyValueErrorCode'
-          - description: The error code.
-        errorTimestamp:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The date the error occurred, in Unix epoch time.
-      description: The error information, such as the error code and the timestamp.
-    BatchGetAssetPropertyValueErrorEntries:
-      type: array
-      items:
-        $ref: '#/components/schemas/BatchGetAssetPropertyValueErrorEntry'
-    BatchGetAssetPropertyAggregatesSuccessEntry:
-      type: object
-      required:
-      - entryId
-      - aggregatedValues
-      properties:
-        entryId:
-          allOf:
-          - $ref: '#/components/schemas/EntryId'
-          - description: The ID of the entry.
-        aggregatedValues:
-          allOf:
-          - $ref: '#/components/schemas/AggregatedValues'
-          - description: The requested aggregated asset property values (for example, average, minimum, and maximum).
-      description: Contains success information for an entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.
-    BatchGetAssetPropertyValueResponse:
-      type: object
-      required:
-      - errorEntries
-      - successEntries
-      - skippedEntries
-      properties:
-        errorEntries:
-          allOf:
-          - $ref: '#/components/schemas/BatchGetAssetPropertyValueErrorEntries'
-          - description: A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.
-        successEntries:
-          allOf:
-          - $ref: '#/components/schemas/BatchGetAssetPropertyValueSuccessEntries'
-          - description: A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.
-        skippedEntries:
-          allOf:
-          - $ref: '#/components/schemas/BatchGetAssetPropertyValueSkippedEntries'
-          - description: A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The token for the next set of results, or null if there are no additional results.
-    PropertyValueDoubleValue:
-      type: number
-      format: double
-    BatchGetAssetPropertyValueSuccessEntry:
-      type: object
-      required:
-      - entryId
-      properties:
-        entryId:
-          allOf:
-          - $ref: '#/components/schemas/EntryId'
-          - description: The ID of the entry.
-        assetPropertyValue:
-          $ref: '#/components/schemas/AssetPropertyValue'
-      description: Contains success information for an entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> API.
-    Aggregates:
-      type: object
-      properties:
-        average:
-          allOf:
-          - $ref: '#/components/schemas/AggregatedDoubleValue'
-          - description: The average (mean) value of the time series over a time interval window.
-        count:
-          allOf:
-          - $ref: '#/components/schemas/AggregatedDoubleValue'
-          - description: The count of data points in the time series over a time interval window.
-        maximum:
-          allOf:
-          - $ref: '#/components/schemas/AggregatedDoubleValue'
-          - description: The maximum value of the time series over a time interval window.
-        minimum:
-          allOf:
-          - $ref: '#/components/schemas/AggregatedDoubleValue'
-          - description: The minimum value of the time series over a time interval window.
-        sum:
-          allOf:
-          - $ref: '#/components/schemas/AggregatedDoubleValue'
-          - description: The sum of the time series over a time interval window.
-        standardDeviation:
-          allOf:
-          - $ref: '#/components/schemas/AggregatedDoubleValue'
-          - description: The standard deviation of the time series over a time interval window.
-      description: Contains the (pre-calculated) aggregate values for an asset property.
-    AssetPropertyAlias:
-      type: string
-      pattern: '[^\u0000-\u001F\u007F]+'
-      minLength: 1
-      maxLength: 2048
-    BatchGetAssetPropertyValueSkippedEntry:
-      type: object
-      required:
-      - entryId
-      - completionStatus
-      properties:
-        entryId:
-          allOf:
-          - $ref: '#/components/schemas/EntryId'
-          - description: The ID of the entry.
-        completionStatus:
-          allOf:
-          - $ref: '#/components/schemas/BatchEntryCompletionStatus'
-          - description: The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> request.
-        errorInfo:
-          allOf:
-          - $ref: '#/components/schemas/BatchGetAssetPropertyValueErrorInfo'
-          - description: The error information, such as the error code and the timestamp.
-      description: Contains information for an entry that has been processed by the previous <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> request.
-    TimeOrdering:
-      type: string
-      enum:
-      - ASCENDING
-      - DESCENDING
-    BatchGetAssetPropertyValueErrorCode:
-      type: string
-      enum:
-      - ResourceNotFoundException
-      - InvalidRequestException
-      - AccessDeniedException
-    Timestamp:
-      type: string
-      format: date-time
-    InvalidRequestException: {}
-    BatchGetAssetPropertyValueSkippedEntries:
-      type: array
-      items:
-        $ref: '#/components/schemas/BatchGetAssetPropertyValueSkippedEntry'
-    BatchGetAssetPropertyValueHistoryErrorEntries:
-      type: array
-      items:
-        $ref: '#/components/schemas/BatchGetAssetPropertyValueHistoryErrorEntry'
-    ThrottlingException: {}
-    BatchGetAssetPropertyAggregatesResponse:
-      type: object
-      required:
-      - errorEntries
-      - successEntries
-      - skippedEntries
-      properties:
-        errorEntries:
-          allOf:
-          - $ref: '#/components/schemas/BatchGetAssetPropertyAggregatesErrorEntries'
-          - description: A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.
-        successEntries:
-          allOf:
-          - $ref: '#/components/schemas/BatchGetAssetPropertyAggregatesSuccessEntries'
-          - description: A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.
-        skippedEntries:
-          allOf:
-          - $ref: '#/components/schemas/BatchGetAssetPropertyAggregatesSkippedEntries'
-          - description: A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The token for the next set of results, or null if there are no additional results.
-    NextToken:
-      type: string
-      pattern: '[A-Za-z0-9+/=]+'
-      minLength: 1
-      maxLength: 4096
-    BatchGetAssetPropertyAggregatesSkippedEntry:
-      type: object
-      required:
-      - entryId
-      - completionStatus
-      properties:
-        entryId:
-          allOf:
-          - $ref: '#/components/schemas/EntryId'
-          - description: The ID of the entry.
-        completionStatus:
-          allOf:
-          - $ref: '#/components/schemas/BatchEntryCompletionStatus'
-          - description: The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.
-        errorInfo:
-          allOf:
-          - $ref: '#/components/schemas/BatchGetAssetPropertyAggregatesErrorInfo'
-          - description: The error information, such as the error code and the timestamp.
-      description: Contains information for an entry that has been processed by the previous <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> request.
-    ServiceUnavailableException: {}
-    InterpolatedAssetPropertyValues:
-      type: array
-      items:
-        $ref: '#/components/schemas/InterpolatedAssetPropertyValue'
-    BatchEntryCompletionStatus:
-      type: string
-      enum:
-      - SUCCESS
-      - ERROR
-    AssetPropertyValueHistory:
-      type: array
-      items:
-        $ref: '#/components/schemas/AssetPropertyValue'
-    PutAssetPropertyValueEntry:
-      type: object
-      required:
-      - entryId
-      - propertyValues
-      properties:
-        entryId:
-          allOf:
-          - $ref: '#/components/schemas/EntryId'
-          - description: The user specified ID for the entry. You can use this ID to identify which entries failed.
-        assetId:
-          allOf:
-          - $ref: '#/components/schemas/ID'
-          - description: The ID of the asset to update.
-        propertyId:
-          allOf:
-          - $ref: '#/components/schemas/ID'
-          - description: The ID of the asset property for this entry.
-        propertyAlias:
-          allOf:
-          - $ref: '#/components/schemas/AssetPropertyAlias'
-          - description: The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.
-        propertyValues:
-          allOf:
-          - $ref: '#/components/schemas/AssetPropertyValues'
-          - description: 'The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements. '
-      description: Contains a list of value updates for an asset property in the list of asset entries consumed by the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchPutAssetPropertyValue.html">BatchPutAssetPropertyValue</a> API operation.
     BatchGetAssetPropertyAggregatesEntry:
       type: object
       required:
@@ -1760,56 +1100,81 @@ components:
           - $ref: '#/components/schemas/TimeOrdering'
           - description: '<p>The chronological sorting order of the requested information.</p> <p>Default: <code>ASCENDING</code> </p>'
       description: <p>Contains information for an asset property aggregate entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.</p> <p>To identify an asset property, you must specify one of the following:</p> <ul> <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li> <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li> </ul>
-    GetAssetPropertyAggregatesResponse:
+    BatchGetAssetPropertyValueHistoryErrorEntries:
+      type: array
+      items:
+        $ref: '#/components/schemas/BatchGetAssetPropertyValueHistoryErrorEntry'
+    BatchGetAssetPropertyValueHistoryErrorEntry:
       type: object
       required:
-      - aggregatedValues
+      - errorCode
+      - errorMessage
+      - entryId
       properties:
-        aggregatedValues:
+        errorCode:
           allOf:
-          - $ref: '#/components/schemas/AggregatedValues'
-          - description: The requested aggregated values.
-        nextToken:
+          - $ref: '#/components/schemas/BatchGetAssetPropertyValueHistoryErrorCode'
+          - description: The error code.
+        errorMessage:
           allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The token for the next set of results, or null if there are no additional results.
-    BatchPutAssetPropertyErrors:
+          - $ref: '#/components/schemas/ErrorMessage'
+          - description: The associated error message.
+        entryId:
+          allOf:
+          - $ref: '#/components/schemas/EntryId'
+          - description: The ID of the entry.
+      description: A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.
+    BatchGetAssetPropertyValueSkippedEntries:
       type: array
       items:
-        $ref: '#/components/schemas/BatchPutAssetPropertyError'
-    Timestamps:
-      type: array
-      items:
-        $ref: '#/components/schemas/TimeInNanos'
-    AssetPropertyValue:
+        $ref: '#/components/schemas/BatchGetAssetPropertyValueSkippedEntry'
+    NextToken:
+      type: string
+      pattern: '[A-Za-z0-9+/=]+'
+      minLength: 1
+      maxLength: 4096
+    BatchGetAssetPropertyAggregatesErrorInfo:
       type: object
       required:
-      - value
+      - errorCode
+      - errorTimestamp
+      properties:
+        errorCode:
+          allOf:
+          - $ref: '#/components/schemas/BatchGetAssetPropertyAggregatesErrorCode'
+          - description: The error code.
+        errorTimestamp:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The date the error occurred, in Unix epoch time.
+      description: Contains the error code and the timestamp for an asset property aggregate entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.
+    AggregatedValues:
+      type: array
+      items:
+        $ref: '#/components/schemas/AggregatedValue'
+    AssetPropertyValueHistory:
+      type: array
+      items:
+        $ref: '#/components/schemas/AssetPropertyValue'
+    AggregatedValue:
+      type: object
+      required:
       - timestamp
+      - value
       properties:
-        value:
-          allOf:
-          - $ref: '#/components/schemas/Variant'
-          - description: The value of the asset property (see <code>Variant</code>).
         timestamp:
           allOf:
-          - $ref: '#/components/schemas/TimeInNanos'
-          - description: The timestamp of the asset property value.
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The date the aggregating computations occurred, in Unix epoch time.
         quality:
           allOf:
           - $ref: '#/components/schemas/Quality'
-          - description: The quality of the asset property value.
-      description: Contains asset property value information.
-    Qualities:
-      type: array
-      items:
-        $ref: '#/components/schemas/Quality'
-      minItems: 1
-      maxItems: 1
-    BatchGetAssetPropertyValueHistorySuccessEntries:
-      type: array
-      items:
-        $ref: '#/components/schemas/BatchGetAssetPropertyValueHistorySuccessEntry'
+          - description: The quality of the aggregated data.
+        value:
+          allOf:
+          - $ref: '#/components/schemas/Aggregates'
+          - description: The value of the aggregates.
+      description: Contains aggregated asset property values (for example, average, minimum, and maximum).
     BatchGetAssetPropertyValueErrorEntry:
       type: object
       required:
@@ -1830,9 +1195,668 @@ components:
           - $ref: '#/components/schemas/EntryId'
           - description: The ID of the entry.
       description: Contains error information for an asset property value entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> API.
+    Timestamp:
+      type: string
+      format: date-time
+    BatchGetAssetPropertyAggregatesResponse:
+      type: object
+      required:
+      - errorEntries
+      - successEntries
+      - skippedEntries
+      properties:
+        errorEntries:
+          allOf:
+          - $ref: '#/components/schemas/BatchGetAssetPropertyAggregatesErrorEntries'
+          - description: A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.
+        successEntries:
+          allOf:
+          - $ref: '#/components/schemas/BatchGetAssetPropertyAggregatesSuccessEntries'
+          - description: A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.
+        skippedEntries:
+          allOf:
+          - $ref: '#/components/schemas/BatchGetAssetPropertyAggregatesSkippedEntries'
+          - description: A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The token for the next set of results, or null if there are no additional results.
+    BatchGetAssetPropertyAggregatesErrorEntry:
+      type: object
+      required:
+      - errorCode
+      - errorMessage
+      - entryId
+      properties:
+        errorCode:
+          allOf:
+          - $ref: '#/components/schemas/BatchGetAssetPropertyAggregatesErrorCode'
+          - description: The error code.
+        errorMessage:
+          allOf:
+          - $ref: '#/components/schemas/ErrorMessage'
+          - description: The associated error message.
+        entryId:
+          allOf:
+          - $ref: '#/components/schemas/EntryId'
+          - description: The ID of the entry.
+      description: Contains error information for an asset property aggregate entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.
+    BatchGetAssetPropertyAggregatesErrorEntries:
+      type: array
+      items:
+        $ref: '#/components/schemas/BatchGetAssetPropertyAggregatesErrorEntry'
+    Aggregates:
+      type: object
+      properties:
+        average:
+          allOf:
+          - $ref: '#/components/schemas/AggregatedDoubleValue'
+          - description: The average (mean) value of the time series over a time interval window.
+        count:
+          allOf:
+          - $ref: '#/components/schemas/AggregatedDoubleValue'
+          - description: The count of data points in the time series over a time interval window.
+        maximum:
+          allOf:
+          - $ref: '#/components/schemas/AggregatedDoubleValue'
+          - description: The maximum value of the time series over a time interval window.
+        minimum:
+          allOf:
+          - $ref: '#/components/schemas/AggregatedDoubleValue'
+          - description: The minimum value of the time series over a time interval window.
+        sum:
+          allOf:
+          - $ref: '#/components/schemas/AggregatedDoubleValue'
+          - description: The sum of the time series over a time interval window.
+        standardDeviation:
+          allOf:
+          - $ref: '#/components/schemas/AggregatedDoubleValue'
+          - description: The standard deviation of the time series over a time interval window.
+      description: Contains the (pre-calculated) aggregate values for an asset property.
+    Timestamps:
+      type: array
+      items:
+        $ref: '#/components/schemas/TimeInNanos'
+    PropertyValueDoubleValue:
+      type: number
+      format: double
+    BatchGetAssetPropertyValueHistoryEntry:
+      type: object
+      required:
+      - entryId
+      properties:
+        entryId:
+          allOf:
+          - $ref: '#/components/schemas/EntryId'
+          - description: The ID of the entry.
+        assetId:
+          allOf:
+          - $ref: '#/components/schemas/ID'
+          - description: The ID of the asset in which the asset property was created.
+        propertyId:
+          allOf:
+          - $ref: '#/components/schemas/ID'
+          - description: The ID of the asset property.
+        propertyAlias:
+          allOf:
+          - $ref: '#/components/schemas/AssetPropertyAlias'
+          - description: The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.
+        startDate:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.
+        endDate:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.
+        qualities:
+          allOf:
+          - $ref: '#/components/schemas/Qualities'
+          - description: The quality by which to filter asset data.
+        timeOrdering:
+          allOf:
+          - $ref: '#/components/schemas/TimeOrdering'
+          - description: '<p>The chronological sorting order of the requested information.</p> <p>Default: <code>ASCENDING</code> </p>'
+      description: <p>Contains information for an asset property historical value entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValueHistory</a> API.</p> <p>To identify an asset property, you must specify one of the following:</p> <ul> <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li> <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li> </ul>
+    AssetPropertyAlias:
+      type: string
+      pattern: '[^\u0000-\u001F\u007F]+'
+      minLength: 1
+      maxLength: 2048
+    GetAssetPropertyValueHistoryResponse:
+      type: object
+      required:
+      - assetPropertyValueHistory
+      properties:
+        assetPropertyValueHistory:
+          allOf:
+          - $ref: '#/components/schemas/AssetPropertyValueHistory'
+          - description: The asset property's value history.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The token for the next set of results, or null if there are no additional results.
+    BatchGetAssetPropertyAggregatesSkippedEntry:
+      type: object
+      required:
+      - entryId
+      - completionStatus
+      properties:
+        entryId:
+          allOf:
+          - $ref: '#/components/schemas/EntryId'
+          - description: The ID of the entry.
+        completionStatus:
+          allOf:
+          - $ref: '#/components/schemas/BatchEntryCompletionStatus'
+          - description: The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.
+        errorInfo:
+          allOf:
+          - $ref: '#/components/schemas/BatchGetAssetPropertyAggregatesErrorInfo'
+          - description: The error information, such as the error code and the timestamp.
+      description: Contains information for an entry that has been processed by the previous <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> request.
+    BatchPutAssetPropertyErrorEntry:
+      type: object
+      required:
+      - entryId
+      - errors
+      properties:
+        entryId:
+          allOf:
+          - $ref: '#/components/schemas/EntryId'
+          - description: The ID of the failed entry.
+        errors:
+          allOf:
+          - $ref: '#/components/schemas/BatchPutAssetPropertyErrors'
+          - description: The list of update property value errors.
+      description: Contains error information for asset property value entries that are associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchPutAssetPropertyValue.html">BatchPutAssetPropertyValue</a> API.
+    BatchGetAssetPropertyValueHistorySuccessEntries:
+      type: array
+      items:
+        $ref: '#/components/schemas/BatchGetAssetPropertyValueHistorySuccessEntry'
+    BatchGetAssetPropertyValueEntry:
+      type: object
+      required:
+      - entryId
+      properties:
+        entryId:
+          allOf:
+          - $ref: '#/components/schemas/EntryId'
+          - description: The ID of the entry.
+        assetId:
+          allOf:
+          - $ref: '#/components/schemas/ID'
+          - description: The ID of the asset in which the asset property was created.
+        propertyId:
+          allOf:
+          - $ref: '#/components/schemas/ID'
+          - description: The ID of the asset property.
+        propertyAlias:
+          allOf:
+          - $ref: '#/components/schemas/AssetPropertyAlias'
+          - description: The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.
+      description: <p>Contains information for an asset property value entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> API.</p> <p>To identify an asset property, you must specify one of the following:</p> <ul> <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li> <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li> </ul>
+    BatchPutAssetPropertyValueResponse:
+      type: object
+      required:
+      - errorEntries
+      properties:
+        errorEntries:
+          allOf:
+          - $ref: '#/components/schemas/BatchPutAssetPropertyErrorEntries'
+          - description: A list of the errors (if any) associated with the batch put request. Each error entry contains the <code>entryId</code> of the entry that failed.
+    BatchGetAssetPropertyAggregatesSkippedEntries:
+      type: array
+      items:
+        $ref: '#/components/schemas/BatchGetAssetPropertyAggregatesSkippedEntry'
+    PutAssetPropertyValueEntry:
+      type: object
+      required:
+      - entryId
+      - propertyValues
+      properties:
+        entryId:
+          allOf:
+          - $ref: '#/components/schemas/EntryId'
+          - description: The user specified ID for the entry. You can use this ID to identify which entries failed.
+        assetId:
+          allOf:
+          - $ref: '#/components/schemas/ID'
+          - description: The ID of the asset to update.
+        propertyId:
+          allOf:
+          - $ref: '#/components/schemas/ID'
+          - description: The ID of the asset property for this entry.
+        propertyAlias:
+          allOf:
+          - $ref: '#/components/schemas/AssetPropertyAlias'
+          - description: The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.
+        propertyValues:
+          allOf:
+          - $ref: '#/components/schemas/AssetPropertyValues'
+          - description: 'The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements. '
+      description: Contains a list of value updates for an asset property in the list of asset entries consumed by the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchPutAssetPropertyValue.html">BatchPutAssetPropertyValue</a> API operation.
+    InterpolatedAssetPropertyValues:
+      type: array
+      items:
+        $ref: '#/components/schemas/InterpolatedAssetPropertyValue'
+    TimeInNanos:
+      type: object
+      required:
+      - timeInSeconds
+      properties:
+        timeInSeconds:
+          allOf:
+          - $ref: '#/components/schemas/TimeInSeconds'
+          - description: The timestamp date, in seconds, in the Unix epoch format. Fractional nanosecond data is provided by <code>offsetInNanos</code>.
+        offsetInNanos:
+          allOf:
+          - $ref: '#/components/schemas/OffsetInNanos'
+          - description: The nanosecond offset from <code>timeInSeconds</code>.
+      description: Contains a timestamp with optional nanosecond granularity.
+    BatchGetAssetPropertyValueResponse:
+      type: object
+      required:
+      - errorEntries
+      - successEntries
+      - skippedEntries
+      properties:
+        errorEntries:
+          allOf:
+          - $ref: '#/components/schemas/BatchGetAssetPropertyValueErrorEntries'
+          - description: A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.
+        successEntries:
+          allOf:
+          - $ref: '#/components/schemas/BatchGetAssetPropertyValueSuccessEntries'
+          - description: A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.
+        skippedEntries:
+          allOf:
+          - $ref: '#/components/schemas/BatchGetAssetPropertyValueSkippedEntries'
+          - description: A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The token for the next set of results, or null if there are no additional results.
+    GetInterpolatedAssetPropertyValuesResponse:
+      type: object
+      required:
+      - interpolatedAssetPropertyValues
+      properties:
+        interpolatedAssetPropertyValues:
+          allOf:
+          - $ref: '#/components/schemas/InterpolatedAssetPropertyValues'
+          - description: The requested interpolated values.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The token for the next set of results, or null if there are no additional results.
+    BatchGetAssetPropertyValueHistorySkippedEntry:
+      type: object
+      required:
+      - entryId
+      - completionStatus
+      properties:
+        entryId:
+          allOf:
+          - $ref: '#/components/schemas/EntryId'
+          - description: The ID of the entry.
+        completionStatus:
+          allOf:
+          - $ref: '#/components/schemas/BatchEntryCompletionStatus'
+          - description: The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValueHistory.html">BatchGetAssetPropertyValueHistory</a> API.
+        errorInfo:
+          allOf:
+          - $ref: '#/components/schemas/BatchGetAssetPropertyValueHistoryErrorInfo'
+          - description: The error information, such as the error code and the timestamp.
+      description: Contains information for an entry that has been processed by the previous <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValueHistory</a> request.
+    BatchGetAssetPropertyValueSuccessEntry:
+      type: object
+      required:
+      - entryId
+      properties:
+        entryId:
+          allOf:
+          - $ref: '#/components/schemas/EntryId'
+          - description: The ID of the entry.
+        assetPropertyValue:
+          $ref: '#/components/schemas/AssetPropertyValue'
+      description: Contains success information for an entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> API.
+    ThrottlingException: {}
+    BatchGetAssetPropertyValueSuccessEntries:
+      type: array
+      items:
+        $ref: '#/components/schemas/BatchGetAssetPropertyValueSuccessEntry'
+    BatchPutAssetPropertyErrors:
+      type: array
+      items:
+        $ref: '#/components/schemas/BatchPutAssetPropertyError'
+    AssetPropertyValue:
+      type: object
+      required:
+      - value
+      - timestamp
+      properties:
+        value:
+          allOf:
+          - $ref: '#/components/schemas/Variant'
+          - description: The value of the asset property (see <code>Variant</code>).
+        timestamp:
+          allOf:
+          - $ref: '#/components/schemas/TimeInNanos'
+          - description: The timestamp of the asset property value.
+        quality:
+          allOf:
+          - $ref: '#/components/schemas/Quality'
+          - description: The quality of the asset property value.
+      description: Contains asset property value information.
+    ResourceNotFoundException: {}
+    BatchPutAssetPropertyErrorEntries:
+      type: array
+      items:
+        $ref: '#/components/schemas/BatchPutAssetPropertyErrorEntry'
+    ServiceUnavailableException: {}
+    BatchPutAssetPropertyError:
+      type: object
+      required:
+      - errorCode
+      - errorMessage
+      - timestamps
+      properties:
+        errorCode:
+          allOf:
+          - $ref: '#/components/schemas/BatchPutAssetPropertyValueErrorCode'
+          - description: The error code.
+        errorMessage:
+          allOf:
+          - $ref: '#/components/schemas/ErrorMessage'
+          - description: The associated error message.
+        timestamps:
+          allOf:
+          - $ref: '#/components/schemas/Timestamps'
+          - description: A list of timestamps for each error, if any.
+      description: Contains error information from updating a batch of asset property values.
+    BatchGetAssetPropertyValueHistorySuccessEntry:
+      type: object
+      required:
+      - entryId
+      - assetPropertyValueHistory
+      properties:
+        entryId:
+          allOf:
+          - $ref: '#/components/schemas/EntryId'
+          - description: The ID of the entry.
+        assetPropertyValueHistory:
+          allOf:
+          - $ref: '#/components/schemas/AssetPropertyValueHistory'
+          - description: The requested historical values for the specified asset property.
+      description: Contains success information for an entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValueHistory</a> API.
+    BatchGetAssetPropertyAggregatesSuccessEntries:
+      type: array
+      items:
+        $ref: '#/components/schemas/BatchGetAssetPropertyAggregatesSuccessEntry'
+    InvalidRequestException: {}
+    AggregateType:
+      type: string
+      enum:
+      - AVERAGE
+      - COUNT
+      - MAXIMUM
+      - MINIMUM
+      - SUM
+      - STANDARD_DEVIATION
+    Variant:
+      type: object
+      properties:
+        stringValue:
+          allOf:
+          - $ref: '#/components/schemas/PropertyValueStringValue'
+          - description: Asset property data of type string (sequence of characters).
+        integerValue:
+          allOf:
+          - $ref: '#/components/schemas/PropertyValueIntegerValue'
+          - description: Asset property data of type integer (whole number).
+        doubleValue:
+          allOf:
+          - $ref: '#/components/schemas/PropertyValueDoubleValue'
+          - description: Asset property data of type double (floating point number).
+        booleanValue:
+          allOf:
+          - $ref: '#/components/schemas/PropertyValueBooleanValue'
+          - description: Asset property data of type Boolean (true or false).
+      description: Contains an asset property value (of a single type only).
+    BatchGetAssetPropertyValueHistorySkippedEntries:
+      type: array
+      items:
+        $ref: '#/components/schemas/BatchGetAssetPropertyValueHistorySkippedEntry'
+    GetAssetPropertyAggregatesResponse:
+      type: object
+      required:
+      - aggregatedValues
+      properties:
+        aggregatedValues:
+          allOf:
+          - $ref: '#/components/schemas/AggregatedValues'
+          - description: The requested aggregated values.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The token for the next set of results, or null if there are no additional results.
+    BatchPutAssetPropertyValueErrorCode:
+      type: string
+      enum:
+      - ResourceNotFoundException
+      - InvalidRequestException
+      - InternalFailureException
+      - ServiceUnavailableException
+      - ThrottlingException
+      - LimitExceededException
+      - ConflictingOperationException
+      - TimestampOutOfRangeException
+      - AccessDeniedException
+    OffsetInNanos:
+      type: integer
+      minimum: 0
+      maximum: 999999999
+    TimeInSeconds:
+      type: integer
+      minimum: 1
+      maximum: 9223372036854774
+    AssetPropertyValues:
+      type: array
+      items:
+        $ref: '#/components/schemas/AssetPropertyValue'
+    InternalFailureException: {}
+    BatchGetAssetPropertyValueHistoryErrorCode:
+      type: string
+      enum:
+      - ResourceNotFoundException
+      - InvalidRequestException
+      - AccessDeniedException
+    BatchGetAssetPropertyValueHistoryErrorInfo:
+      type: object
+      required:
+      - errorCode
+      - errorTimestamp
+      properties:
+        errorCode:
+          allOf:
+          - $ref: '#/components/schemas/BatchGetAssetPropertyValueHistoryErrorCode'
+          - description: The error code.
+        errorTimestamp:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The date the error occurred, in Unix epoch time.
+      description: The error information, such as the error code and the timestamp.
+    TimeOrdering:
+      type: string
+      enum:
+      - ASCENDING
+      - DESCENDING
+    BatchGetAssetPropertyValueSkippedEntry:
+      type: object
+      required:
+      - entryId
+      - completionStatus
+      properties:
+        entryId:
+          allOf:
+          - $ref: '#/components/schemas/EntryId'
+          - description: The ID of the entry.
+        completionStatus:
+          allOf:
+          - $ref: '#/components/schemas/BatchEntryCompletionStatus'
+          - description: The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> request.
+        errorInfo:
+          allOf:
+          - $ref: '#/components/schemas/BatchGetAssetPropertyValueErrorInfo'
+          - description: The error information, such as the error code and the timestamp.
+      description: Contains information for an entry that has been processed by the previous <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> request.
+    Resolution:
+      type: string
+      pattern: 1m|15m|1h|1d
+      minLength: 2
+      maxLength: 3
+    InterpolatedAssetPropertyValue:
+      type: object
+      required:
+      - timestamp
+      - value
+      properties:
+        timestamp:
+          $ref: '#/components/schemas/TimeInNanos'
+        value:
+          $ref: '#/components/schemas/Variant'
+      description: Contains information about an interpolated asset property value.
+    BatchGetAssetPropertyValueErrorEntries:
+      type: array
+      items:
+        $ref: '#/components/schemas/BatchGetAssetPropertyValueErrorEntry'
+    PropertyValueIntegerValue:
+      type: integer
+    BatchEntryCompletionStatus:
+      type: string
+      enum:
+      - SUCCESS
+      - ERROR
+    LimitExceededException: {}
+    Quality:
+      type: string
+      enum:
+      - GOOD
+      - BAD
+      - UNCERTAIN
+    BatchGetAssetPropertyValueHistoryResponse:
+      type: object
+      required:
+      - errorEntries
+      - successEntries
+      - skippedEntries
+      properties:
+        errorEntries:
+          allOf:
+          - $ref: '#/components/schemas/BatchGetAssetPropertyValueHistoryErrorEntries'
+          - description: A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.
+        successEntries:
+          allOf:
+          - $ref: '#/components/schemas/BatchGetAssetPropertyValueHistorySuccessEntries'
+          - description: A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.
+        skippedEntries:
+          allOf:
+          - $ref: '#/components/schemas/BatchGetAssetPropertyValueHistorySkippedEntries'
+          - description: A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The token for the next set of results, or null if there are no additional results.
+    BatchGetAssetPropertyValueErrorInfo:
+      type: object
+      required:
+      - errorCode
+      - errorTimestamp
+      properties:
+        errorCode:
+          allOf:
+          - $ref: '#/components/schemas/BatchGetAssetPropertyValueErrorCode'
+          - description: The error code.
+        errorTimestamp:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The date the error occurred, in Unix epoch time.
+      description: The error information, such as the error code and the timestamp.
+    ID:
+      type: string
+      pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
+      minLength: 36
+      maxLength: 36
+    PropertyValueBooleanValue:
+      type: boolean
+    BatchGetAssetPropertyValueErrorCode:
+      type: string
+      enum:
+      - ResourceNotFoundException
+      - InvalidRequestException
+      - AccessDeniedException
+    BatchGetAssetPropertyAggregatesErrorCode:
+      type: string
+      enum:
+      - ResourceNotFoundException
+      - InvalidRequestException
+      - AccessDeniedException
+    BatchGetAssetPropertyAggregatesSuccessEntry:
+      type: object
+      required:
+      - entryId
+      - aggregatedValues
+      properties:
+        entryId:
+          allOf:
+          - $ref: '#/components/schemas/EntryId'
+          - description: The ID of the entry.
+        aggregatedValues:
+          allOf:
+          - $ref: '#/components/schemas/AggregatedValues'
+          - description: The requested aggregated asset property values (for example, average, minimum, and maximum).
+      description: Contains success information for an entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.
+    PropertyValueStringValue:
+      type: string
+    EntryId:
+      type: string
+      pattern: ^[a-zA-Z0-9_-]+$
+      minLength: 1
+      maxLength: 64
+    Qualities:
+      type: array
+      items:
+        $ref: '#/components/schemas/Quality'
+      minItems: 1
+      maxItems: 1
     ErrorMessage:
       type: string
   parameters:
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Credential:
       name: X-Amz-Credential
       in: header
@@ -1845,32 +1869,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string

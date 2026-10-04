@@ -283,6 +283,9 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/iot-sitewise/faqs/
 common:
+- type: CapabilityMap
+  url: capabilities/amazon-iot-sitewise-capability-edges.yml
+  name: Amazon IoT SiteWise Business Capability Map
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/amazon-iot-sitewise/overview
 - type: AgenticAccess

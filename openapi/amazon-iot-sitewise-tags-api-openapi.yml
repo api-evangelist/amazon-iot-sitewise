@@ -380,6 +380,12 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Credential:
       name: X-Amz-Credential
       in: header
@@ -392,8 +398,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -404,28 +410,19 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    ResourceNotFoundException: {}
+    TagResourceResponse:
+      type: object
+      properties: {}
+    UnauthorizedException: {}
     TagValue:
       type: string
       minLength: 0
       maxLength: 256
-    UntagResourceResponse:
-      type: object
-      properties: {}
-    TooManyTagsException: {}
-    LimitExceededException: {}
+    InternalFailureException: {}
     ConflictingOperationException: {}
     InvalidRequestException: {}
-    TagResourceResponse:
-      type: object
-      properties: {}
+    ThrottlingException: {}
     ListTagsForResourceResponse:
       type: object
       properties:
@@ -433,19 +430,22 @@ components:
           allOf:
           - $ref: '#/components/schemas/TagMap'
           - description: The list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.
+    TagKey:
+      type: string
+      minLength: 1
+      maxLength: 128
+    UntagResourceResponse:
+      type: object
+      properties: {}
+    ResourceNotFoundException: {}
+    LimitExceededException: {}
     TagMap:
       type: object
       minProperties: 1
       maxProperties: 50
       additionalProperties:
         $ref: '#/components/schemas/TagValue'
-    InternalFailureException: {}
-    TagKey:
-      type: string
-      minLength: 1
-      maxLength: 128
-    UnauthorizedException: {}
-    ThrottlingException: {}
+    TooManyTagsException: {}
   securitySchemes:
     hmac:
       type: apiKey

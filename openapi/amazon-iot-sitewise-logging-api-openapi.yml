@@ -237,26 +237,14 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Date:
       name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -267,23 +255,25 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
       required: false
   schemas:
-    PutLoggingOptionsResponse:
-      type: object
-      properties: {}
-    LoggingLevel:
-      type: string
-      enum:
-      - ERROR
-      - INFO
-      - 'OFF'
-    ResourceNotFoundException: {}
     LoggingOptions:
       type: object
       required:
@@ -294,9 +284,11 @@ components:
           - $ref: '#/components/schemas/LoggingLevel'
           - description: The IoT SiteWise logging verbosity level.
       description: Contains logging options.
+    ResourceNotFoundException: {}
+    PutLoggingOptionsResponse:
+      type: object
+      properties: {}
     ThrottlingException: {}
-    ConflictingOperationException: {}
-    InternalFailureException: {}
     DescribeLoggingOptionsResponse:
       type: object
       required:
@@ -306,6 +298,14 @@ components:
           allOf:
           - $ref: '#/components/schemas/LoggingOptions'
           - description: The current logging options.
+    InternalFailureException: {}
+    ConflictingOperationException: {}
+    LoggingLevel:
+      type: string
+      enum:
+      - ERROR
+      - INFO
+      - 'OFF'
     InvalidRequestException: {}
   securitySchemes:
     hmac:

@@ -1,4 +1,4 @@
-# Amazon IoT SiteWise (amazon-iot-sitewise)
+# Amazon IoT SiteWise
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,128 +66,289 @@
 
 AWS IoT SiteWise is a managed service that makes it easy to collect, store, organize, and monitor industrial data at scale. It provides tools to create asset models representing your industrial operations and analyze equipment performance across your facilities.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/amazon-iot-sitewise/refs/heads/main/apis.yml)
+**Areas:** AWS · Asset Management · Industrial IoT · IoT · Time Series Data
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Amazon IoT SiteWise on APIs.io
 
-## Tags:
+Everything profiled for Amazon IoT SiteWise is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/amazon-iot-sitewise/](https://apis.io/providers/amazon-iot-sitewise/)** — or go straight to one of the APIs or properties below.
 
- - AWS, Asset Management, Industrial IoT, IoT, Time Series Data
+### APIs (30)
 
-## Timestamps
+- [Amazon IoT SiteWise Access Policies API](https://apis.io/apis/amazon-iot-sitewise/amazon-iot-sitewise-access-policies-api/) — The Access Policies API from Amazon IoT SiteWise — 2 operation(s) for access policies.
+- [Amazon IoT SiteWise Asset Models API](https://apis.io/apis/amazon-iot-sitewise/amazon-iot-sitewise-asset-models-api/) — The Asset Models API from Amazon IoT SiteWise — 3 operation(s) for asset models.
+- [Amazon IoT SiteWise Assets API](https://apis.io/apis/amazon-iot-sitewise/amazon-iot-sitewise-assets-api/) — The Assets API from Amazon IoT SiteWise — 8 operation(s) for assets.
+- [Amazon IoT SiteWise Configuration API](https://apis.io/apis/amazon-iot-sitewise/amazon-iot-sitewise-configuration-api/) — The Configuration API from Amazon IoT SiteWise — 2 operation(s) for configuration.
+- [Amazon IoT SiteWise Dashboards API](https://apis.io/apis/amazon-iot-sitewise/amazon-iot-sitewise-dashboards-api/) — The Dashboards API from Amazon IoT SiteWise — 2 operation(s) for dashboards.
+- [Amazon IoT SiteWise Gateways API](https://apis.io/apis/amazon-iot-sitewise/amazon-iot-sitewise-gateways-api/) — The Gateways API from Amazon IoT SiteWise — 4 operation(s) for gateways.
+- [Amazon IoT SiteWise Jobs API](https://apis.io/apis/amazon-iot-sitewise/amazon-iot-sitewise-jobs-api/) — The Jobs API from Amazon IoT SiteWise — 2 operation(s) for jobs.
+- [Amazon IoT SiteWise Logging API](https://apis.io/apis/amazon-iot-sitewise/amazon-iot-sitewise-logging-api/) — The Logging API from Amazon IoT SiteWise — 1 operation(s) for logging.
+- [Amazon IoT SiteWise Portals API](https://apis.io/apis/amazon-iot-sitewise/amazon-iot-sitewise-portals-api/) — The Portals API from Amazon IoT SiteWise — 2 operation(s) for portals.
+- [Amazon IoT SiteWise Projects API](https://apis.io/apis/amazon-iot-sitewise/amazon-iot-sitewise-projects-api/) — The Projects API from Amazon IoT SiteWise — 5 operation(s) for projects.
+- [Amazon IoT SiteWise Properties API](https://apis.io/apis/amazon-iot-sitewise/amazon-iot-sitewise-properties-api/) — The Properties API from Amazon IoT SiteWise — 8 operation(s) for properties.
+- [Amazon IoT SiteWise Tags API](https://apis.io/apis/amazon-iot-sitewise/amazon-iot-sitewise-tags-api/) — The Tags API from Amazon IoT SiteWise — 2 operation(s) for tags.
+- [Amazon IoT SiteWise Time Series API](https://apis.io/apis/amazon-iot-sitewise/amazon-iot-sitewise-time-series-api/) — The Time Series API from Amazon IoT SiteWise — 5 operation(s) for time series.
+- [Amazon IoT SiteWise Iot Sitewise Actions API](https://apis.io/apis/amazon-iot-sitewise/amazon-iot-sitewise-actions-api/) — The Iot Sitewise Actions API from Amazon IoT SiteWise — 2 operation(s) for iot sitewise actions.
+- [Amazon IoT SiteWise Iot Sitewise Applications API](https://apis.io/apis/amazon-iot-sitewise/amazon-iot-sitewise-applications-api/) — The Iot Sitewise Applications API from Amazon IoT SiteWise — 2 operation(s) for iot sitewise applications.
+- [Amazon IoT SiteWise Iot Sitewise Asset Model Interface Relationship API](https://apis.io/apis/amazon-iot-sitewise/amazon-iot-sitewise-asset-model-interface-relationship-api/) — The Iot Sitewise Asset Model Interface Relationship API from Amazon IoT SiteWise — 1 operation(s) for iot sitewise asset model interface relationship.
+- [Amazon IoT SiteWise Iot Sitewise Cancel API](https://apis.io/apis/amazon-iot-sitewise/amazon-iot-sitewise-cancel-api/) — The Iot Sitewise Cancel API from Amazon IoT SiteWise — 3 operation(s) for iot sitewise cancel.
+- [Amazon IoT SiteWise Iot Sitewise Composite Models API](https://apis.io/apis/amazon-iot-sitewise/amazon-iot-sitewise-composite-models-api/) — The Iot Sitewise Composite Models API from Amazon IoT SiteWise — 3 operation(s) for iot sitewise composite models.
+- [Amazon IoT SiteWise Iot Sitewise Computation Models API](https://apis.io/apis/amazon-iot-sitewise/amazon-iot-sitewise-computation-models-api/) — The Iot Sitewise Computation Models API from Amazon IoT SiteWise — 3 operation(s) for iot sitewise computation models.
+- [Amazon IoT SiteWise Iot Sitewise Data Segments API](https://apis.io/apis/amazon-iot-sitewise/amazon-iot-sitewise-data-segments-api/) — The Iot Sitewise Data Segments API from Amazon IoT SiteWise — 4 operation(s) for iot sitewise data segments.
+- [Amazon IoT SiteWise Iot Sitewise Dataset Export Jobs API](https://apis.io/apis/amazon-iot-sitewise/amazon-iot-sitewise-dataset-export-jobs-api/) — The Iot Sitewise Dataset Export Jobs API from Amazon IoT SiteWise — 2 operation(s) for iot sitewise dataset export jobs.
+- [Amazon IoT SiteWise Iot Sitewise Datasets API](https://apis.io/apis/amazon-iot-sitewise/amazon-iot-sitewise-datasets-api/) — The Iot Sitewise Datasets API from Amazon IoT SiteWise — 2 operation(s) for iot sitewise datasets.
+- [Amazon IoT SiteWise Iot Sitewise Enrichment Jobs API](https://apis.io/apis/amazon-iot-sitewise/amazon-iot-sitewise-enrichment-jobs-api/) — The Iot Sitewise Enrichment Jobs API from Amazon IoT SiteWise — 2 operation(s) for iot sitewise enrichment jobs.
+- [Amazon IoT SiteWise Iot Sitewise Executions API](https://apis.io/apis/amazon-iot-sitewise/amazon-iot-sitewise-executions-api/) — The Iot Sitewise Executions API from Amazon IoT SiteWise — 4 operation(s) for iot sitewise executions.
+- [Amazon IoT SiteWise Iot Sitewise Operations API](https://apis.io/apis/amazon-iot-sitewise/amazon-iot-sitewise-operations-api/) — The Iot Sitewise Operations API from Amazon IoT SiteWise — 12 operation(s) for iot sitewise operations.
+- [Amazon IoT SiteWise Iot Sitewise Pipelines API](https://apis.io/apis/amazon-iot-sitewise/amazon-iot-sitewise-pipelines-api/) — The Iot Sitewise Pipelines API from Amazon IoT SiteWise — 2 operation(s) for iot sitewise pipelines.
+- [Amazon IoT SiteWise Iot Sitewise Queries API](https://apis.io/apis/amazon-iot-sitewise/amazon-iot-sitewise-queries-api/) — The Iot Sitewise Queries API from Amazon IoT SiteWise — 3 operation(s) for iot sitewise queries.
+- [Amazon IoT SiteWise Iot Sitewise Searches API](https://apis.io/apis/amazon-iot-sitewise/amazon-iot-sitewise-searches-api/) — The Iot Sitewise Searches API from Amazon IoT SiteWise — 3 operation(s) for iot sitewise searches.
+- [Amazon IoT SiteWise Iot Sitewise Tasks API](https://apis.io/apis/amazon-iot-sitewise/amazon-iot-sitewise-tasks-api/) — The Iot Sitewise Tasks API from Amazon IoT SiteWise — 2 operation(s) for iot sitewise tasks.
+- [Amazon IoT SiteWise Iot Sitewise Workspaces API](https://apis.io/apis/amazon-iot-sitewise/amazon-iot-sitewise-workspaces-api/) — The Iot Sitewise Workspaces API from Amazon IoT SiteWise — 2 operation(s) for iot sitewise workspaces.
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### AWS IoT SiteWise API
-The AWS IoT SiteWise API provides access to asset model management, asset data ingestion, time-series data queries, portals, and dashboards for industrial IoT monitoring.
+#### Agentic access (1)
 
-**Human URL:** [https://aws.amazon.com/iot-sitewise/](https://aws.amazon.com/iot-sitewise/)
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags:
+- [Amazon Iot Sitewise Agentic Access](https://apis.io/agentic-access/amazon-iot-sitewise/amazon-iot-sitewise-agentic-access/)
 
- - Asset Management, Industrial IoT, IoT, Time Series
+#### JSON Schema (200)
 
-#### Properties
+The data models the API reads and writes.
 
-- [Documentation](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/)
-- [OpenAPI](openapi/amazon-iot-sitewise-openapi-original.yml)
-- [GettingStarted](https://docs.aws.amazon.com/iot-sitewise/latest/userguide/getting-started.html)
-- [Pricing](https://aws.amazon.com/iot-sitewise/pricing/)
-- [FAQ](https://aws.amazon.com/iot-sitewise/faqs/)
+- [AccessPolicySummaries](https://apis.io/schemas/amazon-iot-sitewise/iot-sitewise-access-policy-summaries/)
+- [AccessPolicySummary](https://apis.io/schemas/amazon-iot-sitewise/iot-sitewise-access-policy-summary/)
+- [AggregateType](https://apis.io/schemas/amazon-iot-sitewise/iot-sitewise-aggregate-type/)
+- [AggregateTypes](https://apis.io/schemas/amazon-iot-sitewise/iot-sitewise-aggregate-types/)
+- [AggregatedValue](https://apis.io/schemas/amazon-iot-sitewise/iot-sitewise-aggregated-value/)
+- [AggregatedValues](https://apis.io/schemas/amazon-iot-sitewise/iot-sitewise-aggregated-values/)
+- [Aggregates](https://apis.io/schemas/amazon-iot-sitewise/iot-sitewise-aggregates/)
+- [Alarms](https://apis.io/schemas/amazon-iot-sitewise/iot-sitewise-alarms/)
+- [AssetCompositeModel](https://apis.io/schemas/amazon-iot-sitewise/iot-sitewise-asset-composite-model/)
+- [AssetCompositeModels](https://apis.io/schemas/amazon-iot-sitewise/iot-sitewise-asset-composite-models/)
+- [AssetErrorCode](https://apis.io/schemas/amazon-iot-sitewise/iot-sitewise-asset-error-code/)
+- [AssetErrorDetails](https://apis.io/schemas/amazon-iot-sitewise/iot-sitewise-asset-error-details/)
+- [AssetHierarchies](https://apis.io/schemas/amazon-iot-sitewise/iot-sitewise-asset-hierarchies/)
+- [AssetHierarchy](https://apis.io/schemas/amazon-iot-sitewise/iot-sitewise-asset-hierarchy/)
+- [AssetHierarchyInfo](https://apis.io/schemas/amazon-iot-sitewise/iot-sitewise-asset-hierarchy-info/)
+- [AssetIDs](https://apis.io/schemas/amazon-iot-sitewise/iot-sitewise-asset-i-ds/)
+- [AssetModelCompositeModel](https://apis.io/schemas/amazon-iot-sitewise/iot-sitewise-asset-model-composite-model/)
+- [AssetModelCompositeModelDefinition](https://apis.io/schemas/amazon-iot-sitewise/iot-sitewise-asset-model-composite-model-definition/)
+- [AssetModelCompositeModelDefinitions](https://apis.io/schemas/amazon-iot-sitewise/iot-sitewise-asset-model-composite-model-definitions/)
+- [AssetModelCompositeModels](https://apis.io/schemas/amazon-iot-sitewise/iot-sitewise-asset-model-composite-models/)
+- [AssetModelHierarchies](https://apis.io/schemas/amazon-iot-sitewise/iot-sitewise-asset-model-hierarchies/)
+- [AssetModelHierarchy](https://apis.io/schemas/amazon-iot-sitewise/iot-sitewise-asset-model-hierarchy/)
+- [AssetModelHierarchyDefinition](https://apis.io/schemas/amazon-iot-sitewise/iot-sitewise-asset-model-hierarchy-definition/)
+- [AssetModelHierarchyDefinitions](https://apis.io/schemas/amazon-iot-sitewise/iot-sitewise-asset-model-hierarchy-definitions/)
+- [AssetModelProperties](https://apis.io/schemas/amazon-iot-sitewise/iot-sitewise-asset-model-properties/)
+- …and 175 more published on APIs.io
 
-## Common Properties
+#### JSON Structure (200)
 
-- [Portal](https://aws.amazon.com/iot-sitewise/)
+Data models expressed in JSON Structure.
+
+- [Iot Sitewise Access Policy Summaries Structure](https://apis.io/json-structure/amazon-iot-sitewise/iot-sitewise-access-policy-summaries-structure/)
+- [Iot Sitewise Access Policy Summary Structure](https://apis.io/json-structure/amazon-iot-sitewise/iot-sitewise-access-policy-summary-structure/)
+- [Iot Sitewise Aggregate Type Structure](https://apis.io/json-structure/amazon-iot-sitewise/iot-sitewise-aggregate-type-structure/)
+- [Iot Sitewise Aggregate Types Structure](https://apis.io/json-structure/amazon-iot-sitewise/iot-sitewise-aggregate-types-structure/)
+- [Iot Sitewise Aggregated Value Structure](https://apis.io/json-structure/amazon-iot-sitewise/iot-sitewise-aggregated-value-structure/)
+- [Iot Sitewise Aggregated Values Structure](https://apis.io/json-structure/amazon-iot-sitewise/iot-sitewise-aggregated-values-structure/)
+- [Iot Sitewise Aggregates Structure](https://apis.io/json-structure/amazon-iot-sitewise/iot-sitewise-aggregates-structure/)
+- [Iot Sitewise Alarms Structure](https://apis.io/json-structure/amazon-iot-sitewise/iot-sitewise-alarms-structure/)
+- [Iot Sitewise Asset Composite Model Structure](https://apis.io/json-structure/amazon-iot-sitewise/iot-sitewise-asset-composite-model-structure/)
+- [Iot Sitewise Asset Composite Models Structure](https://apis.io/json-structure/amazon-iot-sitewise/iot-sitewise-asset-composite-models-structure/)
+- [Iot Sitewise Asset Error Code Structure](https://apis.io/json-structure/amazon-iot-sitewise/iot-sitewise-asset-error-code-structure/)
+- [Iot Sitewise Asset Error Details Structure](https://apis.io/json-structure/amazon-iot-sitewise/iot-sitewise-asset-error-details-structure/)
+- [Iot Sitewise Asset Hierarchies Structure](https://apis.io/json-structure/amazon-iot-sitewise/iot-sitewise-asset-hierarchies-structure/)
+- [Iot Sitewise Asset Hierarchy Info Structure](https://apis.io/json-structure/amazon-iot-sitewise/iot-sitewise-asset-hierarchy-info-structure/)
+- [Iot Sitewise Asset Hierarchy Structure](https://apis.io/json-structure/amazon-iot-sitewise/iot-sitewise-asset-hierarchy-structure/)
+- [Iot Sitewise Asset I Ds Structure](https://apis.io/json-structure/amazon-iot-sitewise/iot-sitewise-asset-i-ds-structure/)
+- [Iot Sitewise Asset Model Composite Model Definition Structure](https://apis.io/json-structure/amazon-iot-sitewise/iot-sitewise-asset-model-composite-model-definition-structure/)
+- [Iot Sitewise Asset Model Composite Model Definitions Structure](https://apis.io/json-structure/amazon-iot-sitewise/iot-sitewise-asset-model-composite-model-definitions-structure/)
+- [Iot Sitewise Asset Model Composite Model Structure](https://apis.io/json-structure/amazon-iot-sitewise/iot-sitewise-asset-model-composite-model-structure/)
+- [Iot Sitewise Asset Model Composite Models Structure](https://apis.io/json-structure/amazon-iot-sitewise/iot-sitewise-asset-model-composite-models-structure/)
+- [Iot Sitewise Asset Model Hierarchies Structure](https://apis.io/json-structure/amazon-iot-sitewise/iot-sitewise-asset-model-hierarchies-structure/)
+- [Iot Sitewise Asset Model Hierarchy Definition Structure](https://apis.io/json-structure/amazon-iot-sitewise/iot-sitewise-asset-model-hierarchy-definition-structure/)
+- [Iot Sitewise Asset Model Hierarchy Definitions Structure](https://apis.io/json-structure/amazon-iot-sitewise/iot-sitewise-asset-model-hierarchy-definitions-structure/)
+- [Iot Sitewise Asset Model Hierarchy Structure](https://apis.io/json-structure/amazon-iot-sitewise/iot-sitewise-asset-model-hierarchy-structure/)
+- [Iot Sitewise Asset Model Properties Structure](https://apis.io/json-structure/amazon-iot-sitewise/iot-sitewise-asset-model-properties-structure/)
+- …and 175 more published on APIs.io
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Amazon Iot Sitewise Context](https://apis.io/jsonld/amazon-iot-sitewise/amazon-iot-sitewise-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Amazon Iot Sitewise Vocabulary](https://apis.io/vocabularies/amazon-iot-sitewise/amazon-iot-sitewise-vocabulary/)
+
+#### Examples (179)
+
+Example requests and responses.
+
+- [Iot Sitewise Access Policy Summaries Example](https://apis.io/examples/amazon-iot-sitewise/iot-sitewise-access-policy-summaries-example/)
+- [Iot Sitewise Access Policy Summary Example](https://apis.io/examples/amazon-iot-sitewise/iot-sitewise-access-policy-summary-example/)
+- [Iot Sitewise Aggregate Types Example](https://apis.io/examples/amazon-iot-sitewise/iot-sitewise-aggregate-types-example/)
+- [Iot Sitewise Aggregated Value Example](https://apis.io/examples/amazon-iot-sitewise/iot-sitewise-aggregated-value-example/)
+- [Iot Sitewise Aggregated Values Example](https://apis.io/examples/amazon-iot-sitewise/iot-sitewise-aggregated-values-example/)
+- [Iot Sitewise Aggregates Example](https://apis.io/examples/amazon-iot-sitewise/iot-sitewise-aggregates-example/)
+- [Iot Sitewise Alarms Example](https://apis.io/examples/amazon-iot-sitewise/iot-sitewise-alarms-example/)
+- [Iot Sitewise Asset Composite Model Example](https://apis.io/examples/amazon-iot-sitewise/iot-sitewise-asset-composite-model-example/)
+- [Iot Sitewise Asset Composite Models Example](https://apis.io/examples/amazon-iot-sitewise/iot-sitewise-asset-composite-models-example/)
+- [Iot Sitewise Asset Error Details Example](https://apis.io/examples/amazon-iot-sitewise/iot-sitewise-asset-error-details-example/)
+- [Iot Sitewise Asset Hierarchies Example](https://apis.io/examples/amazon-iot-sitewise/iot-sitewise-asset-hierarchies-example/)
+- [Iot Sitewise Asset Hierarchy Example](https://apis.io/examples/amazon-iot-sitewise/iot-sitewise-asset-hierarchy-example/)
+- [Iot Sitewise Asset Hierarchy Info Example](https://apis.io/examples/amazon-iot-sitewise/iot-sitewise-asset-hierarchy-info-example/)
+- [Iot Sitewise Asset I Ds Example](https://apis.io/examples/amazon-iot-sitewise/iot-sitewise-asset-i-ds-example/)
+- [Iot Sitewise Asset Model Composite Model Definition Example](https://apis.io/examples/amazon-iot-sitewise/iot-sitewise-asset-model-composite-model-definition-example/)
+- [Iot Sitewise Asset Model Composite Model Definitions Example](https://apis.io/examples/amazon-iot-sitewise/iot-sitewise-asset-model-composite-model-definitions-example/)
+- [Iot Sitewise Asset Model Composite Model Example](https://apis.io/examples/amazon-iot-sitewise/iot-sitewise-asset-model-composite-model-example/)
+- [Iot Sitewise Asset Model Composite Models Example](https://apis.io/examples/amazon-iot-sitewise/iot-sitewise-asset-model-composite-models-example/)
+- [Iot Sitewise Asset Model Hierarchies Example](https://apis.io/examples/amazon-iot-sitewise/iot-sitewise-asset-model-hierarchies-example/)
+- [Iot Sitewise Asset Model Hierarchy Definition Example](https://apis.io/examples/amazon-iot-sitewise/iot-sitewise-asset-model-hierarchy-definition-example/)
+- [Iot Sitewise Asset Model Hierarchy Definitions Example](https://apis.io/examples/amazon-iot-sitewise/iot-sitewise-asset-model-hierarchy-definitions-example/)
+- [Iot Sitewise Asset Model Hierarchy Example](https://apis.io/examples/amazon-iot-sitewise/iot-sitewise-asset-model-hierarchy-example/)
+- [Iot Sitewise Asset Model Properties Example](https://apis.io/examples/amazon-iot-sitewise/iot-sitewise-asset-model-properties-example/)
+- [Iot Sitewise Asset Model Property Definition Example](https://apis.io/examples/amazon-iot-sitewise/iot-sitewise-asset-model-property-definition-example/)
+- [Iot Sitewise Asset Model Property Definitions Example](https://apis.io/examples/amazon-iot-sitewise/iot-sitewise-asset-model-property-definitions-example/)
+- …and 154 more published on APIs.io
+
+#### Collections (32)
+
+Postman and Open Collection request collections.
+
+- [AWS IoT SiteWise Access Policies API](https://apis.io/collections/amazon-iot-sitewise/open-amazon-iot-sitewise-access-policies-api/)
+- [AWS IoT SiteWise Access Policies Asset Models API](https://apis.io/collections/amazon-iot-sitewise/open-amazon-iot-sitewise-asset-models-api/)
+- [AWS IoT SiteWise Access Policies Assets API](https://apis.io/collections/amazon-iot-sitewise/open-amazon-iot-sitewise-assets-api/)
+- [AWS IoT SiteWise Access Policies Configuration API](https://apis.io/collections/amazon-iot-sitewise/open-amazon-iot-sitewise-configuration-api/)
+- [AWS IoT SiteWise Access Policies Dashboards API](https://apis.io/collections/amazon-iot-sitewise/open-amazon-iot-sitewise-dashboards-api/)
+- [AWS IoT SiteWise Access Policies Dashboards#projectId API](https://apis.io/collections/amazon-iot-sitewise/open-amazon-iot-sitewise-dashboards-projectid-api/)
+- [AWS IoT SiteWise Access Policies Gateways API](https://apis.io/collections/amazon-iot-sitewise/open-amazon-iot-sitewise-gateways-api/)
+- [AWS IoT SiteWise Access Policies Jobs API](https://apis.io/collections/amazon-iot-sitewise/open-amazon-iot-sitewise-jobs-api/)
+- [AWS IoT SiteWise Access Policies Logging API](https://apis.io/collections/amazon-iot-sitewise/open-amazon-iot-sitewise-logging-api/)
+- [AWS IoT SiteWise Access Policies Portals API](https://apis.io/collections/amazon-iot-sitewise/open-amazon-iot-sitewise-portals-api/)
+- [AWS IoT SiteWise Access Policies Projects API](https://apis.io/collections/amazon-iot-sitewise/open-amazon-iot-sitewise-projects-api/)
+- [AWS IoT SiteWise Access Policies Projects#portalId API](https://apis.io/collections/amazon-iot-sitewise/open-amazon-iot-sitewise-projects-portalid-api/)
+- [AWS IoT SiteWise Access Policies Properties API](https://apis.io/collections/amazon-iot-sitewise/open-amazon-iot-sitewise-properties-api/)
+- [AWS IoT SiteWise Access Policies Tags#resourceArn API](https://apis.io/collections/amazon-iot-sitewise/open-amazon-iot-sitewise-tags-resourcearn-api/)
+- [AWS IoT SiteWise Access Policies Tags#resourceArn&tagKeys API](https://apis.io/collections/amazon-iot-sitewise/open-amazon-iot-sitewise-tags-resourcearn-tagkeys-api/)
+- [AWS IoT SiteWise Access Policies Timeseries API](https://apis.io/collections/amazon-iot-sitewise/open-amazon-iot-sitewise-timeseries-api/)
+- [AWS IoT SiteWise Access Policies API](https://apis.io/collections/amazon-iot-sitewise/postman-amazon-iot-sitewise-access-policies-api/)
+- [AWS IoT SiteWise Access Policies Asset Models API](https://apis.io/collections/amazon-iot-sitewise/postman-amazon-iot-sitewise-asset-models-api/)
+- [AWS IoT SiteWise Access Policies Assets API](https://apis.io/collections/amazon-iot-sitewise/postman-amazon-iot-sitewise-assets-api/)
+- [AWS IoT SiteWise Access Policies Configuration API](https://apis.io/collections/amazon-iot-sitewise/postman-amazon-iot-sitewise-configuration-api/)
+- [AWS IoT SiteWise Access Policies Dashboards API](https://apis.io/collections/amazon-iot-sitewise/postman-amazon-iot-sitewise-dashboards-api/)
+- [AWS IoT SiteWise Access Policies Dashboards#projectId API](https://apis.io/collections/amazon-iot-sitewise/postman-amazon-iot-sitewise-dashboards-projectid-api/)
+- [AWS IoT SiteWise Access Policies Gateways API](https://apis.io/collections/amazon-iot-sitewise/postman-amazon-iot-sitewise-gateways-api/)
+- [AWS IoT SiteWise Access Policies Jobs API](https://apis.io/collections/amazon-iot-sitewise/postman-amazon-iot-sitewise-jobs-api/)
+- [AWS IoT SiteWise Access Policies Logging API](https://apis.io/collections/amazon-iot-sitewise/postman-amazon-iot-sitewise-logging-api/)
+- …and 7 more published on APIs.io
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Amazon IoT SiteWise — jsonschema rules](https://apis.io/rules/amazon-iot-sitewise/amazon-iot-sitewise-jsonschema-spectral-rules/)
+- [Amazon IoT SiteWise API Rules](https://apis.io/rules/amazon-iot-sitewise/amazon-iot-sitewise-spectral-rules/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Amazon Iot Sitewise Authentication](https://apis.io/security/amazon-iot-sitewise/amazon-iot-sitewise-authentication/)
+- [Amazon Iot Sitewise Domain Security](https://apis.io/security/amazon-iot-sitewise/amazon-iot-sitewise-domain-security/)
+- [Amazon Iot Sitewise Trust Center](https://apis.io/security/amazon-iot-sitewise/amazon-iot-sitewise-trust-center/)
+- [Amazon Iot Sitewise Vulnerability Disclosure](https://apis.io/security/amazon-iot-sitewise/amazon-iot-sitewise-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Amazon Iot Sitewise Plans Pricing](https://apis.io/plans/amazon-iot-sitewise/amazon-iot-sitewise-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Amazon Iot Sitewise Rate Limits](https://apis.io/rate-limits/amazon-iot-sitewise/amazon-iot-sitewise-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Amazon Iot Sitewise Finops](https://apis.io/finops/amazon-iot-sitewise/amazon-iot-sitewise-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://aws.amazon.com/iot-sitewise/)
 - [Documentation](https://docs.aws.amazon.com/iot-sitewise/)
-- [TermsOfService](https://aws.amazon.com/service-terms/)
-- [PrivacyPolicy](https://aws.amazon.com/privacy/)
 - [Support](https://aws.amazon.com/premiumsupport/)
 - [Blog](https://aws.amazon.com/blogs/iot/tag/aws-iot-sitewise/)
-- [GitHubOrganization](https://github.com/aws)
-- [Console](https://console.aws.amazon.com/iotsitewise/)
-- [SignUp](https://portal.aws.amazon.com/billing/signup)
-- [Login](https://signin.aws.amazon.com/)
-- [StatusPage](https://health.aws.amazon.com/health/status)
-- [Contact](https://aws.amazon.com/contact-us/)
+- [Terms of service](https://aws.amazon.com/service-terms/)
+- [Privacy policy](https://aws.amazon.com/privacy/)
+- [GitHub](https://github.com/aws)
+- [Status](https://health.aws.amazon.com/health/status)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| Asset Modeling | Create hierarchical asset models that represent your industrial equipment and processes. |
-| Time-Series Data Storage | Ingest and store industrial sensor data with automatic data quality classification. |
-| SiteWise Monitor | Build no-code dashboards for industrial operations visualization. |
-| Edge Processing | Process data locally at industrial sites using SiteWise Edge. |
-| Computed Properties | Define metrics and transforms on asset data using built-in formula engine. |
+**Kin Score 55.4** — strong · rubric 0.25.0 · scored 2026-10-23
 
-## Use Cases
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 63.0 |
+| Contract governance | 27.3 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 58.3 |
+| Access clarity | 53.9 |
 
-| Name | Description |
-|------|-------------|
-| Equipment Performance Monitoring | Track OEE and equipment health across multiple manufacturing facilities. |
-| Energy Management | Monitor and optimize energy consumption across industrial sites. |
-| Process Optimization | Analyze production line data to identify bottlenecks and inefficiencies. |
+**Agent readiness 34.1** — agent-ready
 
-## Integrations
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | verified |
+| Error Semantics | verified |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
 
-| Name | Description |
-|------|-------------|
-| AWS IoT Greengrass | Collects industrial data from OPC-UA, Modbus, and Ethernet/IP sources at the edge. |
-| Amazon Kinesis | Streams asset property data for real-time analytics. |
-| Amazon QuickSight | Visualizes SiteWise industrial data in business dashboards. |
+**Regulatory alignment 35.3** — Horizontal (data, software, accessibility, platform)
 
-## Artifacts
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/amazon-iot-sitewise/](https://apis.io/providers/amazon-iot-sitewise/).
 
-Machine-readable API specifications organized by format.
+## How this profile is made
 
-### OpenAPI
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-- [AWS IoT SiteWise API](openapi/amazon-iot-sitewise-openapi-original.yml)
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Amazon IoT SiteWise: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-### JSON Schema
+## Open an issue
 
-200 schema files covering key resources and operations.
-
-### JSON Structure
-
-200 JSON Structure files converted from JSON Schema.
-
-### JSON-LD
-
-- [Amazon IoT SiteWise Context](json-ld/amazon-iot-sitewise-context.jsonld)
-
-### Examples
-
-200 example JSON files generated from schemas.
-
-## Capabilities
-
-Naftiko capabilities organized as shared per-API definitions composed into customer-facing workflows.
-
-### Shared Per-API Definitions
-
-- [AWS IoT SiteWise API](capabilities/shared/iot-sitewise.yaml) — operations for amazon iot sitewise management
-
-### Workflow Capabilities
-
-| Workflow | APIs Combined | Tools | Persona |
-|----------|--------------|-------|---------|
-| [Industrial Asset Management](capabilities/industrial-asset-management.yaml) | Amazon IoT SiteWise | 8 | OT Engineer, Data Analyst |
-
-## Vocabulary
-
-- [Amazon IoT SiteWise Vocabulary](vocabulary/amazon-iot-sitewise-vocabulary.yaml) — Unified taxonomy mapping resources, actions, workflows, and personas
-
-## Rules
-
-- [Amazon IoT SiteWise Spectral Rules](rules/amazon-iot-sitewise-spectral-rules.yml) — 14 rules across 6 categories enforcing Amazon IoT SiteWise API conventions
-
-## Maintainers
-
-**FN:** Kin Lane
-
-**Email:** kin@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/amazon-iot-sitewise/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).

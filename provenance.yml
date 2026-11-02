@@ -1925,7 +1925,7 @@ artifacts:
   kin/checks-2026-10-23T222754.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  kin/checks-2026-10-31T095417.yml:
+  kin/checks-2026-11-02T082323.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-23T000603.yml:
@@ -1983,6 +1983,15 @@ artifacts:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-10-31T095417.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-11-01T171331.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-11-01T200237.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-11-02T082323.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   openapi/_original/amazon-iot-sitewise-openapi-original.yml:
@@ -2147,6 +2156,9 @@ artifacts:
     evidence: declared in the artifact
   security/amazon-iot-sitewise-vulnerability-disclosure.yml:
     method: searched
+    evidence: declared in the artifact
+  sla/amazon-iot-sitewise-sla.yml:
+    method: generated
     evidence: declared in the artifact
   smithy/iotsitewise-2019-12-02.json:
     method: unknown

@@ -1,0 +1,163 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-28'
+method: searched
+source: https://aws.amazon.com/iot-sitewise/pricing/
+sources:
+- https://aws.amazon.com/iot-sitewise/pricing/
+provenance:
+  tool: engine/economics/harvest_pricing.py
+  run: 20261028T161713
+  grounding: every price_text was found verbatim in the fetched page text
+audience: developer-api
+pricing_basis: usage-other
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-28'
+published: true
+note: Most rate tables are unrendered pricing tokens; numeric values captured from the stated Edge pack
+  price and the worked pricing examples (US East N. Virginia). SiteWise Assistant monthly enablement fee
+  and Scenario Discovery credit tiers show placeholders, not numbers.
+plan_count: 9
+currency: USD
+plans:
+- name: Messaging
+  price_text: $1.00 per million messages
+  price: 1.0
+  currency: USD
+  period: per-use
+  unit: per million messages
+- name: Data Processing (computations)
+  price_text: $0.50 per million computations
+  price: 0.5
+  currency: USD
+  period: per-use
+  unit: per million computations
+- name: Hot Storage
+  price_text: $0.30 per GB-month
+  price: 0.3
+  currency: USD
+  period: month
+  unit: GB-month
+- name: Warm Storage
+  price_text: $0.03 per GB-month
+  price: 0.03
+  currency: USD
+  period: month
+  unit: GB-month
+- name: SiteWise Monitor
+  price_text: $10.00 per active user per month
+  price: 10.0
+  currency: USD
+  period: month
+  unit: active user
+- name: SiteWise Edge Data Processing Pack
+  price_text: $200 per active gateway per month
+  price: 200
+  currency: USD
+  period: month
+  unit: active gateway
+- name: SiteWise Edge Data Collection Pack
+  price_text: The Data Collection Pack is free.
+  period: none
+  unit: pack
+- name: Data Export
+  price_text: $0.005 per thousand objects
+  price: 0.005
+  currency: USD
+  period: per-use
+  unit: per thousand objects
+- name: Query (data scanned)
+  price_text: $0.20 per GB scanned
+  price: 0.2
+  currency: USD
+  period: per-use
+  unit: GB scanned
+rate_limit_statements:
+- it supports up to 300 sensors per model
+- When ingesting buffered data, you will be charged a minimum of 10MB or 2,000 messages per ingestion
+  period
+x-canonical:
+  generated: '2026-11-01'
+  vocabulary: engine/economics/plans-canonical.yml
+  models:
+  - hybrid
+  - seat
+  - subscription
+  units:
+  - data
+  - message
+  - seat
+  plans:
+  - name: Messaging
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - message
+    periods:
+    - other
+  - name: Data Processing (computations)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Hot Storage
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - data
+    periods:
+    - month
+  - name: Warm Storage
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - data
+    periods:
+    - month
+  - name: SiteWise Monitor
+    access: other
+    model: seat
+    model_how: derived
+    units:
+    - seat
+    periods:
+    - month
+  - name: SiteWise Edge Data Processing Pack
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: SiteWise Edge Data Collection Pack
+    access: other
+    model: unstated
+    model_how: derived
+    units:
+    - other
+    periods:
+    - none
+  - name: Data Export
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Query (data scanned)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
